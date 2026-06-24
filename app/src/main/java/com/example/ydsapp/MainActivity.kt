@@ -3,26 +3,50 @@ package com.example.ydsapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.ydsapp.data.Lesson
+import com.example.ydsapp.data.LessonDataProvider
+import com.example.ydsapp.data.Question
+import com.example.ydsapp.data.QuestionDataProvider
 import com.example.ydsapp.ui.MainViewModel
 import kotlinx.coroutines.launch
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MaterialTheme(colorScheme = darkColorScheme()) {
+            MaterialTheme(
+                colorScheme = darkColorScheme(
+                    primary = Color(0xFF64B5F6),
+                    secondary = Color(0xFF81C784),
+                    background = Color(0xFF121212),
+                    surface = Color(0xFF1E1E1E),
+                    error = Color(0xFFE57373)
+                )
+            ) {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
@@ -105,20 +129,38 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MainScreen(viewModel: MainViewModel) {
     var selectedTab by remember { mutableStateOf(0) }
-    
+
     Scaffold(
         bottomBar = {
             NavigationBar {
                 NavigationBarItem(
                     selected = selectedTab == 0,
                     onClick = { selectedTab = 0 },
-                    icon = { Text("📝") },
-                    label = { Text("Active Recall") }
+                    icon = { Text("📊", fontSize = 20.sp) },
+                    label = { Text("Panel") }
                 )
                 NavigationBarItem(
                     selected = selectedTab == 1,
                     onClick = { selectedTab = 1 },
-                    icon = { Text("🧠") },
+                    icon = { Text("📝", fontSize = 20.sp) },
+                    label = { Text("Kartlar") }
+                )
+                NavigationBarItem(
+                    selected = selectedTab == 2,
+                    onClick = { selectedTab = 2 },
+                    icon = { Text("📚", fontSize = 20.sp) },
+                    label = { Text("Dersler") }
+                )
+                NavigationBarItem(
+                    selected = selectedTab == 3,
+                    onClick = { selectedTab = 3 },
+                    icon = { Text("❓", fontSize = 20.sp) },
+                    label = { Text("Sorular") }
+                )
+                NavigationBarItem(
+                    selected = selectedTab == 4,
+                    onClick = { selectedTab = 4 },
+                    icon = { Text("🧠", fontSize = 20.sp) },
                     label = { Text("Feynman") }
                 )
             }
@@ -126,9 +168,127 @@ fun MainScreen(viewModel: MainViewModel) {
     ) { paddingValues ->
         Box(modifier = Modifier.padding(paddingValues)) {
             when (selectedTab) {
-                0 -> ActiveRecallScreen(viewModel)
-                1 -> FeynmanScreen()
+                0 -> DashboardScreen(viewModel) { tabIndex -> selectedTab = tabIndex }
+                1 -> ActiveRecallScreen(viewModel)
+                2 -> LessonsScreen()
+                3 -> PracticeScreen(viewModel)
+                4 -> FeynmanScreen(viewModel)
             }
+        }
+    }
+}
+
+@Composable
+fun DashboardScreen(viewModel: MainViewModel, navigateToTab: (Int) -> Unit) {
+    val totalQuizzes by viewModel.quizAttemptsCount.collectAsState(initial = 0)
+    val correctQuizzes by viewModel.correctAttemptsCount.collectAsState(initial = 0)
+    val feynmanList by viewModel.feynmanSubmissions.collectAsState(initial = emptyList())
+    val currentCard by viewModel.currentCard.collectAsState()
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp)
+            .verticalScroll(rememberScrollState()),
+        verticalArrangement = Arrangement.spacedBy(16.dp)
+    ) {
+        Text(
+            text = "YDS Çalışma Ortağım",
+            fontSize = 28.sp,
+            fontWeight = FontWeight.Bold,
+            color = MaterialTheme.colorScheme.primary,
+            modifier = Modifier.padding(vertical = 8.dp)
+        )
+
+        // Streak Card
+        Card(
+            modifier = Modifier.fillMaxWidth(),
+            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
+        ) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text("🔥", fontSize = 40.sp)
+                Spacer(modifier = Modifier.width(16.dp))
+                Column {
+                    Text("Çalışma Serisi", fontWeight = FontWeight.Bold, fontSize = 18.sp)
+                    Text("Her gün çalışarak seriyi devam ettir!", color = MaterialTheme.colorScheme.onSurfaceVariant, fontSize = 14.sp)
+                }
+            }
+        }
+
+        // Stats Dashboard
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            Card(
+                modifier = Modifier.weight(1f),
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
+            ) {
+                Column(modifier = Modifier.padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+                    Text("Kelime Kartı", fontWeight = FontWeight.SemiBold, fontSize = 14.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Text(if (currentCard != null) "Tekrar Var" else "Tamamlandı", fontSize = 16.sp, fontWeight = FontWeight.Bold, color = if (currentCard != null) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.secondary)
+                }
+            }
+
+            Card(
+                modifier = Modifier.weight(1f),
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
+            ) {
+                Column(modifier = Modifier.padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+                    Text("Çözülen Soru", fontWeight = FontWeight.SemiBold, fontSize = 14.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Text("$totalQuizzes Soru", fontSize = 16.sp, fontWeight = FontWeight.Bold)
+                    if (totalQuizzes > 0) {
+                        Text("Doğru: %${(correctQuizzes.toFloat() / totalQuizzes.toFloat() * 100).toInt()}", fontSize = 12.sp, color = MaterialTheme.colorScheme.secondary)
+                    }
+                }
+            }
+
+            Card(
+                modifier = Modifier.weight(1f),
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
+            ) {
+                Column(modifier = Modifier.padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+                    Text("Feynman Anlatımı", fontWeight = FontWeight.SemiBold, fontSize = 14.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Text("${feynmanList.size} Konu", fontSize = 16.sp, fontWeight = FontWeight.Bold)
+                }
+            }
+        }
+
+        // Quick Actions
+        Text("Hızlı Başlat", fontWeight = FontWeight.Bold, fontSize = 18.sp, color = MaterialTheme.colorScheme.primary)
+
+        Button(
+            onClick = { navigateToTab(1) },
+            modifier = Modifier.fillMaxWidth(),
+            shape = RoundedCornerShape(12.dp)
+        ) {
+            Text("Kelime Çalışmaya Başla (Active Recall)")
+        }
+
+        Button(
+            onClick = { navigateToTab(3) },
+            modifier = Modifier.fillMaxWidth(),
+            shape = RoundedCornerShape(12.dp),
+            colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.secondary)
+        ) {
+            Text("YDS Pratik Soruları Çöz")
+        }
+
+        Button(
+            onClick = { navigateToTab(4) },
+            modifier = Modifier.fillMaxWidth(),
+            shape = RoundedCornerShape(12.dp),
+            colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.tertiaryContainer)
+        ) {
+            Text("Feynman Anlatımı Yap")
         }
     }
 }
@@ -150,34 +310,45 @@ fun ActiveRecallScreen(viewModel: MainViewModel) {
         verticalArrangement = Arrangement.Center
     ) {
         if (currentCard == null) {
-            Text("Harika! Bugünlük tüm tekrarlarını tamamladın.", fontSize = 18.sp, textAlign = TextAlign.Center)
+            Text("🎉 Harika! Bugünlük tüm tekrarlarını tamamladın.", fontSize = 20.sp, fontWeight = FontWeight.Bold, textAlign = TextAlign.Center)
+            Spacer(modifier = Modifier.height(16.dp))
+            Text("Yarın yeni kelimelerle çalışmaya devam edebilirsin.", fontSize = 14.sp, color = MaterialTheme.colorScheme.onSurfaceVariant, textAlign = TextAlign.Center)
         } else {
             val card = currentCard!!
             
             Card(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(300.dp)
+                    .height(350.dp)
                     .clickable { isRevealed = true },
-                elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
+                elevation = CardDefaults.cardElevation(defaultElevation = 8.dp),
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
             ) {
                 Column(
-                    modifier = Modifier.fillMaxSize(),
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(16.dp),
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center
                 ) {
-                    Text(text = card.word, fontSize = 32.sp, fontWeight = FontWeight.Bold)
+                    Text(text = card.word, fontSize = 36.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
                     
                     if (isRevealed) {
+                        Spacer(modifier = Modifier.height(24.dp))
+                        Text(text = card.translation, fontSize = 24.sp, color = MaterialTheme.colorScheme.secondary, fontWeight = FontWeight.SemiBold)
                         Spacer(modifier = Modifier.height(16.dp))
-                        Text(text = card.translation, fontSize = 24.sp, color = MaterialTheme.colorScheme.primary)
+                        Text(
+                            text = "\"${card.exampleSentence}\"",
+                            fontSize = 16.sp,
+                            fontStyle = FontStyle.Italic,
+                            textAlign = TextAlign.Center,
+                            modifier = Modifier.padding(horizontal = 8.dp)
+                        )
                         Spacer(modifier = Modifier.height(16.dp))
-                        Text(text = "\"${card.exampleSentence}\"", fontSize = 16.sp, textAlign = TextAlign.Center, modifier = Modifier.padding(horizontal = 16.dp))
-                        Spacer(modifier = Modifier.height(8.dp))
-                        Text(text = "Eş Anlamlılar: ${card.synonyms}", fontSize = 14.sp, color = MaterialTheme.colorScheme.secondary)
+                        Text(text = "Eş Anlamlılar: ${card.synonyms}", fontSize = 14.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
                     } else {
-                        Spacer(modifier = Modifier.height(32.dp))
-                        Text("Cevabı görmek için dokun", fontSize = 14.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                        Spacer(modifier = Modifier.height(48.dp))
+                        Text("Anlamını görmek için dokun", fontSize = 14.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
                     }
                 }
             }
@@ -185,20 +356,32 @@ fun ActiveRecallScreen(viewModel: MainViewModel) {
             Spacer(modifier = Modifier.height(32.dp))
             
             if (isRevealed) {
-                Text("Ne kadar zorlandın?", fontWeight = FontWeight.Medium)
-                Spacer(modifier = Modifier.height(8.dp))
+                Text("Cevabı hatırlamakta ne kadar zorlandın?", fontWeight = FontWeight.Medium, fontSize = 16.sp)
+                Spacer(modifier = Modifier.height(16.dp))
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceEvenly
                 ) {
-                    Button(onClick = { viewModel.submitReview(0) }, colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.error)) {
+                    Button(
+                        onClick = { viewModel.submitReview(0) },
+                        colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.error),
+                        modifier = Modifier.weight(1f).padding(horizontal = 4.dp)
+                    ) {
                         Text("Bilemedim")
                     }
-                    Button(onClick = { viewModel.submitReview(3) }) {
-                        Text("Zor")
+                    Button(
+                        onClick = { viewModel.submitReview(3) },
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFFB74D)),
+                        modifier = Modifier.weight(1f).padding(horizontal = 4.dp)
+                    ) {
+                        Text("Zorlandım")
                     }
-                    Button(onClick = { viewModel.submitReview(5) }, colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.secondary)) {
-                        Text("Kolay")
+                    Button(
+                        onClick = { viewModel.submitReview(5) },
+                        colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.secondary),
+                        modifier = Modifier.weight(1f).padding(horizontal = 4.dp)
+                    ) {
+                        Text("Kolaydı")
                     }
                 }
             }
@@ -207,36 +390,339 @@ fun ActiveRecallScreen(viewModel: MainViewModel) {
 }
 
 @Composable
-fun FeynmanScreen() {
-    var text by remember { mutableStateOf("") }
-    
+fun LessonsScreen() {
+    var activeLesson by remember { mutableStateOf<Lesson?>(null) }
+
+    if (activeLesson != null) {
+        // Fullscreen Lesson Reader Dialog
+        AlertDialog(
+            onDismissRequest = { activeLesson = null },
+            title = { Text(activeLesson!!.title, fontSize = 20.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary) },
+            text = {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(400.dp)
+                        .verticalScroll(rememberScrollState())
+                ) {
+                    Text(activeLesson!!.content, fontSize = 15.sp, modifier = Modifier.padding(bottom = 16.dp))
+                }
+            },
+            confirmButton = {
+                Button(onClick = { activeLesson = null }) {
+                    Text("Dersi Bitir")
+                }
+            }
+        )
+    }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp),
+            .padding(16.dp)
+    ) {
+        Text("YDS Konu Anlatımları", fontSize = 24.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
+        Spacer(modifier = Modifier.height(8.dp))
+        Text("YDS'de en çok çıkan dil bilgisi kurallarını ve yapılarını sırasıyla çalışın.", color = MaterialTheme.colorScheme.onSurfaceVariant)
+        Spacer(modifier = Modifier.height(16.dp))
+
+        LazyColumn(
+            verticalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            items(LessonDataProvider.lessons) { lesson ->
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clickable { activeLesson = lesson },
+                    colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
+                ) {
+                    Column(modifier = Modifier.padding(16.dp)) {
+                        Text(lesson.title, fontWeight = FontWeight.Bold, fontSize = 18.sp, color = MaterialTheme.colorScheme.primary)
+                        Spacer(modifier = Modifier.height(4.dp))
+                        Text(lesson.summary, fontSize = 14.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                        Spacer(modifier = Modifier.height(12.dp))
+                        Text("Çalışmaya Başla ➔", fontWeight = FontWeight.SemiBold, fontSize = 14.sp, color = MaterialTheme.colorScheme.secondary)
+                    }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun PracticeScreen(viewModel: MainViewModel) {
+    var currentQuestionIndex by remember { mutableStateOf(0) }
+    var selectedOptionIndex by remember { mutableStateOf<Int?>(null) }
+    var hasAnswered by remember { mutableStateOf(false) }
+
+    val question = QuestionDataProvider.questions[currentQuestionIndex]
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp)
+            .verticalScroll(rememberScrollState()),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text("Feynman Tekniği", fontSize = 24.sp, fontWeight = FontWeight.Bold)
-        Spacer(modifier = Modifier.height(8.dp))
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text("YDS Pratik Soruları", fontSize = 20.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
+            Text("Soru: ${currentQuestionIndex + 1} / ${QuestionDataProvider.questions.size}", fontSize = 14.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        }
+        
+        Spacer(modifier = Modifier.height(16.dp))
+
+        // Question text
+        Card(
+            modifier = Modifier.fillMaxWidth(),
+            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
+        ) {
+            Text(
+                text = question.questionText,
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Medium,
+                modifier = Modifier.padding(16.dp),
+                lineHeight = 24.sp
+            )
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        // Options list
+        Column(
+            modifier = Modifier.fillMaxWidth(),
+            verticalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            question.options.forEachIndexed { index, optionText ->
+                val isSelected = selectedOptionIndex == index
+                val isCorrect = question.correctOptionIndex == index
+                
+                val buttonColor = when {
+                    hasAnswered && isCorrect -> MaterialTheme.colorScheme.secondary
+                    hasAnswered && isSelected && !isCorrect -> MaterialTheme.colorScheme.error
+                    isSelected -> MaterialTheme.colorScheme.primary
+                    else -> MaterialTheme.colorScheme.surface
+                }
+
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clickable(enabled = !hasAnswered) { selectedOptionIndex = index },
+                    colors = CardDefaults.cardColors(containerColor = buttonColor)
+                ) {
+                    Text(
+                        text = optionText,
+                        modifier = Modifier.padding(16.dp),
+                        fontSize = 16.sp,
+                        fontWeight = if (isSelected || (hasAnswered && isCorrect)) FontWeight.Bold else FontWeight.Normal
+                    )
+                }
+            }
+        }
+
+        Spacer(modifier = Modifier.height(24.dp))
+
+        if (!hasAnswered) {
+            Button(
+                onClick = {
+                    if (selectedOptionIndex != null) {
+                        hasAnswered = true
+                        val isCorrect = selectedOptionIndex == question.correctOptionIndex
+                        viewModel.submitQuizAttempt(question.id, isCorrect)
+                    }
+                },
+                enabled = selectedOptionIndex != null,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text("Cevabı Onayla")
+            }
+        } else {
+            // Explanation box
+            Card(
+                modifier = Modifier.fillMaxWidth(),
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)
+            ) {
+                Column(modifier = Modifier.padding(16.dp)) {
+                    Text(
+                        text = if (selectedOptionIndex == question.correctOptionIndex) "✅ Doğru Cevap!" else "❌ Yanlış Cevap!",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 16.sp,
+                        color = if (selectedOptionIndex == question.correctOptionIndex) MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.error
+                    )
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Text(text = question.explanation, fontSize = 14.sp)
+                }
+            }
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            Button(
+                onClick = {
+                    if (currentQuestionIndex < QuestionDataProvider.questions.size - 1) {
+                        currentQuestionIndex++
+                        selectedOptionIndex = null
+                        hasAnswered = false
+                    } else {
+                        // Reset test
+                        currentQuestionIndex = 0
+                        selectedOptionIndex = null
+                        hasAnswered = false
+                    }
+                },
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text(if (currentQuestionIndex < QuestionDataProvider.questions.size - 1) "Sonraki Soru" else "Testi Sıfırla ve Yeniden Başlat")
+            }
+        }
+    }
+}
+
+@Composable
+fun FeynmanScreen(viewModel: MainViewModel) {
+    var selectedTopic by remember { mutableStateOf("Noun Clauses") }
+    var explanationText by remember { mutableStateOf("") }
+    
+    // Checklist Items
+    var check1 by remember { mutableStateOf(false) }
+    var check2 by remember { mutableStateOf(false) }
+    var check3 by remember { mutableStateOf(false) }
+    var check4 by remember { mutableStateOf(false) }
+
+    val feynmanList by viewModel.feynmanSubmissions.collectAsState(initial = emptyList())
+    val coroutineScope = rememberCoroutineScope()
+    val scrollState = rememberScrollState()
+
+    val topics = listOf("Noun Clauses", "Relative Clauses", "Conjunctions (Zıtlık Bağlaçları)", "Passive Voice (Edilgen Yapı)")
+
+    LaunchedEffect(selectedTopic) {
+        // Reset inputs on topic change
+        explanationText = ""
+        check1 = false
+        check2 = false
+        check3 = false
+        check4 = false
+    }
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp)
+            .verticalScroll(scrollState),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.spacedBy(16.dp)
+    ) {
+        Text("Feynman Kendin Anlat Metodu", fontSize = 22.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
         Text(
-            "Günün Görevi: Noun Clause nedir? Hiç İngilizce bilmeyen birine nasıl anlatırsın? (Sade ve anlaşılır bir dille açıkla)",
+            "Bir konuyu gerçekten anlamanın en iyi yolu, onu başkasına basitçe anlatmaktır. Bir konu seçin, hiç bilmeyen birine anlatır gibi sade bir dille açıklayın.",
+            fontSize = 14.sp,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
             textAlign = TextAlign.Center
         )
-        Spacer(modifier = Modifier.height(16.dp))
-        
+
+        // Topic Selector
+        var expanded by remember { mutableStateOf(false) }
+        Box(modifier = Modifier.fillMaxWidth()) {
+            OutlinedButton(onClick = { expanded = true }, modifier = Modifier.fillMaxWidth()) {
+                Text("Konu: $selectedTopic ▾")
+            }
+            DropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
+                topics.forEach { topic ->
+                    DropdownMenuItem(
+                        text = { Text(topic) },
+                        onClick = {
+                            selectedTopic = topic
+                            expanded = false
+                        }
+                    )
+                }
+            }
+        }
+
         OutlinedTextField(
-            value = text,
-            onValueChange = { text = it },
+            value = explanationText,
+            onValueChange = { explanationText = it },
             modifier = Modifier
                 .fillMaxWidth()
-                .weight(1f),
-            label = { Text("Açıklamanız...") }
+                .height(180.dp),
+            label = { Text("Basit dille konuyu açıklayın...") },
+            placeholder = { Text("Örneğin: 'Noun Clause aslında bir cümlenin başka bir cümlede isim gibi davranmasıdır...'") }
         )
-        
-        Spacer(modifier = Modifier.height(16.dp))
-        
-        Button(onClick = { text = "" }) {
-            Text("Gönder ve Tamamla")
+
+        // Self-evaluation checklist
+        Card(
+            modifier = Modifier.fillMaxWidth(),
+            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
+        ) {
+            Column(modifier = Modifier.padding(16.dp)) {
+                Text("Öz Değerlendirme Ölçeği (Checklist)", fontWeight = FontWeight.Bold, fontSize = 16.sp, color = MaterialTheme.colorScheme.primary)
+                Spacer(modifier = Modifier.height(8.dp))
+                
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Checkbox(checked = check1, onCheckedChange = { check1 = it })
+                    Text("Temel kuralı/tanımı basitçe açıkladım (+25 Puan)", fontSize = 14.sp)
+                }
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Checkbox(checked = check2, onCheckedChange = { check2 = it })
+                    Text("Formülünü/cümle yapısını belirttim (+25 Puan)", fontSize = 14.sp)
+                }
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Checkbox(checked = check3, onCheckedChange = { check3 = it })
+                    Text("En az bir tane İngilizce örnek cümle yazdım (+25 Puan)", fontSize = 14.sp)
+                }
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Checkbox(checked = check4, onCheckedChange = { check4 = it })
+                    Text("YDS'de nasıl soru gelebileceğinden bahsettim (+25 Puan)", fontSize = 14.sp)
+                }
+            }
+        }
+
+        // Calculate score
+        val score = (if (check1) 25 else 0) + (if (check2) 25 else 0) + (if (check3) 25 else 0) + (if (check4) 25 else 0)
+
+        Button(
+            onClick = {
+                if (explanationText.isNotBlank()) {
+                    viewModel.submitFeynman(selectedTopic, explanationText, score)
+                    explanationText = ""
+                    check1 = false
+                    check2 = false
+                    check3 = false
+                    check4 = false
+                }
+            },
+            enabled = explanationText.isNotBlank(),
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text("Özeti Tamamla ve Kaydet ($score / 100 Puan)")
+        }
+
+        // Feynman log history
+        if (feynmanList.isNotEmpty()) {
+            Spacer(modifier = Modifier.height(8.dp))
+            Divider(color = MaterialTheme.colorScheme.surfaceVariant)
+            Spacer(modifier = Modifier.height(8.dp))
+            Text("Geçmiş Feynman Özetleriniz", fontWeight = FontWeight.Bold, fontSize = 18.sp, color = MaterialTheme.colorScheme.primary, modifier = Modifier.align(Alignment.Start))
+            
+            feynmanList.forEach { submission ->
+                val dateStr = SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.getDefault()).format(Date(submission.date))
+                Card(
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
+                ) {
+                    Column(modifier = Modifier.padding(16.dp)) {
+                        Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+                            Text(submission.topic, fontWeight = FontWeight.Bold, fontSize = 16.sp)
+                            Text("Puan: ${submission.score}/100", fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.secondary)
+                        }
+                        Text(dateStr, fontSize = 12.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Text(submission.explanation, fontSize = 14.sp)
+                    }
+                }
+            }
         }
     }
 }
