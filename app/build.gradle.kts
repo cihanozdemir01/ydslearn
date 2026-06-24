@@ -2,7 +2,7 @@ plugins {
   alias(libs.plugins.android.application)
   alias(libs.plugins.compose.compiler)
   alias(libs.plugins.kotlin.serialization)
-  id("com.android.legacy-kapt")
+  alias(libs.plugins.legacy.kapt)
 }
 
 android {
@@ -84,7 +84,7 @@ dependencies {
   implementation(libs.androidx.lifecycle.viewmodel.navigation3)
 
   // Room Database
-  val room_version = "2.6.1"
+  val room_version = "2.8.4"
   implementation("androidx.room:room-runtime:$room_version")
   implementation("androidx.room:room-ktx:$room_version")
   kapt("androidx.room:room-compiler:$room_version")
