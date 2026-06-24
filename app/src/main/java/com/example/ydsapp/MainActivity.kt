@@ -9,12 +9,14 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.ydsapp.ui.MainViewModel
+import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +27,73 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
+                    var showUpdateDialog by remember { mutableStateOf(false) }
+                    var updateInfo by remember { mutableStateOf<UpdateInfo?>(null) }
+                    var isDownloading by remember { mutableStateOf(false) }
+                    var downloadProgress by remember { mutableStateOf(0f) }
+                    val context = LocalContext.current
+                    val coroutineScope = rememberCoroutineScope()
+
+                    LaunchedEffect(Unit) {
+                        val info = UpdateChecker.checkForUpdate(context)
+                        if (info.isAvailable) {
+                            updateInfo = info
+                            showUpdateDialog = true
+                        }
+                    }
+
+                    if (showUpdateDialog && updateInfo != null) {
+                        AlertDialog(
+                            onDismissRequest = { if (!isDownloading) showUpdateDialog = false },
+                            title = { Text("Güncelleme Mevcut") },
+                            text = {
+                                Column {
+                                    Text("Yeni bir sürüm (${updateInfo!!.latestVersion}) mevcut. İndirmek ve kurmak istiyor musunuz?")
+                                    if (isDownloading) {
+                                        Spacer(modifier = Modifier.height(16.dp))
+                                        LinearProgressIndicator(
+                                            progress = downloadProgress,
+                                            modifier = Modifier.fillMaxWidth()
+                                        )
+                                        Spacer(modifier = Modifier.height(8.dp))
+                                        Text(
+                                            text = "İndiriliyor: %${(downloadProgress * 100).toInt()}",
+                                            style = MaterialTheme.typography.bodySmall
+                                        )
+                                    }
+                                }
+                            },
+                            confirmButton = {
+                                Button(
+                                    onClick = {
+                                        if (!isDownloading) {
+                                            isDownloading = true
+                                            coroutineScope.launch {
+                                                val success = UpdateChecker.downloadAndInstallApk(context, updateInfo!!.downloadUrl) { progress ->
+                                                    downloadProgress = progress
+                                                }
+                                                isDownloading = false
+                                                if (success) {
+                                                    showUpdateDialog = false
+                                                }
+                                            }
+                                        }
+                                    },
+                                    enabled = !isDownloading
+                                ) {
+                                    Text(if (isDownloading) "İndiriliyor..." else "Güncelle")
+                                }
+                            },
+                            dismissButton = {
+                                if (!isDownloading) {
+                                    TextButton(onClick = { showUpdateDialog = false }) {
+                                        Text("Daha Sonra")
+                                    }
+                                }
+                            }
+                        )
+                    }
+
                     val viewModel: MainViewModel = viewModel()
                     MainScreen(viewModel)
                 }
