@@ -22,10 +22,10 @@ interface YdsDao {
     @Query("SELECT * FROM quiz_attempts ORDER BY date DESC")
     fun getAllQuizAttempts(): Flow<List<QuizAttempt>>
 
-    @Query("SELECT COUNT(*) FROM quiz_attempts")
+    @Query("SELECT COUNT(DISTINCT questionId) FROM quiz_attempts")
     fun getQuizAttemptsCountFlow(): Flow<Int>
 
-    @Query("SELECT COUNT(*) FROM quiz_attempts WHERE isCorrect = 1")
+    @Query("SELECT COUNT(DISTINCT questionId) FROM quiz_attempts WHERE isCorrect = 1")
     fun getCorrectQuizAttemptsCountFlow(): Flow<Int>
 
     @Query("SELECT COUNT(*) FROM flashcards")

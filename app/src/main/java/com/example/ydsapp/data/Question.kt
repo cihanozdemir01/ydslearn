@@ -139,6 +139,136 @@ object QuestionDataProvider {
             ),
             correctOptionIndex = 2,
             explanation = "Yeni politikanın önümüzdeki Pazartesi günü 'uygulamaya konulacağı/yürütüleceği' (implemented) ve çalışanların buna uymasının beklendiği anlamı tamamlar. Doğru cevap C."
+        ),
+        Question(
+            id = 11,
+            questionText = "The expansion of the universe ---- by scientists for decades, but many questions still remain unanswered.",
+            options = listOf(
+                "A) has been studied",
+                "B) studies",
+                "C) was studying",
+                "D) will study",
+                "E) had studied"
+            ),
+            correctOptionIndex = 0,
+            explanation = "Evrenin genişlemesi bilim insanları tarafından onlarca yıldır 'incelenmektedir/incelenegelmiştir' (pasif ve süregelen eylem - Present Perfect Passive). Doğru cevap A."
+        ),
+        Question(
+            id = 12,
+            questionText = "She decided to accept the job offer ---- the salary was lower than she had expected.",
+            options = listOf(
+                "A) as if",
+                "B) even though",
+                "C) in case",
+                "D) in order that",
+                "E) as long as"
+            ),
+            correctOptionIndex = 1,
+            explanation = "Maaşın beklediğinden düşük olmasına 'rağmen' (even though) iş teklifini kabul etmeye karar verdi. Zıtlık bağlacı gerekir. Doğru cevap B."
+        ),
+        Question(
+            id = 13,
+            questionText = "The city of Pompeii was ---- destroyed by the eruption of Mount Vesuvius in 79 AD.",
+            options = listOf(
+                "A) partially",
+                "B) virtually",
+                "C) completely",
+                "D) mutually",
+                "E) abruptly"
+            ),
+            correctOptionIndex = 2,
+            explanation = "Pompeii şehri MS 79 yılında Vezüv Yanardağı'nın patlamasıyla 'tamamen' (completely) yok oldu. Doğru cevap C."
+        ),
+        Question(
+            id = 14,
+            questionText = "We should take an umbrella with us ---- it rains later in the afternoon.",
+            options = listOf(
+                "A) in case",
+                "B) so that",
+                "C) even if",
+                "D) unless",
+                "E) although"
+            ),
+            correctOptionIndex = 0,
+            explanation = "Öğleden sonra yağmur yağması 'ihtimaline karşı' (in case) yanımıza şemsiye almalıyız. Önlem amaçlı 'in case' kullanımı uygundur. Doğru cevap A."
+        ),
+        Question(
+            id = 15,
+            questionText = "The project ---- by the committee last week, but the official announcement has not been made yet.",
+            options = listOf(
+                "A) approved",
+                "B) was approved",
+                "C) has approved",
+                "D) is approved",
+                "E) would approve"
+            ),
+            correctOptionIndex = 1,
+            explanation = "'Last week' (geçen hafta) ifadesi Past Simple gerektirir. Proje komite tarafından 'onaylandı' (edilgen/passive yapı). Doğru cevap B."
+        ),
+        Question(
+            id = 16,
+            questionText = "No one is quite sure ---- the ancient monument was constructed by prehistoric civilisations.",
+            options = listOf(
+                "A) what",
+                "B) how",
+                "C) which",
+                "D) whose",
+                "E) whatever"
+            ),
+            correctOptionIndex = 1,
+            explanation = "Antik anıtın tarih öncesi uygarlıklar tarafından 'nasıl' (how) inşa edildiğinden kimse tam olarak emin değil. İsim cümleciğinde yöntem bildiren zarf kullanımı uygundur. Doğru cevap B."
+        ),
+        Question(
+            id = 17,
+            questionText = "The search for clean and renewable energy sources has ---- due to growing environmental concerns.",
+            options = listOf(
+                "A) diminished",
+                "B) intensified",
+                "C) abandoned",
+                "D) collapsed",
+                "E) stabilized"
+            ),
+            correctOptionIndex = 1,
+            explanation = "Çevre kaygılarının artması sebebiyle temiz ve yenilenebilir enerji kaynakları arayışı 'yoğunlaşmıştır' (intensified). Doğru cevap B."
+        ),
+        Question(
+            id = 18,
+            questionText = "If the government had taken strict measures earlier, the economic downturn ---- so severe.",
+            options = listOf(
+                "A) wouldn't be",
+                "B) won't be",
+                "C) wouldn't have been",
+                "D) is not",
+                "E) had not been"
+            ),
+            correctOptionIndex = 2,
+            explanation = "Geçmişte gerçekleşmeyen bir durum için koşul bildiren Type 3 Conditional yapısıdır: 'If + past perfect, would have + V3'. Doğru cevap C."
+        ),
+        Question(
+            id = 19,
+            questionText = "The students ---- research on climate change were awarded a special scholarship by the university.",
+            options = listOf(
+                "A) who conducting",
+                "B) conducted",
+                "C) conducting",
+                "D) they conduct",
+                "E) which conducted"
+            ),
+            correctOptionIndex = 2,
+            explanation = "Kısaltılmış ilgi cümleciği (Relative Clause reduction) yapısıdır. 'The students who were conducting research...' ifadesi aktif kısaltma ile 'students conducting research...' (araştırma yapan öğrenciler) şekline dönüşür. Doğru cevap C."
+        ),
+        Question(
+            id = 20,
+            questionText = "---- the difficulty of the exam, almost all candidates managed to pass with high scores.",
+            options = listOf(
+                "A) Because of",
+                "B) In spite of",
+                "C) As a result of",
+                "D) In addition to",
+                "E) Rather than"
+            ),
+            correctOptionIndex = 1,
+            explanation = "Sınavın zorluğuna 'rağmen' (In spite of + noun phrase) neredeyse tüm adaylar yüksek puanlarla geçmeyi başardı. Doğru cevap B."
         )
     )
 }

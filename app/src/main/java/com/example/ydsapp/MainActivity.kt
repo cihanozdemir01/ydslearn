@@ -451,9 +451,9 @@ fun LessonsScreen() {
 
 @Composable
 fun PracticeScreen(viewModel: MainViewModel) {
-    var currentQuestionIndex by remember { mutableStateOf(0) }
-    var selectedOptionIndex by remember { mutableStateOf<Int?>(null) }
-    var hasAnswered by remember { mutableStateOf(false) }
+    val currentQuestionIndex by viewModel.currentQuestionIndex.collectAsState()
+    val selectedOptionIndex by viewModel.selectedOptionIndex.collectAsState()
+    val hasAnswered by viewModel.hasAnswered.collectAsState()
 
     val question = QuestionDataProvider.questions[currentQuestionIndex]
 
@@ -510,7 +510,7 @@ fun PracticeScreen(viewModel: MainViewModel) {
                 Card(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .clickable(enabled = !hasAnswered) { selectedOptionIndex = index },
+                        .clickable(enabled = !hasAnswered) { viewModel.selectQuizOption(index) },
                     colors = CardDefaults.cardColors(containerColor = buttonColor)
                 ) {
                     Text(
@@ -529,7 +529,7 @@ fun PracticeScreen(viewModel: MainViewModel) {
             Button(
                 onClick = {
                     if (selectedOptionIndex != null) {
-                        hasAnswered = true
+                        viewModel.setQuizAnswered(true)
                         val isCorrect = selectedOptionIndex == question.correctOptionIndex
                         viewModel.submitQuizAttempt(question.id, isCorrect)
                     }
@@ -562,14 +562,9 @@ fun PracticeScreen(viewModel: MainViewModel) {
             Button(
                 onClick = {
                     if (currentQuestionIndex < QuestionDataProvider.questions.size - 1) {
-                        currentQuestionIndex++
-                        selectedOptionIndex = null
-                        hasAnswered = false
+                        viewModel.nextQuizQuestion()
                     } else {
-                        // Reset test
-                        currentQuestionIndex = 0
-                        selectedOptionIndex = null
-                        hasAnswered = false
+                        viewModel.resetQuiz()
                     }
                 },
                 modifier = Modifier.fillMaxWidth()

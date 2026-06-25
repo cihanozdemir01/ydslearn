@@ -9,6 +9,7 @@ import com.example.ydsapp.data.FeynmanSubmission
 import com.example.ydsapp.data.QuizAttempt
 import com.example.ydsapp.data.FlashcardRepository
 import com.example.ydsapp.data.YdsDao
+import com.example.ydsapp.data.QuestionDataProvider
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -22,6 +23,16 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val currentCard: StateFlow<Flashcard?> = _currentCard
     
     private var dueCardsList: List<Flashcard> = emptyList()
+
+    // Quiz State
+    private val _currentQuestionIndex = MutableStateFlow(0)
+    val currentQuestionIndex: StateFlow<Int> = _currentQuestionIndex
+
+    private val _selectedOptionIndex = MutableStateFlow<Int?>(null)
+    val selectedOptionIndex: StateFlow<Int?> = _selectedOptionIndex
+
+    private val _hasAnswered = MutableStateFlow(false)
+    val hasAnswered: StateFlow<Boolean> = _hasAnswered
 
     // Statistics Flows
     val quizAttemptsCount: Flow<Int>
@@ -86,5 +97,30 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             )
             ydsDao.insertQuizAttempt(attempt)
         }
+    }
+
+    fun selectQuizOption(index: Int?) {
+        _selectedOptionIndex.value = index
+    }
+
+    fun setQuizAnswered(answered: Boolean) {
+        _hasAnswered.value = answered
+    }
+
+    fun nextQuizQuestion() {
+        _selectedOptionIndex.value = null
+        _hasAnswered.value = false
+        val nextIndex = _currentQuestionIndex.value + 1
+        if (nextIndex < QuestionDataProvider.questions.size) {
+            _currentQuestionIndex.value = nextIndex
+        } else {
+            _currentQuestionIndex.value = 0
+        }
+    }
+
+    fun resetQuiz() {
+        _currentQuestionIndex.value = 0
+        _selectedOptionIndex.value = null
+        _hasAnswered.value = false
     }
 }
