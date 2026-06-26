@@ -10,7 +10,8 @@ data class Question(
 )
 
 object QuestionDataProvider {
-    private val chunk0 = listOf(
+object QuestionChunk0 {
+    val list = listOf(
         Question(
             id = 1,
             questionText = "(2013 Sonbahar / Soru 1)\nParents should teach their children that being\npatient with someone does not necessarily mean\nthey have to ---- their inappropriate behaviour.",
@@ -62,7 +63,7 @@ object QuestionDataProvider {
         Question(
             id = 7,
             questionText = "(2013 Sonbahar / Soru 9)\nA report by the Japanese government ---- that the\nÖdisaster in 2011 at the Fukushima Nuclear Plant ----.",
-            options = listOf("A) has revealed / needs to be foreseen", "B) can reveal / should have been foreseen", "C) could reveal / will be foreseen", "D) reveals / must be foreseen", "E) revealed / could have been foreseen\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) has revealed / needs to be foreseen", "B) can reveal / should have been foreseen", "C) could reveal / will be foreseen", "D) reveals / must be foreseen", "E) revealed / could have been foreseen"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2013 Sonbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Dil Bilgisi"
@@ -110,7 +111,7 @@ object QuestionDataProvider {
         Question(
             id = 13,
             questionText = "(2013 Sonbahar / Soru 16)\nThe crimes of the rich and the powerful can be\nexplained ---- the same motives as any other\nÖ\ncriminal act.",
-            options = listOf("A) in terms of", "B) prior to", "C) apart from", "D) in spite of", "E) instead of\n\n=== COLUMN_SEPARATOR ===\n\nM"),
+            options = listOf("A) in terms of", "B) prior to", "C) apart from", "D) in spite of", "E) instead of\n\n\n\nM"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2013 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Bağlaçlar"
@@ -126,7 +127,7 @@ object QuestionDataProvider {
         Question(
             id = 15,
             questionText = "(2013 Sonbahar / Soru 18)\n",
-            options = listOf("A) with", "B) to", "C) in", "D) by", "E) off\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) with", "B) to", "C) in", "D) by", "E) off"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2013 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Dil Bilgisi"
@@ -158,7 +159,7 @@ object QuestionDataProvider {
         Question(
             id = 19,
             questionText = "(2013 Sonbahar / Soru 23)\n",
-            options = listOf("A) with", "B) for", "C) in", "D) by", "E) at\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) with", "B) for", "C) in", "D) by", "E) at"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2013 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Dil Bilgisi"
@@ -198,7 +199,7 @@ object QuestionDataProvider {
         Question(
             id = 24,
             questionText = "(2013 Sonbahar / Soru 29)\n----, diets that include a variety of healthy food are\nmore likely to produce long-term results.",
-            options = listOf("A) Now that there has been a recent decline in fat\nconsumption in Turkey over the short term", "B) Unless we develop reasonable and healthy eating\npatterns", "C) Although restricting or eliminating a food category is\nnutritionally unwise", "D) Due to the fact that a vegetarian diet is a good\nchoice for some people but not for others", "E) Whether they are part of a formal weight-loss\nprogram or a personal attempt\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Now that there has been a recent decline in fat\nconsumption in Turkey over the short term", "B) Unless we develop reasonable and healthy eating\npatterns", "C) Although restricting or eliminating a food category is\nnutritionally unwise", "D) Due to the fact that a vegetarian diet is a good\nchoice for some people but not for others", "E) Whether they are part of a formal weight-loss\nprogram or a personal attempt"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2013 Sonbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Bağlaçlar"
@@ -286,7 +287,7 @@ object QuestionDataProvider {
         Question(
             id = 35,
             questionText = "(2013 Sonbahar / Soru 42)\nPeople who apply for professional assistance in\ncoping with stress and pain are generally\nindividuals whose strategies have proven ineffective\nin managing their problems.",
-            options = listOf("A) Sorunlarını çözmek için geliştirdikleri yöntemler\nyetersiz kalan bireyler, genellikle stres ve ağrıyla\nÖbaşa çıkma konusunda uzman desteğine\nbaşvururlar.", "B) Stres ve ağrıyla başa çıkmada uzman desteğine\nbaşvuran bireyler, genellikle sorunlarını çözmek için\nkullandıkları yöntemler yetersiz kalan kişilerdir.", "C) Stres ve ağrı ile başa çıkmak için uzman desteğine\nbaşvuranlar, genellikle sorunlarını çözmek için\nyetersiz yöntemler geliştiren kişilerden oluşmaktadır.", "D) Bireyler, sorunlarını halletmek için kullandıkları\nyöntemler yetersiz kaldığında stres ve ağrıyla başa\nçıkmak için genellikle uzman desteğine başvururlar.", "E) Bireyler, sorunlarına çare bulma konusunda gereken\nyöntemleri etkin olarak kullanamadıklarında stres ve\nağrıyla başa çıkmak için genellikle uzman desteğine\nbaşvururlar.\n\n=== COLUMN_SEPARATOR ===\n\nM"),
+            options = listOf("A) Sorunlarını çözmek için geliştirdikleri yöntemler\nyetersiz kalan bireyler, genellikle stres ve ağrıyla\nÖbaşa çıkma konusunda uzman desteğine\nbaşvururlar.", "B) Stres ve ağrıyla başa çıkmada uzman desteğine\nbaşvuran bireyler, genellikle sorunlarını çözmek için\nkullandıkları yöntemler yetersiz kalan kişilerdir.", "C) Stres ve ağrı ile başa çıkmak için uzman desteğine\nbaşvuranlar, genellikle sorunlarını çözmek için\nyetersiz yöntemler geliştiren kişilerden oluşmaktadır.", "D) Bireyler, sorunlarını halletmek için kullandıkları\nyöntemler yetersiz kaldığında stres ve ağrıyla başa\nçıkmak için genellikle uzman desteğine başvururlar.", "E) Bireyler, sorunlarına çare bulma konusunda gereken\nyöntemleri etkin olarak kullanamadıklarında stres ve\nağrıyla başa çıkmak için genellikle uzman desteğine\nbaşvururlar.\n\n\n\nM"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2013 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Çeviri"
@@ -318,7 +319,7 @@ object QuestionDataProvider {
         Question(
             id = 39,
             questionText = "(2013 Sonbahar / Soru 46)\nOne can infer from the passage that ----.",
-            options = listOf("A) the richer and poorer nations of the world uniformly\naffect each other", "B) globalization is a controversial issue with both its\nadvocates and opponents", "C) the impact of globalization has produced a one-sided\nreaction", "D) globalization itself can explain why new nationalist\nthinking has recently gained importance", "E) both the rich and poor are equally affected by the\nnegative aspects of globalization\nDiğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2013-YDS Sonbahar / İNGİLİZCE"),
+            options = listOf("A) the richer and poorer nations of the world uniformly\naffect each other", "B) globalization is a controversial issue with both its\nadvocates and opponents", "C) the impact of globalization has produced a one-sided\nreaction", "D) globalization itself can explain why new nationalist\nthinking has recently gained importance", "E) both the rich and poor are equally affected by the\nnegative aspects of globalization\nDiğer sayfaya geçiniz.\n\n\n\n2013-YDS Sonbahar / İNGİLİZCE"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2013 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Paragraf"
@@ -342,7 +343,7 @@ object QuestionDataProvider {
         Question(
             id = 42,
             questionText = "(2013 Sonbahar / Soru 50)\nIt can be understood from the passage that ----.",
-            options = listOf("A) it is the team leader’s responsibility to develop an\noverall concept for an event", "B) corporate companies may sometimes seem\nunwilling to organize their affairs with the help of the\nevent planner", "C) if a team leader cannot adapt to the dynamics of a\ncertain group, he or she is transferred to another one", "D) the author enjoys the challenge of working with\nwell-known artistic individuals", "E) every team leader determines the schedule of a\nproject on their own\nDiğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2013-YDS Sonbahar / İNGİLİZCE"),
+            options = listOf("A) it is the team leader’s responsibility to develop an\noverall concept for an event", "B) corporate companies may sometimes seem\nunwilling to organize their affairs with the help of the\nevent planner", "C) if a team leader cannot adapt to the dynamics of a\ncertain group, he or she is transferred to another one", "D) the author enjoys the challenge of working with\nwell-known artistic individuals", "E) every team leader determines the schedule of a\nproject on their own\nDiğer sayfaya geçiniz.\n\n\n\n2013-YDS Sonbahar / İNGİLİZCE"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2013 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -374,7 +375,7 @@ object QuestionDataProvider {
         Question(
             id = 46,
             questionText = "(2013 Sonbahar / Soru 54)\nAccording to Russell, the concept of ‘honest toil’\n----.",
-            options = listOf("A) was originally put forward to produce economic\nsurplus for the benefit of the idle people", "B) is still a valid expression describing the benefits of\nregular work practices", "C) should be re-assessed to get rid of the unfair\npractices of the privileged class", "D) helped the working class live decently and support\ntheir families", "E) was used to continue the oppression of priests over\nthe rich\nDiğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2013-YDS Sonbahar / İNGİLİZCE"),
+            options = listOf("A) was originally put forward to produce economic\nsurplus for the benefit of the idle people", "B) is still a valid expression describing the benefits of\nregular work practices", "C) should be re-assessed to get rid of the unfair\npractices of the privileged class", "D) helped the working class live decently and support\ntheir families", "E) was used to continue the oppression of priests over\nthe rich\nDiğer sayfaya geçiniz.\n\n\n\n2013-YDS Sonbahar / İNGİLİZCE"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2013 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -406,7 +407,7 @@ object QuestionDataProvider {
         Question(
             id = 50,
             questionText = "(2013 Sonbahar / Soru 58)\nIt can be inferred from the passage that the\nsymptoms of ADHD ----.",
-            options = listOf("A) vary in prominence and variety over the course of a\nlifetime", "B) might be quite different for girls or boys of different\nages", "C) are difficult to diagnose even through advanced\ntreatment methods", "D) are more salient than others especially among\nteenagers who experience less parental intervention", "E) such as rash decision-making and rapid mood\nchanges stem from genetic history\nDiğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2013-YDS Sonbahar / İNGİLİZCE"),
+            options = listOf("A) vary in prominence and variety over the course of a\nlifetime", "B) might be quite different for girls or boys of different\nages", "C) are difficult to diagnose even through advanced\ntreatment methods", "D) are more salient than others especially among\nteenagers who experience less parental intervention", "E) such as rash decision-making and rapid mood\nchanges stem from genetic history\nDiğer sayfaya geçiniz.\n\n\n\n2013-YDS Sonbahar / İNGİLİZCE"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2013 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Paragraf"
@@ -438,7 +439,7 @@ object QuestionDataProvider {
         Question(
             id = 54,
             questionText = "(2013 Sonbahar / Soru 62)\nIt can be inferred from the passage that ----.",
-            options = listOf("A) when it is controlled, anger might be the key to\ndealing with difficult situations", "B) anger management studies are becoming\nincreasingly popular", "C) expressing sadness instead of anger for your\nmistakes is more acceptable in many cultures", "D) Brescoll’s and Adam’s findings appear to be\ncontradictory", "E) there is a general agreement among scholars about\nwhy anger is considered negative\nDiğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2013-YDS Sonbahar / İNGİLİZCE"),
+            options = listOf("A) when it is controlled, anger might be the key to\ndealing with difficult situations", "B) anger management studies are becoming\nincreasingly popular", "C) expressing sadness instead of anger for your\nmistakes is more acceptable in many cultures", "D) Brescoll’s and Adam’s findings appear to be\ncontradictory", "E) there is a general agreement among scholars about\nwhy anger is considered negative\nDiğer sayfaya geçiniz.\n\n\n\n2013-YDS Sonbahar / İNGİLİZCE"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2013 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Paragraf"
@@ -454,7 +455,7 @@ object QuestionDataProvider {
         Question(
             id = 56,
             questionText = "(2013 Sonbahar / Soru 64)\nTarık:\n I believe global warming will define the political\nand cultural landscape of the 21st century.\nUğur:\n Critics say it has been invented to scare us into\nthinking we’re part of the problem when, in fact,\nwMe can’t really do anything.\nTarık:\n ----\nUğur:\n No, not really. I guess I should be better informed,\nso I can have a more balanced opinion.",
-            options = listOf("A) I agree. Records of temperatures in some parts of\nthe world cannot be regarded as representative on a\nglobal scale, can they?", "B) I think the claims that global warming is nonsense\nare unfounded and can be disputed by scientific\nevidence. Haven’t you read anything about it?", "C) Well, the melting polar ice-caps is one of the\nindicators of global warming. Do you think there are\nother reasons for this?", "D) It may be dangerous to dismiss the threat of global\nwarming. Don’t you think we should avoid using\nproducts that harm theenvironment?", "E) International organizations are trying to find solutions\nto stop greenhouse gas emissions. Will all those\nefforts stop global warming?\nDiğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2013-YDS Sonbahar / İNGİLİZCE"),
+            options = listOf("A) I agree. Records of temperatures in some parts of\nthe world cannot be regarded as representative on a\nglobal scale, can they?", "B) I think the claims that global warming is nonsense\nare unfounded and can be disputed by scientific\nevidence. Haven’t you read anything about it?", "C) Well, the melting polar ice-caps is one of the\nindicators of global warming. Do you think there are\nother reasons for this?", "D) It may be dangerous to dismiss the threat of global\nwarming. Don’t you think we should avoid using\nproducts that harm theenvironment?", "E) International organizations are trying to find solutions\nto stop greenhouse gas emissions. Will all those\nefforts stop global warming?\nDiğer sayfaya geçiniz.\n\n\n\n2013-YDS Sonbahar / İNGİLİZCE"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2013 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Diyalog"
@@ -478,7 +479,7 @@ object QuestionDataProvider {
         Question(
             id = 59,
             questionText = "(2013 Sonbahar / Soru 67)\nLecturer:\n Before I finish the lecture, let’s just go over the\nmain points again. Is there anywhere you would\nlike to start?\nStudent:\n Well, we examined the importance of hospital\ngMardens, particularly in the treatment of young\nchildren.\nLecturer:\n ----\nStudent:\n You mentioned a 3-year-old who had a heart\ntransplant and who loved to go out and feed the\nbirds. He recovered really quickly.",
-            options = listOf("A) That’s right, and what makes them attractive?", "B) Yes, and what about hospitals that don’t have a\ngarden?", "C) And what conclusions did we reach?", "D) Good. Now can you give me a specific example?", "E) OK, and do such gardens only contain plants?\nDiğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2013-YDS Sonbahar / İNGİLİZCE"),
+            options = listOf("A) That’s right, and what makes them attractive?", "B) Yes, and what about hospitals that don’t have a\ngarden?", "C) And what conclusions did we reach?", "D) Good. Now can you give me a specific example?", "E) OK, and do such gardens only contain plants?\nDiğer sayfaya geçiniz.\n\n\n\n2013-YDS Sonbahar / İNGİLİZCE"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2013 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Diyalog"
@@ -502,7 +503,7 @@ object QuestionDataProvider {
         Question(
             id = 62,
             questionText = "(2013 Sonbahar / Soru 71)\nThe activity of coffee trading on the international\nmarket is second only to petroleum.",
-            options = listOf("A) Petroleum is one of the most internationally traded\nproducts, but coffee surpasses it.", "B) Increasing demand for petroleum makes coffee the\nsecond most popular product in the world.", "C) Petroleum trading ranks the second worldwide when\ncompared to coffee.", "D) Petroleum is the most internationally traded product,\nfollowed by coffee.", "E) Coffee and petroleum are the two most valuable\ncommodities in trade among countries.\nDiğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2013-YDS Sonbahar / İNGİLİZCE"),
+            options = listOf("A) Petroleum is one of the most internationally traded\nproducts, but coffee surpasses it.", "B) Increasing demand for petroleum makes coffee the\nsecond most popular product in the world.", "C) Petroleum trading ranks the second worldwide when\ncompared to coffee.", "D) Petroleum is the most internationally traded product,\nfollowed by coffee.", "E) Coffee and petroleum are the two most valuable\ncommodities in trade among countries.\nDiğer sayfaya geçiniz.\n\n\n\n2013-YDS Sonbahar / İNGİLİZCE"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2013 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Dil Bilgisi"
@@ -534,7 +535,7 @@ object QuestionDataProvider {
         Question(
             id = 66,
             questionText = "(2013 Sonbahar / Soru 75)\nPeople generally have a repertoire of speech styles,\nand they automatically or deliberately tailor the way\nthey speak to the context of the communicative\nFor instance, we tend to speak slowly and\nuse short words and simple grammatical\nconstructions when we speak to foreigners and\nchildren. ----",
-            options = listOf("A) Moreover, scientists claim that children acquire their\nfirst language listening to their parents and imitating\nthem.", "B) However, we use longer and complex sentences\nwhen we are in a formal context such as an\ninterview.", "C) In fact, there are other similarities and differences in\nword choice of men and women.", "D) For example, most people can quite easily identify\nAmericans and Australians within various age\ngroups.", "E) In other words, speech style alone may not be\nsufficient to elicit a listener’s attitudes towards the\ngroup that the speaker represents.\nDiğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2013-YDS Sonbahar / İNGİLİZCE"),
+            options = listOf("A) Moreover, scientists claim that children acquire their\nfirst language listening to their parents and imitating\nthem.", "B) However, we use longer and complex sentences\nwhen we are in a formal context such as an\ninterview.", "C) In fact, there are other similarities and differences in\nword choice of men and women.", "D) For example, most people can quite easily identify\nAmericans and Australians within various age\ngroups.", "E) In other words, speech style alone may not be\nsufficient to elicit a listener’s attitudes towards the\ngroup that the speaker represents.\nDiğer sayfaya geçiniz.\n\n\n\n2013-YDS Sonbahar / İNGİLİZCE"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2013 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Paragraf"
@@ -574,7 +575,7 @@ object QuestionDataProvider {
         Question(
             id = 71,
             questionText = "(2013 Sonbahar / Soru 80)\n(I) While some restaurants serve a variety of dishes that\nare labelled as local, others present a menu including\nuniversal ones like hamburger or salad.(II)A meal at a\nfine restaurant will often seem to taste better than food\neaten off a paper plate with plastic cutlery.(III) This is\nbecause our perception of the quality of food and drink\ndoes not only involve senses, but emotions and\nexpectations play a role too.(IV) Colours can also affect\nhow we perceive flavour.(V) In one famous French\nstudy, participants were convinced that they were\ndrinking red wine when it was, in fact, white wine dyed\nred.",
-            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V\nTEST BİTTİ.\nCEVAPLARINIZI KONTROL EDİNİZ.\n\n=== COLUMN_SEPARATOR ===\n\nSINAVDA UYULACAK"),
+            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V\nTEST BİTTİ.\nCEVAPLARINIZI KONTROL EDİNİZ.\n\n\n\nSINAVDA UYULACAK"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2013 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Paragraf"
@@ -598,7 +599,7 @@ object QuestionDataProvider {
         Question(
             id = 74,
             questionText = "(2013 İlkbahar / Soru 3)\nBefore they are allowed to be used, all medicines,\nincluding vaccines, are ---- tested to assess how\nsafe and effective they are.",
-            options = listOf("A) incidentally", "B) hazardously", "C) thoroughly", "D) fatally", "E) offensively\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) incidentally", "B) hazardously", "C) thoroughly", "D) fatally", "E) offensively"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2013 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Kelime Bilgisi"
@@ -646,7 +647,7 @@ object QuestionDataProvider {
         Question(
             id = 80,
             questionText = "(2013 İlkbahar / Soru 9)\n---- the types of individuals it seeks to attract, an\norganization ---- to consider what methods to use to\nreach them.",
-            options = listOf("A) To have established / could need", "B) Having established / needs", "C) Establishing / had needed", "D) Established / needed", "E) Being established / will need\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) To have established / could need", "B) Having established / needs", "C) Establishing / had needed", "D) Established / needed", "E) Being established / will need"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2013 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Dil Bilgisi"
@@ -694,7 +695,7 @@ object QuestionDataProvider {
         Question(
             id = 86,
             questionText = "(2013 İlkbahar / Soru 15)\nWhen modern coastal fish-farming began 30 years\nago, no one was doing things right, ---- for the\nenvironment ---- the industry’s long-term\nsustainability.",
-            options = listOf("A) whether / or", "B) such / as", "C) so / that", "D) either / or", "E) as / as\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) whether / or", "B) such / as", "C) so / that", "D) either / or", "E) as / as"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2013 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Bağlaçlar"
@@ -718,7 +719,7 @@ object QuestionDataProvider {
         Question(
             id = 89,
             questionText = "(2013 İlkbahar / Soru 18)\n",
-            options = listOf("A) to find", "B) finding", "C) to have found", "D) being found", "E) to be found\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) to find", "B) finding", "C) to have found", "D) being found", "E) to be found"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2013 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Dil Bilgisi"
@@ -758,7 +759,7 @@ object QuestionDataProvider {
         Question(
             id = 94,
             questionText = "(2013 İlkbahar / Soru 23)\n",
-            options = listOf("A) were to sign", "B) had to sign", "C) must sign", "D) may sign", "E) used to sign\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) were to sign", "B) had to sign", "C) must sign", "D) may sign", "E) used to sign"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2013 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Dil Bilgisi"
@@ -798,7 +799,7 @@ object QuestionDataProvider {
         Question(
             id = 99,
             questionText = "(2013 İlkbahar / Soru 28)\nWhile several other minerals are needed for muscle\nfunction, ----.",
-            options = listOf("A) knowledge of your body and its functions can be a\ngreat ally in health matters", "B) most of the calories in the food we eat are used by\nour muscles", "C) the contours of the body alter as the muscles\nstrengthen", "D) exercise is a vital ingredient for keeping the human\nbody in good health", "E) continuous intake of calcium helps to maintain a\nhealthy skeleton\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) knowledge of your body and its functions can be a\ngreat ally in health matters", "B) most of the calories in the food we eat are used by\nour muscles", "C) the contours of the body alter as the muscles\nstrengthen", "D) exercise is a vital ingredient for keeping the human\nbody in good health", "E) continuous intake of calcium helps to maintain a\nhealthy skeleton"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2013 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Bağlaçlar"
@@ -812,8 +813,10 @@ object QuestionDataProvider {
             category = "Bağlaçlar"
         )
     )
+}
 
-    private val chunk1 = listOf(
+object QuestionChunk1 {
+    val list = listOf(
         Question(
             id = 101,
             questionText = "(2013 İlkbahar / Soru 30)\nWhereas there are undoubted social benefits to\nincreasing home ownership, ----.",
@@ -833,7 +836,7 @@ object QuestionDataProvider {
         Question(
             id = 103,
             questionText = "(2013 İlkbahar / Soru 32)\n----, Indian culture was primarily oral, with a high\nvalue placed on recounting tales and dreams.",
-            options = listOf("A) No matter how extraordinarily diverse Indian\ncustoms and culture have been", "B) As native American Indians evolved into complex\nhierarchical societies that practiced human sacrifice", "C) Even though the first Indians began constructing\nearthen burial sites and fortifications around 600 BC", "D) If all European emigrants had left their homelands to\nescape political oppression", "E) Although some North American tribes developed a\ntype of hieroglyphics to preserve certain texts\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) No matter how extraordinarily diverse Indian\ncustoms and culture have been", "B) As native American Indians evolved into complex\nhierarchical societies that practiced human sacrifice", "C) Even though the first Indians began constructing\nearthen burial sites and fortifications around 600 BC", "D) If all European emigrants had left their homelands to\nescape political oppression", "E) Although some North American tribes developed a\ntype of hieroglyphics to preserve certain texts"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2013 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Bağlaçlar"
@@ -865,7 +868,7 @@ object QuestionDataProvider {
         Question(
             id = 107,
             questionText = "(2013 İlkbahar / Soru 36)\n----, not only cell operators but also law enforcement\nhave come under fire for exploiting personal data\nwithout the user’s knowledge.",
-            options = listOf("A) After the companies have agreed widely on privacy\npolicies", "B) Although law enforcement units permit users to\nreach all sites", "C) Since market demand is driving some of the biggest\ncollectors of data into piracy", "D) As smart phones’ tracking abilities have become\nmore sophisticated", "E) Now that banking transactions via mobile devices\nare almost completely secure\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) After the companies have agreed widely on privacy\npolicies", "B) Although law enforcement units permit users to\nreach all sites", "C) Since market demand is driving some of the biggest\ncollectors of data into piracy", "D) As smart phones’ tracking abilities have become\nmore sophisticated", "E) Now that banking transactions via mobile devices\nare almost completely secure"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2013 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Bağlaçlar"
@@ -873,7 +876,7 @@ object QuestionDataProvider {
         Question(
             id = 108,
             questionText = "(2013 İlkbahar / Soru 37)\nMost of the fears that we had when we were children\nare actually quite profound, but as we grow older\nand become more self-sufficient, the reality of fears\ndiminishes.",
-            options = listOf("A) Çocukken yaşadığımız korkuların çoğu, aslında\noldukça derindir ancak büyüyüp kendimize daha\nfazla yeter hâle geldikçe korkuların gerçekliği azalır.", "B) Çocukken aslında çok derin birçok korku yaşarız\nfakat büyüyüp daha çok kendimize yettikçe bu\nkorkular gerçekliğini yitirir.", "C) Çocukken yaşadığımız korkuların çoğu, aslında\noldukça derin boyuttadır ancak büyüyüp kendimize\ndaha fazla yeten bireyler hâline geldiğimizde bu\nkorkular zamanla ortadan kalkar.", "D) Çocukken yaşanılan korkuların çoğu, aslında\noldukça derindir fakat kendimize yetecek kadar\nbüyüdüğümüzde bu korkular gerçekliğini kaybeder.", "E) Çocukken yaşadığımız korkuların çoğu, aslında\noldukça derin olsa da büyüyüp kendimize daha fazla\nyettikçe bu korkular gerçek olmaktan uzaklaşır.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Çocukken yaşadığımız korkuların çoğu, aslında\noldukça derindir ancak büyüyüp kendimize daha\nfazla yeter hâle geldikçe korkuların gerçekliği azalır.", "B) Çocukken aslında çok derin birçok korku yaşarız\nfakat büyüyüp daha çok kendimize yettikçe bu\nkorkular gerçekliğini yitirir.", "C) Çocukken yaşadığımız korkuların çoğu, aslında\noldukça derin boyuttadır ancak büyüyüp kendimize\ndaha fazla yeten bireyler hâline geldiğimizde bu\nkorkular zamanla ortadan kalkar.", "D) Çocukken yaşanılan korkuların çoğu, aslında\noldukça derindir fakat kendimize yetecek kadar\nbüyüdüğümüzde bu korkular gerçekliğini kaybeder.", "E) Çocukken yaşadığımız korkuların çoğu, aslında\noldukça derin olsa da büyüyüp kendimize daha fazla\nyettikçe bu korkular gerçek olmaktan uzaklaşır."),
             correctOptionIndex = 0,
             explanation = "Bu soru 2013 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Çeviri"
@@ -937,7 +940,7 @@ object QuestionDataProvider {
         Question(
             id = 116,
             questionText = "(2013 İlkbahar / Soru 46)\nIt can be inferred from the passage that the author\n----.",
-            options = listOf("A) is in favour of using history textbooks to inform\npeople about international relations", "B) sets out to emphasize the use of history textbooks to\ninstil national values in the young generation", "C) is of the opinion that textbooks on history are easy to\nwrite", "D) believes in the necessity of locally produced history\ntextbooks to bring about world peace", "E) is trying to persuade the reader of the importance of\nunderstanding history\nDiğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2013-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) is in favour of using history textbooks to inform\npeople about international relations", "B) sets out to emphasize the use of history textbooks to\ninstil national values in the young generation", "C) is of the opinion that textbooks on history are easy to\nwrite", "D) believes in the necessity of locally produced history\ntextbooks to bring about world peace", "E) is trying to persuade the reader of the importance of\nunderstanding history\nDiğer sayfaya geçiniz.\n\n\n\n2013-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2013 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Paragraf"
@@ -969,7 +972,7 @@ object QuestionDataProvider {
         Question(
             id = 120,
             questionText = "(2013 İlkbahar / Soru 50)\nIt is stated in the passage that antibiotics ----.",
-            options = listOf("A) are crucial as they change the genetic mutations of\npoultry", "B) form the basis for microbial resistance of genes in\nanimals", "C) are effective in restricting resistant strains of bacteria\nin poultry", "D) are employed to prevent a possible disease spread\nfrom farm animals to human beings", "E) may produce drug resistant bacteria, irrespective of\nhow carefully they are used\nDiğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2013-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) are crucial as they change the genetic mutations of\npoultry", "B) form the basis for microbial resistance of genes in\nanimals", "C) are effective in restricting resistant strains of bacteria\nin poultry", "D) are employed to prevent a possible disease spread\nfrom farm animals to human beings", "E) may produce drug resistant bacteria, irrespective of\nhow carefully they are used\nDiğer sayfaya geçiniz.\n\n\n\n2013-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2013 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Paragraf"
@@ -1001,7 +1004,7 @@ object QuestionDataProvider {
         Question(
             id = 124,
             questionText = "(2013 İlkbahar / Soru 54)\nThe main concern of the author is to ----.",
-            options = listOf("A) supply a brief summary of imperial nations’\ndomination of others", "B) blame America’s programs for Germany’s\nagricultural productivity", "C) learn from the failings and achievements of some\neconomic policies", "D) describe ways of industrializing through agriculture\nin order to stop wars", "E) accuse the African leaders of failing to understand\nhow Germany prospered\nDiğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2013-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) supply a brief summary of imperial nations’\ndomination of others", "B) blame America’s programs for Germany’s\nagricultural productivity", "C) learn from the failings and achievements of some\neconomic policies", "D) describe ways of industrializing through agriculture\nin order to stop wars", "E) accuse the African leaders of failing to understand\nhow Germany prospered\nDiğer sayfaya geçiniz.\n\n\n\n2013-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2013 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -1033,7 +1036,7 @@ object QuestionDataProvider {
         Question(
             id = 128,
             questionText = "(2013 İlkbahar / Soru 58)\nIt is pointed out in the passage that in the past ----.",
-            options = listOf("A) an economic system of growth was easy to establish", "B) resources were more valuable than they are today", "C) it was easy for people to find new resources", "D) industry was far less dependent on raw materials", "E) it was rare for businesses to actually fail\nDiğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2013-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) an economic system of growth was easy to establish", "B) resources were more valuable than they are today", "C) it was easy for people to find new resources", "D) industry was far less dependent on raw materials", "E) it was rare for businesses to actually fail\nDiğer sayfaya geçiniz.\n\n\n\n2013-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2013 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -1065,7 +1068,7 @@ object QuestionDataProvider {
         Question(
             id = 132,
             questionText = "(2013 İlkbahar / Soru 62)\nIt can be inferred from the passage that ----.",
-            options = listOf("A) external interventions may have negative impacts on\none’s performance", "B) every athlete should be involved in a study to\nincrease his or her performance", "C) success lies in the power of one’s mind no matter\nwhich treatment he or she is exposed to", "D) the World Anti-Doping Agency should be much more\ncareful about the use of drugs in sports", "E) much more research should be done on the placebo\neffect among athletes\nDiğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2013-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) external interventions may have negative impacts on\none’s performance", "B) every athlete should be involved in a study to\nincrease his or her performance", "C) success lies in the power of one’s mind no matter\nwhich treatment he or she is exposed to", "D) the World Anti-Doping Agency should be much more\ncareful about the use of drugs in sports", "E) much more research should be done on the placebo\neffect among athletes\nDiğer sayfaya geçiniz.\n\n\n\n2013-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2013 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -1081,7 +1084,7 @@ object QuestionDataProvider {
         Question(
             id = 134,
             questionText = "(2013 İlkbahar / Soru 64)\nTimur:\n Do you know the difference between the use of\nbarbecues and conventional gas cooking?\nLevent:\n ----\nTimur:\n What can be done to reduce this?\nLevent:\n I think we should use gas over barbecue as it\ncontributes to an increase in smog levels.",
-            options = listOf("A) Burning charcoal releases carbon monoxide into the\nair much more than cooking with gas does.", "B) Well, actually, both are good ways of cooking, but\nbarbecues take longer to prepare.", "C) Gas cooking is far more efficient than using a\nbarbecue, as you can adjust the heat according to\nyour needs.", "D) Unfortunately, both are harmful and cause damage\nto the environment.", "E) Gas appears to be more dangerous as there is a\nhigh risk of explosion.\nDiğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2013-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) Burning charcoal releases carbon monoxide into the\nair much more than cooking with gas does.", "B) Well, actually, both are good ways of cooking, but\nbarbecues take longer to prepare.", "C) Gas cooking is far more efficient than using a\nbarbecue, as you can adjust the heat according to\nyour needs.", "D) Unfortunately, both are harmful and cause damage\nto the environment.", "E) Gas appears to be more dangerous as there is a\nhigh risk of explosion.\nDiğer sayfaya geçiniz.\n\n\n\n2013-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2013 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Diyalog"
@@ -1097,7 +1100,7 @@ object QuestionDataProvider {
         Question(
             id = 136,
             questionText = "(2013 İlkbahar / Soru 66)\nJale:\n Here is an article about how people react in\nemergencies. Researchers say that when more\npeople are around, it reduces the chances of\nactually being helped.\nAdnan:\n ----\nJale:\n Apparently, onlookers provide a model for action.\nIf they are docile and disinterested, the situation\nmay seem less serious.\nAdnan:\n I think if there is only one bystander, your chance\nof being helped increases, as he will think he must\nhelp immediately.",
-            options = listOf("A) Is an individual aware that others are present?", "B) How did they carry out that research?", "C) Do they offer any explanation as to why this\nhappens?", "D) Is this finding true for all cultures?", "E) Who were the participants in this research?\nDiğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2013-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) Is an individual aware that others are present?", "B) How did they carry out that research?", "C) Do they offer any explanation as to why this\nhappens?", "D) Is this finding true for all cultures?", "E) Who were the participants in this research?\nDiğer sayfaya geçiniz.\n\n\n\n2013-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2013 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Diyalog"
@@ -1113,7 +1116,7 @@ object QuestionDataProvider {
         Question(
             id = 138,
             questionText = "(2013 İlkbahar / Soru 68)\nScience does not produce a unified picture of the\nenvironment on which all can agree, instead it\nprovides multiple views, each of which may be valid\nfrom a particular ideological angle.",
-            options = listOf("A) There is not one single view of the environment that\ncan be provided through science that everyone will\nagree on, rather it gives different perspectives, all of\nwhich are valid depending on the ideological\nperspective.", "B) The environment has been described by scientists in\nmany different ways rather than in just one way, and\neach of these have their own validity according to\nthe observer’s own ideology.", "C) Science represents many diverse and particular\nideological angles, and from these a valid and\nunified description of the environment can be\nproduced that respects multiple views.", "D) Scientists from different ideological backgrounds\nhave come together to agree upon a unified picture\nof the environment on which scientists can all agree\nupon its validity.", "E) Multiple views on the environment are the result of\nscience being unable to produce a unified\ndescription upon which those from different\nideological backgrounds can agree.\nDiğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2013-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) There is not one single view of the environment that\ncan be provided through science that everyone will\nagree on, rather it gives different perspectives, all of\nwhich are valid depending on the ideological\nperspective.", "B) The environment has been described by scientists in\nmany different ways rather than in just one way, and\neach of these have their own validity according to\nthe observer’s own ideology.", "C) Science represents many diverse and particular\nideological angles, and from these a valid and\nunified description of the environment can be\nproduced that respects multiple views.", "D) Scientists from different ideological backgrounds\nhave come together to agree upon a unified picture\nof the environment on which scientists can all agree\nupon its validity.", "E) Multiple views on the environment are the result of\nscience being unable to produce a unified\ndescription upon which those from different\nideological backgrounds can agree.\nDiğer sayfaya geçiniz.\n\n\n\n2013-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2013 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Dil Bilgisi"
@@ -1129,7 +1132,7 @@ object QuestionDataProvider {
         Question(
             id = 140,
             questionText = "(2013 İlkbahar / Soru 70)\nHuntington’s has been described as the most\ndisastrous disease known to man because of its\npeculiarly cruel characteristics, as it progressively\nstrips a person of control of his muscles, reason\nand emotion.",
-            options = listOf("A) Huntington’s disease is described as not only the\nworst disease in the world but also the most cruelly\nprogressive, as it slowly takes away a person’s\nability to control their muscles, reason and emotion.", "B) To describe Huntington’s as a cruel disease could\nbe disastrous as people know that it eventually takes\naway a person’s ability to control their muscles as\nwell as to reason and feel emotion.", "C) Due to its cruel characteristics that gradually take\naway a person’s control of their muscles, reason and\nemotion, Huntington’s is said to be the most\ndevastating disease in the world.", "D) When a person starts to rapidly lose control of his\nmuscles and no longer is able to reason or control\nhis emotions, he can be described as having the\nmost disastrous disease ever – Huntington’s.", "E) When a man is described as having Huntington’s, it\ncan be a very cruel experience, as they will gradually\nexperience certain characteristics such as lack of\nmuscle control, reason and emotion.\nDiğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2013-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) Huntington’s disease is described as not only the\nworst disease in the world but also the most cruelly\nprogressive, as it slowly takes away a person’s\nability to control their muscles, reason and emotion.", "B) To describe Huntington’s as a cruel disease could\nbe disastrous as people know that it eventually takes\naway a person’s ability to control their muscles as\nwell as to reason and feel emotion.", "C) Due to its cruel characteristics that gradually take\naway a person’s control of their muscles, reason and\nemotion, Huntington’s is said to be the most\ndevastating disease in the world.", "D) When a person starts to rapidly lose control of his\nmuscles and no longer is able to reason or control\nhis emotions, he can be described as having the\nmost disastrous disease ever – Huntington’s.", "E) When a man is described as having Huntington’s, it\ncan be a very cruel experience, as they will gradually\nexperience certain characteristics such as lack of\nmuscle control, reason and emotion.\nDiğer sayfaya geçiniz.\n\n\n\n2013-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2013 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Dil Bilgisi"
@@ -1153,7 +1156,7 @@ object QuestionDataProvider {
         Question(
             id = 143,
             questionText = "(2013 İlkbahar / Soru 73)\nEverything in the factories of the future will be run\nby smarter software. Digitization in manufacturing\nwill have as widespread an effect as in other\nindustries that have gone digital, including\nphotography, publishing and films. Such effects will\nnot be confined to large manufacturers, either. ----\nLaunching new and innovative products will\nbecome easier and cheaper for them.",
-            options = listOf("A) The materials being used to make things are\nchanging faster than they were in the past.", "B) In addition, it will allow things to be made\neconomically in much smaller quantities.", "C) Nonetheless, companies are also optimistic about a\nmanufacturing revival.", "D) In fact, these developments will empower smaller\nfirms and individual entrepreneurs.", "E) As such, companies from all over the world use\nChina and India as low-wage workshops.\nDiğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2013-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) The materials being used to make things are\nchanging faster than they were in the past.", "B) In addition, it will allow things to be made\neconomically in much smaller quantities.", "C) Nonetheless, companies are also optimistic about a\nmanufacturing revival.", "D) In fact, these developments will empower smaller\nfirms and individual entrepreneurs.", "E) As such, companies from all over the world use\nChina and India as low-wage workshops.\nDiğer sayfaya geçiniz.\n\n\n\n2013-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2013 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -1177,7 +1180,7 @@ object QuestionDataProvider {
         Question(
             id = 146,
             questionText = "(2013 İlkbahar / Soru 76)\n(I)Using herbs from your garden or the farmer’s market\nto enhance the flavour of your summer cuisine is really\nrewarding.(II)Not only will herbs add subtle accents to\nyour main dishes and salads, but they will also bring\nfragrance and interest to favourite dessert and beverage\nrecipes.(III)If you are not using fresh herbs, remember\nthat dried herbs are very potent, so reduce the amount\nyou use by half or more.(IV)Include your home-grown\nproduce in a salad course, and specimens from your\ngorgeous summer flower beds in a welcoming table\ncentrepiece.(V)Also,if you are cooking outdoors, be\nsure to allow enough time to heat the grill for your\nvegetables, steaks and chicken.",
-            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V\nDiğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2013-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V\nDiğer sayfaya geçiniz.\n\n\n\n2013-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2013 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Paragraf"
@@ -1209,7 +1212,7 @@ object QuestionDataProvider {
         Question(
             id = 150,
             questionText = "(2013 İlkbahar / Soru 80)\n(I)No citizen of the European Union lives more than\n700 km away from the coast.(II)The seas and oceans\nare at the centre of a large number of interactions, and\nto optimize political decision-making, we must clearly\nunderstand these interactions.(III)The European Union\nis surrounded by four seas and two oceans, and has\n89,000 km of coastline.(IV)The maritime areas under\nthe jurisdiction of the member states of the European\nUnion are larger than the land masses.(V)The obvious\nconclusion is the need for rational management of the\nseas and oceans.",
-            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V\nTEST BİTTİ.\nCEVAPLARINIZI KONTROL EDİNİZ.\n\n=== COLUMN_SEPARATOR ===\n\nSINAVDA UYULACAK"),
+            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V\nTEST BİTTİ.\nCEVAPLARINIZI KONTROL EDİNİZ.\n\n\n\nSINAVDA UYULACAK"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2013 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Paragraf"
@@ -1233,7 +1236,7 @@ object QuestionDataProvider {
         Question(
             id = 153,
             questionText = "(2014 Sonbahar / Soru 3)\nWithout knowing distances ----, it can be difficult to\nplan a journey, so maps are very beneficial tools for\npeople to find their way easily.",
-            options = listOf("A) accurately", "B) suspiciously", "C) innovatively", "D) rapidly", "E) controversially\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) accurately", "B) suspiciously", "C) innovatively", "D) rapidly", "E) controversially"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Kelime Bilgisi"
@@ -1257,7 +1260,7 @@ object QuestionDataProvider {
         Question(
             id = 156,
             questionText = "(2014 Sonbahar / Soru 6)\nA stroke occurs when the blood supply of an area of\nbrain cells is ---- for a long period of time, resulting\nin the death of the cells from lack of oxygen and\nnutrients.",
-            options = listOf("A) set up", "B) cut off", "C) put down", "D) left out", "E) taken over\n1 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2014-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) set up", "B) cut off", "C) put down", "D) left out", "E) taken over\n1 Diğer sayfaya geçiniz.\n\n\n\n2014-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Kelime Bilgisi"
@@ -1281,7 +1284,7 @@ object QuestionDataProvider {
         Question(
             id = 159,
             questionText = "(2014 Sonbahar / Soru 9)\nA new type of airport X-ray scanner ---- lately by an\ninnovative company ---- the contents of bottles.",
-            options = listOf("A) has been built / to detect", "B) was built / to have detected", "C) will be built / being detected", "D) had been built / having detected", "E) is built / to be detected\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) has been built / to detect", "B) was built / to have detected", "C) will be built / being detected", "D) had been built / having detected", "E) is built / to be detected"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Dil Bilgisi"
@@ -1313,7 +1316,7 @@ object QuestionDataProvider {
         Question(
             id = 163,
             questionText = "(2014 Sonbahar / Soru 13)\n---- the world has been changing more rapidly than\never before, managers and other employees\nthroughout an organization must perform at higher\nand higher levels.",
-            options = listOf("A) Because", "B) In case", "C) As if", "D) Although", "E) Unless\n2 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2014-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) Because", "B) In case", "C) As if", "D) Although", "E) Unless\n2 Diğer sayfaya geçiniz.\n\n\n\n2014-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Bağlaçlar"
@@ -1337,7 +1340,7 @@ object QuestionDataProvider {
         Question(
             id = 166,
             questionText = "(2014 Sonbahar / Soru 16)\nBeing very significant ---- economical and\ngeopolitical aspects, control of the Bosphorus was\nalways demanded by many countries.",
-            options = listOf("A) in spite of", "B) rather than\nÖ", "C) instead of", "D) regardless of", "E) in terms of\n\n=== COLUMN_SEPARATOR ===\n\nM\n3 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2014-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) in spite of", "B) rather than\nÖ", "C) instead of", "D) regardless of", "E) in terms of\n\n\n\nM\n3 Diğer sayfaya geçiniz.\n\n\n\n2014-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Bağlaçlar"
@@ -1353,7 +1356,7 @@ object QuestionDataProvider {
         Question(
             id = 168,
             questionText = "(2014 Sonbahar / Soru 18)\n",
-            options = listOf("A) Despite", "B) Instead of", "C) Due to", "D) Like", "E) Thanks to\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Despite", "B) Instead of", "C) Due to", "D) Like", "E) Thanks to"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Dil Bilgisi"
@@ -1369,7 +1372,7 @@ object QuestionDataProvider {
         Question(
             id = 170,
             questionText = "(2014 Sonbahar / Soru 21)\n",
-            options = listOf("A) in contrast", "B) in addition", "C) accordingly", "D) for instance", "E) in short\n4 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2014-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) in contrast", "B) in addition", "C) accordingly", "D) for instance", "E) in short\n4 Diğer sayfaya geçiniz.\n\n\n\n2014-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Dil Bilgisi"
@@ -1377,7 +1380,7 @@ object QuestionDataProvider {
         Question(
             id = 171,
             questionText = "(2014 Sonbahar / Soru 23)\n",
-            options = listOf("A) disputes", "B) conquers", "C) renews", "D) maintains", "E) claims\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) disputes", "B) conquers", "C) renews", "D) maintains", "E) claims"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Dil Bilgisi"
@@ -1401,7 +1404,7 @@ object QuestionDataProvider {
         Question(
             id = 174,
             questionText = "(2014 Sonbahar / Soru 26)\n",
-            options = listOf("A) should have been taught", "B) had been taught", "C) was taught", "D) might have been taught", "E) have been taught\n5 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2014-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) should have been taught", "B) had been taught", "C) was taught", "D) might have been taught", "E) have been taught\n5 Diğer sayfaya geçiniz.\n\n\n\n2014-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Dil Bilgisi"
@@ -1417,7 +1420,7 @@ object QuestionDataProvider {
         Question(
             id = 176,
             questionText = "(2014 Sonbahar / Soru 28)\nEven if DNA may have influence on our moral\ncharacter ----.",
-            options = listOf("A) it is widely believed that we are products of our\nsocial and cultural environment\nÖ", "B) such moral understandings are often regulated by\nreligious and legal taboos of various kinds", "C) thinking of ethics often begins with assumptions\nabout human nature", "D) people debate whether being moral is simply a\nmatter of obeying social norms", "E) the story of ethics is to some extent a description of\nattempts to legalize morality\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) it is widely believed that we are products of our\nsocial and cultural environment\nÖ", "B) such moral understandings are often regulated by\nreligious and legal taboos of various kinds", "C) thinking of ethics often begins with assumptions\nabout human nature", "D) people debate whether being moral is simply a\nmatter of obeying social norms", "E) the story of ethics is to some extent a description of\nattempts to legalize morality"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Bağlaçlar"
@@ -1433,7 +1436,7 @@ object QuestionDataProvider {
         Question(
             id = 178,
             questionText = "(2014 Sonbahar / Soru 30)\nAs the age of children rises, needing less care ----.",
-            options = listOf("A) mothers pay more attention to the quality of\npre-school education", "B) mothers who have more than two children tend to\nhave some psychological problems", "C) part-time work has developed because of women’s\npreference to work more", "D) mothers can gradually shift from part-time to full-time\nwork", "E) the low level of care provided by governments\nbecomes an important factor\n6 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2014-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) mothers pay more attention to the quality of\npre-school education", "B) mothers who have more than two children tend to\nhave some psychological problems", "C) part-time work has developed because of women’s\npreference to work more", "D) mothers can gradually shift from part-time to full-time\nwork", "E) the low level of care provided by governments\nbecomes an important factor\n6 Diğer sayfaya geçiniz.\n\n\n\n2014-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Bağlaçlar"
@@ -1449,7 +1452,7 @@ object QuestionDataProvider {
         Question(
             id = 180,
             questionText = "(2014 Sonbahar / Soru 32)\nSpending money on others can provide happiness\n----.",
-            options = listOf("A) even when you use your own hard-earned cash", "B) once people in poor countries have tried to meet\ntheir own basic needs\nÖ", "C) although the tendency to experience joy from\nhelping is part of human nature", "D) after children can get pleasure from helping others", "E) whereas charities make it easy for donors to see\nhow their contributions are used\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) even when you use your own hard-earned cash", "B) once people in poor countries have tried to meet\ntheir own basic needs\nÖ", "C) although the tendency to experience joy from\nhelping is part of human nature", "D) after children can get pleasure from helping others", "E) whereas charities make it easy for donors to see\nhow their contributions are used"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Bağlaçlar"
@@ -1465,7 +1468,7 @@ object QuestionDataProvider {
         Question(
             id = 182,
             questionText = "(2014 Sonbahar / Soru 34)\n---- your body will be supplied with higher levels of\nenergy and become more resistant to diseases.",
-            options = listOf("A) Just as a number of supplements can be used to\nmake up for calcium deficiency", "B) Even if you change your eating habits and avoid\nliving a stressful life", "C) Although you have routine blood-pressure or\ncholesterol level checks", "D) Once you get used to consuming vitamin-rich\nvegetables like broccoli and cabbage", "E) Unless you strengthen your muscles and bones\nthrough regular exercise\n7 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2014-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) Just as a number of supplements can be used to\nmake up for calcium deficiency", "B) Even if you change your eating habits and avoid\nliving a stressful life", "C) Although you have routine blood-pressure or\ncholesterol level checks", "D) Once you get used to consuming vitamin-rich\nvegetables like broccoli and cabbage", "E) Unless you strengthen your muscles and bones\nthrough regular exercise\n7 Diğer sayfaya geçiniz.\n\n\n\n2014-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Bağlaçlar"
@@ -1481,7 +1484,7 @@ object QuestionDataProvider {
         Question(
             id = 184,
             questionText = "(2014 Sonbahar / Soru 36)\nWe often forget the value of things surrounding us\n----.",
-            options = listOf("A) for some aspects of life inspire pride in our cultural\nheritage\nS", "B) even if people avoid paying attention to old crafts\nand skills that were once crucial", "C) and only when seen through the eyes of tourists do\nwe revalue our culture", "D) since some rituals and ceremonies have been so\nÖcommon in some civilizations", "E) so we learn to appreciate more fully the importance\nof culture\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) for some aspects of life inspire pride in our cultural\nheritage\nS", "B) even if people avoid paying attention to old crafts\nand skills that were once crucial", "C) and only when seen through the eyes of tourists do\nwe revalue our culture", "D) since some rituals and ceremonies have been so\nÖcommon in some civilizations", "E) so we learn to appreciate more fully the importance\nof culture"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Bağlaçlar"
@@ -1497,7 +1500,7 @@ object QuestionDataProvider {
         Question(
             id = 186,
             questionText = "(2014 Sonbahar / Soru 38)\nMany people still use plants as medicine, and about\nhalf of medicines bought from a drugstore are\nobtained directly from plants.",
-            options = listOf("A) Birçok insan bitkileri hâlâ ilaç olarak kullanmakta ve\ndoğrudan bitkilerden elde edilen ilaçlar eczaneden\nalınan ilaçların yaklaşık yarısını oluşturmaktadır.", "B) Birçok insan bitkileri hâlâ ilaç olarak kullanmakta ve\neczaneden alınan ilaçların yaklaşık yarısı doğrudan\nbitkilerden elde edilmektedir.", "C) Bitkiler hâlâ birçok insan tarafından ilaç olarak\nkullanılmakta ve doğrudan bitkilerden elde edilen\nilaçların yaklaşık yarısı eczanelerden alınmaktadır.", "D) Eczanelerden alınan ilaçların yaklaşık yarısı\ndoğrudan bitkilerden elde edilmekte ve birçok insan\nbitkileri hâlâ ilaç olarak kullanmaktadır.", "E) Doğrudan bitkilerden elde edilen ilaçların yaklaşık\nyarısını birçok insan hâlâ eczanelerden almakta ve\nkullanmaktadır.\n8 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2014-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) Birçok insan bitkileri hâlâ ilaç olarak kullanmakta ve\ndoğrudan bitkilerden elde edilen ilaçlar eczaneden\nalınan ilaçların yaklaşık yarısını oluşturmaktadır.", "B) Birçok insan bitkileri hâlâ ilaç olarak kullanmakta ve\neczaneden alınan ilaçların yaklaşık yarısı doğrudan\nbitkilerden elde edilmektedir.", "C) Bitkiler hâlâ birçok insan tarafından ilaç olarak\nkullanılmakta ve doğrudan bitkilerden elde edilen\nilaçların yaklaşık yarısı eczanelerden alınmaktadır.", "D) Eczanelerden alınan ilaçların yaklaşık yarısı\ndoğrudan bitkilerden elde edilmekte ve birçok insan\nbitkileri hâlâ ilaç olarak kullanmaktadır.", "E) Doğrudan bitkilerden elde edilen ilaçların yaklaşık\nyarısını birçok insan hâlâ eczanelerden almakta ve\nkullanmaktadır.\n8 Diğer sayfaya geçiniz.\n\n\n\n2014-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Çeviri"
@@ -1513,7 +1516,7 @@ object QuestionDataProvider {
         Question(
             id = 188,
             questionText = "(2014 Sonbahar / Soru 40)\nHem zaman alıcı hem de sağlıksız olduğu için bazı\nsebzeleri pişirirken mümkün olduğunca kaçınılması\ngereken şeylerden biri, onları haşlamaktır.",
-            options = listOf("A) Since boiling some vegetables is both\ntime-consuming and unhealthy, you should avoid\nboiling them as much as possible.\nÖ", "B) As it is both time-consuming and unhealthy, one of\nthe things that should be avoided as much as\npossible while cooking some vegetables is boiling\nthem.", "C) The only way of cooking some vegetables to be\navoided as much as possible is boiling them,\nbecause boiling is both time-consuming and\nunhealthy.", "D) Both time-consuming and unhealthy, boiling must be\navoided as much as possible while cooking some\nvegetables.", "E) Although boiling some vegetables is both\ntime-consuming and unhealthy, it cannot be avoided\nin some situations.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Since boiling some vegetables is both\ntime-consuming and unhealthy, you should avoid\nboiling them as much as possible.\nÖ", "B) As it is both time-consuming and unhealthy, one of\nthe things that should be avoided as much as\npossible while cooking some vegetables is boiling\nthem.", "C) The only way of cooking some vegetables to be\navoided as much as possible is boiling them,\nbecause boiling is both time-consuming and\nunhealthy.", "D) Both time-consuming and unhealthy, boiling must be\navoided as much as possible while cooking some\nvegetables.", "E) Although boiling some vegetables is both\ntime-consuming and unhealthy, it cannot be avoided\nin some situations."),
             correctOptionIndex = 1,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Çeviri"
@@ -1529,7 +1532,7 @@ object QuestionDataProvider {
         Question(
             id = 190,
             questionText = "(2014 Sonbahar / Soru 42)\n20. yüzyılda Birleşik Devletler’de meydana gelen\nortalama yaşam süresindeki 30 yıllık artış,\niyileştirilen tıbbi bakım sayesindeydi.",
-            options = listOf("A) Improved medical care contributed to a 30-year\nincrease in life expectancy that occurred in the\nUnited States during the 20th century.", "B) The 30-year increase in life expectancy that\noccurred in the United States during the 20th century\nwas due to improved medical care.", "C) The 20th century saw a 30-year increase in life\nexpectancy in the United States owing to improved\nmedical care.", "D) Thanks to improved medical care, a 30-year\nincrease in life expectancy occurred in the United\nStates in the 20th century.", "E) In the 20th century, there occurred a 30-year\nincrease in life expectancy in the United States\nbecause of improved medical care.\n9 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2014-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) Improved medical care contributed to a 30-year\nincrease in life expectancy that occurred in the\nUnited States during the 20th century.", "B) The 30-year increase in life expectancy that\noccurred in the United States during the 20th century\nwas due to improved medical care.", "C) The 20th century saw a 30-year increase in life\nexpectancy in the United States owing to improved\nmedical care.", "D) Thanks to improved medical care, a 30-year\nincrease in life expectancy occurred in the United\nStates in the 20th century.", "E) In the 20th century, there occurred a 30-year\nincrease in life expectancy in the United States\nbecause of improved medical care.\n9 Diğer sayfaya geçiniz.\n\n\n\n2014-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Çeviri"
@@ -1537,7 +1540,7 @@ object QuestionDataProvider {
         Question(
             id = 191,
             questionText = "(2014 Sonbahar / Soru 43)\nIt can be inferred from the passage that ----.\nÖ",
-            options = listOf("A) the collapse of the Rana Plaza should have attracted\nmore attention worldwide", "B) there were far more workers in the Rana Plaza than\nthe building could handle", "C) the Rana Plaza was not properly constructed", "D) the Bangladeshi government has always prioritized\nthe conditions of workers in the RMG industry", "E) the workers in the Rana Plaza did not have a\nreputation for producing high-quality garments\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) the collapse of the Rana Plaza should have attracted\nmore attention worldwide", "B) there were far more workers in the Rana Plaza than\nthe building could handle", "C) the Rana Plaza was not properly constructed", "D) the Bangladeshi government has always prioritized\nthe conditions of workers in the RMG industry", "E) the workers in the Rana Plaza did not have a\nreputation for producing high-quality garments"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -1561,7 +1564,7 @@ object QuestionDataProvider {
         Question(
             id = 194,
             questionText = "(2014 Sonbahar / Soru 46)\nThe author points out that the RMG-workers in\nBangladesh differ from other developing-country\nworkers in that ----.",
-            options = listOf("A) they are brave enough to leave their villages", "B) the mortality rates among them are higher", "C) they dedicate their work to later generations", "D) they are not intimidated by uncertainties in the city", "E) they need to work much harder and longer hours\n10 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2014-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) they are brave enough to leave their villages", "B) the mortality rates among them are higher", "C) they dedicate their work to later generations", "D) they are not intimidated by uncertainties in the city", "E) they need to work much harder and longer hours\n10 Diğer sayfaya geçiniz.\n\n\n\n2014-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Paragraf"
@@ -1577,7 +1580,7 @@ object QuestionDataProvider {
         Question(
             id = 196,
             questionText = "(2014 Sonbahar / Soru 50)\nWhat could be the best title for the passage?",
-            options = listOf("A) How We Grow over Time", "B) How to Change our Personality Traits", "C) Economic Concerns versus Life Satisfaction", "D) Life Satisfaction Linked to Personality Changes", "E) Forces of Personality Change\n11 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2014-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) How We Grow over Time", "B) How to Change our Personality Traits", "C) Economic Concerns versus Life Satisfaction", "D) Life Satisfaction Linked to Personality Changes", "E) Forces of Personality Change\n11 Diğer sayfaya geçiniz.\n\n\n\n2014-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -1585,7 +1588,7 @@ object QuestionDataProvider {
         Question(
             id = 197,
             questionText = "(2014 Sonbahar / Soru 51)\nAccording to the passage, Roman baths ----.",
-            options = listOf("A) had to wait till the end of the Republican era to gain\nits deserved popularity\nÖ", "B) are found interesting by both novices and experts in\nancient studies", "C) were the place for Romans to go on occasions when\nthey did not prefer siesta for their leisure", "D) in both town and country had the same design as\nwell as abundance", "E) became a significant part of the daily life, resulting in\nthe formation of an institution to run public baths\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) had to wait till the end of the Republican era to gain\nits deserved popularity\nÖ", "B) are found interesting by both novices and experts in\nancient studies", "C) were the place for Romans to go on occasions when\nthey did not prefer siesta for their leisure", "D) in both town and country had the same design as\nwell as abundance", "E) became a significant part of the daily life, resulting in\nthe formation of an institution to run public baths"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Paragraf"
@@ -1609,18 +1612,20 @@ object QuestionDataProvider {
         Question(
             id = 200,
             questionText = "(2014 Sonbahar / Soru 54)\nWhat could be the best title for the passage?",
-            options = listOf("A) Development of Roman Baths", "B) Bathing Rituals and Activities in Ancient Rome", "C) Popularity of Roman Bathing Culture", "D) Architecture of Roman Baths", "E) Differences between Urban and Country Baths in\nAncient Rome\n12 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2014-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) Development of Roman Baths", "B) Bathing Rituals and Activities in Ancient Rome", "C) Popularity of Roman Bathing Culture", "D) Architecture of Roman Baths", "E) Differences between Urban and Country Baths in\nAncient Rome\n12 Diğer sayfaya geçiniz.\n\n\n\n2014-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
         )
     )
+}
 
-    private val chunk2 = listOf(
+object QuestionChunk2 {
+    val list = listOf(
         Question(
             id = 201,
             questionText = "(2014 Sonbahar / Soru 55)\nThe couple mentioned in the passage ----.",
-            options = listOf("A) had to spend a lot more money than they had\noriginally intended when they went on a safari", "B) had already been seeking out memorable activities\nbefore they bought a house\nÖ", "C) were satisfied with the decision they made when its\nconsequences are taken into account", "D) would have been more pleased if they had\nrenovated their bathroom instead of going on a\nsafari", "E) were invited to take part in more safaris after their\npleasant experiences\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) had to spend a lot more money than they had\noriginally intended when they went on a safari", "B) had already been seeking out memorable activities\nbefore they bought a house\nÖ", "C) were satisfied with the decision they made when its\nconsequences are taken into account", "D) would have been more pleased if they had\nrenovated their bathroom instead of going on a\nsafari", "E) were invited to take part in more safaris after their\npleasant experiences"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -1644,7 +1649,7 @@ object QuestionDataProvider {
         Question(
             id = 204,
             questionText = "(2014 Sonbahar / Soru 58)\nWhat could be the best title for this passage?",
-            options = listOf("A) The Superiority of Experiences over Material Goods", "B) When to Make Profitable Purchases", "C) The Studies on Couples’ Spending Choices", "D) How Choices Influence Marriage", "E) The Effects of Material Goods on Our Lives\n13 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2014-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) The Superiority of Experiences over Material Goods", "B) When to Make Profitable Purchases", "C) The Studies on Couples’ Spending Choices", "D) How Choices Influence Marriage", "E) The Effects of Material Goods on Our Lives\n13 Diğer sayfaya geçiniz.\n\n\n\n2014-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Paragraf"
@@ -1668,7 +1673,7 @@ object QuestionDataProvider {
         Question(
             id = 207,
             questionText = "(2014 Sonbahar / Soru 62)\nIt can be understood from the passage that the\nauthor ----.",
-            options = listOf("A) tries to explain why the use of polygraph is open to\ndoubt", "B) criticizes courts using the polygraph as a proof", "C) favours the use of the polygraph even though it\ncauses ambiguity", "D) informs the reader that the polygraph, on its own, is\nable to both record and detect accurately", "E) aims to encourage people to use the polygraph for\nspecific purposes\n14 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2014-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) tries to explain why the use of polygraph is open to\ndoubt", "B) criticizes courts using the polygraph as a proof", "C) favours the use of the polygraph even though it\ncauses ambiguity", "D) informs the reader that the polygraph, on its own, is\nable to both record and detect accurately", "E) aims to encourage people to use the polygraph for\nspecific purposes\n14 Diğer sayfaya geçiniz.\n\n\n\n2014-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Paragraf"
@@ -1676,7 +1681,7 @@ object QuestionDataProvider {
         Question(
             id = 208,
             questionText = "(2014 Sonbahar / Soru 63)\nMartin:\n I read Tom Jenkinson has built his entire career\nout of doing the unexpected.\nJack:\n ----\nMartin:\n No, not necessarily. I think he doesn’t want to\nrepeat himself or imitate his predecessors.\nJack:\n It must be really interesting and challenging for\nhim.",
-            options = listOf("A) I’m sure teenage girls are passionate fanYs of him.", "B) That sounds disappointing. Why bother to please\nothers?", "C) It is just the atmosphere of the scenes that makes\nhim so amazing.\nSdecide", "D) Does it mean that his all life is based on surprising\nthe others?", "E) Then, he must be really proud of himself.\nÖ\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) I’m sure teenage girls are passionate fanYs of him.", "B) That sounds disappointing. Why bother to please\nothers?", "C) It is just the atmosphere of the scenes that makes\nhim so amazing.\nSdecide", "D) Does it mean that his all life is based on surprising\nthe others?", "E) Then, he must be really proud of himself.\nÖ"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Diyalog"
@@ -1684,7 +1689,7 @@ object QuestionDataProvider {
         Question(
             id = 209,
             questionText = "(2014 Sonbahar / Soru 64)\nCeyhun:\n I haven’t been feeling very well for a long time.\nI’ve tried hard but cannot help feeling less and\nless happy.\nKemal:\n It sounds like depression. Maybe you need some\nMchanges in your life. Experts believe that living in\nthe country may be relaxing for your mind.\nCeyhun:\n ----\nKemal:\n I quite agree with you. I hope you’ll be alright\nsoon.",
-            options = listOf("A) Interesting, that makes sense. Perhaps I should now\nfocus more on my retirement and settling down in a\nvillage.", "B) Do you really think I’m going to suffer from\ndepression? I wonder whether you know any\npsychologists I can see.", "C) So that means living in the countryside will refresh\nme, as it may provide wonderful views. Yet, I can’t\nwhat to do.", "D) I’m not ready to give up my urban living. I suspect\nthose experts haven’t made an evidence-based\ncomparison of urban living and country living.", "E) It must be due to plenty of stress factors in cities.\nI’ve heard of many studies confirming the link\nbetween social strain and mental illness.\n15 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2014-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) Interesting, that makes sense. Perhaps I should now\nfocus more on my retirement and settling down in a\nvillage.", "B) Do you really think I’m going to suffer from\ndepression? I wonder whether you know any\npsychologists I can see.", "C) So that means living in the countryside will refresh\nme, as it may provide wonderful views. Yet, I can’t\nwhat to do.", "D) I’m not ready to give up my urban living. I suspect\nthose experts haven’t made an evidence-based\ncomparison of urban living and country living.", "E) It must be due to plenty of stress factors in cities.\nI’ve heard of many studies confirming the link\nbetween social strain and mental illness.\n15 Diğer sayfaya geçiniz.\n\n\n\n2014-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Diyalog"
@@ -1692,7 +1697,7 @@ object QuestionDataProvider {
         Question(
             id = 210,
             questionText = "(2014 Sonbahar / Soru 65)\nAllison:\n ----\nJill:\n I’d recommend you to study the latter since it is a\nlanguage spoken worldwide, with official status in\na great number of countries, holding the second\nplace only after English.\nAllison:\n Wow, I didn’t know that it had that many speakers\naround the world.\nJill:\n Yes, and besides, I think you will find it much\neasier considering you can also speak French,\nhaving an extensive amount of vocabulary in\ncommon.\nY",
-            options = listOf("A) I am so much interested in languages and linguistics\nthat I want to learn about the evolution of languages\nbut don’t know with what to start.", "B) My parents are going to support me if I plan to\npursue an academic career abroad. But I can’t\ndecide where to go to study.", "C) Do you have anyS idea which of the two is a more\nappropriate place for an international student: Brazil\nor Argentina?", "D) I was considering how it would be if I settled down in\na totally new country once I am done with the work\nand get retired.", "E) I have decided to take up learning a new foreign\nÖ\nlanguage but I’m finding it a bit confusing to choose\nbetween German and Spanish.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) I am so much interested in languages and linguistics\nthat I want to learn about the evolution of languages\nbut don’t know with what to start.", "B) My parents are going to support me if I plan to\npursue an academic career abroad. But I can’t\ndecide where to go to study.", "C) Do you have anyS idea which of the two is a more\nappropriate place for an international student: Brazil\nor Argentina?", "D) I was considering how it would be if I settled down in\na totally new country once I am done with the work\nand get retired.", "E) I have decided to take up learning a new foreign\nÖ\nlanguage but I’m finding it a bit confusing to choose\nbetween German and Spanish."),
             correctOptionIndex = 4,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Diyalog"
@@ -1700,7 +1705,7 @@ object QuestionDataProvider {
         Question(
             id = 211,
             questionText = "(2014 Sonbahar / Soru 66)\nYavuz:\n Did you ever think about how huge the Universe\nreally is? We’re merely one small part of an\nenormous system.\nEbru:\n No, I haven’t really given any thought to it.\nM\nYavuz:\n ----\nEbru:\n Oh, wow! That’s really fantastic. Tell me more.\nYavuz:\n I can’t remember much now, but soon I'll share\nwith you any information I learn.",
-            options = listOf("A) You probably haven’t thought about it before\nbecause you’ve never read much about this topic.", "B) Well, you really should think about it. Don’t you care\nabout the Universe?", "C) I don’t want to think about it anymore because it\nconfuses me a lot.", "D) Are you even listening to me? Please try to pay\nmore attention.", "E) Me neither, until I started taking this astronomy\ncourse. We’re learning a lot of interesting facts about\nouter space.\n16 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2014-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) You probably haven’t thought about it before\nbecause you’ve never read much about this topic.", "B) Well, you really should think about it. Don’t you care\nabout the Universe?", "C) I don’t want to think about it anymore because it\nconfuses me a lot.", "D) Are you even listening to me? Please try to pay\nmore attention.", "E) Me neither, until I started taking this astronomy\ncourse. We’re learning a lot of interesting facts about\nouter space.\n16 Diğer sayfaya geçiniz.\n\n\n\n2014-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Diyalog"
@@ -1708,7 +1713,7 @@ object QuestionDataProvider {
         Question(
             id = 212,
             questionText = "(2014 Sonbahar / Soru 67)\nDilek:\n Do you think the digital age will bring an end to\nlibraries?\nSelin:\n ----\nDilek:\n I never thought about it like that. So, you mean\nlibraries actually encourage the digital age.\nSelin:\n Exactly, the future offers hope by placing libraries\nin a broader context as key parts of the\ninformation society rather than just rooms full of\nbooks.",
-            options = listOf("A) I don’t know, but to my mind, using a mouse to\nY\ncontrol a cursor is as important as learning to\nunderstand letters on a page.", "B) I am not certain whether tomorrow’s libraries will be\nable to offer access to the shared space of the\nnetwork.", "C) Today, some libraries are being handed over to\nvoluntary groupsS or charities, so the answer of your\nquestions depends on their steps.", "D) Sooner or later, we’ll find ourselves at a point in time\nwhere the library will either become extinct or evolve\ninto something fitter for the modern age.", "E) Definitely not. For me, they offer a lot more than just\nbooks; they are information centres and the Internet\nÖ\naccess points for a wide community.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) I don’t know, but to my mind, using a mouse to\nY\ncontrol a cursor is as important as learning to\nunderstand letters on a page.", "B) I am not certain whether tomorrow’s libraries will be\nable to offer access to the shared space of the\nnetwork.", "C) Today, some libraries are being handed over to\nvoluntary groupsS or charities, so the answer of your\nquestions depends on their steps.", "D) Sooner or later, we’ll find ourselves at a point in time\nwhere the library will either become extinct or evolve\ninto something fitter for the modern age.", "E) Definitely not. For me, they offer a lot more than just\nbooks; they are information centres and the Internet\nÖ\naccess points for a wide community."),
             correctOptionIndex = 4,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Diyalog"
@@ -1724,7 +1729,7 @@ object QuestionDataProvider {
         Question(
             id = 214,
             questionText = "(2014 Sonbahar / Soru 69)\nWhen people suffer from difficulty in eating because\nof illness, they are advised to have concentrated\nliquid formulas since they are easily swallowed.",
-            options = listOf("A) As concentrated liquid formulas do not cause any\ndifficulty in swallowing, people who find it hard to eat\ndue to illness are advised to use them.", "B) Concentrated liquid formulas are very practical to\nswallow, so they are recommended to ill people,\nespecially those who have problems with eating.", "C) If a person cannot eat easily because of illness, he\nor she should have concentrated liquid formulas, as\nillness affects them immensely.", "D) Illness may cause difficulty in eating, but people can\novercome it using concentrated liquid formulas that\nare easy to swallow.", "E) Concentrated liquid formulas contribute a lot to\nsolving the problem of eating resulting from illness,\nas they are convenient for easy swallowing.\n17 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2014-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) As concentrated liquid formulas do not cause any\ndifficulty in swallowing, people who find it hard to eat\ndue to illness are advised to use them.", "B) Concentrated liquid formulas are very practical to\nswallow, so they are recommended to ill people,\nespecially those who have problems with eating.", "C) If a person cannot eat easily because of illness, he\nor she should have concentrated liquid formulas, as\nillness affects them immensely.", "D) Illness may cause difficulty in eating, but people can\novercome it using concentrated liquid formulas that\nare easy to swallow.", "E) Concentrated liquid formulas contribute a lot to\nsolving the problem of eating resulting from illness,\nas they are convenient for easy swallowing.\n17 Diğer sayfaya geçiniz.\n\n\n\n2014-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Dil Bilgisi"
@@ -1740,7 +1745,7 @@ object QuestionDataProvider {
         Question(
             id = 216,
             questionText = "(2014 Sonbahar / Soru 71)\nThe way that scientists compare colour vision in\ndifferent types of animals is by counting the colour\nphotoreceptors in their eyes.",
-            options = listOf("A) The colour vision of different animals can be\ncompared by counting their photoreceptors, a\nmethod put forward by many scientists.\nÖ", "B) There are many ways of comparing the colour vision\nof different animals, yet scientists are mainly using\none specific technique; counting the colour\nphotoreceptors in their eyes.", "C) In order to compare different animals’ colour vision,\nscientists count the colour photoreceptors in the\neyes of the animals.", "D) If anyone is interested in making a comparison\namong animals’ colour vision, they should count the\ncolour photoreceptors in their eyes.", "E) The colour photoreceptors in the eyes of different\nanimals give lots of information about their colour\nvision, according to the scientists.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) The colour vision of different animals can be\ncompared by counting their photoreceptors, a\nmethod put forward by many scientists.\nÖ", "B) There are many ways of comparing the colour vision\nof different animals, yet scientists are mainly using\none specific technique; counting the colour\nphotoreceptors in their eyes.", "C) In order to compare different animals’ colour vision,\nscientists count the colour photoreceptors in the\neyes of the animals.", "D) If anyone is interested in making a comparison\namong animals’ colour vision, they should count the\ncolour photoreceptors in their eyes.", "E) The colour photoreceptors in the eyes of different\nanimals give lots of information about their colour\nvision, according to the scientists."),
             correctOptionIndex = 2,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Dil Bilgisi"
@@ -1748,7 +1753,7 @@ object QuestionDataProvider {
         Question(
             id = 217,
             questionText = "(2014 Sonbahar / Soru 72)\nNo one on the planet is going to escape the effects\nof global warming and for billions the resulting\nenvironmental deterioration is going to make life\nco nsiderably more difficult. ---- The question is\nM\nwhether we will ever be able to achieve a worthwhile\ninternational consensus that allows us to do this\nwith any degree of effectiveness.",
-            options = listOf("A) Without US ratification, emissions from all the\nindustrial countries could rise significantly soon.", "B) It is too late now to put the clock back, but we can at\nleast attempt to reduce the worst impacts of global\nwarming.", "C) The more global warming continues to attract the\npublic attention, the closer we are to finding a\nsolution.", "D) The latter includes ways of using the oceans as a\ndumping ground for atmospheric carbon dioxide.", "E) In terms of greenhouse gas emissions, things are\ngetting steadily worse, not better.\n18 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2014-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) Without US ratification, emissions from all the\nindustrial countries could rise significantly soon.", "B) It is too late now to put the clock back, but we can at\nleast attempt to reduce the worst impacts of global\nwarming.", "C) The more global warming continues to attract the\npublic attention, the closer we are to finding a\nsolution.", "D) The latter includes ways of using the oceans as a\ndumping ground for atmospheric carbon dioxide.", "E) In terms of greenhouse gas emissions, things are\ngetting steadily worse, not better.\n18 Diğer sayfaya geçiniz.\n\n\n\n2014-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Paragraf"
@@ -1764,7 +1769,7 @@ object QuestionDataProvider {
         Question(
             id = 219,
             questionText = "(2014 Sonbahar / Soru 74)\nBetween 4000 and 2000 BC, the first urban\ncivilizations arose independently along the Tigris,\nthe Nile, the Indus and the Yellow River. All of these\ngreat rivers are prone to seasonal variations in flow,\nwith flood alternating with drought. ---- Once this\ntechnology was developed, farmers found that they\ncould move into drier areas, such as southern\nMesopotamia.\nÖ",
-            options = listOf("A) Archaeologists have found sites where one\nSumerian city was built on top of an earlier one,\nseparated by a layer of mud swept over in a flood.", "B) Although most humans lived in small hunting bands,\nsome pre-farming peoples worked out a very\ndifferent strategy of survival.", "C) To maximize agricultural production, it was\nnecessary to build dams to store the flood waters in\nreservoirs to water the fields during the dry season.", "D) Constructing such schemes required an accurate\ncalendar to predict when the floods would come, and\na high degree of social organization.", "E) It was here that first people first began to cultivate\ncrops, kick starting a global revolution in the way\nhumans live.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Archaeologists have found sites where one\nSumerian city was built on top of an earlier one,\nseparated by a layer of mud swept over in a flood.", "B) Although most humans lived in small hunting bands,\nsome pre-farming peoples worked out a very\ndifferent strategy of survival.", "C) To maximize agricultural production, it was\nnecessary to build dams to store the flood waters in\nreservoirs to water the fields during the dry season.", "D) Constructing such schemes required an accurate\ncalendar to predict when the floods would come, and\na high degree of social organization.", "E) It was here that first people first began to cultivate\ncrops, kick starting a global revolution in the way\nhumans live."),
             correctOptionIndex = 2,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -1772,7 +1777,7 @@ object QuestionDataProvider {
         Question(
             id = 220,
             questionText = "(2014 Sonbahar / Soru 75)\nIt was only about a century ago that Jules Verne\nfantasized about people travelling around the world\nin only 80 days. Much of what we take for granted\ntoday results from technology that has been\ndeveloped only within the last century. Before then,\nchange occurred slowly. ---- Travellers commonly fly\nfrom New York to London in six-and-a-half hours,\nanMd communications are almost instantaneous.",
-            options = listOf("A) Demand for new products, services and technology\nhas little impact on international transport.", "B) Moreover, the cost of improved communications and\ntransportation has risen more slowly than the speed\nof travel.", "C) But conducting business on an international level\ninvolves greater distances than it did in the previous\ncentury.", "D) Speed restrictions now make international business\nmore expensive to undertake.", "E) In recent years, however, the pace of technological\nhas accelerated at a fast rate.\n19 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2014-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) Demand for new products, services and technology\nhas little impact on international transport.", "B) Moreover, the cost of improved communications and\ntransportation has risen more slowly than the speed\nof travel.", "C) But conducting business on an international level\ninvolves greater distances than it did in the previous\ncentury.", "D) Speed restrictions now make international business\nmore expensive to undertake.", "E) In recent years, however, the pace of technological\nhas accelerated at a fast rate.\n19 Diğer sayfaya geçiniz.\n\n\n\n2014-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Paragraf"
@@ -1796,7 +1801,7 @@ object QuestionDataProvider {
         Question(
             id = 223,
             questionText = "(2014 Sonbahar / Soru 78)\n(I) Material that makes its way from short-term memory\nto long-term memory enters a storehouse of almost\nunlimited capacity. (II) Like a new file we save on a hard\ndrive, the information in the long-term memory is filled\nand coded so that we can retrieve it when we need it.\n(III) Repeating a word several times, for example, is a\npopular strategy to keep information in short-term\nmemory. (IV) Evidence of the existence of long-term\nmemory comes from a number of sources. (V) For\nexample, people with certain kinds of brain damage\nhave no lasting recall of new information after the\ndamage, although people and events stored in memory\nbefore the injury remain intact.",
-            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -1812,7 +1817,7 @@ object QuestionDataProvider {
         Question(
             id = 225,
             questionText = "(2014 Sonbahar / Soru 80)\n(I) Sand particles and dust from the roads make up a\nlarge proportion of air pollution. (II) The composition\nof household dust will vary from place to place, but it\nmostly consists of organic matter that naturally comes\noff people, pets, plants and anything else that lives in\nour homes. (III) The main components include human\nskin flakes, fibres from plants, clothing and furnishings,\nsmoke and oil droplets from cooking. (IV) Our hobbies\nalso add a personal signature to house dust.\n(V) Woodworkers have wood dust in their homes, cooks\nmake savoury dust, while readers produce papery\nparticles.",
-            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V\nTEST BİTTİ.\n20 CEVAPLARINIZI KONTROL EDİNİZ.\n\n=== COLUMN_SEPARATOR ===\n\nSINAVDA UYULACAK"),
+            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V\nTEST BİTTİ.\n20 CEVAPLARINIZI KONTROL EDİNİZ.\n\n\n\nSINAVDA UYULACAK"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Paragraf"
@@ -1836,7 +1841,7 @@ object QuestionDataProvider {
         Question(
             id = 228,
             questionText = "(2014 İlkbahar / Soru 3)\nWhen compared with petrol, hydrogen is ---- clean\nand does not produce carbon emissions when it is\nburned.",
-            options = listOf("A) severely", "B) fundamentally", "C) promptly", "D) gradually", "E) relatively\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) severely", "B) fundamentally", "C) promptly", "D) gradually", "E) relatively"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2014 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Kelime Bilgisi"
@@ -1884,7 +1889,7 @@ object QuestionDataProvider {
         Question(
             id = 234,
             questionText = "(2014 İlkbahar / Soru 9)\n---- by the Romans first and then by Arabs, Crete ----\nÖ\nby the Ottomans in the 17thcentury.",
-            options = listOf("A) Taking over / had been conquered", "B) Having been taken over / had conquered", "C) Having taken over / conquered", "D) Taken over / was conquered", "E) To be taken over / was being conquered\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Taking over / had been conquered", "B) Having been taken over / had conquered", "C) Having taken over / conquered", "D) Taken over / was conquered", "E) To be taken over / was being conquered"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2014 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Dil Bilgisi"
@@ -1932,7 +1937,7 @@ object QuestionDataProvider {
         Question(
             id = 240,
             questionText = "(2014 İlkbahar / Soru 16)\n---- children and older people, who suffer most of\ntheir unintentional injuries at home, young and\nmiddle-aged adults are often injured in the\nworkplace.",
-            options = listOf("A) In contrast to", "B) Instead of", "C) Due to", "D) Thanks to\nÖ", "E) In case of\n\n=== COLUMN_SEPARATOR ===\n\nM"),
+            options = listOf("A) In contrast to", "B) Instead of", "C) Due to", "D) Thanks to\nÖ", "E) In case of\n\n\n\nM"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2014 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Bağlaçlar"
@@ -1948,7 +1953,7 @@ object QuestionDataProvider {
         Question(
             id = 242,
             questionText = "(2014 İlkbahar / Soru 18)\n",
-            options = listOf("A) assessments", "B) prescriptions", "C) adoptions", "D) treatments", "E) indicators\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) assessments", "B) prescriptions", "C) adoptions", "D) treatments", "E) indicators"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2014 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Dil Bilgisi"
@@ -1972,7 +1977,7 @@ object QuestionDataProvider {
         Question(
             id = 245,
             questionText = "(2014 İlkbahar / Soru 23)\n",
-            options = listOf("A) Although", "B) Whereas", "C) If", "D) Whether", "E) Unless\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Although", "B) Whereas", "C) If", "D) Whether", "E) Unless"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2014 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Dil Bilgisi"
@@ -2020,7 +2025,7 @@ object QuestionDataProvider {
         Question(
             id = 251,
             questionText = "(2014 İlkbahar / Soru 29)\nEven if you learn only a few Turkish words as a\ntourist, ----.",
-            options = listOf("A) Turkey is as safe to visit as anywhere else in Europe", "B) you should check opening times before setting out\non any sightseeing expedition", "C) Turks will respect any attempt at their difficult\nlanguage", "D) many English language publications are available in\nmajor cities in Turkey", "E) public telephones will prompt you to select the\nlanguage of your choice\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Turkey is as safe to visit as anywhere else in Europe", "B) you should check opening times before setting out\non any sightseeing expedition", "C) Turks will respect any attempt at their difficult\nlanguage", "D) many English language publications are available in\nmajor cities in Turkey", "E) public telephones will prompt you to select the\nlanguage of your choice"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2014 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Bağlaçlar"
@@ -2068,7 +2073,7 @@ object QuestionDataProvider {
         Question(
             id = 257,
             questionText = "(2014 İlkbahar / Soru 35)\nAnger and sadness are an important part of life, ----.",
-            options = listOf("A) so you may not want to express how you feel to\nanother person", "B) as positive thoughts and emotions can boost\nself-esteem", "C) while unpleasant feelings are as crucial as enjoyable\nones", "D) although many people find it helpful to breathe\nslowly while learning to tolerate strong feelings", "E) and new research shows that experiencing such\nemotions are vital to our mental health\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) so you may not want to express how you feel to\nanother person", "B) as positive thoughts and emotions can boost\nself-esteem", "C) while unpleasant feelings are as crucial as enjoyable\nones", "D) although many people find it helpful to breathe\nslowly while learning to tolerate strong feelings", "E) and new research shows that experiencing such\nemotions are vital to our mental health"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2014 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Bağlaçlar"
@@ -2092,7 +2097,7 @@ object QuestionDataProvider {
         Question(
             id = 260,
             questionText = "(2014 İlkbahar / Soru 38)\nAdvanced data analysis is now on the verge of\nbreaking free of its confines in hospitals and\ncomputer labs and making its way into our daily\nlives.",
-            options = listOf("A) Gelişmiş veri analizi artık sınırlarından kurtulup\nhastanelerde ve bilgisayar laboratuvarlarında olduğu\ngibi günlük hayatımıza girmek üzere.\nÖ", "B) Hastanelerdeki ve bilgisayar laboratuvarlarındaki\nsınırlarından kurtuluyor olması, gelişmiş veri\nanalizinin artık günlük hayatımıza gireceğini\ngöstermekte.", "C) Gelişmiş veri analizi artık hastanelerdeki ve\nbilgisayar laboratuvarlarındaki sınırlarından kurtulup\ngünlük hayatımıza girmek üzere.", "D) Hastanelerdeki ve bilgisayar laboratuvarlarındaki\nsınırlarından kurtulan gelişmiş veri analizi artık\ngünlük hayatımıza girmek üzere.", "E) Günlük hayatımıza girmek üzere olan gelişmiş veri\nanalizi artık hastanelerdeki ve bilgisayar\nlaboratuvarlarındaki sınırlarından kurtuluyor.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Gelişmiş veri analizi artık sınırlarından kurtulup\nhastanelerde ve bilgisayar laboratuvarlarında olduğu\ngibi günlük hayatımıza girmek üzere.\nÖ", "B) Hastanelerdeki ve bilgisayar laboratuvarlarındaki\nsınırlarından kurtuluyor olması, gelişmiş veri\nanalizinin artık günlük hayatımıza gireceğini\ngöstermekte.", "C) Gelişmiş veri analizi artık hastanelerdeki ve\nbilgisayar laboratuvarlarındaki sınırlarından kurtulup\ngünlük hayatımıza girmek üzere.", "D) Hastanelerdeki ve bilgisayar laboratuvarlarındaki\nsınırlarından kurtulan gelişmiş veri analizi artık\ngünlük hayatımıza girmek üzere.", "E) Günlük hayatımıza girmek üzere olan gelişmiş veri\nanalizi artık hastanelerdeki ve bilgisayar\nlaboratuvarlarındaki sınırlarından kurtuluyor."),
             correctOptionIndex = 2,
             explanation = "Bu soru 2014 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Çeviri"
@@ -2124,7 +2129,7 @@ object QuestionDataProvider {
         Question(
             id = 264,
             questionText = "(2014 İlkbahar / Soru 42)\nToplumda bilime yönelik artan hayal kırıklığının\ntemel sebebi, bilimS insanlarının birbirleriyle sürekli\ntartıştıkları algısıdır.",
-            options = listOf("A) There has been considerable disappointment with\nscience in the public, as people think that scientists\nare always arguing with each other.", "B) The main reason for growing disappointment with\nscience in the public is the perception that scientists\nare always arguing with one another.\nÖ", "C) The fact that scientists are always arguing with one\nanother causes profound disappointment with\nscience in the public.", "D) The perception that scientists are always arguing\nwith each other can be a good reason for growing\ndisappointment with science in the public.", "E) Increasing disappointment with science in the public\nhas been mainly resulting from the thought that\nscientists are always arguing with one another.\n\n=== COLUMN_SEPARATOR ===\n\nM"),
+            options = listOf("A) There has been considerable disappointment with\nscience in the public, as people think that scientists\nare always arguing with each other.", "B) The main reason for growing disappointment with\nscience in the public is the perception that scientists\nare always arguing with one another.\nÖ", "C) The fact that scientists are always arguing with one\nanother causes profound disappointment with\nscience in the public.", "D) The perception that scientists are always arguing\nwith each other can be a good reason for growing\ndisappointment with science in the public.", "E) Increasing disappointment with science in the public\nhas been mainly resulting from the thought that\nscientists are always arguing with one another.\n\n\n\nM"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2014 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Çeviri"
@@ -2156,7 +2161,7 @@ object QuestionDataProvider {
         Question(
             id = 268,
             questionText = "(2014 İlkbahar / Soru 46)\nIt can be inferred from the passage that ----.",
-            options = listOf("A) removing the medical device from the body has\nbeen the scientists’ main concern", "B) inserting medical devices into the body may have\nharmful effects on people", "C) prototypes should first be tested on people for a\nperiod of time", "D) diagnosis and treatment of some diseases may be\neasier in the long run", "E) attempts to discover new methods of powering the\nimplants will probably fail\nDiğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2014-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) removing the medical device from the body has\nbeen the scientists’ main concern", "B) inserting medical devices into the body may have\nharmful effects on people", "C) prototypes should first be tested on people for a\nperiod of time", "D) diagnosis and treatment of some diseases may be\neasier in the long run", "E) attempts to discover new methods of powering the\nimplants will probably fail\nDiğer sayfaya geçiniz.\n\n\n\n2014-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2014 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -2188,7 +2193,7 @@ object QuestionDataProvider {
         Question(
             id = 272,
             questionText = "(2014 İlkbahar / Soru 50)\nOne can infer from the passage that ----.",
-            options = listOf("A) scientific protection projects often fail because\nscientists take into account financial interests", "B) it is the clash of interests that results in extensive\nenvironmental damage in most parts of the world", "C) it is highly challenging to take action to protect the\nnature due to various intervening conditions", "D) the nature can be protected even if governments,\nscientists and the public do not reach a compromise", "E) organized attempts to protect the environment have\nproved fruitful despite the challenges involved\nDiğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2014-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) scientific protection projects often fail because\nscientists take into account financial interests", "B) it is the clash of interests that results in extensive\nenvironmental damage in most parts of the world", "C) it is highly challenging to take action to protect the\nnature due to various intervening conditions", "D) the nature can be protected even if governments,\nscientists and the public do not reach a compromise", "E) organized attempts to protect the environment have\nproved fruitful despite the challenges involved\nDiğer sayfaya geçiniz.\n\n\n\n2014-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2014 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -2212,7 +2217,7 @@ object QuestionDataProvider {
         Question(
             id = 275,
             questionText = "(2014 İlkbahar / Soru 54)\nWhat is the main idea of the passage?",
-            options = listOf("A) Young population constitutes an opportunity for as\nwell as a threat to the economic development of\nAfrican countries.", "B) Having young population can mean achieving\neconomic prosperity in the future as seen in Africa.", "C) The realization of demographic dividend accounts\nfor the rapid economic growth in African countries.", "D) Although what East Asian countries did so as to\nboost their economies affected African politicians,\nthey have not made any attempts to do the same.", "E) African countries should follow the example of East\nAsia, as they have similar demographic profile.\nDiğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2014-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) Young population constitutes an opportunity for as\nwell as a threat to the economic development of\nAfrican countries.", "B) Having young population can mean achieving\neconomic prosperity in the future as seen in Africa.", "C) The realization of demographic dividend accounts\nfor the rapid economic growth in African countries.", "D) Although what East Asian countries did so as to\nboost their economies affected African politicians,\nthey have not made any attempts to do the same.", "E) African countries should follow the example of East\nAsia, as they have similar demographic profile.\nDiğer sayfaya geçiniz.\n\n\n\n2014-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2014 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Paragraf"
@@ -2244,7 +2249,7 @@ object QuestionDataProvider {
         Question(
             id = 279,
             questionText = "(2014 İlkbahar / Soru 58)\nOne can understand from the passage that ----.",
-            options = listOf("A) Gandhi owes his political influence mainly to his\nextraordinary aspirations", "B) Indian people were fascinated by the developments\nin the West", "C) Gandhi taught important lessons to other political\nfigures of his time", "D) whatever Gandhi proposed was accepted without\nbeing questioned", "E) relying on the participation of ordinary people in\npolitics can lead to productive results\nDiğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2014-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) Gandhi owes his political influence mainly to his\nextraordinary aspirations", "B) Indian people were fascinated by the developments\nin the West", "C) Gandhi taught important lessons to other political\nfigures of his time", "D) whatever Gandhi proposed was accepted without\nbeing questioned", "E) relying on the participation of ordinary people in\npolitics can lead to productive results\nDiğer sayfaya geçiniz.\n\n\n\n2014-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2014 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Paragraf"
@@ -2276,7 +2281,7 @@ object QuestionDataProvider {
         Question(
             id = 283,
             questionText = "(2014 İlkbahar / Soru 62)\nWhat could be the best title for the passage?",
-            options = listOf("A) Working with Stem Cells of Mice", "B) How to Grow Fingers", "C) Innovations in Biology and Medicine", "D) Stem Cells are Answer to Many Diseases", "E) Fingernails Point the Way to Regeneration\nDiğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2014-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) Working with Stem Cells of Mice", "B) How to Grow Fingers", "C) Innovations in Biology and Medicine", "D) Stem Cells are Answer to Many Diseases", "E) Fingernails Point the Way to Regeneration\nDiğer sayfaya geçiniz.\n\n\n\n2014-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2014 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Paragraf"
@@ -2292,7 +2297,7 @@ object QuestionDataProvider {
         Question(
             id = 285,
             questionText = "(2014 İlkbahar / Soru 64)\nFahri:\n The use of chemicals poses serious hazards to\nthe environment. It’s often the main cause of\nhabitat destruction.\nAydın:\n ----\nM\nFahri:\n Could you give me an example to support your\nclaim?\nAydın:\n Sure. Following World War II, chemicals were\nused to control agricultural pests, which\nincreased productivity and farmers' income.",
-            options = listOf("A) Significant fish kills have resulted from the legal\nof chemicals, such as the 1991 death of\nmore than one million fish in the US.", "B) Yes, I agree, but people have long been using a\nvariety of chemicals in a wide range of areas for\nsome benefits.", "C) While some ecological changes due to heavy use of\nchemicals have been documented, others remain\npoorly researched and understood.", "D) More and more chemicals have been pressed into\nuse in industry, but pollution arising from industrial\nsources can now be effectively prevented.", "E) When chemicals like insecticides reduce the insect\npopulations that comprise the diet of birds, this leads\nto dramatic population reductions.\nDiğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2014-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) Significant fish kills have resulted from the legal\nof chemicals, such as the 1991 death of\nmore than one million fish in the US.", "B) Yes, I agree, but people have long been using a\nvariety of chemicals in a wide range of areas for\nsome benefits.", "C) While some ecological changes due to heavy use of\nchemicals have been documented, others remain\npoorly researched and understood.", "D) More and more chemicals have been pressed into\nuse in industry, but pollution arising from industrial\nsources can now be effectively prevented.", "E) When chemicals like insecticides reduce the insect\npopulations that comprise the diet of birds, this leads\nto dramatic population reductions.\nDiğer sayfaya geçiniz.\n\n\n\n2014-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2014 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Diyalog"
@@ -2308,7 +2313,7 @@ object QuestionDataProvider {
         Question(
             id = 287,
             questionText = "(2014 İlkbahar / Soru 66)\nHakan:\n Do you think new technologies can have\nadditional benefits for us?\nGizem:\n ----\nHaMkan:\n Does this mean we can react more quickly to what\nwe read and improve our attention?\nGizem:\n Exactly. If we develop a better ability to scan large\namounts of information rapidly, we can\ndistinguish between what’s important and what\nisn’t.",
-            options = listOf("A) Some activities, such as sending e-mail or playing\nvideo games, are said to sharpen some cognitive\nabilities.", "B) We should take advantage of their efficiencies, but\nwe also need to maintain our skills unique to\nhumankind.", "C) Disadvantages can actually outweigh advantages,\nso we have to cope with negative aspects all the\ntime.", "D) It's proven that many people who have been working\non the Internet for several hours without a break\nreport making frequent errors.", "E) Well, in my opinion, our brains are not built to\nsustain monitoring for extended periods, and mental\nstress is threatening to become an epidemic.\nDiğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2014-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) Some activities, such as sending e-mail or playing\nvideo games, are said to sharpen some cognitive\nabilities.", "B) We should take advantage of their efficiencies, but\nwe also need to maintain our skills unique to\nhumankind.", "C) Disadvantages can actually outweigh advantages,\nso we have to cope with negative aspects all the\ntime.", "D) It's proven that many people who have been working\non the Internet for several hours without a break\nreport making frequent errors.", "E) Well, in my opinion, our brains are not built to\nsustain monitoring for extended periods, and mental\nstress is threatening to become an epidemic.\nDiğer sayfaya geçiniz.\n\n\n\n2014-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2014 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Diyalog"
@@ -2324,7 +2329,7 @@ object QuestionDataProvider {
         Question(
             id = 289,
             questionText = "(2014 İlkbahar / Soru 68)\nThere is some evidence that the way we handle\nstress and the way we are affected by it change with\nage.",
-            options = listOf("A) MAs we age, evidence can be found related to the way\nwe deal with and manage our stress levels.", "B) Evidence regarding age-related stress shows that\nour ability to deal with stress and its effects change\nover time.", "C) How we handle stress and how we deal with it\nchange according to the evidence related to age.", "D) As we get older, evidence suggests that how stress\naffects us and how we deal with it change.", "E) There is evidence to suggest that our ability to\nmanage stress and its effects worsens as we get\nolder.\nDiğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2014-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) MAs we age, evidence can be found related to the way\nwe deal with and manage our stress levels.", "B) Evidence regarding age-related stress shows that\nour ability to deal with stress and its effects change\nover time.", "C) How we handle stress and how we deal with it\nchange according to the evidence related to age.", "D) As we get older, evidence suggests that how stress\naffects us and how we deal with it change.", "E) There is evidence to suggest that our ability to\nmanage stress and its effects worsens as we get\nolder.\nDiğer sayfaya geçiniz.\n\n\n\n2014-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2014 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Dil Bilgisi"
@@ -2348,7 +2353,7 @@ object QuestionDataProvider {
         Question(
             id = 292,
             questionText = "(2014 İlkbahar / Soru 71)\nBird migration is similar to an extreme endurance\nsport, but even the most impressive human athletic\nefforts lose significance in comparison to it.",
-            options = listOf("A) No matter how excellent a human athlete can be in\nhis attempts in an extreme endurance sport, it\ncannot be likened in any way to bird migration.", "B) Even though migrating birds can be likened to\nhuman athletes in extreme endurance sports, the\nbest athletes prove to be far superior to birds.", "C) Both bird migration and human athletic activities are\nsimilar in that the best examples in both cases are\nvery impressive.", "D) An extreme endurance sport endeavour is\ncomparable to bird migration; however, its most\nextraordinary instances go beyond it in comparison.", "E) Bird migration is akin to an extreme endurance\nsport; nevertheless, no matter how remarkable they\nare, human sports activities fall behind when\ncompared to it.\nDiğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2014-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) No matter how excellent a human athlete can be in\nhis attempts in an extreme endurance sport, it\ncannot be likened in any way to bird migration.", "B) Even though migrating birds can be likened to\nhuman athletes in extreme endurance sports, the\nbest athletes prove to be far superior to birds.", "C) Both bird migration and human athletic activities are\nsimilar in that the best examples in both cases are\nvery impressive.", "D) An extreme endurance sport endeavour is\ncomparable to bird migration; however, its most\nextraordinary instances go beyond it in comparison.", "E) Bird migration is akin to an extreme endurance\nsport; nevertheless, no matter how remarkable they\nare, human sports activities fall behind when\ncompared to it.\nDiğer sayfaya geçiniz.\n\n\n\n2014-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2014 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Dil Bilgisi"
@@ -2380,7 +2385,7 @@ object QuestionDataProvider {
         Question(
             id = 296,
             questionText = "(2014 İlkbahar / Soru 75)\nCaring for the young may delay ageing in the brain.\nGro Amdam, who studies ageing in bees at Arizona\nState University, observed improvements in\ncognition among older bees that turn their attention\nback to nursing. ---- Amdam’s theory is that when\nolder individuals participate in tasks typically\nhandled by a younger generation – whether in a hive\nor in our own society – antioxidant levels increase in\nthe brain, which slows the ageing process.",
-            options = listOf("A) This change in social behaviour could help the\nhuman brain as well.", "B) In a bee colony, there is a perfect distribution of\nduties, leaving no room for any delay in ageing.", "C) However, changing social roles can have negative\nimpact on both the young and the old.", "D) It is essential that we try and keep our brain young at\nany cost.", "E) The study is subject to serious criticism, as bees and\nhumans are very different species.\nDiğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2014-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) This change in social behaviour could help the\nhuman brain as well.", "B) In a bee colony, there is a perfect distribution of\nduties, leaving no room for any delay in ageing.", "C) However, changing social roles can have negative\nimpact on both the young and the old.", "D) It is essential that we try and keep our brain young at\nany cost.", "E) The study is subject to serious criticism, as bees and\nhumans are very different species.\nDiğer sayfaya geçiniz.\n\n\n\n2014-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2014 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Paragraf"
@@ -2418,8 +2423,10 @@ object QuestionDataProvider {
             category = "Paragraf"
         )
     )
+}
 
-    private val chunk3 = listOf(
+object QuestionChunk3 {
+    val list = listOf(
         Question(
             id = 301,
             questionText = "(2015 Sonbahar / Soru 1)\nThe total amount of military ---- by all the countries\nof the world in 2010 was $1.63 trillion, which is\nequivalent to $236 for every person on the planet.",
@@ -2439,7 +2446,7 @@ object QuestionDataProvider {
         Question(
             id = 303,
             questionText = "(2015 Sonbahar / Soru 3)\nToday, contagious diseases rarely kill in developed\ncountries, where improvements in sanitation and\nnutrition have ---- reduced premature deaths.",
-            options = listOf("A) favourably", "B) separately", "C) significantly", "D) dangerously", "E) cautiously\n\n=== COLUMN_SEPARATOR ===\n\nTESTİ"),
+            options = listOf("A) favourably", "B) separately", "C) significantly", "D) dangerously", "E) cautiously\n\n\n\nTESTİ"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Kelime Bilgisi"
@@ -2455,7 +2462,7 @@ object QuestionDataProvider {
         Question(
             id = 305,
             questionText = "(2015 Sonbahar / Soru 6)\nBlood type has been linked with a variety of mental\ndisorders, but associations are weak; many other\nfactors are more important in determining who ---- a\nparticular illness.",
-            options = listOf("A) runs out of", "B) ends up with", "C) makes up for", "D) gets back to", "E) cuts down on\n1 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) runs out of", "B) ends up with", "C) makes up for", "D) gets back to", "E) cuts down on\n1 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Kelime Bilgisi"
@@ -2479,7 +2486,7 @@ object QuestionDataProvider {
         Question(
             id = 308,
             questionText = "(2015 Sonbahar / Soru 9)\nMany advanced nations ---- space exploration, and\nplans are under way ---- a human presence on Mars.",
-            options = listOf("A) begin / seeing", "B) have begun / to see", "C) are beginning / to have seen", "D) began / being seen", "E) had begun / having seen\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) begin / seeing", "B) have begun / to see", "C) are beginning / to have seen", "D) began / being seen", "E) had begun / having seen"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Dil Bilgisi"
@@ -2511,7 +2518,7 @@ object QuestionDataProvider {
         Question(
             id = 312,
             questionText = "(2015 Sonbahar / Soru 13)\n---- the 50-second silent film Train Pulling Into A\nStation was first shown in 1895, people were so\nterrified by the locomotive racing towards them that\nthey hurried to the back of the theatre.",
-            options = listOf("A) Before", "B) Although", "C) Since", "D) When", "E) As if\n2 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) Before", "B) Although", "C) Since", "D) When", "E) As if\n2 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Bağlaçlar"
@@ -2535,7 +2542,7 @@ object QuestionDataProvider {
         Question(
             id = 315,
             questionText = "(2015 Sonbahar / Soru 16)\nOne way to reduce the negative impact people have\non the environment is to make sure that as much\ngarbage as possible is recycled ---- being put in a\nlandfill.",
-            options = listOf("A) because of", "B) in terms of", "C) for the sake of", "D) instead of\nÖ", "E) in case of\n\n=== COLUMN_SEPARATOR ===\n\nM\n3 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) because of", "B) in terms of", "C) for the sake of", "D) instead of\nÖ", "E) in case of\n\n\n\nM\n3 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Bağlaçlar"
@@ -2559,7 +2566,7 @@ object QuestionDataProvider {
         Question(
             id = 318,
             questionText = "(2015 Sonbahar / Soru 19)\n",
-            options = listOf("A) incorporate", "B) rehearse", "C) convert", "D) threaten", "E) review\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) incorporate", "B) rehearse", "C) convert", "D) threaten", "E) review"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Dil Bilgisi"
@@ -2575,7 +2582,7 @@ object QuestionDataProvider {
         Question(
             id = 320,
             questionText = "(2015 Sonbahar / Soru 21)\n",
-            options = listOf("A) in", "B) on", "C) off", "D) with", "E) from\n4 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) in", "B) on", "C) off", "D) with", "E) from\n4 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Dil Bilgisi"
@@ -2591,7 +2598,7 @@ object QuestionDataProvider {
         Question(
             id = 322,
             questionText = "(2015 Sonbahar / Soru 23)\n",
-            options = listOf("A) instead of", "B) except for", "C) due to", "D) in spite of", "E) in contrast with\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) instead of", "B) except for", "C) due to", "D) in spite of", "E) in contrast with"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Dil Bilgisi"
@@ -2615,7 +2622,7 @@ object QuestionDataProvider {
         Question(
             id = 325,
             questionText = "(2015 Sonbahar / Soru 28)\nIn order to analyze the light reflected from Earth, ----.\nS",
-            options = listOf("A) a team of astronomers used a very large telescope in\nChile", "B) some of the light reaches the Moon and is again\nreflected, known as 'Earthshine'", "C) it may be a while before astronomers are able to do\nthat\nÖ", "D) a number of new planets have been discovered so far\nwith the help of new space telescopes", "E) the light reflected from these distant worlds is too faint\nto be analyzed by today’s telescopes\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) a team of astronomers used a very large telescope in\nChile", "B) some of the light reaches the Moon and is again\nreflected, known as 'Earthshine'", "C) it may be a while before astronomers are able to do\nthat\nÖ", "D) a number of new planets have been discovered so far\nwith the help of new space telescopes", "E) the light reflected from these distant worlds is too faint\nto be analyzed by today’s telescopes"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Bağlaçlar"
@@ -2631,7 +2638,7 @@ object QuestionDataProvider {
         Question(
             id = 327,
             questionText = "(2015 Sonbahar / Soru 30)\nAlthough the role of diet and nutrition in human\nevolution has generally come under the scope\nof anthropology, ----.",
-            options = listOf("A) the subject has also been of great interest to scholars\nin many other disciplines", "B) 'nutriture' is the state resulting from the balance\nbetween supply of nutrition and the expenditure of the\norganism", "C) it is the nutrients that are necessary for all of our\nbodily functions", "D) it is a fact that modern humans require some 40 to 50\nnutrients for proper health", "E) diet and nutrition are central to an understanding of\nthe evolutionary journey of humankind\n6 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) the subject has also been of great interest to scholars\nin many other disciplines", "B) 'nutriture' is the state resulting from the balance\nbetween supply of nutrition and the expenditure of the\norganism", "C) it is the nutrients that are necessary for all of our\nbodily functions", "D) it is a fact that modern humans require some 40 to 50\nnutrients for proper health", "E) diet and nutrition are central to an understanding of\nthe evolutionary journey of humankind\n6 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Bağlaçlar"
@@ -2647,7 +2654,7 @@ object QuestionDataProvider {
         Question(
             id = 329,
             questionText = "(2015 Sonbahar / Soru 32)\nParticularly important to the marketer is knowledge\nof the philosophies of all major political parties\nwithin a country ----.",
-            options = listOf("A) since any of them, when in power, might change the\nconsumption patterns of the public\nS", "B) as the historical direction each minor party is likely to\ntake is unpredictable", "C) no matter how one tends to be more restrictive\nregarding foreign trade than the others", "D) so that one party sometimes changes its membership\ncriteria\nÖ", "E) although the doctrines of opposing parties have an\ninfluence on the direction of the policy\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) since any of them, when in power, might change the\nconsumption patterns of the public\nS", "B) as the historical direction each minor party is likely to\ntake is unpredictable", "C) no matter how one tends to be more restrictive\nregarding foreign trade than the others", "D) so that one party sometimes changes its membership\ncriteria\nÖ", "E) although the doctrines of opposing parties have an\ninfluence on the direction of the policy"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Bağlaçlar"
@@ -2671,7 +2678,7 @@ object QuestionDataProvider {
         Question(
             id = 332,
             questionText = "(2015 Sonbahar / Soru 35)\n----, it is not the only incentive that drives people to\ntake certain decisions.",
-            options = listOf("A) Whereas most shoppers decline monetary rewards in\nfear of being ripped off", "B) As men and women spend more and more time for\ntheir appearance", "C) Although money plays an important part in economic\nactivity", "D) Unless people are encouraged to save and invest\nmore of their income", "E) As if it were possible to entice customers with special\noffers\n7 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) Whereas most shoppers decline monetary rewards in\nfear of being ripped off", "B) As men and women spend more and more time for\ntheir appearance", "C) Although money plays an important part in economic\nactivity", "D) Unless people are encouraged to save and invest\nmore of their income", "E) As if it were possible to entice customers with special\noffers\n7 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Bağlaçlar"
@@ -2679,7 +2686,7 @@ object QuestionDataProvider {
         Question(
             id = 333,
             questionText = "(2015 Sonbahar / Soru 36)\nIn tropical grassland or savanna areas, trees may be\nfound frequently, ----.",
-            options = listOf("A) but savanna grasslands are located between humid\ntropical regions and dry deserts", "B) whereas temperate or semitropical grassland areas\nhave very little tree growth", "C) since hot summers and limited precipitation allow for\nvery short growth periods of vegetation", "D) because temperate grasslands are an important\nresource for plant-eating animals", "E) and therefore vast areas of this type of grassland are\nnot covered by trees\nYdüşünüldüğü\nS\nÖ\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) but savanna grasslands are located between humid\ntropical regions and dry deserts", "B) whereas temperate or semitropical grassland areas\nhave very little tree growth", "C) since hot summers and limited precipitation allow for\nvery short growth periods of vegetation", "D) because temperate grasslands are an important\nresource for plant-eating animals", "E) and therefore vast areas of this type of grassland are\nnot covered by trees\nYdüşünüldüğü\nS\nÖ"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Bağlaçlar"
@@ -2695,7 +2702,7 @@ object QuestionDataProvider {
         Question(
             id = 335,
             questionText = "(2015 Sonbahar / Soru 38)\nViolence prevention strategies can work through\nchanging individual behaviour, the environment or\nthe law.",
-            options = listOf("A) Şiddeti önleme yöntemleri; bireysel davranışı, çevreyi\nveya kanunu değiştirerek işe yarayabilir.", "B) Şiddeti önleme yöntemleri; bireysel davranışın,\nçevrenin veya kanunun değiştirilmesiyle fayda sağlar.", "C) Bireysel davranışı, çevreyi veya kanunu değiştirmek,\nşiddeti önleme yöntemlerine katkıda bulunabilir.", "D) Bireysel davranışın çevre veya kanun aracılığıyla\ndeğiştirilmesi, şiddeti önleme yöntemlerini işe yarar\nhâle getirebilir.", "E) Şiddeti önleme yöntemleri, çevre veya kanunun\netkisiyle bireysel davranışı değiştirebilir.\n8 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) Şiddeti önleme yöntemleri; bireysel davranışı, çevreyi\nveya kanunu değiştirerek işe yarayabilir.", "B) Şiddeti önleme yöntemleri; bireysel davranışın,\nçevrenin veya kanunun değiştirilmesiyle fayda sağlar.", "C) Bireysel davranışı, çevreyi veya kanunu değiştirmek,\nşiddeti önleme yöntemlerine katkıda bulunabilir.", "D) Bireysel davranışın çevre veya kanun aracılığıyla\ndeğiştirilmesi, şiddeti önleme yöntemlerini işe yarar\nhâle getirebilir.", "E) Şiddeti önleme yöntemleri, çevre veya kanunun\netkisiyle bireysel davranışı değiştirebilir.\n8 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Çeviri"
@@ -2711,7 +2718,7 @@ object QuestionDataProvider {
         Question(
             id = 337,
             questionText = "(2015 Sonbahar / Soru 40)\nBirleşik Devletler’dSe 2007 yılında başlayan mali\nkrizden bu yana sağlık kurumları ciddi bütçe\nkesintilerine uğradı.",
-            options = listOf("A) Health institutions have suffered serious budget cuts\nsince the financial crisis that began in the US in 2007.", "B) The financial crisis that began in the US in 2007 has\ncaused health institutions to suffer from serious\nÖbudget cuts.", "C) The reason why health institutions have been suffering\nfrom serious budget cuts is the financial crisis that\nbegan in the US in 2007.", "D) Serious budget cuts, which have been experienced by\nhealth institutions since the financial crisis that began\nin the US in 2007, cause them to suffer.", "E) Health institutions have been suffering from serious\nbudget cuts caused by the financial crisis that began\nin the US in 2007.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Health institutions have suffered serious budget cuts\nsince the financial crisis that began in the US in 2007.", "B) The financial crisis that began in the US in 2007 has\ncaused health institutions to suffer from serious\nÖbudget cuts.", "C) The reason why health institutions have been suffering\nfrom serious budget cuts is the financial crisis that\nbegan in the US in 2007.", "D) Serious budget cuts, which have been experienced by\nhealth institutions since the financial crisis that began\nin the US in 2007, cause them to suffer.", "E) Health institutions have been suffering from serious\nbudget cuts caused by the financial crisis that began\nin the US in 2007."),
             correctOptionIndex = 0,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Çeviri"
@@ -2719,7 +2726,7 @@ object QuestionDataProvider {
         Question(
             id = 338,
             questionText = "(2015 Sonbahar / Soru 42)\nCan sıkıntısı, esnemeye yol açar ve bu da akciğerleri\nçevreleyen kasları gererek veya beyne daha fazla\noksijen taşıyarak uyanık kalmamızı sağlar.",
-            options = listOf("A) When boredom causes us to yawn, the muscles\naround the lungs stretch or more oxygen is brought to\nthe brain, which makes us feel awake.", "B) Yawning, which may be caused by boredom, makes\nus feel awake by stretching the muscles surrounding\nthe lungs or bringing more oxygen to the brain.", "C) Boredom leads to yawning, and this makes us feel\nawake by stretching the muscles surrounding the\nlungs or bringing more oxygen to the brain.", "D) Stretching the muscles around the lungs or bringing\nmore oxygen to the brain, yawning, if caused by\nboredom, makes us feel awake.", "E) When bored, yawning makes us feel awake by\nstretching the muscles surrounding the lungs or\nbringing more oxygen to the brain.\n9 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) When boredom causes us to yawn, the muscles\naround the lungs stretch or more oxygen is brought to\nthe brain, which makes us feel awake.", "B) Yawning, which may be caused by boredom, makes\nus feel awake by stretching the muscles surrounding\nthe lungs or bringing more oxygen to the brain.", "C) Boredom leads to yawning, and this makes us feel\nawake by stretching the muscles surrounding the\nlungs or bringing more oxygen to the brain.", "D) Stretching the muscles around the lungs or bringing\nmore oxygen to the brain, yawning, if caused by\nboredom, makes us feel awake.", "E) When bored, yawning makes us feel awake by\nstretching the muscles surrounding the lungs or\nbringing more oxygen to the brain.\n9 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Çeviri"
@@ -2727,7 +2734,7 @@ object QuestionDataProvider {
         Question(
             id = 339,
             questionText = "(2015 Sonbahar / Soru 43)\nThe research conducted by Rucker and Galinsky\nrevealed that ----.",
-            options = listOf("A) those with feelings of low status were not satisfied with\ntheir investments\nÖ", "B) those who felt powerful gave a high amount of money\nfor luxury products", "C) manipulating people's feelings of status led them to\npay reasonable amounts of money for certain products", "D) there is a connection between the feelings of low\nstatus and the tendency to pay more", "E) having felt either powerful or powerless, subjects were\nequally extravagant\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) those with feelings of low status were not satisfied with\ntheir investments\nÖ", "B) those who felt powerful gave a high amount of money\nfor luxury products", "C) manipulating people's feelings of status led them to\npay reasonable amounts of money for certain products", "D) there is a connection between the feelings of low\nstatus and the tendency to pay more", "E) having felt either powerful or powerless, subjects were\nequally extravagant"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -2751,7 +2758,7 @@ object QuestionDataProvider {
         Question(
             id = 342,
             questionText = "(2015 Sonbahar / Soru 46)\nThe passage mainly focuses on the ----.",
-            options = listOf("A) reasons why high status is associated with expensive\ngoods", "B) contradiction between different studies on feelings of\nlow status", "C) relation between people's status and their investment\nstrategies", "D) healthy size choices of people to combat feelings of\ninferiority", "E) effects of manipulating people's feelings of low status\n10 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) reasons why high status is associated with expensive\ngoods", "B) contradiction between different studies on feelings of\nlow status", "C) relation between people's status and their investment\nstrategies", "D) healthy size choices of people to combat feelings of\ninferiority", "E) effects of manipulating people's feelings of low status\n10 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Paragraf"
@@ -2775,7 +2782,7 @@ object QuestionDataProvider {
         Question(
             id = 345,
             questionText = "(2015 Sonbahar / Soru 50)\nThe author's attitude towards palm oil plantation is\n----.",
-            options = listOf("A) tolerant", "B) superficial", "C) impartial", "D) disapproving", "E) favouring\n11 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) tolerant", "B) superficial", "C) impartial", "D) disapproving", "E) favouring\n11 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -2783,7 +2790,7 @@ object QuestionDataProvider {
         Question(
             id = 346,
             questionText = "(2015 Sonbahar / Soru 51)\nAccording to the passage, the decision made by the\nInternational Court of Justice ----.",
-            options = listOf("A) seems to satisfy whale researcher Phillip Clapham's\nconcerns\nÖ", "B) may lead Japan to hunt whales in places other than\nAntarctica", "C) will not be effective in the long-term", "D) contradicts the ban imposed by the International\nWhaling Commission", "E) has caused great controversy among critics\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) seems to satisfy whale researcher Phillip Clapham's\nconcerns\nÖ", "B) may lead Japan to hunt whales in places other than\nAntarctica", "C) will not be effective in the long-term", "D) contradicts the ban imposed by the International\nWhaling Commission", "E) has caused great controversy among critics"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -2807,7 +2814,7 @@ object QuestionDataProvider {
         Question(
             id = 349,
             questionText = "(2015 Sonbahar / Soru 54)\nWhat could be the best title for the passage?",
-            options = listOf("A) International Competition for Hunting Whales", "B) UN's Efforts to Deter Japan from Hunting Whales", "C) Unacceptable Whale Hunting by Japan", "D) Protection of Endangered Whale Species", "E) Japan's Contribution to Research on Whales\n12 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) International Competition for Hunting Whales", "B) UN's Efforts to Deter Japan from Hunting Whales", "C) Unacceptable Whale Hunting by Japan", "D) Protection of Endangered Whale Species", "E) Japan's Contribution to Research on Whales\n12 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -2815,7 +2822,7 @@ object QuestionDataProvider {
         Question(
             id = 350,
             questionText = "(2015 Sonbahar / Soru 55)\nAccording to the information at the end of the\npassage, which of the following questions can\neasily be answered?\nÖ",
-            options = listOf("A) What do we mean by vegetarianism in broad terms?", "B) Why do people become vegetarian?", "C) Why is it difficult to calculate the extent of\nvegetarianism?", "D) Is there an increase in the number of vegetarians\nacross the world?", "E) Which countries have the highest proportions of\nvegetarians?\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) What do we mean by vegetarianism in broad terms?", "B) Why do people become vegetarian?", "C) Why is it difficult to calculate the extent of\nvegetarianism?", "D) Is there an increase in the number of vegetarians\nacross the world?", "E) Which countries have the highest proportions of\nvegetarians?"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -2839,7 +2846,7 @@ object QuestionDataProvider {
         Question(
             id = 353,
             questionText = "(2015 Sonbahar / Soru 58)\nIt can be inferred from the passage that ----.",
-            options = listOf("A) different types of vegetarians have different\napproaches towards the concept of vegetarianism", "B) animal mistreatment, especially of hens and calves, is\na crucial issue discussed by all vegetarians", "C) fish is preferred as an alternative by all vegetarians\nwhen they refuse to eat any other animal flesh", "D) vegetarianism no longer draws attention in many\ncountries such as the United States", "E) all vegetarians hardly eat any animal products except\nfor egg, whether free-range or not\n13 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) different types of vegetarians have different\napproaches towards the concept of vegetarianism", "B) animal mistreatment, especially of hens and calves, is\na crucial issue discussed by all vegetarians", "C) fish is preferred as an alternative by all vegetarians\nwhen they refuse to eat any other animal flesh", "D) vegetarianism no longer draws attention in many\ncountries such as the United States", "E) all vegetarians hardly eat any animal products except\nfor egg, whether free-range or not\n13 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Paragraf"
@@ -2847,7 +2854,7 @@ object QuestionDataProvider {
         Question(
             id = 354,
             questionText = "(2015 Sonbahar / Soru 59)\nAccording to the passage, Egypt's Old Kingdom ----.",
-            options = listOf("A) was a wealthy state with centralized governance\nheaded by pharaohs", "B) deemed that prosperity and strong centralization were\nÖmore important than stability", "C) fell long before the era when the pyramids were built", "D) ruled during a period when people were free to\nworship their own gods", "E) effectively separated religious affairs from political\nones\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) was a wealthy state with centralized governance\nheaded by pharaohs", "B) deemed that prosperity and strong centralization were\nÖmore important than stability", "C) fell long before the era when the pyramids were built", "D) ruled during a period when people were free to\nworship their own gods", "E) effectively separated religious affairs from political\nones"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Paragraf"
@@ -2871,7 +2878,7 @@ object QuestionDataProvider {
         Question(
             id = 357,
             questionText = "(2015 Sonbahar / Soru 62)\nWhat can be inferred from the passage about\nEgypt's Old Kingdom?",
-            options = listOf("A) Stability was achieved through democratic rule despite\nthe relative lack of prosperity.", "B) Stability was negatively affected by the highly powerful\nposition of the pharaohs.", "C) It was difficult for the rulers to combine social, religious\nand political aspects of life in the Old Kingdom.", "D) The figure of pharoah was central in designing every\naspect of life.", "E) To the pharaohs, religion was less significant than\nprosperity and centralization in the Old Kingdom.\n14 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) Stability was achieved through democratic rule despite\nthe relative lack of prosperity.", "B) Stability was negatively affected by the highly powerful\nposition of the pharaohs.", "C) It was difficult for the rulers to combine social, religious\nand political aspects of life in the Old Kingdom.", "D) The figure of pharoah was central in designing every\naspect of life.", "E) To the pharaohs, religion was less significant than\nprosperity and centralization in the Old Kingdom.\n14 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -2879,7 +2886,7 @@ object QuestionDataProvider {
         Question(
             id = 358,
             questionText = "(2015 Sonbahar / Soru 63)\nMurat:\n Why is it easier to speak using gestures?\nTaylan:\n Well, speaking without gesturing requires more\nthought.\nMurat:\n ----\nTaylan:\n Exactly. For instance, pointing to keys on the table\nand saying “The keys are there.” is much faster\nand simpler than saying, “Your keys are right\nbehind you on the table, next to the book.”\nY",
-            options = listOf("A) Do you mean a lot more words are needed to convey\nyour message?", "B) So we need to read more on the neurological link\nbetween speech and gesture.", "C) But some people still insist on verbalising their\nthoughts even if they use body language.\nSin", "D) Do you think gesturing should be used only when one\nis short of words?", "E) I believe one needs to think in depth before he or she\nspeaks.\nÖ\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Do you mean a lot more words are needed to convey\nyour message?", "B) So we need to read more on the neurological link\nbetween speech and gesture.", "C) But some people still insist on verbalising their\nthoughts even if they use body language.\nSin", "D) Do you think gesturing should be used only when one\nis short of words?", "E) I believe one needs to think in depth before he or she\nspeaks.\nÖ"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Diyalog"
@@ -2887,7 +2894,7 @@ object QuestionDataProvider {
         Question(
             id = 359,
             questionText = "(2015 Sonbahar / Soru 64)\nHüseyin:\n What do you think about going to Russia for the\nsummer holiday?\nGülsüm:\n I've always wanted to visit St. Petersburg. It's a\nbeautiful city that has inspired artists, writers,\ncMomposers and thinkers for hundreds of years.\nHüseyin:\n ----\nGülsüm:\n Yes, it's everything a culture lover could dream of.\nWe could also visit dozens of palaces and over\n200 museums. Please, let's go there.",
-            options = listOf("A) From May through the end of July, they have a\ncelebration featuring opera, classical music, and of\ncourse, the ballet.", "B) I don't know. I was actually planning to go on a\ncamping holiday. Being in the countryside is what\nexcites me. You know, mountains, lakes, forests and\nplenty of fresh air.", "C) The Trans-Siberian Railway is the longest railway in\nthe world, and we can take it all the way from Moscow\nthe west, to the seaport of Vladivostok in the east.", "D) Russia makes me think of deep snow and frigid\ntemperatures, but in the summer we could enjoy the\nnatural beauty of the countryside and the warm\nsunshine.", "E) Russia spans eleven different time zones, so you can\neasily see how big the country actually is and it has\nsuch a diverse mixture of different cultures.\n15 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) From May through the end of July, they have a\ncelebration featuring opera, classical music, and of\ncourse, the ballet.", "B) I don't know. I was actually planning to go on a\ncamping holiday. Being in the countryside is what\nexcites me. You know, mountains, lakes, forests and\nplenty of fresh air.", "C) The Trans-Siberian Railway is the longest railway in\nthe world, and we can take it all the way from Moscow\nthe west, to the seaport of Vladivostok in the east.", "D) Russia makes me think of deep snow and frigid\ntemperatures, but in the summer we could enjoy the\nnatural beauty of the countryside and the warm\nsunshine.", "E) Russia spans eleven different time zones, so you can\neasily see how big the country actually is and it has\nsuch a diverse mixture of different cultures.\n15 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Diyalog"
@@ -2895,7 +2902,7 @@ object QuestionDataProvider {
         Question(
             id = 360,
             questionText = "(2015 Sonbahar / Soru 65)\nCansu:\n In the article I’ve been reading, it says we’re closer\nto either our mother or our father. Which is true\nfor you?\nErkan:\n ----\nCansu:\n What do you mean by that?\nErkan:\n Well, until I was 18, I was closer to my mother, but\nas I got older, I felt more empathy with my father.",
-            options = listOf("A) Well, the generation gap is a key factor that illustrates\nit best.", "B) As I’m getting older and older, my expectations from\nY\nboth of them change.", "C) I think it depends on what stage a person is at in his or\nher life.", "D) Both mother and father have the same responsibilities\nwhile raising their children.", "E) I don’t think childSren usually make a preference\nbetween their mother and father.\nÖ\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Well, the generation gap is a key factor that illustrates\nit best.", "B) As I’m getting older and older, my expectations from\nY\nboth of them change.", "C) I think it depends on what stage a person is at in his or\nher life.", "D) Both mother and father have the same responsibilities\nwhile raising their children.", "E) I don’t think childSren usually make a preference\nbetween their mother and father.\nÖ"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Diyalog"
@@ -2903,7 +2910,7 @@ object QuestionDataProvider {
         Question(
             id = 361,
             questionText = "(2015 Sonbahar / Soru 66)\nHarun:\n– Have you ever heard about the companies that use\n'multisensory' marketing?\nGizem:\n– ----\nHaMrun:\n– Not exactly. They want to have not only the right\nlook for their products but also the right sounds,\nsmell, taste, and touch.\nGizem:\n– Now, I see your point. Coffee shops are a good\nexample, right? They have a particular style of\nmusic that they play in their stores as well as\ncertain aromas and flavours.",
-            options = listOf("A) Companies using multisensory marketing! Are they\nthe ones that sell multifunctional products?", "B) It's a complex issue which I only partially understand. I\nhaven't read enough about it.", "C) Well, I visited one last week and it was really amazing.\nWhat do you know about them?", "D) Really? I haven't heard about them yet. Can you\nexplain what you mean?", "E) Of course. One of my friends has started up such a\ncompany.\n16 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) Companies using multisensory marketing! Are they\nthe ones that sell multifunctional products?", "B) It's a complex issue which I only partially understand. I\nhaven't read enough about it.", "C) Well, I visited one last week and it was really amazing.\nWhat do you know about them?", "D) Really? I haven't heard about them yet. Can you\nexplain what you mean?", "E) Of course. One of my friends has started up such a\ncompany.\n16 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Diyalog"
@@ -2911,7 +2918,7 @@ object QuestionDataProvider {
         Question(
             id = 362,
             questionText = "(2015 Sonbahar / Soru 67)\nGülşen:\n– Do you think living in an extended family makes\nchildren more sociable and self-confident?\nOrhan:\n– It may make them more sociable but I don’t think it\nmakes them more self-confident but rather more\ndependent.\nGülşen:\n– ----\nOrhan:\n– Definitely! They might not be able to find someone\nto back them up all the time. They have to make\ntheir own decisions.",
-            options = listOf("A) Is it really true that being social depends on the\nnumber of the family members? Y", "B) It's always easy for these children to make friends,\nisn't it?", "C) Do you believe that children brought up in extended\nfamilies also have high self-esteem?", "D) Aren't there any positive results of growing up in an\nextended family?S", "E) Do you mean that children in nuclear families are more\nindependent?\nÖ\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Is it really true that being social depends on the\nnumber of the family members? Y", "B) It's always easy for these children to make friends,\nisn't it?", "C) Do you believe that children brought up in extended\nfamilies also have high self-esteem?", "D) Aren't there any positive results of growing up in an\nextended family?S", "E) Do you mean that children in nuclear families are more\nindependent?\nÖ"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Diyalog"
@@ -2919,7 +2926,7 @@ object QuestionDataProvider {
         Question(
             id = 363,
             questionText = "(2015 Sonbahar / Soru 68)\nExperts admit that the Hagia Sophia has survived\nearthquakes due to the supports built by the Great\nArchitect Sinan.\nMAccording to experts, it was because of the Great",
-            options = listOf("A) Architect Sinan's supports that the Hagia Sophia has\nbeen able to survive different natural disasters\nespecially earthquakes.", "B) If the Great Architect Sinan had not built the supports,\nit would have been impossible for the Hagia Sophia to\nsurvive earthquakes, as experts acknowledge.", "C) The experts argue the fact that the Hagia Sophia\nwould have collapsed as a result of earthquakes if the\nGreat Architect Sinan had not built the supports.", "D) The experts believe that the supports built by the\nGreat Architect Sinan are the main reason why the\nHagia Sophia did not collapse during the time of\nearthquakes.", "E) According to experts, thanks to the Great Architect\nSinan’s supports that were built onto the Hagia\nSophia, no damage was caused even by earthquakes.\n17 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) Architect Sinan's supports that the Hagia Sophia has\nbeen able to survive different natural disasters\nespecially earthquakes.", "B) If the Great Architect Sinan had not built the supports,\nit would have been impossible for the Hagia Sophia to\nsurvive earthquakes, as experts acknowledge.", "C) The experts argue the fact that the Hagia Sophia\nwould have collapsed as a result of earthquakes if the\nGreat Architect Sinan had not built the supports.", "D) The experts believe that the supports built by the\nGreat Architect Sinan are the main reason why the\nHagia Sophia did not collapse during the time of\nearthquakes.", "E) According to experts, thanks to the Great Architect\nSinan’s supports that were built onto the Hagia\nSophia, no damage was caused even by earthquakes.\n17 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Dil Bilgisi"
@@ -2935,7 +2942,7 @@ object QuestionDataProvider {
         Question(
             id = 365,
             questionText = "(2015 Sonbahar / Soru 70)\nThe growth of the European Union has weakened\nthe nation states’ authority though it is still nation\nstates that take policy decisions and implement\nEuropean Union policies.\nÖ",
-            options = listOf("A) In spite of the fact that the authority of the nation\nstates has been weakened by the growth of the\nEuropean Union, they continue taking policy decisions\nand carrying out European Union policies.", "B) Even if the authority of the nation states has been\neliminated by the growth of the European Union,\nnation states are responsible for taking policy\ndecisions and carrying out European Union policies.", "C) Nation states in the European Union have been\naffected by its growth although they still hold the\nauthority to take policy decisions and implement\nEuropean Union policies.", "D) The expansion of the European Union has devastated\nits authority on the nation states to take policy\ndecisions and carry out European Union policies.", "E) The authority of nation states has been weakened by\nthe growth of the European Union, which still takes\npolicy decisions and implement the European Union\npolicies.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) In spite of the fact that the authority of the nation\nstates has been weakened by the growth of the\nEuropean Union, they continue taking policy decisions\nand carrying out European Union policies.", "B) Even if the authority of the nation states has been\neliminated by the growth of the European Union,\nnation states are responsible for taking policy\ndecisions and carrying out European Union policies.", "C) Nation states in the European Union have been\naffected by its growth although they still hold the\nauthority to take policy decisions and implement\nEuropean Union policies.", "D) The expansion of the European Union has devastated\nits authority on the nation states to take policy\ndecisions and carry out European Union policies.", "E) The authority of nation states has been weakened by\nthe growth of the European Union, which still takes\npolicy decisions and implement the European Union\npolicies."),
             correctOptionIndex = 0,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Dil Bilgisi"
@@ -2943,7 +2950,7 @@ object QuestionDataProvider {
         Question(
             id = 366,
             questionText = "(2015 Sonbahar / Soru 71)\nThe most fuel-efficient way to transport people and\ngoods is by sea, but journey times are long.",
-            options = listOf("A) Sea transportation is widely preferred to carry goods\nfrom one place to another although it is both\ntime-consuming and expensive.", "B) Transportation by sea is the most efficient way for\nM\npeople and goods as it costs less than the other\nmeans of transportation.", "C) People and goods are best transported by sea in\nterms of fuel consumption; however, it is\ntime-consuming.", "D) Other means of transportation can take less time and\ncost less, as they are much more efficient than sea\ntransportation.", "E) Transporting people and goods by sea is mostly\npreferred, as it is the fastest and cheapest way of\ntransportation.\n18 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) Sea transportation is widely preferred to carry goods\nfrom one place to another although it is both\ntime-consuming and expensive.", "B) Transportation by sea is the most efficient way for\nM\npeople and goods as it costs less than the other\nmeans of transportation.", "C) People and goods are best transported by sea in\nterms of fuel consumption; however, it is\ntime-consuming.", "D) Other means of transportation can take less time and\ncost less, as they are much more efficient than sea\ntransportation.", "E) Transporting people and goods by sea is mostly\npreferred, as it is the fastest and cheapest way of\ntransportation.\n18 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Dil Bilgisi"
@@ -2951,7 +2958,7 @@ object QuestionDataProvider {
         Question(
             id = 367,
             questionText = "(2015 Sonbahar / Soru 72)\nThe most fundamental aspect of Piaget's theory is\nthe belief that intelligence is a process, not\nsomething that a child has, but something that a\nchild does. Piaget's child does not possess\nknowledge, but understands the world by acting or\noperating in it. ---- These actions represent the\ncognitive structures of infancy and are called\n'schemes'.",
-            options = listOf("A) Furthermore, as a student of biology and zoology,\nPiaget learned that survival requires adaptation.", "B) One psychologist might concentrate on infants, like\nPiaget, while another might study the ways in which\nchildren's social skills affect their success.\nY", "C) For example, Piaget would describe an infant's\nknowledge of a ball in terms of what he or she\nperforms with it – pushing, throwing or mouthing it.", "D) For Piaget, development referred to continual\nrecognition of knowledge into new and more complex\nstructures.\nS", "E) The cognitive-developmental approach actually\nincludes several related theories, and it is closely\nassociated with the work of Piaget.\nÖ\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Furthermore, as a student of biology and zoology,\nPiaget learned that survival requires adaptation.", "B) One psychologist might concentrate on infants, like\nPiaget, while another might study the ways in which\nchildren's social skills affect their success.\nY", "C) For example, Piaget would describe an infant's\nknowledge of a ball in terms of what he or she\nperforms with it – pushing, throwing or mouthing it.", "D) For Piaget, development referred to continual\nrecognition of knowledge into new and more complex\nstructures.\nS", "E) The cognitive-developmental approach actually\nincludes several related theories, and it is closely\nassociated with the work of Piaget.\nÖ"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -2959,7 +2966,7 @@ object QuestionDataProvider {
         Question(
             id = 368,
             questionText = "(2015 Sonbahar / Soru 73)\nNowadays, manual labour has largely been replaced\nby machines; in some cases machines are\ncompletely taking over certain processes. For\nexample, some machines produce food and energy,\nas well as transport passengers and goods by land,\nsea, air and even space. ---- The global connection\nbetween humans and machines is made possible by\ncoMmputer networks that allow for the merging of old\nand new ways of communication. Computers can\neven be programmed to simulate the intelligent\nperformances of living organisms and transfer this\nartificial intelligence into motion carried out by\nrobots.",
-            options = listOf("A) Machines are used to accomplish almost all\nagricultural tasks from cultivating the soil to sowing\nand harvesting.", "B) An increasing number of machines are equipped with\nsophisticated artificial intelligence and can be\nprogrammed to handle many types of work.", "C) There is, however, growing concern about the\npotential threat of machines becoming more intelligent\nthan humans.", "D) Others simplify administration, planning or\norganizational tasks; for instance, computers support\noffice work, education and research.", "E) This is reducing the number of jobs that are available\nfor unskilled workers in these sectors.\n19 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) Machines are used to accomplish almost all\nagricultural tasks from cultivating the soil to sowing\nand harvesting.", "B) An increasing number of machines are equipped with\nsophisticated artificial intelligence and can be\nprogrammed to handle many types of work.", "C) There is, however, growing concern about the\npotential threat of machines becoming more intelligent\nthan humans.", "D) Others simplify administration, planning or\norganizational tasks; for instance, computers support\noffice work, education and research.", "E) This is reducing the number of jobs that are available\nfor unskilled workers in these sectors.\n19 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -2975,7 +2982,7 @@ object QuestionDataProvider {
         Question(
             id = 370,
             questionText = "(2015 Sonbahar / Soru 75)\n'Genre' is a term that refers to a type of media\nproduct or work of art governed by implicit rules\nthat are shared by the makers of the product and the\naudience for it. Examples are thrillers, soap operas\nand talk shows. ---- To some extent, these rules are\nabout the content of the genre. Particular types of\nÖ\ncharacters and events, for example, will routinely\noccur in particular genres and others will not.",
-            options = listOf("A) Every genre has its own standards and conventions\nthat distinguish it from others.", "B) Today, there are many people involved in the\nproduction of the film rating system.", "C) Some agencies control whether the content of these\ntypes of media are suitable to be broadcast.", "D) Moreover, you can also come across similar\ndefinitions in music.", "E) On the other hand, there are various reasons why\ngenre is more controlled in certain countries.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Every genre has its own standards and conventions\nthat distinguish it from others.", "B) Today, there are many people involved in the\nproduction of the film rating system.", "C) Some agencies control whether the content of these\ntypes of media are suitable to be broadcast.", "D) Moreover, you can also come across similar\ndefinitions in music.", "E) On the other hand, there are various reasons why\ngenre is more controlled in certain countries."),
             correctOptionIndex = 0,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Paragraf"
@@ -2999,7 +3006,7 @@ object QuestionDataProvider {
         Question(
             id = 373,
             questionText = "(2015 Sonbahar / Soru 78)\n(I) Nearly half of all college math majors are women, and\nfemales now score as well as males on standardized\nmath tests. (II) Yet, only about 30 percent of Ph.D.s in\nmathematics – and fewer in computer science, physics\nand engineering – are awarded to women every year.\n(III)Researchers have long blamed sex discrimination\nand bias, but research suggests that there may now be\na less sinister culprit: motherhood. (IV) Family\nresponsibilities can explain why men outnumber\nwomen in science- and math-related positions.\n(V)Undeniably, women in science have had to fight sex\ndiscrimination for decades.",
-            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V\n20 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS Sonbahar/İNGİLİZCE"),
+            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V\n20 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS Sonbahar/İNGİLİZCE"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Paragraf"
@@ -3015,7 +3022,7 @@ object QuestionDataProvider {
         Question(
             id = 375,
             questionText = "(2015 Sonbahar / Soru 80)\n(I) Staring at the Sun without sunglasses huYrts, which is\nreason enough to avoid doing it. (II) Too little sunshine\nleads to low vitamin D levels, which put you at higher\nrisk of certain cancers. (III) But direct exposure to the\nultraviolet radiation in intense sunlight can also damage\nthe eye and increase the likelihood of a cataract\ndeveloping. (IV) Cataracts affect the part of the eye that\nfocuses light – the lens – gradually clouding vision and\nleading to blindness. (V) Surgery to restore vision\ninvolves making tiny cuts in the eye to remove the\nS\ncataract and replace the lens.",
-            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V\nÖ\n\n=== COLUMN_SEPARATOR ===\n\nM\nTEST BİTTİ.\n21 CEVAPLARINIZI KONTROL EDİNİZ.\n\n=== COLUMN_SEPARATOR ===\n\nSINAVDA UYULACAK"),
+            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V\nÖ\n\n\n\nM\nTEST BİTTİ.\n21 CEVAPLARINIZI KONTROL EDİNİZ.\n\n\n\nSINAVDA UYULACAK"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Paragraf"
@@ -3047,7 +3054,7 @@ object QuestionDataProvider {
         Question(
             id = 379,
             questionText = "(2015 İlkbahar / Soru 4)\nTotal world population seems to have ---- around a\nlevel of approximately half a billion people until the\nmodern period, when it began to climb steadily.",
-            options = listOf("A) appeared", "B) expired", "C) qualified", "D) fluctuated", "E) weakened\n\n=== COLUMN_SEPARATOR ===\n\nTESTİ"),
+            options = listOf("A) appeared", "B) expired", "C) qualified", "D) fluctuated", "E) weakened\n\n\n\nTESTİ"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Kelime Bilgisi"
@@ -3063,7 +3070,7 @@ object QuestionDataProvider {
         Question(
             id = 381,
             questionText = "(2015 İlkbahar / Soru 6)\nFrom the ancient pyramids to today’s hi-tech\nskyscrapers, powerful people have always ---- their\nstatus through impressive buildings.",
-            options = listOf("A) put on", "B) laid out", "C) shown off", "D) given in", "E) passed over\n1 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) put on", "B) laid out", "C) shown off", "D) given in", "E) passed over\n1 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Kelime Bilgisi"
@@ -3079,7 +3086,7 @@ object QuestionDataProvider {
         Question(
             id = 383,
             questionText = "(2015 İlkbahar / Soru 8)\nBehind every architectural masterpiece ---- a brand\nnew technology without which these structures ---- a\nfew years ago. S",
-            options = listOf("A) has been / did not have to be built", "B) is / could not have been built", "C) had been / would not have been built\nÖ", "D) was / need not have been built", "E) will be / should not have been built\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) has been / did not have to be built", "B) is / could not have been built", "C) had been / would not have been built\nÖ", "D) was / need not have been built", "E) will be / should not have been built"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Dil Bilgisi"
@@ -3103,7 +3110,7 @@ object QuestionDataProvider {
         Question(
             id = 386,
             questionText = "(2015 İlkbahar / Soru 11)\nThe ultimate goal ---- medical profession is not to\nreplace whole organs but to repair damaged organs\n---- healthy cells.",
-            options = listOf("A) of / over", "B) to / on", "C) for / with", "D) against / into", "E) behind / towards\n2 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) of / over", "B) to / on", "C) for / with", "D) against / into", "E) behind / towards\n2 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Edatlar"
@@ -3135,7 +3142,7 @@ object QuestionDataProvider {
         Question(
             id = 390,
             questionText = "(2015 İlkbahar / Soru 15)\nJapan is enormously centralized, and Tokyo, the\ncapital city, hosts ---- the national government ----\nthe stock market and the world’s largest companies.",
-            options = listOf("A) not only / but also", "B) whether / or", "C) neither / nor", "D) such / that", "E) the more / the less\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) not only / but also", "B) whether / or", "C) neither / nor", "D) such / that", "E) the more / the less"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Bağlaçlar"
@@ -3143,7 +3150,7 @@ object QuestionDataProvider {
         Question(
             id = 391,
             questionText = "(2015 İlkbahar / Soru 16)\nPrejudice may be expressed by people who have\ndeveloped generally negative personalities, perhaps\n---- being raised in harsh and restrictive families.",
-            options = listOf("A) as a result of", "B) in terms of", "C) rather than", "D) in contrast with", "E) in place of\nM\n3 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) as a result of", "B) in terms of", "C) rather than", "D) in contrast with", "E) in place of\nM\n3 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Bağlaçlar"
@@ -3167,7 +3174,7 @@ object QuestionDataProvider {
         Question(
             id = 394,
             questionText = "(2015 İlkbahar / Soru 19)\n",
-            options = listOf("A) sensitive", "B) immense", "C) total", "D) genetic", "E) main\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) sensitive", "B) immense", "C) total", "D) genetic", "E) main"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Dil Bilgisi"
@@ -3175,7 +3182,7 @@ object QuestionDataProvider {
         Question(
             id = 395,
             questionText = "(2015 İlkbahar / Soru 21)\n",
-            options = listOf("A) as well as", "B) because of", "C) contrary to", "D) in case of", "E) for the sake of\n4 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) as well as", "B) because of", "C) contrary to", "D) in case of", "E) for the sake of\n4 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Dil Bilgisi"
@@ -3199,7 +3206,7 @@ object QuestionDataProvider {
         Question(
             id = 398,
             questionText = "(2015 İlkbahar / Soru 24)\n",
-            options = listOf("A) can be designed", "B) were designed", "C) are being designed", "D) would be designed", "E) are to be designed\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) can be designed", "B) were designed", "C) are being designed", "D) would be designed", "E) are to be designed"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Dil Bilgisi"
@@ -3215,14 +3222,16 @@ object QuestionDataProvider {
         Question(
             id = 400,
             questionText = "(2015 İlkbahar / Soru 26)\n",
-            options = listOf("A) as", "B) even if", "C) if only", "D) unless", "E) although\n5 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) as", "B) even if", "C) if only", "D) unless", "E) although\n5 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Dil Bilgisi"
         )
     )
+}
 
-    private val chunk4 = listOf(
+object QuestionChunk4 {
+    val list = listOf(
         Question(
             id = 401,
             questionText = "(2015 İlkbahar / Soru 27)\nEstablished originally in the 18thcentury to make\nmedicinal chocolates, ----.",
@@ -3242,7 +3251,7 @@ object QuestionDataProvider {
         Question(
             id = 403,
             questionText = "(2015 İlkbahar / Soru 29)\n---- unless they are heading back to their birthplace.",
-            options = listOf("A) Money is an important aspect when migrants decide to\nleave their home country", "B) There are now more humanitarian groups providing\nassistance around the world", "C) People usually do not move to lower-income countries", "D) Governments should do something to stop massive\nimmigration", "E) Highly-skilled people are always in great demand and\nattract foreign aid\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Money is an important aspect when migrants decide to\nleave their home country", "B) There are now more humanitarian groups providing\nassistance around the world", "C) People usually do not move to lower-income countries", "D) Governments should do something to stop massive\nimmigration", "E) Highly-skilled people are always in great demand and\nattract foreign aid"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Bağlaçlar"
@@ -3266,7 +3275,7 @@ object QuestionDataProvider {
         Question(
             id = 406,
             questionText = "(2015 İlkbahar / Soru 32)\nMalaria, a mosquito-borne disease, is one of the\ngreatest threats to human health, ----.",
-            options = listOf("A) so mosquitoes find their victims easily thanks to their\nexcellent sense of smell", "B) although there is hardly any chance of surviving a\nsevere attack of malaria without drugs", "C) as deaths from malaria have fallen more than 25\npercent over the last decade", "D) but a mosquito can transfer hundreds of parasites with\na bite", "E) and scientists are struggling to defeat it by finding new\nways to fight mosquitoes\n6 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) so mosquitoes find their victims easily thanks to their\nexcellent sense of smell", "B) although there is hardly any chance of surviving a\nsevere attack of malaria without drugs", "C) as deaths from malaria have fallen more than 25\npercent over the last decade", "D) but a mosquito can transfer hundreds of parasites with\na bite", "E) and scientists are struggling to defeat it by finding new\nways to fight mosquitoes\n6 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Bağlaçlar"
@@ -3282,7 +3291,7 @@ object QuestionDataProvider {
         Question(
             id = 408,
             questionText = "(2015 İlkbahar / Soru 35)\n----, other changes such as habitat destruction and\nhunting threaten individual species.",
-            options = listOf("A) Although volcanoes erupt and meteorites hit the Earth", "B) While global warming, acid rain and holes in the ozone\nlayer can affect the entire life on the planet", "C) Because life first appeared on the Earth more than 3,5\nbillion years ago", "D) As soon as atmospheric gases become part of the\nwater cycle and are carried by the wind", "E) Though it is difficult to adapt to the harmful materials\nreleased into the environment\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Although volcanoes erupt and meteorites hit the Earth", "B) While global warming, acid rain and holes in the ozone\nlayer can affect the entire life on the planet", "C) Because life first appeared on the Earth more than 3,5\nbillion years ago", "D) As soon as atmospheric gases become part of the\nwater cycle and are carried by the wind", "E) Though it is difficult to adapt to the harmful materials\nreleased into the environment"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Bağlaçlar"
@@ -3290,7 +3299,7 @@ object QuestionDataProvider {
         Question(
             id = 409,
             questionText = "(2015 İlkbahar / Soru 36)\nIn academic fields such as literature, music and art,\nthe emphasis is frequently on individual tests,\npersonal opinions and other subjective judgments\n----.",
-            options = listOf("A) whereas the emphasis is on objectivity in psychology\nand other natural sciences\nM", "B) only if natural sciences focus on objectivity and social\ninteraction", "C) unless the target of academic inquiry necessitates the\nresearcher to repeat the experiment", "D) so that professors spend more time on testing\nhypotheses", "E) as though natural sciences involve neither subjectivity\nnor objectivity\n7 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) whereas the emphasis is on objectivity in psychology\nand other natural sciences\nM", "B) only if natural sciences focus on objectivity and social\ninteraction", "C) unless the target of academic inquiry necessitates the\nresearcher to repeat the experiment", "D) so that professors spend more time on testing\nhypotheses", "E) as though natural sciences involve neither subjectivity\nnor objectivity\n7 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Bağlaçlar"
@@ -3298,7 +3307,7 @@ object QuestionDataProvider {
         Question(
             id = 410,
             questionText = "(2015 İlkbahar / Soru 37)\nSince the reality reflected in documentaries is not\nnatural, documentary filmmakers are aware that\ntheir choices shape the meaning they want to\nconvey.",
-            options = listOf("A) Belgesellerde yansıtılan gerçeklik doğal olmadığı için\nbelgesel film yapımcıları, tercihlerinin vermek\nistedikleri anlamı şekillendirdiğinin farkındadırlar.", "B) Belgesel film yapımcıları, tercihlerinin vermek\nistedikleri anlamı şekillendirdiğinin ve bu yüzden\nbelgesellerde ortaya konan gerçekliğin doğal\nolmadığının farkındadırlar.", "C) Belgesel film yapımcılarının tercihleri ve vermek\nYetse\nistedikleri anlamla şekillenen belgesellerde yansıtılan\ngerçeklik doğal değildir.", "D) Belgesel film yapımcılarının vermek istedikleri anlam,\ntercihlerini şekillendirdiğinde belgesellerde sunulan\ngerçeklik doğal olmaktan uzaklaşır.", "E) Belgesel film yapSımcıları, belgesellerde yansıtılan\ngerçekliğin doğal olmadığının farkında oldukları için\ntercihlerini vermek istedikleri anlama göre\nşekillendirirler.\nÖ\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Belgesellerde yansıtılan gerçeklik doğal olmadığı için\nbelgesel film yapımcıları, tercihlerinin vermek\nistedikleri anlamı şekillendirdiğinin farkındadırlar.", "B) Belgesel film yapımcıları, tercihlerinin vermek\nistedikleri anlamı şekillendirdiğinin ve bu yüzden\nbelgesellerde ortaya konan gerçekliğin doğal\nolmadığının farkındadırlar.", "C) Belgesel film yapımcılarının tercihleri ve vermek\nYetse\nistedikleri anlamla şekillenen belgesellerde yansıtılan\ngerçeklik doğal değildir.", "D) Belgesel film yapımcılarının vermek istedikleri anlam,\ntercihlerini şekillendirdiğinde belgesellerde sunulan\ngerçeklik doğal olmaktan uzaklaşır.", "E) Belgesel film yapSımcıları, belgesellerde yansıtılan\ngerçekliğin doğal olmadığının farkında oldukları için\ntercihlerini vermek istedikleri anlama göre\nşekillendirirler.\nÖ"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Çeviri"
@@ -3306,7 +3315,7 @@ object QuestionDataProvider {
         Question(
             id = 411,
             questionText = "(2015 İlkbahar / Soru 38)\nThough international security and global economics\nconstitute the two major traditional issue areas in\nworld politics, some academics now claim that the\nenvironment has emerged as the third major issue\narea.",
-            options = listOf("A) Uluslararası güvenlik ve küresel ekonominin dünya\nMsiyasetindeki iki büyük geleneksel sorun olduğu\ndüşünülse de, bazı akademisyenler tarafından\nçevrenin de üçüncü büyük sorun olarak ortaya çıktığı\niddia edilmektedir.", "B) Uluslararası güvenlik ve küresel ekonomi dünya\nsiyasetinde geleneksel olarak iki önemli sorun alanını\nteşkil etse de, bazı akademisyenlere göre çevre, artık\nüçüncü büyük sorun alanını teşkil etmektedir.", "C) Uluslararası güvenlik ve küresel ekonomi dünya\nsiyasetindeki iki büyük geleneksel sorun alanını teşkil\nde, bazı akademisyenler çevrenin artık üçüncü\nbüyük sorun alanı olarak ortaya çıktığını iddia\netmektedirler.", "D) Uluslararası güvenlik ve küresel ekonomi dünya\nsiyasetinin iki büyük geleneksel sorun alanını teşkil\netmektedir ancak bazı akademisyenlerce çevrenin\nartık üçüncü büyük sorun alanını teşkil ettiği iddia\nedilmektedir.", "E) Uluslararası güvenlik ve küresel ekonomi dünya\nsiyasetinde iki büyük geleneksel sorun alanı olsa da,\nbazı akademisyenler üçüncü büyük sorun alanının da\nçevre olduğunu iddia etmektedirler.\n8 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) Uluslararası güvenlik ve küresel ekonominin dünya\nMsiyasetindeki iki büyük geleneksel sorun olduğu\ndüşünülse de, bazı akademisyenler tarafından\nçevrenin de üçüncü büyük sorun olarak ortaya çıktığı\niddia edilmektedir.", "B) Uluslararası güvenlik ve küresel ekonomi dünya\nsiyasetinde geleneksel olarak iki önemli sorun alanını\nteşkil etse de, bazı akademisyenlere göre çevre, artık\nüçüncü büyük sorun alanını teşkil etmektedir.", "C) Uluslararası güvenlik ve küresel ekonomi dünya\nsiyasetindeki iki büyük geleneksel sorun alanını teşkil\nde, bazı akademisyenler çevrenin artık üçüncü\nbüyük sorun alanı olarak ortaya çıktığını iddia\netmektedirler.", "D) Uluslararası güvenlik ve küresel ekonomi dünya\nsiyasetinin iki büyük geleneksel sorun alanını teşkil\netmektedir ancak bazı akademisyenlerce çevrenin\nartık üçüncü büyük sorun alanını teşkil ettiği iddia\nedilmektedir.", "E) Uluslararası güvenlik ve küresel ekonomi dünya\nsiyasetinde iki büyük geleneksel sorun alanı olsa da,\nbazı akademisyenler üçüncü büyük sorun alanının da\nçevre olduğunu iddia etmektedirler.\n8 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Çeviri"
@@ -3322,7 +3331,7 @@ object QuestionDataProvider {
         Question(
             id = 413,
             questionText = "(2015 İlkbahar / Soru 40)\nKişilik testlerinin, gelecekteki kariyer başarısını\ntahmin etmede tavsiye mektuplarından,\nmülakatlardan ve eğitim sertifikalarından daha iyi\nolduğuna yaygın olarak inanılıyor.",
-            options = listOf("A) It is widely believed that personality tests are better\npredictors of future career success than letters of\nrecommendation, interviews and educational\nÖcertificates.", "B) People widely believe that personality tests better\npredict future career success than letters of\nrecommendation, interviews and educational\ncertificates do.", "C) It is widely believed that personality tests will replace\nletters of recommendation, interviews and educational\ncertificates in terms of predicting future career\nsuccess.", "D) People widely believe that personality tests can better\npredict future career success, so there is no need to\nuse letters of recommendation, interviews and\neducational certificates any more.", "E) In predicting future career success people widely\nbelieve personality tests are better tools than letters of\nrecommendation, interviews and educational\ncertificates.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) It is widely believed that personality tests are better\npredictors of future career success than letters of\nrecommendation, interviews and educational\nÖcertificates.", "B) People widely believe that personality tests better\npredict future career success than letters of\nrecommendation, interviews and educational\ncertificates do.", "C) It is widely believed that personality tests will replace\nletters of recommendation, interviews and educational\ncertificates in terms of predicting future career\nsuccess.", "D) People widely believe that personality tests can better\npredict future career success, so there is no need to\nuse letters of recommendation, interviews and\neducational certificates any more.", "E) In predicting future career success people widely\nbelieve personality tests are better tools than letters of\nrecommendation, interviews and educational\ncertificates."),
             correctOptionIndex = 0,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Çeviri"
@@ -3338,7 +3347,7 @@ object QuestionDataProvider {
         Question(
             id = 415,
             questionText = "(2015 İlkbahar / Soru 42)\nOtoyollardan hızlı trenlere varıncaya kadar şehirler\narasındaki ulaşım bağlantıları ticari kuruluşların ülke\nçapında başarı elde etmesine imkân sağlar.",
-            options = listOf("A) It is transport links between cities such as motorways\nand high-speed trains that enable businesses to be\nsuccessful across a country.", "B) Transport links between cities, from motorways to\nhigh-speed trains, contribute to the success of\nbusinesses countrywide.", "C) What makes businesses successful throughout a\ncountry is transport links between cities like\nmotorways and high-speed trains.", "D) Businesses can become more successful countrywide\nthanks to transport links between cities such as\nmotorways and high-speed trains.", "E) From motorways to high-speed trains, transport links\nbetween cities allow businesses to achieve success\ncountrywide.\n9 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) It is transport links between cities such as motorways\nand high-speed trains that enable businesses to be\nsuccessful across a country.", "B) Transport links between cities, from motorways to\nhigh-speed trains, contribute to the success of\nbusinesses countrywide.", "C) What makes businesses successful throughout a\ncountry is transport links between cities like\nmotorways and high-speed trains.", "D) Businesses can become more successful countrywide\nthanks to transport links between cities such as\nmotorways and high-speed trains.", "E) From motorways to high-speed trains, transport links\nbetween cities allow businesses to achieve success\ncountrywide.\n9 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Çeviri"
@@ -3346,7 +3355,7 @@ object QuestionDataProvider {
         Question(
             id = 416,
             questionText = "(2015 İlkbahar / Soru 43)\n- 46. soruları aşağıdaki parçaya göre\ncevaplayınız.\nGrowing orchids could change your lifeforever! It has\nfor many people. No other plant family offers the\nnumber and diversity of breathtaking and intriguing\nflowers that orchids do. When you discover that you can\nactually grow these exotic plants in your home and that\nthey are not expensive, your resistance will be lowered\nand your chances of catching the extremely contagious\nbut wonderful obsession called the ‘Orchid Bug’ are\nhigh. In England, and the rest of Europe in Victorian\ntimes, these fabulous plants used to be only for the eyes\nof royalty or well-heeled aristocrats because of the\none-time astronomical prices they commanded at flower\nauctions. They were grown in elaborate and costly\nglasshouses, usually by a staff of professional growers.\nHowever, as times have changed, orchids have entered\nthe mainstream. They are now the second most popular\nY\npot plant in the world and are gaining quickly on the\nleader (poinsettia)! Because of new techniques and\nmodern growing methods, award-quality orchids are\navailable to everyone at prices lower than ever before.\nYou can buy an orchid plant in full bloom for less than\nyou would pay for a bouquet of flowers from the florist.\nIn addition to the orchids of today being less expensive,\nthey are also much easier to grow. Some bloom more\nthan once a year and others have a pleasant smell. And\nwith thousands of hSybrids and new ones being produced\nall the time, there is an orchid that will strike anyone’s\nand everyone’s fancy.\nÖ43. According to the passage, ‘Orchid Bug’ ----.",
-            options = listOf("A) is a type of irrepressible desire people may have when\nthey learn how easy and inexpensive it is to take care\nof orchids", "B) is experienced by orchid-growing people who have\nexperienced changes in their lives thanks to the plant", "C) dates back to the Victorian era, when it was extremely\nexpensive to have orchids", "D) can be defined as the inability to resist owning an\nexpensive but an easy-to-care-for orchid", "E) is a condition used to describe people who are willing\nto pay high prices for orchids at auctions in England\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) is a type of irrepressible desire people may have when\nthey learn how easy and inexpensive it is to take care\nof orchids", "B) is experienced by orchid-growing people who have\nexperienced changes in their lives thanks to the plant", "C) dates back to the Victorian era, when it was extremely\nexpensive to have orchids", "D) can be defined as the inability to resist owning an\nexpensive but an easy-to-care-for orchid", "E) is a condition used to describe people who are willing\nto pay high prices for orchids at auctions in England"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Paragraf"
@@ -3370,7 +3379,7 @@ object QuestionDataProvider {
         Question(
             id = 419,
             questionText = "(2015 İlkbahar / Soru 46)\nWhat could be the best title for the passage?",
-            options = listOf("A) Where Orchids Come From", "B) What Makes an Orchid an Orchid", "C) Welcoming Orchids into Your Life", "D) Understanding How to Grow Orchids", "E) Choosing the Right Orchid\n10 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) Where Orchids Come From", "B) What Makes an Orchid an Orchid", "C) Welcoming Orchids into Your Life", "D) Understanding How to Grow Orchids", "E) Choosing the Right Orchid\n10 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -3378,7 +3387,7 @@ object QuestionDataProvider {
         Question(
             id = 420,
             questionText = "(2015 İlkbahar / Soru 47)\nAccording to the passage, one reason for the spread\nof kite use for different functions was that ----.",
-            options = listOf("A) the Chinese philosopher Mo Zi was the first person\ninterested in constructing a kite\nÖ", "B) Chinese people needed something to test the direction\nof the wind", "C) China at that time was engaged in a lot of wars where\nthey needed to use the kite for communication", "D) perfect materials to make a kite were abundantly\navailable in China", "E) people in China had been trying for thousands of\nyears to come up with a method to measure distances\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) the Chinese philosopher Mo Zi was the first person\ninterested in constructing a kite\nÖ", "B) Chinese people needed something to test the direction\nof the wind", "C) China at that time was engaged in a lot of wars where\nthey needed to use the kite for communication", "D) perfect materials to make a kite were abundantly\navailable in China", "E) people in China had been trying for thousands of\nyears to come up with a method to measure distances"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -3402,7 +3411,7 @@ object QuestionDataProvider {
         Question(
             id = 423,
             questionText = "(2015 İlkbahar / Soru 50)\nWhat could be the best title for this passage?",
-            options = listOf("A) Decoration of Kites in Different Parts of the World", "B) The Development and Use of the Kite Throughout\nHistory", "C) The Importance of Kites in Asian Festivals", "D) Chinese Contribution to the Construction of Kite", "E) How We Use Kites in Our Modern World\n11 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) Decoration of Kites in Different Parts of the World", "B) The Development and Use of the Kite Throughout\nHistory", "C) The Importance of Kites in Asian Festivals", "D) Chinese Contribution to the Construction of Kite", "E) How We Use Kites in Our Modern World\n11 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Paragraf"
@@ -3410,7 +3419,7 @@ object QuestionDataProvider {
         Question(
             id = 424,
             questionText = "(2015 İlkbahar / Soru 51)\nIt is stated in the passage that ----.",
-            options = listOf("A) the US Federal Drug Administration’s approval of da\nVinci paved the path to robotic surgery", "B) conventional keyhole surgery is different from robotic\nÖkeyhole surgery in that it takes less time", "C) one advantage of robotic keyhole surgery is that it is\nmore comfortable for the surgeon", "D) conventional keyhole surgery is less tiring to carry out\nfor surgeons since they use less equipment", "E) in conventional keyhole surgery surgeons have to be\nseated to pay attention to the equipment\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) the US Federal Drug Administration’s approval of da\nVinci paved the path to robotic surgery", "B) conventional keyhole surgery is different from robotic\nÖkeyhole surgery in that it takes less time", "C) one advantage of robotic keyhole surgery is that it is\nmore comfortable for the surgeon", "D) conventional keyhole surgery is less tiring to carry out\nfor surgeons since they use less equipment", "E) in conventional keyhole surgery surgeons have to be\nseated to pay attention to the equipment"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -3434,7 +3443,7 @@ object QuestionDataProvider {
         Question(
             id = 427,
             questionText = "(2015 İlkbahar / Soru 54)\nOne can infer from the passage that ----.",
-            options = listOf("A) thanks to technological developments in medical\nsurgery it is less stressful for surgeons to operate on\npatients for lengthy periods", "B) new medical technologies will eventually make it\npossible to carry out operations without any need for\nmedical professionals in the future", "C) the US is making serious investments in developing\ninnovative medical equipment in order to enable\nsurgeons to operate from distant locations", "D) new technological developments in medical operations\nenable surgeons to do their work more precisely and\nwithout restrictions of space", "E) keyhole surgery is so accurate and comfortable that\nmost surgeons will soon carry out operations using\nsuch minimally invasive methods\n12 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) thanks to technological developments in medical\nsurgery it is less stressful for surgeons to operate on\npatients for lengthy periods", "B) new medical technologies will eventually make it\npossible to carry out operations without any need for\nmedical professionals in the future", "C) the US is making serious investments in developing\ninnovative medical equipment in order to enable\nsurgeons to operate from distant locations", "D) new technological developments in medical operations\nenable surgeons to do their work more precisely and\nwithout restrictions of space", "E) keyhole surgery is so accurate and comfortable that\nmost surgeons will soon carry out operations using\nsuch minimally invasive methods\n12 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -3442,7 +3451,7 @@ object QuestionDataProvider {
         Question(
             id = 428,
             questionText = "(2015 İlkbahar / Soru 55)\nOne can understand from the passage that ----.\nÖ",
-            options = listOf("A) upholding invisible copyrights has a potential danger\nof jeopardizing the health of poor people", "B) copyrights to solid, visible property tend to be\nobserved by the emerging economies in Asia", "C) for an economy to be protected, governments have to\nsimplify their laws on patents and copyrights", "D) neglecting intellectual property rights can discourage\ninnovation and may risk public health", "E) emerging economies are particularly careful about\nadhering to intellectual copyright laws\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) upholding invisible copyrights has a potential danger\nof jeopardizing the health of poor people", "B) copyrights to solid, visible property tend to be\nobserved by the emerging economies in Asia", "C) for an economy to be protected, governments have to\nsimplify their laws on patents and copyrights", "D) neglecting intellectual property rights can discourage\ninnovation and may risk public health", "E) emerging economies are particularly careful about\nadhering to intellectual copyright laws"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -3466,7 +3475,7 @@ object QuestionDataProvider {
         Question(
             id = 431,
             questionText = "(2015 İlkbahar / Soru 58)\nIt is stated in the passage that the issue of\nintellectual property rights ----.",
-            options = listOf("A) has become more important since companies in\ndeveloping countries gain undeserved profit from the\nexpertise of Western research", "B) inevitably brings up the issue of how willing the\nemerging economies of China and India are to\nredefine regulations", "C) has long been respected even in emerging economies\nof the countries like China and India", "D) is largely on the agenda of Western pharmacological\ncompanies which invest in research and development", "E) is more often debated in reference to cheap but\ntrustworthy versions of drugs produced by Indian and\nChinese companies\n13 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) has become more important since companies in\ndeveloping countries gain undeserved profit from the\nexpertise of Western research", "B) inevitably brings up the issue of how willing the\nemerging economies of China and India are to\nredefine regulations", "C) has long been respected even in emerging economies\nof the countries like China and India", "D) is largely on the agenda of Western pharmacological\ncompanies which invest in research and development", "E) is more often debated in reference to cheap but\ntrustworthy versions of drugs produced by Indian and\nChinese companies\n13 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Paragraf"
@@ -3474,7 +3483,7 @@ object QuestionDataProvider {
         Question(
             id = 432,
             questionText = "(2015 İlkbahar / Soru 59)\nIt can be understood from the passage that ----.\nÖ",
-            options = listOf("A) the birth of Dolly has been reported in the local\nnewspapers since 1997", "B) the way Dolly was born made the birth quite difficult for\nher mother", "C) Dolly was different from other lambs as she was a\nbetter milk producer", "D) the birth of Dolly was important because of the fact\nthat she had a twin", "E) the birth of Dolly was impressive as she was the first\nof her kind\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) the birth of Dolly has been reported in the local\nnewspapers since 1997", "B) the way Dolly was born made the birth quite difficult for\nher mother", "C) Dolly was different from other lambs as she was a\nbetter milk producer", "D) the birth of Dolly was important because of the fact\nthat she had a twin", "E) the birth of Dolly was impressive as she was the first\nof her kind"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Paragraf"
@@ -3498,7 +3507,7 @@ object QuestionDataProvider {
         Question(
             id = 435,
             questionText = "(2015 İlkbahar / Soru 62)\nThe author’s attitude towards cloning is ----.",
-            options = listOf("A) neutral", "B) pessimistic", "C) uncertain", "D) sarcastic", "E) favouring\n14 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) neutral", "B) pessimistic", "C) uncertain", "D) sarcastic", "E) favouring\n14 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Paragraf"
@@ -3506,7 +3515,7 @@ object QuestionDataProvider {
         Question(
             id = 436,
             questionText = "(2015 İlkbahar / Soru 63)\nCavit:\n I sometimes have difficulty in understanding what\ngenre means in the literary world.\nNuray:\n It depends on where you’re positioned in the book\nworld. For a bookseller, it’s a shelving and\nlocation issue.\nCavit:\n ----\nNuray:\n With fiction, for example, there will be classics,\nromance or horror sections.\nY",
-            options = listOf("A) So it’s a pragmatic question of what to put where.", "B) I think fiction is always the best-selling line.", "C) But even in small bookstores, I get confused.\nS", "D) Bookstores say Westerns mostly attract male\ncustomers.", "E) Then, a genre can have large number of dedicated\nreaders.\nÖ\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) So it’s a pragmatic question of what to put where.", "B) I think fiction is always the best-selling line.", "C) But even in small bookstores, I get confused.\nS", "D) Bookstores say Westerns mostly attract male\ncustomers.", "E) Then, a genre can have large number of dedicated\nreaders.\nÖ"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Diyalog"
@@ -3514,7 +3523,7 @@ object QuestionDataProvider {
         Question(
             id = 437,
             questionText = "(2015 İlkbahar / Soru 64)\nSami:\n I’ve always been fascinated by the idea of the\ndiscovery of an Earth-like planet for humans to\nlive on.\nFeridun:\n ----\nM\nSami:\n I didn’t know about that. Do you think they will be\nsuccessful in doing so?\nFeridun:\n Yes, but more research is needed. Even if they\nfind an Earth-like planet with water, food might\nstill be an issue if life on that planet were based\non a different biochemistry.",
-            options = listOf("A) Me too, but only a few scientists think it’s possible.\nThey’re trying to develop alternative life-support\nsystems.", "B) So have I, considering how exciting and interesting it\nwould be to be visited by aliens from other planets.", "C) I totally agree with you. I think we aren’t alone in such\nthinking as I’ve read articles by scientists writing on\nEarth-like planets.", "D) I don’t understand why you’re so interested in this\nsubject while even some astronomers don’t believe\nEarth-like planets exist.", "E) I also like dreaming about living on a new planet, as\nscientists now say the Earth is running out of its\nresources.\n15 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) Me too, but only a few scientists think it’s possible.\nThey’re trying to develop alternative life-support\nsystems.", "B) So have I, considering how exciting and interesting it\nwould be to be visited by aliens from other planets.", "C) I totally agree with you. I think we aren’t alone in such\nthinking as I’ve read articles by scientists writing on\nEarth-like planets.", "D) I don’t understand why you’re so interested in this\nsubject while even some astronomers don’t believe\nEarth-like planets exist.", "E) I also like dreaming about living on a new planet, as\nscientists now say the Earth is running out of its\nresources.\n15 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Diyalog"
@@ -3522,7 +3531,7 @@ object QuestionDataProvider {
         Question(
             id = 438,
             questionText = "(2015 İlkbahar / Soru 65)\nFevzi:\n I’ve always fancied being a writer and now my\ndream is coming true thanks to a home-study\ncreative writing course.\nRecep:\n ----\nFevzi:\n Why not? I’m going to receive individual, personal\ntuition from a professional writer.\nRecep:\n I’m not really convinced though. He or she may\nteach you the rules of the publishing world, but\nnot provide the inspiration to produce.",
-            options = listOf("A) Do you really think you can become a writer through\nan online course? Yhours.", "B) Congratulations! Have you finally had the opportunity\nto realize your goal?", "C) Do you know if there is an age limit for attending the\ncourse?", "D) Can’t it be also quite rewarding if you’re determined to\nlearn everything in detail?\nS", "E) Don’t misunderstand me, but shouldn’t you be looking\nfor a different career?\nÖ\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Do you really think you can become a writer through\nan online course? Yhours.", "B) Congratulations! Have you finally had the opportunity\nto realize your goal?", "C) Do you know if there is an age limit for attending the\ncourse?", "D) Can’t it be also quite rewarding if you’re determined to\nlearn everything in detail?\nS", "E) Don’t misunderstand me, but shouldn’t you be looking\nfor a different career?\nÖ"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Diyalog"
@@ -3530,7 +3539,7 @@ object QuestionDataProvider {
         Question(
             id = 439,
             questionText = "(2015 İlkbahar / Soru 66)\nZeliha:\n How do you think our media consumption has\nchanged over the last ten years?\nHayri:\n I feel that we’ve become more reliant on\ntechnological tools such as mobile phones and\nMtablets in addition to TV.\nZeliha:\n ----\nHayri:\n Yet, we shouldn’t miss the point that we’re also\nbecoming enslaved since there’s more and more\nto discover now.",
-            options = listOf("A) So you mean people should decrease their TV viewing", "B) Yes, we’ve become so extravagant. Even children\nhave smart phones.", "C) That’s why I don’t allow my kids to play computer\ngames for long hours.", "D) In fact, it’s not completely true for the older generation.", "E) That’s right. They give us the freedom to access\ninformation anywhere and anytime we want.\n16 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) So you mean people should decrease their TV viewing", "B) Yes, we’ve become so extravagant. Even children\nhave smart phones.", "C) That’s why I don’t allow my kids to play computer\ngames for long hours.", "D) In fact, it’s not completely true for the older generation.", "E) That’s right. They give us the freedom to access\ninformation anywhere and anytime we want.\n16 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Diyalog"
@@ -3538,7 +3547,7 @@ object QuestionDataProvider {
         Question(
             id = 440,
             questionText = "(2015 İlkbahar / Soru 67)\nEmrullah:\n We sometimes use certain polite expressions\ninstead of offensive and unpleasant ones in order\nto show respect to others.\nCemil:\n Do you mean it’s like asking “Would you mind if I\nopened the window?” instead of saying “I’ll open\nthe window.”?\nEmrullah:\n ----\nCemil:\n Oh, I see. Politicians often do the same thing. For\nexample, ‘user fees’ is the term they use for\n‘taxes’.",
-            options = listOf("A) However, this all depends on whom you’Yre talking to.\nWe often try to be more polite while communicating\nwith authority figures or our supervisors.", "B) Actually, we use them to refer to taboo topics like\ndisability and death. Do you understand what I mean?", "C) Sure, but over-politeness can also disturb people and\nmake them feel like you want to put a safe distance\nbetween you andS them.", "D) I especially want to emphasize language change.\nSome words lose their original meanings and gain new\nones depending on the context or tone.", "E) No, it’s more related to word choice and the\nconnotations behind language. I’d rather use the term\n‘government officer’ than ‘civil servant’.\nÖ\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) However, this all depends on whom you’Yre talking to.\nWe often try to be more polite while communicating\nwith authority figures or our supervisors.", "B) Actually, we use them to refer to taboo topics like\ndisability and death. Do you understand what I mean?", "C) Sure, but over-politeness can also disturb people and\nmake them feel like you want to put a safe distance\nbetween you andS them.", "D) I especially want to emphasize language change.\nSome words lose their original meanings and gain new\nones depending on the context or tone.", "E) No, it’s more related to word choice and the\nconnotations behind language. I’d rather use the term\n‘government officer’ than ‘civil servant’.\nÖ"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Diyalog"
@@ -3554,7 +3563,7 @@ object QuestionDataProvider {
         Question(
             id = 442,
             questionText = "(2015 İlkbahar / Soru 69)\nSince we are both perpetrators and victims of\nenvironmental damage, humanity’s survival\nultimately depends on our ability to preserve the\nnatural world.",
-            options = listOf("A) The future of humankind is finally to be decided by our\nresolve to preserve the environment as we are\nnegatively affected when we damage it.", "B) The reason why we destroy the natural world and are\nafflicted with its damage is that our survival relies on\nour capability to protect the environment.", "C) If we destroy nature and are badly affected by such\ndevastation, our ability to protect the environment will\neventually rely on the survival of humanity.", "D) As we are the ones who both destroy the environment\nand suffer from this destruction, the existence of\nhumanity finally rests on how well we maintain the\nnatural world.", "E) Given that we both destroy the natural world and suffer\nfrom it, our power to protect the environment ultimately\nfails to save our lives.\n17 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) The future of humankind is finally to be decided by our\nresolve to preserve the environment as we are\nnegatively affected when we damage it.", "B) The reason why we destroy the natural world and are\nafflicted with its damage is that our survival relies on\nour capability to protect the environment.", "C) If we destroy nature and are badly affected by such\ndevastation, our ability to protect the environment will\neventually rely on the survival of humanity.", "D) As we are the ones who both destroy the environment\nand suffer from this destruction, the existence of\nhumanity finally rests on how well we maintain the\nnatural world.", "E) Given that we both destroy the natural world and suffer\nfrom it, our power to protect the environment ultimately\nfails to save our lives.\n17 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Dil Bilgisi"
@@ -3578,7 +3587,7 @@ object QuestionDataProvider {
         Question(
             id = 445,
             questionText = "(2015 İlkbahar / Soru 73)\nThe brain analyzes the flood of incoming\ninformation, decides how to respond, and sends\noutgoing signals to muscles and other organs,\ntelling them what to do. ---- However, many parts of\nthe nervous system work automatically, controlling\nyour internal organs and reflexes without your\nconscious awareness.",
-            options = listOf("A) The nervous system has two main parts: the central\nnervous system and the peripheral nervous system.", "B) The nervous system in the human body is made up of\nbillions of cells called neurons used for sending and\nreceiving information.", "C) Nerve cells located almost everywhere in your\nbody have long extensions called axons that can\nstretch to 1 m in length.", "D) Much of your nervous system is under voluntary\ncontrol, which means you can choose how to react.", "E) While man-made wires carry power, the cells that\nmake up the nervous system carry information.\n18 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) The nervous system has two main parts: the central\nnervous system and the peripheral nervous system.", "B) The nervous system in the human body is made up of\nbillions of cells called neurons used for sending and\nreceiving information.", "C) Nerve cells located almost everywhere in your\nbody have long extensions called axons that can\nstretch to 1 m in length.", "D) Much of your nervous system is under voluntary\ncontrol, which means you can choose how to react.", "E) While man-made wires carry power, the cells that\nmake up the nervous system carry information.\n18 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -3594,7 +3603,7 @@ object QuestionDataProvider {
         Question(
             id = 447,
             questionText = "(2015 İlkbahar / Soru 75)\nIn the early 1980s, Israeli scientist Dan Shechtman\ndiscovered that snow crystals could form in\nstructures that are ordered, but that have no\nrepeating pattern. ---- It turns out, he should not\nhave worried as he was awarded the Nobel Prize for\nthe work in 2011. The structures, now known as\nquasicrystals, resemble Moorish mosaics such as\nÖthose found in the Alhambra in Granada, Spain.",
-            options = listOf("A) Since Shechtman’s publication, hundreds\nof quasicrystals have been created in the laboratory.", "B) It was 100 years ago when the technique of X-ray\ndiffraction, which Shechtman used a lot in his\nstudies, first allowed the detailed study of crystals.", "C) The idea was so controversial that he did not publish\nhis results for two years, fearing that no one would\nbelieve him.", "D) Shechtman’s findings were not enough; the world had\nto wait until 2010 for a natural crystal to be identified.", "E) When he published his findings, Shechtman had to\nconfront a lot of criticism.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Since Shechtman’s publication, hundreds\nof quasicrystals have been created in the laboratory.", "B) It was 100 years ago when the technique of X-ray\ndiffraction, which Shechtman used a lot in his\nstudies, first allowed the detailed study of crystals.", "C) The idea was so controversial that he did not publish\nhis results for two years, fearing that no one would\nbelieve him.", "D) Shechtman’s findings were not enough; the world had\nto wait until 2010 for a natural crystal to be identified.", "E) When he published his findings, Shechtman had to\nconfront a lot of criticism."),
             correctOptionIndex = 2,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -3618,7 +3627,7 @@ object QuestionDataProvider {
         Question(
             id = 450,
             questionText = "(2015 İlkbahar / Soru 78)\n(I) It is perfectly normal and sensible for small children to\nbe afraid sometimes. (II) One of the most popular and\nsuccessful treatments for phobias is to think about that\nwhich frightens you most. (III) Children are mainly afraid\nof losing their parents or of becoming separated from\nthem. (IV) They are also afraid that something big might\ncarry them away, and this was probably a realistic fear\nfor our primitive ancestors. (V) It is wise for parents to\nhelp them learn how to deal with fear.",
-            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V\n19 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2015-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V\n19 Diğer sayfaya geçiniz.\n\n\n\n2015-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Paragraf"
@@ -3634,7 +3643,7 @@ object QuestionDataProvider {
         Question(
             id = 452,
             questionText = "(2015 İlkbahar / Soru 80)\n(I) A maglev train might seem mysterious in Yaction, but\nthe concept is easy to understand. (II) Magnets in the\ntrack are activated by the motion of the train and then\nare deactivated as soon as the train is gone. (III) While\nthe concept has been applied to trains, right now its\napplication to ships is still theoretical. (IV) Magnets on\nthe bottom of the train and magnets on the track repel\neach other and the train rises a few inches above the\ntrack; individual magnetic fields of the guideway propel\nthe train forward. (V)Maglev trains travel at nearly twice\nS\nthe speed of conventional trains, use less energy, and\ncost less to maintain and run  partly because their\noperating mechanism involves almost no friction.",
-            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V\nÖ\n\n=== COLUMN_SEPARATOR ===\n\nM\nTEST BİTTİ."),
+            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V\nÖ\n\n\n\nM\nTEST BİTTİ."),
             correctOptionIndex = 2,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -3658,7 +3667,7 @@ object QuestionDataProvider {
         Question(
             id = 455,
             questionText = "(2016 Sonbahar / Soru 3)\nAn understanding of the physiology of stress does\nnot ---- clarify its meaning, thus several models have\nbeen constructed in an attempt to better define and\nexplain it.",
-            options = listOf("A) arguably", "B) jointly", "C) eventually", "D) completely", "E) desperately\n\n=== COLUMN_SEPARATOR ===\n\nTESTİ"),
+            options = listOf("A) arguably", "B) jointly", "C) eventually", "D) completely", "E) desperately\n\n\n\nTESTİ"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Kelime Bilgisi"
@@ -3682,7 +3691,7 @@ object QuestionDataProvider {
         Question(
             id = 458,
             questionText = "(2016 Sonbahar / Soru 6)\nThe success of advertising ultimately ---- whether it\ninfluences consumer behaviour.",
-            options = listOf("A) breaks in", "B) disposes of", "C) gives away", "D) rests on", "E) tears apart\n1 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS Sonbahar /İNGİLİZCE"),
+            options = listOf("A) breaks in", "B) disposes of", "C) gives away", "D) rests on", "E) tears apart\n1 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS Sonbahar /İNGİLİZCE"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Kelime Bilgisi"
@@ -3698,7 +3707,7 @@ object QuestionDataProvider {
         Question(
             id = 460,
             questionText = "(2016 Sonbahar / Soru 8)\nIn cultures that ---- up to more recent times, we ----\nfurther clues to past beliefs.\nS",
-            options = listOf("A) will survive / need to find", "B) had survived / could find", "C) survived / would find", "D) survive / used to find\nÖ", "E) have survived / may find\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) will survive / need to find", "B) had survived / could find", "C) survived / would find", "D) survive / used to find\nÖ", "E) have survived / may find"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Dil Bilgisi"
@@ -3722,7 +3731,7 @@ object QuestionDataProvider {
         Question(
             id = 463,
             questionText = "(2016 Sonbahar / Soru 11)\nExcluding minor skin cancers, breast cancer is the\nsingle most common type of cancer ---- women\nbased ---- American Cancer Society data.",
-            options = listOf("A) in / from", "B) with / for", "C) among / upon", "D) within / about", "E) on / of\n2 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS Sonbahar /İNGİLİZCE"),
+            options = listOf("A) in / from", "B) with / for", "C) among / upon", "D) within / about", "E) on / of\n2 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS Sonbahar /İNGİLİZCE"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Edatlar"
@@ -3754,7 +3763,7 @@ object QuestionDataProvider {
         Question(
             id = 467,
             questionText = "(2016 Sonbahar / Soru 16)\n---- the promising prospects that carbon capture and\nstorage technology offers to prevent air pollution,\nit is still a rather new technique requiring much\nmore research before it can be utilized on a large\nscale.",
-            options = listOf("A) Owing to", "B) Rather than", "C) In spite of", "D) Similar to", "E) Except for\n3 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS Sonbahar /İNGİLİZCE"),
+            options = listOf("A) Owing to", "B) Rather than", "C) In spite of", "D) Similar to", "E) Except for\n3 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS Sonbahar /İNGİLİZCE"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Bağlaçlar"
@@ -3770,7 +3779,7 @@ object QuestionDataProvider {
         Question(
             id = 469,
             questionText = "(2016 Sonbahar / Soru 18)\n",
-            options = listOf("A) as a result of", "B) such as", "C) by means of", "D) due to", "E) as opposed to\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) as a result of", "B) such as", "C) by means of", "D) due to", "E) as opposed to"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Dil Bilgisi"
@@ -3794,7 +3803,7 @@ object QuestionDataProvider {
         Question(
             id = 472,
             questionText = "(2016 Sonbahar / Soru 21)\n",
-            options = listOf("A) as if", "B) though", "C) in case", "D) only if", "E) just as\n4 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS Sonbahar /İNGİLİZCE"),
+            options = listOf("A) as if", "B) though", "C) in case", "D) only if", "E) just as\n4 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS Sonbahar /İNGİLİZCE"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Dil Bilgisi"
@@ -3802,7 +3811,7 @@ object QuestionDataProvider {
         Question(
             id = 473,
             questionText = "(2016 Sonbahar / Soru 23)\n",
-            options = listOf("A) coincidentally", "B) scarcely", "C) firmly", "D) moderately", "E) severely\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) coincidentally", "B) scarcely", "C) firmly", "D) moderately", "E) severely"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Dil Bilgisi"
@@ -3826,7 +3835,7 @@ object QuestionDataProvider {
         Question(
             id = 476,
             questionText = "(2016 Sonbahar / Soru 26)\n",
-            options = listOf("A) at", "B) for", "C) into", "D) with", "E) upon\n5 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS Sonbahar /İNGİLİZCE"),
+            options = listOf("A) at", "B) for", "C) into", "D) with", "E) upon\n5 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS Sonbahar /İNGİLİZCE"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Dil Bilgisi"
@@ -3842,7 +3851,7 @@ object QuestionDataProvider {
         Question(
             id = 478,
             questionText = "(2016 Sonbahar / Soru 28)\nThe world's cities are home to more than half of the\nglobal population ----.",
-            options = listOf("A) so they are facinSg unprecedented pressure and\ndemand for investment in infrastructure and urban\ndevelopment", "B) until they gain recognition as one of the fastest\ndeveloping regional players in the local sector", "C) since firms around the world are trying hard to sign a\ncontract to get involved in cities' recreation process\nÖ", "D) so that new industrial projects can be designed to deal\nwith the problems resulting from overpopulation", "E) but governments hope that public transportation\nsystems will encourage people to get out of their cars\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) so they are facinSg unprecedented pressure and\ndemand for investment in infrastructure and urban\ndevelopment", "B) until they gain recognition as one of the fastest\ndeveloping regional players in the local sector", "C) since firms around the world are trying hard to sign a\ncontract to get involved in cities' recreation process\nÖ", "D) so that new industrial projects can be designed to deal\nwith the problems resulting from overpopulation", "E) but governments hope that public transportation\nsystems will encourage people to get out of their cars"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Bağlaçlar"
@@ -3858,7 +3867,7 @@ object QuestionDataProvider {
         Question(
             id = 480,
             questionText = "(2016 Sonbahar / Soru 30)\nParts of Antarctica are claimed by seven\nnations: Argentina, Australia, Chile, France, New\nZealand, Norway, and the United Kingdom, ----.",
-            options = listOf("A) given that Antarctica is generally described as having\ntwo parts, West Antarctica and East Antarctica", "B) but Antarctica is located in the far south,\nand is extremely cold, even during the summer", "C) therefore, it ranks fifth in size among the world’s\ncontinents, being larger than Australia or Europe", "D) for example, about 98 percent of the land area is\npermanently covered with ice", "E) however, their territories are not recognized by the\ninternational community\n6 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS Sonbahar /İNGİLİZCE"),
+            options = listOf("A) given that Antarctica is generally described as having\ntwo parts, West Antarctica and East Antarctica", "B) but Antarctica is located in the far south,\nand is extremely cold, even during the summer", "C) therefore, it ranks fifth in size among the world’s\ncontinents, being larger than Australia or Europe", "D) for example, about 98 percent of the land area is\npermanently covered with ice", "E) however, their territories are not recognized by the\ninternational community\n6 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS Sonbahar /İNGİLİZCE"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Bağlaçlar"
@@ -3874,7 +3883,7 @@ object QuestionDataProvider {
         Question(
             id = 482,
             questionText = "(2016 Sonbahar / Soru 32)\nAlthough there is no standard definition for a\nsmartphone, ----.",
-            options = listOf("A) it is a mobile phoSne with advanced functions in its\nbasic sense", "B) the first smartphone had a calendar, a calculator, and\nfax capabilities", "C) its applications are not often included when you buy it", "D) whether the smartphone will simply be a computer in\nthe future is not certain\nÖ", "E) the number of people using smartphones is increasing\nday by day\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) it is a mobile phoSne with advanced functions in its\nbasic sense", "B) the first smartphone had a calendar, a calculator, and\nfax capabilities", "C) its applications are not often included when you buy it", "D) whether the smartphone will simply be a computer in\nthe future is not certain\nÖ", "E) the number of people using smartphones is increasing\nday by day"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Bağlaçlar"
@@ -3890,7 +3899,7 @@ object QuestionDataProvider {
         Question(
             id = 484,
             questionText = "(2016 Sonbahar / Soru 34)\nWhile some hunter-gatherer communities exist even\ntoday ----.",
-            options = listOf("A) hunter-gatherer communities lived by searching out\nfood and other things they needed rather than growing\nor manufacturing them", "B) the era of hunter-gatherers ended about ten thousand\nyears ago with the appearance of the first agricultural\nsocieties", "C) all hunter-gatherers lived during what is called the\n'Palaeolithic Era', which means the era of 'Old Stone\nAge'", "D) many gathered the resources they needed for food, for\nshelter and clothing, and for ritual activities and other\npurposes", "E) scholars usually study the physical remains from\nhunter-gatherer communities in the absence of written\nevidence\n7 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS Sonbahar /İNGİLİZCE"),
+            options = listOf("A) hunter-gatherer communities lived by searching out\nfood and other things they needed rather than growing\nor manufacturing them", "B) the era of hunter-gatherers ended about ten thousand\nyears ago with the appearance of the first agricultural\nsocieties", "C) all hunter-gatherers lived during what is called the\n'Palaeolithic Era', which means the era of 'Old Stone\nAge'", "D) many gathered the resources they needed for food, for\nshelter and clothing, and for ritual activities and other\npurposes", "E) scholars usually study the physical remains from\nhunter-gatherer communities in the absence of written\nevidence\n7 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS Sonbahar /İNGİLİZCE"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Bağlaçlar"
@@ -3906,7 +3915,7 @@ object QuestionDataProvider {
         Question(
             id = 486,
             questionText = "(2016 Sonbahar / Soru 36)\nAfter securing political and economic stability and\novercoming severe flooding, ----.",
-            options = listOf("A) about half of Thailand’s workforce is employed in the\nagriculture sector\nSE)", "B) the Thai economy depends mainly on automotive and\nelectronics manufacturing", "C) Thailand is now becoming attractive to foreign\ninvestors with its ability to recover", "D) the majority of the population in Thailand are ethnic\nThais besides a large ethnic Chinese minority\nÖ", "E) Thailand also exports processed foods like frozen\nshrimp and canned pineapple\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) about half of Thailand’s workforce is employed in the\nagriculture sector\nSE)", "B) the Thai economy depends mainly on automotive and\nelectronics manufacturing", "C) Thailand is now becoming attractive to foreign\ninvestors with its ability to recover", "D) the majority of the population in Thailand are ethnic\nThais besides a large ethnic Chinese minority\nÖ", "E) Thailand also exports processed foods like frozen\nshrimp and canned pineapple"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Bağlaçlar"
@@ -3914,7 +3923,7 @@ object QuestionDataProvider {
         Question(
             id = 487,
             questionText = "(2016 Sonbahar / Soru 38)\nThere are over 100 trillion bacteria in our body, most\nof which are in the guts, and they support essential\nfunctions like digestion, immunity and mental\nhealth.",
-            options = listOf("A) Sindirim, bağışıklık ve akıl sağlığı gibi önemli\nfonksiyonları destekleyen ve vücudumuzda çoğunlukla\nbağırsaklarda bulunan 100 trilyondan fazla bakteri\nvardır.", "B) Vücudumuzdaki 100 trilyondan fazla bakterinin çoğu\nbağırsaklardadır ve bunlar sindirim, bağışıklık ve akıl\nsağlığı gibi önemli fonksiyonları desteklemektedir.", "C) Vücudumuzda bulunan 100 trilyonu aşkın bakterinin\nçoğu bağırsaklarda yaşar ve sindirim, bağışıklık ve akıl\nsağlığı gibi önemli fonksiyonları destekler.", "D) Vücudumuzda çoğu bağırsaklarda olan 100 trilyondan\nfazla bakteri vardır ve bunlar sindirim, bağışıklık ve\nY\nakıl sağlığı gibi önemli fonksiyonları desteklemektedir.", "E) Sindirim, bağışıklık ve akıl sağlığı gibi önemli\nfonksiyonları destekleyen 100 trilyonu aşkın bakteri,\nvücudumuzda çoğunlukla bağırsaklarda\nbulunmaktadır.\nS\nÖ\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Sindirim, bağışıklık ve akıl sağlığı gibi önemli\nfonksiyonları destekleyen ve vücudumuzda çoğunlukla\nbağırsaklarda bulunan 100 trilyondan fazla bakteri\nvardır.", "B) Vücudumuzdaki 100 trilyondan fazla bakterinin çoğu\nbağırsaklardadır ve bunlar sindirim, bağışıklık ve akıl\nsağlığı gibi önemli fonksiyonları desteklemektedir.", "C) Vücudumuzda bulunan 100 trilyonu aşkın bakterinin\nçoğu bağırsaklarda yaşar ve sindirim, bağışıklık ve akıl\nsağlığı gibi önemli fonksiyonları destekler.", "D) Vücudumuzda çoğu bağırsaklarda olan 100 trilyondan\nfazla bakteri vardır ve bunlar sindirim, bağışıklık ve\nY\nakıl sağlığı gibi önemli fonksiyonları desteklemektedir.", "E) Sindirim, bağışıklık ve akıl sağlığı gibi önemli\nfonksiyonları destekleyen 100 trilyonu aşkın bakteri,\nvücudumuzda çoğunlukla bağırsaklarda\nbulunmaktadır.\nS\nÖ"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Çeviri"
@@ -3922,7 +3931,7 @@ object QuestionDataProvider {
         Question(
             id = 488,
             questionText = "(2016 Sonbahar / Soru 39)\nAlthough sleep disorder has negative effects on\nalmost all of the occupations throughout the world,\nit is a particular source of concern for those who\nwork the night shift.",
-            options = listOf("A) Gece vardiyasında çalışanlar için özel bir endişe\nkaynağı olan uyku bozukluğu, artık tüm dünyada\nMhemen hemen bütün meslekler üzerinde olumsuz\netkiler yaratmaktadır.", "B) Uyku bozukluğu, gece vardiyasında çalışanlar için özel\nbir endişe kaynağı oluştursa da dünya çapındaki\nhemen hemen bütün meslekler üzerinde olumsuz\netkilere sahiptir.", "C) Uyku bozukluğu, tüm dünyada neredeyse bütün\nmeslekler üzerinde olumsuz etkilere sahip olmasına\nrağmen, en çok gece vardiyasında çalışanlar için özel\nbir endişe kaynağı oluşturmaktadır.", "D) Uyku bozukluğu, dünya genelindeki hemen hemen\nbütün meslekler üzerinde olumsuz etkiler\noluşturmaktadır ancak gece vardiyasında çalışanlar\niçin özel bir endişe kaynağıdır.", "E) Uyku bozukluğu, dünya çapında neredeyse bütün\nmeslekler üzerinde olumsuz etkilere sahip olsa da\ngece vardiyasında çalışanlar için özel bir endişe\nkaynağıdır.\n9 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS Sonbahar /İNGİLİZCE"),
+            options = listOf("A) Gece vardiyasında çalışanlar için özel bir endişe\nkaynağı olan uyku bozukluğu, artık tüm dünyada\nMhemen hemen bütün meslekler üzerinde olumsuz\netkiler yaratmaktadır.", "B) Uyku bozukluğu, gece vardiyasında çalışanlar için özel\nbir endişe kaynağı oluştursa da dünya çapındaki\nhemen hemen bütün meslekler üzerinde olumsuz\netkilere sahiptir.", "C) Uyku bozukluğu, tüm dünyada neredeyse bütün\nmeslekler üzerinde olumsuz etkilere sahip olmasına\nrağmen, en çok gece vardiyasında çalışanlar için özel\nbir endişe kaynağı oluşturmaktadır.", "D) Uyku bozukluğu, dünya genelindeki hemen hemen\nbütün meslekler üzerinde olumsuz etkiler\noluşturmaktadır ancak gece vardiyasında çalışanlar\niçin özel bir endişe kaynağıdır.", "E) Uyku bozukluğu, dünya çapında neredeyse bütün\nmeslekler üzerinde olumsuz etkilere sahip olsa da\ngece vardiyasında çalışanlar için özel bir endişe\nkaynağıdır.\n9 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS Sonbahar /İNGİLİZCE"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Çeviri"
@@ -3930,7 +3939,7 @@ object QuestionDataProvider {
         Question(
             id = 489,
             questionText = "(2016 Sonbahar / Soru 41)\nRüzgar basit tabirle yüksek basınç bölgelerinden\ndaha alçak basınç bölgelerine hava akışı anlamına\ngelir ve sıvılarla aynı fizik kanunlarına tabidir.",
-            options = listOf("A) What is simply meant by wind is that it is the flow of air\nfrom areas of high pressure to those of lower\npressure, and it obeys the same laws of physics as\nMfluids.", "B) The meaning of wind is simply the flow of air from high\npressure areas to the areas of lower pressure in\naddition to following the same physics laws just as\nfluids do.", "C) Wind simply means the flow of air from areas of high\npressure to those of lower pressure, and it obeys the\nsame laws of physics as fluids.", "D) Because wind obeys the same laws of physics as\nfluids, it simply means the flow of air from areas of\nhigh pressure to those of lower pressure.", "E) Wind flows from high pressure areas to lower pressure\nareas, which simply means that it obeys the same\nlaws of physics as fluids.\n10 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS Sonbahar /İNGİLİZCE"),
+            options = listOf("A) What is simply meant by wind is that it is the flow of air\nfrom areas of high pressure to those of lower\npressure, and it obeys the same laws of physics as\nMfluids.", "B) The meaning of wind is simply the flow of air from high\npressure areas to the areas of lower pressure in\naddition to following the same physics laws just as\nfluids do.", "C) Wind simply means the flow of air from areas of high\npressure to those of lower pressure, and it obeys the\nsame laws of physics as fluids.", "D) Because wind obeys the same laws of physics as\nfluids, it simply means the flow of air from areas of\nhigh pressure to those of lower pressure.", "E) Wind flows from high pressure areas to lower pressure\nareas, which simply means that it obeys the same\nlaws of physics as fluids.\n10 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS Sonbahar /İNGİLİZCE"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Çeviri"
@@ -3938,7 +3947,7 @@ object QuestionDataProvider {
         Question(
             id = 490,
             questionText = "(2016 Sonbahar / Soru 42)\nBaşarılı bir portre ressamı olan Samuel Morse\nelektromanyetizmayı ilk duyduğunda mesajların\nbir kablo üzerinden elektrik aracılığıyla nasıl\ngönderilebileceği üzerine hemen çalışmaya\nbaşlamıştır.",
-            options = listOf("A) As soon as Samuel Morse, a brilliant portrait artist,\nhad heard about electromagnetism, he at once started\nto study how electricity could be used to send\nmessages over a wire.", "B) Samuel Morse, who quickly began studying how\nmessages could be sent over a wire through electricity\nwhen he first heard about electromagnetism, was a\nskillful portrait artist.", "C) When Samuel Morse, an accomplished portrait artist,\nfirst heard about electromagnetism, he immediately\nbegan studying how messages could be sent over a\nwire via electricity. Y", "D) Having heard about electromagnetism for the first\ntime, Samuel Morse, who was a proficient portrait\nartist, quickly began studying how messages could be\nsent over a wire through electricity.", "E) What made Samuel Morse, a talented portrait artist,\nimmediately begin studying how messages could be\nsent over a wire using electricity was that he learned\nS\nof electromagnetism.\nÖ\n\n=== COLUMN_SEPARATOR ===\n\nM\n11 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS Sonbahar /İNGİLİZCE"),
+            options = listOf("A) As soon as Samuel Morse, a brilliant portrait artist,\nhad heard about electromagnetism, he at once started\nto study how electricity could be used to send\nmessages over a wire.", "B) Samuel Morse, who quickly began studying how\nmessages could be sent over a wire through electricity\nwhen he first heard about electromagnetism, was a\nskillful portrait artist.", "C) When Samuel Morse, an accomplished portrait artist,\nfirst heard about electromagnetism, he immediately\nbegan studying how messages could be sent over a\nwire via electricity. Y", "D) Having heard about electromagnetism for the first\ntime, Samuel Morse, who was a proficient portrait\nartist, quickly began studying how messages could be\nsent over a wire through electricity.", "E) What made Samuel Morse, a talented portrait artist,\nimmediately begin studying how messages could be\nsent over a wire using electricity was that he learned\nS\nof electromagnetism.\nÖ\n\n\n\nM\n11 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS Sonbahar /İNGİLİZCE"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Çeviri"
@@ -3962,7 +3971,7 @@ object QuestionDataProvider {
         Question(
             id = 493,
             questionText = "(2016 Sonbahar / Soru 46)\nWhich of the following best describes the author's\nattitude toward Einstein?",
-            options = listOf("A) indifferent", "B) satirical", "C) impartial", "D) appreciating", "E) disappointed\n12 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS Sonbahar /İNGİLİZCE"),
+            options = listOf("A) indifferent", "B) satirical", "C) impartial", "D) appreciating", "E) disappointed\n12 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS Sonbahar /İNGİLİZCE"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -3970,7 +3979,7 @@ object QuestionDataProvider {
         Question(
             id = 494,
             questionText = "(2016 Sonbahar / Soru 47)\nWhy do governments invest more in education and\ntraining?",
-            options = listOf("A) To take the education system under control\nÖ", "B) To provide a healthy integration of the society with the\nrest of the world", "C) To be able to compete with other nations", "D) To help stop the globalization process", "E) To avoid the impact of successful companies from\nrival countries\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) To take the education system under control\nÖ", "B) To provide a healthy integration of the society with the\nrest of the world", "C) To be able to compete with other nations", "D) To help stop the globalization process", "E) To avoid the impact of successful companies from\nrival countries"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -3986,7 +3995,7 @@ object QuestionDataProvider {
         Question(
             id = 496,
             questionText = "(2016 Sonbahar / Soru 50)\nWhat could be the best title for the passage?",
-            options = listOf("A) State Intervention in Education", "B) Education and Globalization", "C) Industrialization for Globalization", "D) Education in Developing Countries", "E) Future of Education in Industrial Societies\n13 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS Sonbahar /İNGİLİZCE"),
+            options = listOf("A) State Intervention in Education", "B) Education and Globalization", "C) Industrialization for Globalization", "D) Education in Developing Countries", "E) Future of Education in Industrial Societies\n13 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS Sonbahar /İNGİLİZCE"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Paragraf"
@@ -4010,7 +4019,7 @@ object QuestionDataProvider {
         Question(
             id = 499,
             questionText = "(2016 Sonbahar / Soru 54)\nWhat is the main purpose of the passage?",
-            options = listOf("A) Revealing the basic similarities between the Murray\nRiver and the Colorado River", "B) Criticising the reluctance of the US to take action to\nprevent a possible drought", "C) Pointing to the need for the US to take lessons from\nthe drought in Australia", "D) Emphasizing the disastrous effects of the drought\nexperienced in Australia", "E) Explaining how to save limited water supplies and\necosystems destroyed in both Australia and the US\n14 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS Sonbahar /İNGİLİZCE"),
+            options = listOf("A) Revealing the basic similarities between the Murray\nRiver and the Colorado River", "B) Criticising the reluctance of the US to take action to\nprevent a possible drought", "C) Pointing to the need for the US to take lessons from\nthe drought in Australia", "D) Emphasizing the disastrous effects of the drought\nexperienced in Australia", "E) Explaining how to save limited water supplies and\necosystems destroyed in both Australia and the US\n14 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS Sonbahar /İNGİLİZCE"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -4018,14 +4027,16 @@ object QuestionDataProvider {
         Question(
             id = 500,
             questionText = "(2016 Sonbahar / Soru 55)\nIt is clearly stated in the passage that Greenland's\nglaciers ----.",
-            options = listOf("A) have slowed down their movement towards sea", "B) started to melt first with Petermann and Humboldt\nÖglaciers", "C) have caused an increase in sea levels because of\nmelting", "D) have begun to melt from the middle to the edges", "E) used to rest in fjords before they moved towards the\nsea\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) have slowed down their movement towards sea", "B) started to melt first with Petermann and Humboldt\nÖglaciers", "C) have caused an increase in sea levels because of\nmelting", "D) have begun to melt from the middle to the edges", "E) used to rest in fjords before they moved towards the\nsea"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
         )
     )
+}
 
-    private val chunk5 = listOf(
+object QuestionChunk5 {
+    val list = listOf(
         Question(
             id = 501,
             questionText = "(2016 Sonbahar / Soru 56)\nAccording to the passage, lately, it has been\ndeclared that ----.",
@@ -4045,7 +4056,7 @@ object QuestionDataProvider {
         Question(
             id = 503,
             questionText = "(2016 Sonbahar / Soru 58)\nWhat does the passage mainly focus on?",
-            options = listOf("A) How to prevent Greenland's glaciers from melting", "B) The comparison of Greenland's different glaciers", "C) The consequence of melting in Greenland's glaciers", "D) Research on Greenland's glaciers", "E) The disappearance of ice shelves around Greenland\n15 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS Sonbahar /İNGİLİZCE"),
+            options = listOf("A) How to prevent Greenland's glaciers from melting", "B) The comparison of Greenland's different glaciers", "C) The consequence of melting in Greenland's glaciers", "D) Research on Greenland's glaciers", "E) The disappearance of ice shelves around Greenland\n15 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS Sonbahar /İNGİLİZCE"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -4053,7 +4064,7 @@ object QuestionDataProvider {
         Question(
             id = 504,
             questionText = "(2016 Sonbahar / Soru 59)\nIt is stated in the passage that the Foldscope ----.\nÖ",
-            options = listOf("A) is an original method to fold paper that children might\nfavour", "B) is a new kind of magnifier that can also work without a\nlens or a LED", "C) is an easy-to-carry microscope whose primary material\nis paper", "D) can magnify objects better than many microscopes\nused in laboratories", "E) can also be created by children as it has quite a\nsimple design\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) is an original method to fold paper that children might\nfavour", "B) is a new kind of magnifier that can also work without a\nlens or a LED", "C) is an easy-to-carry microscope whose primary material\nis paper", "D) can magnify objects better than many microscopes\nused in laboratories", "E) can also be created by children as it has quite a\nsimple design"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -4077,7 +4088,7 @@ object QuestionDataProvider {
         Question(
             id = 507,
             questionText = "(2016 Sonbahar / Soru 62)\nThe author is of the opinion that the Foldscope ----.",
-            options = listOf("A) needs to be greatly improved to be used in original\nresearch projects", "B) should go beyond biology books and used in\nlaboratories to make detailed studies like those on\nmicro-fossils", "C) has become very popular just because the scientists\nnominated for the Nobel Prize have been using it", "D) was originally designed to be used at schools but\nnow it is being utilized especially for medical purposes", "E) might be a good educational tool that can dramatically\nfoster scientific endeavour\n16 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS Sonbahar /İNGİLİZCE"),
+            options = listOf("A) needs to be greatly improved to be used in original\nresearch projects", "B) should go beyond biology books and used in\nlaboratories to make detailed studies like those on\nmicro-fossils", "C) has become very popular just because the scientists\nnominated for the Nobel Prize have been using it", "D) was originally designed to be used at schools but\nnow it is being utilized especially for medical purposes", "E) might be a good educational tool that can dramatically\nfoster scientific endeavour\n16 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS Sonbahar /İNGİLİZCE"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Paragraf"
@@ -4085,7 +4096,7 @@ object QuestionDataProvider {
         Question(
             id = 508,
             questionText = "(2016 Sonbahar / Soru 63)\nRadio Presenter:\n So, here we have Dr. Henstridge from the\nUniversity of Edinburgh who analyses people's\nbrains in his lab. How do you persuade people to\nagree to donate their brain after death?\nDr. Henstridge:\n These are people who participated in a project 70\nyears ago in which they had their IQ tested. We\nthen sent them a letter so they had the opportunity\nto think about it with their family without any\npressure.\nRadio Presenter:\n ----\nYB)\nDr. Henstridge:\n It is the only one where we have a good idea about\ntheir intelligence levels when they were young.",
-            options = listOf("A) What kind of information is gained in your project by\nanalysing donated brains?", "B) Can you tell us a bit about the profile of those people\nwho donated theSir brain?", "C) What's the difference between IQ in the childhood and\nin the old age?", "D) How long are you planning to pursue this research?", "E) There are several other brain banks, why is yours\ndifferent?\nÖ\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) What kind of information is gained in your project by\nanalysing donated brains?", "B) Can you tell us a bit about the profile of those people\nwho donated theSir brain?", "C) What's the difference between IQ in the childhood and\nin the old age?", "D) How long are you planning to pursue this research?", "E) There are several other brain banks, why is yours\ndifferent?\nÖ"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Diyalog"
@@ -4093,7 +4104,7 @@ object QuestionDataProvider {
         Question(
             id = 509,
             questionText = "(2016 Sonbahar / Soru 66)\nBilge:\n I can't believe there are still some people who\nthink the wealthy have limitless leisure time.\nKerem:\n ----\nMBilge:\n Yes, I do. The well-off people I know work 80\nhours per week inventing and producing things.\nKerem:\n It seems they don't really have so much free time\nafter all.",
-            options = listOf("A) Do you think they'd like to have a lot of leisure time?", "B) Do you feel it is unfair for us to have limited leisure\ntime unlike them?", "C) Do you think they are rich because they have wealthy\nfamilies?", "D) I don't think having a lot of free time means resting a\nlot, do you?", "E) I see you disagree with what they say, don't you?\n18 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS Sonbahar /İNGİLİZCE"),
+            options = listOf("A) Do you think they'd like to have a lot of leisure time?", "B) Do you feel it is unfair for us to have limited leisure\ntime unlike them?", "C) Do you think they are rich because they have wealthy\nfamilies?", "D) I don't think having a lot of free time means resting a\nlot, do you?", "E) I see you disagree with what they say, don't you?\n18 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS Sonbahar /İNGİLİZCE"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Diyalog"
@@ -4101,7 +4112,7 @@ object QuestionDataProvider {
         Question(
             id = 510,
             questionText = "(2016 Sonbahar / Soru 67)\nKemal:\n Can you have a look at this headline? It says ear\ngenes are linked to musical talent. What does that\nmean?\nOnur:\n Well, it suggests musical talent may partly be due\nto genes determining the structure of the inner\near.\nKemal:\n ----\nOnur:\n OK. If you have an excellent inner ear structure,\nyou can play the tunes you hear without looking at\nthe notes.",
-            options = listOf("A) What do you mean in layman's terms?\nY", "B) Do you think this can change later with new research?", "C) Are you interested in the link between genes and\ntalent?", "D) Do you really believe that genes can have an impact\non musical talent?", "E) Doesn't it soundS incredible that genes can be that\nimportant?\nÖ\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) What do you mean in layman's terms?\nY", "B) Do you think this can change later with new research?", "C) Are you interested in the link between genes and\ntalent?", "D) Do you really believe that genes can have an impact\non musical talent?", "E) Doesn't it soundS incredible that genes can be that\nimportant?\nÖ"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Diyalog"
@@ -4109,7 +4120,7 @@ object QuestionDataProvider {
         Question(
             id = 511,
             questionText = "(2016 Sonbahar / Soru 68)\nMany districts in Arizona are considering the\npossibility of lowering the age of partial\nresponsibility to 12 due to the increase in the\nnumber of crimes committed by criminals under the\nM\nage of 14.",
-            options = listOf("A) Many local authorities in Arizona are thinking of\nlowering the age of partial responsibility to 12 in order\nto prevent crimes committed by criminals under the\nage of 14.", "B) Crimes committed by those under the age of 14 are\nbecoming more common, and thus many localities in\nArizona are thinking of lowering the age of partial\nresponsibility to 12.", "C) The possibility of lowering the age of partial\nresponsibility to 12 is being discussed in many regions\nof Arizona because of the immensely growing number\nof crimes committed by 14-year-old individuals.", "D) The increasing number of criminals under the age of\n14 has led to an agreement in localities in Arizona to\nlower the age of partial responsibility to 12.", "E) Criminals under the age of 14 are committing more\ncrimes than ever before, which will probably force the\nauthorities in Arizona to consider lowering the age of\npartial responsibility to 12.\n19 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS Sonbahar /İNGİLİZCE"),
+            options = listOf("A) Many local authorities in Arizona are thinking of\nlowering the age of partial responsibility to 12 in order\nto prevent crimes committed by criminals under the\nage of 14.", "B) Crimes committed by those under the age of 14 are\nbecoming more common, and thus many localities in\nArizona are thinking of lowering the age of partial\nresponsibility to 12.", "C) The possibility of lowering the age of partial\nresponsibility to 12 is being discussed in many regions\nof Arizona because of the immensely growing number\nof crimes committed by 14-year-old individuals.", "D) The increasing number of criminals under the age of\n14 has led to an agreement in localities in Arizona to\nlower the age of partial responsibility to 12.", "E) Criminals under the age of 14 are committing more\ncrimes than ever before, which will probably force the\nauthorities in Arizona to consider lowering the age of\npartial responsibility to 12.\n19 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS Sonbahar /İNGİLİZCE"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Dil Bilgisi"
@@ -4125,7 +4136,7 @@ object QuestionDataProvider {
         Question(
             id = 513,
             questionText = "(2016 Sonbahar / Soru 70)\nDespite the fact that obesity is one of the biggest\ncauses of preventable deaths after smoking and is\nlinked to chronic diseases, obesity rates keep\nincreasing.",
-            options = listOf("A) Although chronic diseases that are associated with\nobesity and smoking can be avoided, the number of\npeople who die of obesity and who become chronically\nill goes up.\nÖ", "B) The number of people who suffer from obesity\ncontinues to rise even though, along with smoking, it is\none of the major factors that account for\navoidable deaths and causes long-term diseases.", "C) In spite of being one of the major causes of deaths\nthat can be avoided and resulting in serious diseases,\nthe number of people who are obese is still higher\nthan the number of people who smoke.", "D) The rate of obesity and the number of people who\nsmoke continue to go up even though they are the\nmain causes of deaths that can be prevented and\nare connected with chronic diseases.", "E) Obesity and smoking are illnesses that can lead to\npreventable deaths, and they are associated with\nchronic diseases; however, people still continue to\nsuffer from obesity and smoking-related diseases.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Although chronic diseases that are associated with\nobesity and smoking can be avoided, the number of\npeople who die of obesity and who become chronically\nill goes up.\nÖ", "B) The number of people who suffer from obesity\ncontinues to rise even though, along with smoking, it is\none of the major factors that account for\navoidable deaths and causes long-term diseases.", "C) In spite of being one of the major causes of deaths\nthat can be avoided and resulting in serious diseases,\nthe number of people who are obese is still higher\nthan the number of people who smoke.", "D) The rate of obesity and the number of people who\nsmoke continue to go up even though they are the\nmain causes of deaths that can be prevented and\nare connected with chronic diseases.", "E) Obesity and smoking are illnesses that can lead to\npreventable deaths, and they are associated with\nchronic diseases; however, people still continue to\nsuffer from obesity and smoking-related diseases."),
             correctOptionIndex = 1,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Dil Bilgisi"
@@ -4133,7 +4144,7 @@ object QuestionDataProvider {
         Question(
             id = 514,
             questionText = "(2016 Sonbahar / Soru 71)\nLike other interventions, hypnotheraphy can be\nregarded as effective only if it proves more powerful\nthan a placebo.",
-            options = listOf("A) Hypnotheraphy is similar to other practices in that it is\nconsidered as effective as a placebo.", "B) Similar to other treatments, hypnotheraphy could be\nM\ninfluential even if a placebo is actually stronger.", "C) Provided that hypnotheraphy becomes stronger than a\nplacebo, it can be considered as effective as other\napplications.", "D) Even if hypnotheraphy acts as a placebo, it may be as\neffective as many other treatments.", "E) Although it is like other practices, hypnotheraphy can\nbe more effective than a placebo.\n20 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS Sonbahar /İNGİLİZCE"),
+            options = listOf("A) Hypnotheraphy is similar to other practices in that it is\nconsidered as effective as a placebo.", "B) Similar to other treatments, hypnotheraphy could be\nM\ninfluential even if a placebo is actually stronger.", "C) Provided that hypnotheraphy becomes stronger than a\nplacebo, it can be considered as effective as other\napplications.", "D) Even if hypnotheraphy acts as a placebo, it may be as\neffective as many other treatments.", "E) Although it is like other practices, hypnotheraphy can\nbe more effective than a placebo.\n20 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS Sonbahar /İNGİLİZCE"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Dil Bilgisi"
@@ -4141,7 +4152,7 @@ object QuestionDataProvider {
         Question(
             id = 515,
             questionText = "(2016 Sonbahar / Soru 72)\nFloating and flying above us are not only the usual\nsuspects – birds, bats, insects – but countless\nmicroscopic creatures as well. The discipline of\naeroecology explores how animals, plants and other\norganisms live in, move through and interact with\nthe aerosphere. ---- Instruments are now so precise\nthat these technical observations can spot a single\nbee at about 45 km away.",
-            options = listOf("A) How animals are sensing, using and adapting to\nchanges in atmospheric conditions is not interesting\nfor some people.", "B) A whole world of invisible creatures inhabit the\naerosphere, which contains more than 100,000\nliving things. YD)External", "C) Air, as an environment, can lead to surprising\ninteractions between living and non-living things.", "D) There are still many mysterious organisms that\necologists cannot define.", "E) This science has seen huge gains because of the\ngrowing ability to track air movement with radar and\ntelemetry. S\nÖ\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) How animals are sensing, using and adapting to\nchanges in atmospheric conditions is not interesting\nfor some people.", "B) A whole world of invisible creatures inhabit the\naerosphere, which contains more than 100,000\nliving things. YD)External", "C) Air, as an environment, can lead to surprising\ninteractions between living and non-living things.", "D) There are still many mysterious organisms that\necologists cannot define.", "E) This science has seen huge gains because of the\ngrowing ability to track air movement with radar and\ntelemetry. S\nÖ"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Paragraf"
@@ -4149,7 +4160,7 @@ object QuestionDataProvider {
         Question(
             id = 516,
             questionText = "(2016 Sonbahar / Soru 74)\nFor thousands of years, man and wolf have been\ntogether as allies and companions. A natural\ninstinct that bonds them still exists. Drawing on\nhuman interactions with wolves, a team of doctors\ncame up with wolf therapy to work towards repairing\nthe empathy and self-esteem deficits among young\nadults. ---- The progress they make builds\ntheir motivation to complete the program and\nreduces the risk of reverting back to old harmful\nhabits.",
-            options = listOf("A) Wolves have been rescued from dire circumstances,\nincluding abuse, neglect and abandonment.", "B) Treatment centres are technologically advanced and\nhave perfect facilities.", "C) The treatment is designed to ease depression, anxiety\nand stress among those in the rehabilitation programs.", "D) One of the challenges that therapists face is the\ndifficulty in obtaining permission to capture wild\nanimals.", "E) A wolf has a unique capacity for engaging people's\nemotions and breaking through their defense\nmechanisms.\n21 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS Sonbahar /İNGİLİZCE"),
+            options = listOf("A) Wolves have been rescued from dire circumstances,\nincluding abuse, neglect and abandonment.", "B) Treatment centres are technologically advanced and\nhave perfect facilities.", "C) The treatment is designed to ease depression, anxiety\nand stress among those in the rehabilitation programs.", "D) One of the challenges that therapists face is the\ndifficulty in obtaining permission to capture wild\nanimals.", "E) A wolf has a unique capacity for engaging people's\nemotions and breaking through their defense\nmechanisms.\n21 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS Sonbahar /İNGİLİZCE"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -4157,7 +4168,7 @@ object QuestionDataProvider {
         Question(
             id = 517,
             questionText = "(2016 Sonbahar / Soru 75)\nThe way that interpersonal attraction develops is\nrelated partly to how we select a mate. Typically,\nmen prefer women with the classic shapely body\nfigure, probably because it signifies youthfulness,\ngood health and fertility. However, there are cultural\nand ecological influences. ---- In modern Western\nsocieties, where heaviness may indicate ill health,\nmen prefer slimmer women.",
-            options = listOf("A) In the United States, a woman's physical beauty is\nconsidered to be an ultimately important factor in\npartner-choosing.", "B) In traditional agricultural societies, being thin may\nmean having a serious disease, so men prefer their\nwomen to be heavier.", "C) If a woman lacks fertility in Far Eastern societies, this\nmay deter men from choosing her as a wife.\nY", "D) Youthful appearance, body and facial symmetry have\nall become points of interest for American men.", "E) Traditional societies have the conception that good\ngenes cannot find their place in heavy bodies, which\ncause women to lose youthfulness.\nS\nÖ\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) In the United States, a woman's physical beauty is\nconsidered to be an ultimately important factor in\npartner-choosing.", "B) In traditional agricultural societies, being thin may\nmean having a serious disease, so men prefer their\nwomen to be heavier.", "C) If a woman lacks fertility in Far Eastern societies, this\nmay deter men from choosing her as a wife.\nY", "D) Youthful appearance, body and facial symmetry have\nall become points of interest for American men.", "E) Traditional societies have the conception that good\ngenes cannot find their place in heavy bodies, which\ncause women to lose youthfulness.\nS\nÖ"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Paragraf"
@@ -4173,7 +4184,7 @@ object QuestionDataProvider {
         Question(
             id = 519,
             questionText = "(2016 Sonbahar / Soru 77)\n(I) The cuttlefish is brilliant at hiding itself from enemies\nin water. (II) It can change the colour, pattern and\ntexture of its skin to blend in with almost any\nenvironment, making it all but invisible to predators.\n(III)Now, a team of researchers at Harvard University\nhas moved a step closer to unlocking the secrets of this\nmaster of disguise, and potentially creating better\ncamouflage for the military. (IV) The cuttlefish's skin is\nloaded with neurally-controlled, pigmented organs called\nchromatophores. (V) As well as being used in military\ncamouflage, the team says the findings could also have\napplications in materials for paints, cosmetics or even\nconsumer electronics.",
-            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V\n22 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS Sonbahar /İNGİLİZCE"),
+            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V\n22 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS Sonbahar /İNGİLİZCE"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -4197,7 +4208,7 @@ object QuestionDataProvider {
         Question(
             id = 522,
             questionText = "(2016 Sonbahar / Soru 80)\n(I)Most house plants need a period of rest during the\nyear when watering must be reduced.(II)The rest period\nis brought on by the reduction in available light at certain\ntimes of the year. (III) When a plant is not watered\nenough, the soil in the pot becomes quite dry and\ncompacted. (IV)Giving excess water at this time\ninevitably encourages plant growth. (V) However, if this\nis not supported by adequate light, it results in poor\ngrowth.",
-            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V\n\n=== COLUMN_SEPARATOR ===\n\nM\nTEST BİTTİ."),
+            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V\n\n\n\nM\nTEST BİTTİ."),
             correctOptionIndex = 2,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -4221,7 +4232,7 @@ object QuestionDataProvider {
         Question(
             id = 525,
             questionText = "(2016 İlkbahar / Soru 4)\nTrade between people depends on a uniform set of\nweights and measures that can be used by both\nsides of the transaction to ---- that the amount\nobtained or handed over is correct.",
-            options = listOf("A) disapprove", "B) pretend", "C) ensure", "D) realise", "E) estimate\n\n=== COLUMN_SEPARATOR ===\n\nTESTİ"),
+            options = listOf("A) disapprove", "B) pretend", "C) ensure", "D) realise", "E) estimate\n\n\n\nTESTİ"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Kelime Bilgisi"
@@ -4237,7 +4248,7 @@ object QuestionDataProvider {
         Question(
             id = 527,
             questionText = "(2016 İlkbahar / Soru 6)\nFrom the beginning of human history, innovators\nhave experimented with all kinds of elements, from\nthe ordinary to the invisible, trying to ---- new,\nimproved materials.",
-            options = listOf("A) come up with", "B) do away with", "C) cut down on", "D) get along with", "E) make up for\n1 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) come up with", "B) do away with", "C) cut down on", "D) get along with", "E) make up for\n1 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Kelime Bilgisi"
@@ -4261,7 +4272,7 @@ object QuestionDataProvider {
         Question(
             id = 530,
             questionText = "(2016 İlkbahar / Soru 9)\nFor many consumers from all over the world, the\nInternet is the first place ---- for useful information\nthat ---- them about what they buy.",
-            options = listOf("A) to look / will inform", "B) looking / has informed", "C) to have looked / informs", "D) to be looking / is informing", "E) having looked / will have informed\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) to look / will inform", "B) looking / has informed", "C) to have looked / informs", "D) to be looking / is informing", "E) having looked / will have informed"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Dil Bilgisi"
@@ -4293,7 +4304,7 @@ object QuestionDataProvider {
         Question(
             id = 534,
             questionText = "(2016 İlkbahar / Soru 13)\n---- sustainable technologies usually cost a lot of\nmoney to set up, they save money in the long run.",
-            options = listOf("A) Even if", "B) After", "C) Just as", "D) Unless", "E) Once\n2 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) Even if", "B) After", "C) Just as", "D) Unless", "E) Once\n2 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Bağlaçlar"
@@ -4317,7 +4328,7 @@ object QuestionDataProvider {
         Question(
             id = 537,
             questionText = "(2016 İlkbahar / Soru 16)\nThe henna, which Smay have spiritual significance in\nvarious cultures, is applied ---- different graphic\nrules, with different symbolic relations.",
-            options = listOf("A) due to", "B) except for", "C) unlike", "D) according to", "E) prior to\nÖ\n\n=== COLUMN_SEPARATOR ===\n\nM\n3 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) due to", "B) except for", "C) unlike", "D) according to", "E) prior to\nÖ\n\n\n\nM\n3 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Bağlaçlar"
@@ -4341,7 +4352,7 @@ object QuestionDataProvider {
         Question(
             id = 540,
             questionText = "(2016 İlkbahar / Soru 19)\n",
-            options = listOf("A) though", "B) only if", "C) unless", "D) as if", "E) in case\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) though", "B) only if", "C) unless", "D) as if", "E) in case"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Dil Bilgisi"
@@ -4357,7 +4368,7 @@ object QuestionDataProvider {
         Question(
             id = 542,
             questionText = "(2016 İlkbahar / Soru 21)\n",
-            options = listOf("A) beyond", "B) against", "C) on", "D) with", "E) for\n4 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) beyond", "B) against", "C) on", "D) with", "E) for\n4 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Dil Bilgisi"
@@ -4381,7 +4392,7 @@ object QuestionDataProvider {
         Question(
             id = 545,
             questionText = "(2016 İlkbahar / Soru 24)\n",
-            options = listOf("A) Over", "B) For", "C) In", "D) From", "E) Off\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Over", "B) For", "C) In", "D) From", "E) Off"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Dil Bilgisi"
@@ -4397,7 +4408,7 @@ object QuestionDataProvider {
         Question(
             id = 547,
             questionText = "(2016 İlkbahar / Soru 26)\n",
-            options = listOf("A) Given that", "B) Even though", "C) Just as", "D) In case", "E) Because\n5 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) Given that", "B) Even though", "C) Just as", "D) In case", "E) Because\n5 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Dil Bilgisi"
@@ -4421,7 +4432,7 @@ object QuestionDataProvider {
         Question(
             id = 550,
             questionText = "(2016 İlkbahar / Soru 29)\nCosmetics companies have started to remove\nparabens and other harmful chemicals from their\nproducts ----.",
-            options = listOf("A) even though there is not much pressure from\nregulatory bodies to do so", "B) when they experience no adverse effects on humans", "C) even if a link between parabens and breast cancer\nexists", "D) because most underarm deodorants do not contain\nparabens", "E) although there is a long-running debate about the\nsafety of parabens\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) even though there is not much pressure from\nregulatory bodies to do so", "B) when they experience no adverse effects on humans", "C) even if a link between parabens and breast cancer\nexists", "D) because most underarm deodorants do not contain\nparabens", "E) although there is a long-running debate about the\nsafety of parabens"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Bağlaçlar"
@@ -4437,7 +4448,7 @@ object QuestionDataProvider {
         Question(
             id = 552,
             questionText = "(2016 İlkbahar / Soru 31)\nNASA's Kepler space telescope was launched in\n2009 and stopped gathering data in 2013 after a\nmechanical failure ----.",
-            options = listOf("A) whereas no input has been detected from it since it\ndown", "B) because during its construction the engineers worked\nmeticulously to maximize its lifespan", "C) so it searched for planets by measuring the levels in a\nstar's brightness", "D) yet in its relatively short lifetime it has provided a\nwealth of discovery", "E) since it has discovered a group of stars where each\nstar has planets of its own\n6 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) whereas no input has been detected from it since it\ndown", "B) because during its construction the engineers worked\nmeticulously to maximize its lifespan", "C) so it searched for planets by measuring the levels in a\nstar's brightness", "D) yet in its relatively short lifetime it has provided a\nwealth of discovery", "E) since it has discovered a group of stars where each\nstar has planets of its own\n6 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Bağlaçlar"
@@ -4461,7 +4472,7 @@ object QuestionDataProvider {
         Question(
             id = 555,
             questionText = "(2016 İlkbahar / Soru 35)\n---- so as to maximise the amount of accurate\ninformation in hand.",
-            options = listOf("A) The police often have the option of closing an\ninvestigation file", "B) It is highly crucial for the police to interview\neyewitnesses", "C) It would be easy to identify someone with the help of\nclosed-circuit television", "D) One must realise how important it is to avoid\nidentifying an innocent person as the criminal", "E) The cognitive interview has proved itself to be more\neffective than other interview techniques\n7 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) The police often have the option of closing an\ninvestigation file", "B) It is highly crucial for the police to interview\neyewitnesses", "C) It would be easy to identify someone with the help of\nclosed-circuit television", "D) One must realise how important it is to avoid\nidentifying an innocent person as the criminal", "E) The cognitive interview has proved itself to be more\neffective than other interview techniques\n7 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Bağlaçlar"
@@ -4469,7 +4480,7 @@ object QuestionDataProvider {
         Question(
             id = 556,
             questionText = "(2016 İlkbahar / Soru 36)\nAlthough the story of humankind and the peopling\nof the planet still holds many mysteries ----.",
-            options = listOf("A) receding oceans are likely to expose ancient land\nbridges between continents", "B) the most widely accepted theory states that modern\nhumans came out of Africa", "C) efforts to trace the diversification of animal forms by\nanalyzing the change in DNA are premature", "D) one of the earliest pieces of art found in Europe can\nbe dated to 24,000 BC", "E) no one knows where exactly the first agricultural\nvillages appeared\nY\nSE)\nÖ\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) receding oceans are likely to expose ancient land\nbridges between continents", "B) the most widely accepted theory states that modern\nhumans came out of Africa", "C) efforts to trace the diversification of animal forms by\nanalyzing the change in DNA are premature", "D) one of the earliest pieces of art found in Europe can\nbe dated to 24,000 BC", "E) no one knows where exactly the first agricultural\nvillages appeared\nY\nSE)\nÖ"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Bağlaçlar"
@@ -4477,7 +4488,7 @@ object QuestionDataProvider {
         Question(
             id = 557,
             questionText = "(2016 İlkbahar / Soru 38)\nReptiles and insects have no need to sweat\nbecause, unlike mammals, they do not need to\nmaintain a constant body temperature.",
-            options = listOf("A) Memelilerin sabit bir vücut ısısını korumak için\nterlemeye ihtiyaçları vardır fakat sürüngenler ve\nböcekler için aynı durum söz konusu değildir.", "B) Sürüngenler ve böcekler terlemeye ihtiyaç duymaz\nçünkü memelilerin aksine sabit bir vücut ısısını\nkorumaları gerekmez.", "C) Memelilerin sabit bir vücut ısısını korumak için\nterlemeleri gerekmektedir ancak sürüngenlerin ve\nböceklerin buna ihtiyacı yoktur.", "D) Sürüngenler ve böcekler, sabit bir vücut ısısını\nkorumaları gerekmediği için, memeliler gibi terlemeye\nihtiyaç duymazlar.", "E) Sürüngenlerin ve böceklerin terlemeye ihtiyaçları\nyoktur çünkü memelilerde olduğu gibi sabit bir vücut\nısısını korumaları gerekmez.\n8 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) Memelilerin sabit bir vücut ısısını korumak için\nterlemeye ihtiyaçları vardır fakat sürüngenler ve\nböcekler için aynı durum söz konusu değildir.", "B) Sürüngenler ve böcekler terlemeye ihtiyaç duymaz\nçünkü memelilerin aksine sabit bir vücut ısısını\nkorumaları gerekmez.", "C) Memelilerin sabit bir vücut ısısını korumak için\nterlemeleri gerekmektedir ancak sürüngenlerin ve\nböceklerin buna ihtiyacı yoktur.", "D) Sürüngenler ve böcekler, sabit bir vücut ısısını\nkorumaları gerekmediği için, memeliler gibi terlemeye\nihtiyaç duymazlar.", "E) Sürüngenlerin ve böceklerin terlemeye ihtiyaçları\nyoktur çünkü memelilerde olduğu gibi sabit bir vücut\nısısını korumaları gerekmez.\n8 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Çeviri"
@@ -4493,7 +4504,7 @@ object QuestionDataProvider {
         Question(
             id = 559,
             questionText = "(2016 İlkbahar / Soru 40)\nÇok az insan renklSerin, nesnelerin özellikleri\nolmadığını ancak gözlerimiz ve beynimizle etkileşen\nışığın farklı dalga boylarının bir sonucu olduğunu\nbilir.",
-            options = listOf("A) Despite the fact that colours are not the property of\nobjects, few people know that they are a result of\ndifferent wavelengths of light that interact with\nour eyes and brain.\nÖ", "B) Few people know that colours are not the property of\nobjects but a result of different wavelengths of light\ninteracting with our eyes and brain.", "C) Realizing that they are not the property of objects, few\npeople know that colours are a result of different\nwavelengths of light that interact with our eyes and\nbrain.", "D) Colours are not the property of objects; however, few\npeople know that they are a result of different\nwavelengths of light interacting with our eyes and\nbrain.", "E) Colours, which are not the property of objects, are\nknown by few people to be a result of different\nwavelengths of light that interact with our eyes and\nbrain.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Despite the fact that colours are not the property of\nobjects, few people know that they are a result of\ndifferent wavelengths of light that interact with\nour eyes and brain.\nÖ", "B) Few people know that colours are not the property of\nobjects but a result of different wavelengths of light\ninteracting with our eyes and brain.", "C) Realizing that they are not the property of objects, few\npeople know that colours are a result of different\nwavelengths of light that interact with our eyes and\nbrain.", "D) Colours are not the property of objects; however, few\npeople know that they are a result of different\nwavelengths of light interacting with our eyes and\nbrain.", "E) Colours, which are not the property of objects, are\nknown by few people to be a result of different\nwavelengths of light that interact with our eyes and\nbrain."),
             correctOptionIndex = 1,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Çeviri"
@@ -4501,7 +4512,7 @@ object QuestionDataProvider {
         Question(
             id = 560,
             questionText = "(2016 İlkbahar / Soru 42)\nSesinizi yükselttirecek kadar çok gürültüye uzun\nsüre maruz kalma, kalp krizi oranlarını yüzde 50\narttırabilmektedir, özellikle bu hem işte hem de evde\ngeçerliyse.",
-            options = listOf("A) Being chronically exposed to loud noise and\nraising your voice can increase heart attack rates by\n50 percent, especially if this is true at both work and\nhome.", "B) Chronic exposure to noise loud enough to make you\nraise your voice by 50 percent can increase heart\nattack rates, especially if this happens at both work\nand home.", "C) Chronic exposure to noise loud enough to make you\nraise your voice can increase heart attack rates by 50\npercent, especially if this is true at both work and\nhome.", "D) Being chronically exposed to noise loud enough to\nmake you raise your voice, especially at both work and\nhome, can increase heart attack rates by 50 percent.", "E) Chronic exposure to loud noise can make you raise\nyour voice and increase heart attack rates by 50\npercent, especially if this happens at both work and\nhome.\n9 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) Being chronically exposed to loud noise and\nraising your voice can increase heart attack rates by\n50 percent, especially if this is true at both work and\nhome.", "B) Chronic exposure to noise loud enough to make you\nraise your voice by 50 percent can increase heart\nattack rates, especially if this happens at both work\nand home.", "C) Chronic exposure to noise loud enough to make you\nraise your voice can increase heart attack rates by 50\npercent, especially if this is true at both work and\nhome.", "D) Being chronically exposed to noise loud enough to\nmake you raise your voice, especially at both work and\nhome, can increase heart attack rates by 50 percent.", "E) Chronic exposure to loud noise can make you raise\nyour voice and increase heart attack rates by 50\npercent, especially if this happens at both work and\nhome.\n9 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Çeviri"
@@ -4509,7 +4520,7 @@ object QuestionDataProvider {
         Question(
             id = 561,
             questionText = "(2016 İlkbahar / Soru 43)\nIt can be understood from the passage that the\nexcavation below the temple at Lumbinini has ----.",
-            options = listOf("A) located the remains of an ancient shrine where\nnothing was thought to exist\nÖ", "B) provided little evidence that the Buddha was actually\nborn there", "C) shown that Ashoka was the first emperor to follow the\nteachings of Buddhism", "D) possibly revealed the very first tree shrine in the\nBuddhist religion", "E) enabled archaeologists to make a previously unknown\nlink between Ashoka and the Buddha\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) located the remains of an ancient shrine where\nnothing was thought to exist\nÖ", "B) provided little evidence that the Buddha was actually\nborn there", "C) shown that Ashoka was the first emperor to follow the\nteachings of Buddhism", "D) possibly revealed the very first tree shrine in the\nBuddhist religion", "E) enabled archaeologists to make a previously unknown\nlink between Ashoka and the Buddha"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -4525,7 +4536,7 @@ object QuestionDataProvider {
         Question(
             id = 563,
             questionText = "(2016 İlkbahar / Soru 46)\nOne can understand from the passage that over the\ncenturies, Buddhist tree shrines have been ----.",
-            options = listOf("A) built away from royal residences", "B) protected by the warriors of the emperor", "C) kept hidden under temple foundations", "D) taken care of in a very similar manner", "E) constructed of both timber and stone\n10 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) built away from royal residences", "B) protected by the warriors of the emperor", "C) kept hidden under temple foundations", "D) taken care of in a very similar manner", "E) constructed of both timber and stone\n10 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -4533,7 +4544,7 @@ object QuestionDataProvider {
         Question(
             id = 564,
             questionText = "(2016 İlkbahar / Soru 47)\nIt is clearly stated in the passage that ----.\nÖ",
-            options = listOf("A) bad land management is especially responsible for\ndevastating floods as in Passau", "B) the rise in water levels in central Europe in 1501 was\nmore alarming than that of 2013", "C) waters from melting snow caused the river Elbe to rise\n5 meters, resulting in great harm in Prague and\nDresden", "D) Prague was more vulnerable to harmful consequences\nof the flood than Dresden", "E) central Europe should be ready for more severe floods\nas they seem unavoidable\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) bad land management is especially responsible for\ndevastating floods as in Passau", "B) the rise in water levels in central Europe in 1501 was\nmore alarming than that of 2013", "C) waters from melting snow caused the river Elbe to rise\n5 meters, resulting in great harm in Prague and\nDresden", "D) Prague was more vulnerable to harmful consequences\nof the flood than Dresden", "E) central Europe should be ready for more severe floods\nas they seem unavoidable"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Paragraf"
@@ -4557,7 +4568,7 @@ object QuestionDataProvider {
         Question(
             id = 567,
             questionText = "(2016 İlkbahar / Soru 50)\nThe primary aim of the author is to ----.",
-            options = listOf("A) draw attention to how central Europe has recently\nbeen contributing to climate change", "B) warn governments in central Europe to take immediate\naction to protect themselves against floods", "C) give detailed information about the reasons for\nflooding in central Europe and how to deal with it", "D) prove the claims made by researchers like Isoard and\nWhite about the floods in central Europe", "E) exemplify the methods to make the soil absorb more\nwater in central Europe\n11 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) draw attention to how central Europe has recently\nbeen contributing to climate change", "B) warn governments in central Europe to take immediate\naction to protect themselves against floods", "C) give detailed information about the reasons for\nflooding in central Europe and how to deal with it", "D) prove the claims made by researchers like Isoard and\nWhite about the floods in central Europe", "E) exemplify the methods to make the soil absorb more\nwater in central Europe\n11 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -4565,7 +4576,7 @@ object QuestionDataProvider {
         Question(
             id = 568,
             questionText = "(2016 İlkbahar / Soru 51)\nThe Zimmermann telegram ----.\nÖ",
-            options = listOf("A) redefined the relationship between Germany and\nRussia", "B) tried to convince the Mexicans that the British were to\ninvade their country", "C) caused the Mexicans to become suspicious of the\nUnited States", "D) showed Germany's intention to take control of the\nUnited States", "E) provoked the US government into joining the war\nagainst Germany\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) redefined the relationship between Germany and\nRussia", "B) tried to convince the Mexicans that the British were to\ninvade their country", "C) caused the Mexicans to become suspicious of the\nUnited States", "D) showed Germany's intention to take control of the\nUnited States", "E) provoked the US government into joining the war\nagainst Germany"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Paragraf"
@@ -4589,7 +4600,7 @@ object QuestionDataProvider {
         Question(
             id = 571,
             questionText = "(2016 İlkbahar / Soru 54)\nWhat could be the best title for the passage?",
-            options = listOf("A) The Development of the Telegraph", "B) The Use of Telegraph in World War I", "C) The Telegraph and Its Various Uses", "D) The Early Days of the Telegraph", "E) The Impact of Telegraph on German Diplomacy\n12 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) The Development of the Telegraph", "B) The Use of Telegraph in World War I", "C) The Telegraph and Its Various Uses", "D) The Early Days of the Telegraph", "E) The Impact of Telegraph on German Diplomacy\n12 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Paragraf"
@@ -4613,7 +4624,7 @@ object QuestionDataProvider {
         Question(
             id = 574,
             questionText = "(2016 İlkbahar / Soru 58)\nThe primary purpose of the author is to ----.",
-            options = listOf("A) persuade the reader to start the Paleo diet to lead a\nlong life", "B) give information about the Paleo diet by providing the\nreader with an example", "C) criticize the reader for not following the healthy Paleo\ndiet", "D) warn the reader against the consequences of following\nthe Paleo diet", "E) explain the reasons why the Red Lady died at such a\nyoung age\n13 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) persuade the reader to start the Paleo diet to lead a\nlong life", "B) give information about the Paleo diet by providing the\nreader with an example", "C) criticize the reader for not following the healthy Paleo\ndiet", "D) warn the reader against the consequences of following\nthe Paleo diet", "E) explain the reasons why the Red Lady died at such a\nyoung age\n13 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Paragraf"
@@ -4637,7 +4648,7 @@ object QuestionDataProvider {
         Question(
             id = 577,
             questionText = "(2016 İlkbahar / Soru 62)\nThe study may make people aware that ----.",
-            options = listOf("A) it is usually the needs that play a key role in how much\nmoney people spend when shopping", "B) non-food goods do not attract people when they are\nhungry", "C) taking part in lab experiments may change their\nprevious shopping tendencies", "D) shopping on an empty stomach might result in\nspending more money than intended", "E) consumption of unnecessary calories may be\ndemotivating to do shopping\n14 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) it is usually the needs that play a key role in how much\nmoney people spend when shopping", "B) non-food goods do not attract people when they are\nhungry", "C) taking part in lab experiments may change their\nprevious shopping tendencies", "D) shopping on an empty stomach might result in\nspending more money than intended", "E) consumption of unnecessary calories may be\ndemotivating to do shopping\n14 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -4645,7 +4656,7 @@ object QuestionDataProvider {
         Question(
             id = 578,
             questionText = "(2016 İlkbahar / Soru 63)\nDefne:\n Why have you been stirring your tea for so\nlong? You've cooled it off faster.\nBeren:\n ----\nDefne:\n When you stir it, the molecules move faster.\nSo, you quicken the heat loss.\nBeren:\n Okay, next time I won't stir my tea a lot.",
-            options = listOf("A) What do you think can be done to reduce the heat\nloss? Y", "B) What are you trying to say? I can't see any relation\nbetween them.", "C) As far as I know, the purpose of stirring drinks is to\nhelp the sugar dissolve in it.", "D) I agree that it's much more related to evaporation than\nto stirring.\nS", "E) Do you say the spoon takes away some of the heat\nduring the stirring?\nÖ\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) What do you think can be done to reduce the heat\nloss? Y", "B) What are you trying to say? I can't see any relation\nbetween them.", "C) As far as I know, the purpose of stirring drinks is to\nhelp the sugar dissolve in it.", "D) I agree that it's much more related to evaporation than\nto stirring.\nS", "E) Do you say the spoon takes away some of the heat\nduring the stirring?\nÖ"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Diyalog"
@@ -4653,7 +4664,7 @@ object QuestionDataProvider {
         Question(
             id = 579,
             questionText = "(2016 İlkbahar / Soru 64)\nCahit:\n It says here in the newspaper that although a\nwoman's core body temperature is generally\nhigher than a man's, her hands are usually a few\ndegrees colder.\nAyşe:\n -M---\nCahit:\n It must be about women's hormone levels and\nrelatively smaller muscle mass.\nAyşe:\n That's interesting! I'd never have thought of it that\nway.",
-            options = listOf("A) Does this happen even in mildly cold situations?", "B) What's the explanation for this?", "C) Are there any situations where a man's hands\nget colder?", "D) Don't the blood vessels constrict when temperatures\ndrop?", "E) Have you also read anything about the contribution of\nblood circulation?\n15 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) Does this happen even in mildly cold situations?", "B) What's the explanation for this?", "C) Are there any situations where a man's hands\nget colder?", "D) Don't the blood vessels constrict when temperatures\ndrop?", "E) Have you also read anything about the contribution of\nblood circulation?\n15 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Diyalog"
@@ -4661,7 +4672,7 @@ object QuestionDataProvider {
         Question(
             id = 580,
             questionText = "(2016 İlkbahar / Soru 65)\nOkan:\n Recently, I've been sleeping far less than I\nnormally do. Do you think this could be related to\nstress?\nSinan:\n Well, we all have stress but how it affects us\ndiffers from one person to another.\nOkan:\n ----\nSinan:\n Probably. But I also know people who suffer from\neating disorders due to their stress levels.",
-            options = listOf("A) I think I'm one of those whose sleeping patterns\nare dramatically disturbed.\nY", "B) However, my body needs more sleep than many\npeople because I work at night.", "C) These days, I also have poor appetite since I can't get\nsufficient sleep.", "D) Do you mean lack of sleep has both biological and\npsychological reasons?", "E) I agree. People wSho are self-employed tend to have\nless stress-related problems.\nÖ\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) I think I'm one of those whose sleeping patterns\nare dramatically disturbed.\nY", "B) However, my body needs more sleep than many\npeople because I work at night.", "C) These days, I also have poor appetite since I can't get\nsufficient sleep.", "D) Do you mean lack of sleep has both biological and\npsychological reasons?", "E) I agree. People wSho are self-employed tend to have\nless stress-related problems.\nÖ"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Diyalog"
@@ -4669,7 +4680,7 @@ object QuestionDataProvider {
         Question(
             id = 581,
             questionText = "(2016 İlkbahar / Soru 66)\nPınar:\n I'm just back from the hospital. The doctor\nchanged my medication and suggested more rest.\nHazal:\n OK. But why do you look so depressed? It's\nprobably a good thing, right?\nM\nPınar:\n ----\nHazal:\n So, you're worried that your manager won't be\nvery happy with the news.",
-            options = listOf("A) I guess so, but every type of medication has its side\neffects along with benefits.", "B) No, it's bad news because the new medication is\nnot covered by my health insurance.", "C) I don't think so because I'm supposed to exercise\nmore after work in the evenings.", "D) I'm not sure. That means I'll have to take more days\noff, so I'll fall behind with my work.", "E) It might work better, but I'm afraid it's going to provide\ntemporary relief.\n16 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) I guess so, but every type of medication has its side\neffects along with benefits.", "B) No, it's bad news because the new medication is\nnot covered by my health insurance.", "C) I don't think so because I'm supposed to exercise\nmore after work in the evenings.", "D) I'm not sure. That means I'll have to take more days\noff, so I'll fall behind with my work.", "E) It might work better, but I'm afraid it's going to provide\ntemporary relief.\n16 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Diyalog"
@@ -4677,7 +4688,7 @@ object QuestionDataProvider {
         Question(
             id = 582,
             questionText = "(2016 İlkbahar / Soru 67)\nStudent:\n ----\nProfessor:\n They're fixed three months before you're born.\nYou can leave a mark on them with a cut,\nabrasion or acid, but they'll grow back within a\nmonth.\nStudent:\n What about aging?\nProfessor:\n It doesn't have such an effect, but it gets harder to\nscan your fingers or take a print from them.",
-            options = listOf("A) Do all people throughout the world have different\nfingerprints?\nY", "B) How do they treat finger injuries withoutdamaging\none's fingerprints?", "C) Are fingerprints utilized in any fields other than\nforensics?", "D) What's the role of fingerprints in upcoming\ntechnological advances?", "E) Do fingerprints cShange during our lifetime?\nÖ\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Do all people throughout the world have different\nfingerprints?\nY", "B) How do they treat finger injuries withoutdamaging\none's fingerprints?", "C) Are fingerprints utilized in any fields other than\nforensics?", "D) What's the role of fingerprints in upcoming\ntechnological advances?", "E) Do fingerprints cShange during our lifetime?\nÖ"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Diyalog"
@@ -4693,7 +4704,7 @@ object QuestionDataProvider {
         Question(
             id = 584,
             questionText = "(2016 İlkbahar / Soru 69)\nOne should visit the theater not merely for the\npurpose of entertainment, but rather draw lessons\nfrom the play performed on stage.",
-            options = listOf("A) The purpose of visiting the theatre is to be entertained\nrather than draw lessons from the play performed on\nstage.", "B) Instead of entertainment, which is not the only\nintention of a play, one must acquire knowledge with\nthe help of the play acted on stage.", "C) Paying a visit to the theater must not be for\nentertaining ourselves; instead, we should understand\nthe messages passed on by the actors.", "D) Theaters should not be visited with the aim of\nentertainment alone; instead, one should learn\nlessons from the play acted on stage.", "E) Drawing lessons from the play acted on stage rather\nthan being entertained must be the sole reason for\nvisiting the theater.\n17 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) The purpose of visiting the theatre is to be entertained\nrather than draw lessons from the play performed on\nstage.", "B) Instead of entertainment, which is not the only\nintention of a play, one must acquire knowledge with\nthe help of the play acted on stage.", "C) Paying a visit to the theater must not be for\nentertaining ourselves; instead, we should understand\nthe messages passed on by the actors.", "D) Theaters should not be visited with the aim of\nentertainment alone; instead, one should learn\nlessons from the play acted on stage.", "E) Drawing lessons from the play acted on stage rather\nthan being entertained must be the sole reason for\nvisiting the theater.\n17 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Dil Bilgisi"
@@ -4709,7 +4720,7 @@ object QuestionDataProvider {
         Question(
             id = 586,
             questionText = "(2016 İlkbahar / Soru 72)\nThere are a lot of doubts and questions about how\neffective antidepressants are. Many professionals in\nthe field of psychology claim that for drugs to work,\nwe need 'precision medication'. The aim of precision\nM\nmedication is to develop strategies that are best\nsuited to each patient's biological, psychological,\nand social profile. ---- For example, if you have a job,\nyou may be more likely to respond to a specific type\nof antidepressants.",
-            options = listOf("A) Studies of antidepressant response prediction\ncontinue with millions of dollars and generate data\nderived from neurophysiology and genetics.", "B) Doctors can now use new technologies in\nto improve treatment that can produce\nbetter results.", "C) Certain characteristics, such as socioeconomic\nfactors, can predict how someone will respond to a\ndrug.", "D) We can understand from large clinical trials that\nantidepressants do not work as much as we expect\nto on average.", "E) We do not need big data studies on antidepressant\nresponse, as even finding out the complaints of a\npatient can provide doctors with sufficient information.\n18 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) Studies of antidepressant response prediction\ncontinue with millions of dollars and generate data\nderived from neurophysiology and genetics.", "B) Doctors can now use new technologies in\nto improve treatment that can produce\nbetter results.", "C) Certain characteristics, such as socioeconomic\nfactors, can predict how someone will respond to a\ndrug.", "D) We can understand from large clinical trials that\nantidepressants do not work as much as we expect\nto on average.", "E) We do not need big data studies on antidepressant\nresponse, as even finding out the complaints of a\npatient can provide doctors with sufficient information.\n18 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -4717,7 +4728,7 @@ object QuestionDataProvider {
         Question(
             id = 587,
             questionText = "(2016 İlkbahar / Soru 73)\nEthnic groups can differ greatly in appearance,\ndress codes, cultural practices, and religious\nbeliefs. ---- For instance, the Welsh and the English\nin the UK are most distinctive in terms of their\naccent and language. Speech style, then, is an\nimportant and often central stereotypical or\nnormative property of group membership.",
-            options = listOf("A) Therefore, communities that live in well-defined\nboundaries exhibit uniformity in the way they use\nlanguage orally.", "B) Yet, communication involves spoken and written\nlanguages and a rich mix of expressions which are\ncontextualized by ethnicity and nationality.", "C) Nevertheless, language or speech style is often\nregarded as one of the most distinct and clear markers\nof ethnic identity.\nYfather", "D) Besides, the nature of the power and status relations\nbetween ethnic groups in society is influenced by\nself-respect and pride.", "E) In addition, ethnic groups that are high on status and\nhave respectful jobs have high ethno-linguistic value.\nSE)\nÖ\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Therefore, communities that live in well-defined\nboundaries exhibit uniformity in the way they use\nlanguage orally.", "B) Yet, communication involves spoken and written\nlanguages and a rich mix of expressions which are\ncontextualized by ethnicity and nationality.", "C) Nevertheless, language or speech style is often\nregarded as one of the most distinct and clear markers\nof ethnic identity.\nYfather", "D) Besides, the nature of the power and status relations\nbetween ethnic groups in society is influenced by\nself-respect and pride.", "E) In addition, ethnic groups that are high on status and\nhave respectful jobs have high ethno-linguistic value.\nSE)\nÖ"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -4725,7 +4736,7 @@ object QuestionDataProvider {
         Question(
             id = 588,
             questionText = "(2016 İlkbahar / Soru 75)\nThere are some 100 billion galaxies in the\nobservable universe, with about 100 billion stars in\neach of these galaxies. ---- In fact, there are more\nplanets in the universe than there are sand grains\non all the beaches of all the coastlines of all the\ncontinents. Yet, in all this immensity, there is only\none place where we know there is life – the tiny,\nfragile blue dot we call Earth.",
-            options = listOf("A) The reality is that finding life in remote planets will be\nvery difficult and it will take quite a lot of time.", "B) Many scientists are trying to explain the origin of the\ndisparate bodies in the solar system.", "C) Since one of Saturn's moons has been found to have\nice fountains, we should be looking more widely for\nalive bodies.", "D) In recent years, we have discovered that there are\nprobably more planets than there are stars.", "E) It is possible to find some kind of life in space, but\nwhether we can talk to it is a matter of debate.\n19 Diğer sayfaya geçiniz.\n\n=== COLUMN_SEPARATOR ===\n\n2016-YDS İlkbahar/İNGİLİZCE"),
+            options = listOf("A) The reality is that finding life in remote planets will be\nvery difficult and it will take quite a lot of time.", "B) Many scientists are trying to explain the origin of the\ndisparate bodies in the solar system.", "C) Since one of Saturn's moons has been found to have\nice fountains, we should be looking more widely for\nalive bodies.", "D) In recent years, we have discovered that there are\nprobably more planets than there are stars.", "E) It is possible to find some kind of life in space, but\nwhether we can talk to it is a matter of debate.\n19 Diğer sayfaya geçiniz.\n\n\n\n2016-YDS İlkbahar/İNGİLİZCE"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -4749,7 +4760,7 @@ object QuestionDataProvider {
         Question(
             id = 591,
             questionText = "(2016 İlkbahar / Soru 78)\n(I)By the 12thcentury an aristocratic class of warriors\nÖhad begun to exercise great power throughout Japan.\n(II) Their original center, the military government of\nMinamoto, was located at the coastal town of\nKamakura, near modern Tokyo. (III)Known as the\nSamurai, they dominated Japanese society for nearly\n700 years.(IV) However, as power shifted from civil\naristocracy to a new bureaucratic regime based on\nthese provincial warriors, the Samurai became famous\nfor offering security through military talent.(V)The ritual\nwhere the defeated warrior committed suicide with his\nown sword was also portrayed in the film The Last\nSamurai.",
-            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Paragraf"
@@ -4765,7 +4776,7 @@ object QuestionDataProvider {
         Question(
             id = 593,
             questionText = "(2016 İlkbahar / Soru 80)\n(I)Although it was only in recent years that the 3D\nprinting technology became good enough to produce\nmore than prototypes, the very idea of printing in 3D is\nnot new. (II) The 3D printing technology development\nhas been so rapid and quick. (III) Nevertheless, 3D\nprinters will hardly out-compete existing technologies,\nwhen it comes to the production of large quantities of\nconsumer goods and machine parts. (IV) For a long time\nto come, the technology will probably be more suitable\nfor customized goods, spare parts, minor quantity\nproduction, and products difficult to make in a\nconventional way. (V) But experts have no doubt that 3D\nprinters will be increasingly used in many industries.",
-            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V\nTEST BİTTİ.\n20 CEVAPLARINIZI KONTROL EDİNİZ.\n\n=== COLUMN_SEPARATOR ===\n\nY\nS\nÖ\nOSYM001\n\n=== COLUMN_SEPARATOR ===\n\nM"),
+            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V\nTEST BİTTİ.\n20 CEVAPLARINIZI KONTROL EDİNİZ.\n\n\n\nY\nS\nÖ\nOSYM001\n\n\n\nM"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Paragraf"
@@ -4789,7 +4800,7 @@ object QuestionDataProvider {
         Question(
             id = 596,
             questionText = "(2017 Sonbahar / Soru 3)\nAn important reason to re-evaluate how we are\nraising the next generation grows out of an\nincredibly exciting discovery about brain\ndevelopment: during adolescence, the brain’s\npotential to change through experience is ----.",
-            options = listOf("A) tremendous", "B) frustrating", "C) debatable", "D) redundant", "E) exhausted\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) tremendous", "B) frustrating", "C) debatable", "D) redundant", "E) exhausted"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2017 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Kelime Bilgisi"
@@ -4827,12 +4838,14 @@ object QuestionDataProvider {
             category = "Dil Bilgisi"
         )
     )
+}
 
-    private val chunk6 = listOf(
+object QuestionChunk6 {
+    val list = listOf(
         Question(
             id = 601,
             questionText = "(2017 Sonbahar / Soru 8)\nThe technological advancements that once made\nS\nnations prosperous, such as the internal\ncombustion engine, ---- to shatter empires during\nthe First World War, on a scale few people ---- before\nthe outbreak of the war.",
-            options = listOf("A) had been used / should have imagined", "B) should have been used / used to imagine\nÖ", "C) would have been used / might have imagined", "D) were used / could have imagined", "E) must have been used / can imagine\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) had been used / should have imagined", "B) should have been used / used to imagine\nÖ", "C) would have been used / might have imagined", "D) were used / could have imagined", "E) must have been used / can imagine"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2017 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Dil Bilgisi"
@@ -4888,7 +4901,7 @@ object QuestionDataProvider {
         Question(
             id = 608,
             questionText = "(2017 Sonbahar / Soru 15)\nIn most cultures around the world, men and women\ntypically differ in a number of ways ---- physical\nappearance, personality traits, and occupational\npreferences.",
-            options = listOf("A) in case of", "B) in spite of", "C) such as", "D) similar to", "E) as well as\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) in case of", "B) in spite of", "C) such as", "D) similar to", "E) as well as"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2017 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Bağlaçlar"
@@ -4912,7 +4925,7 @@ object QuestionDataProvider {
         Question(
             id = 611,
             questionText = "(2017 Sonbahar / Soru 18)\n",
-            options = listOf("A) though", "B) otherwise", "C) instead", "D) just as", "E) so\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) though", "B) otherwise", "C) instead", "D) just as", "E) so"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2017 Sonbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Dil Bilgisi"
@@ -4952,7 +4965,7 @@ object QuestionDataProvider {
         Question(
             id = 616,
             questionText = "(2017 Sonbahar / Soru 23)\n",
-            options = listOf("A) impoverished", "B) immeasurable", "C) unreasonable", "D) indispensable", "E) unintentional\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) impoverished", "B) immeasurable", "C) unreasonable", "D) indispensable", "E) unintentional"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2017 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Dil Bilgisi"
@@ -4976,7 +4989,7 @@ object QuestionDataProvider {
         Question(
             id = 619,
             questionText = "(2017 Sonbahar / Soru 28)\nThough China began as a small empire centred on\nSmight\nthe Great Bend of the Yellow River, ----.",
-            options = listOf("A) almost all of what we know about its culture comes\nfrom the wealthy classes", "B) the emperor of China, believed to have descended\nfrom the gods, was at the top of society", "C) it was with the Shang dynasty that people began to\nkeep written records of Chinese history\nÖ", "D) kings of local areas gained more power and\nsometimes fought among themselves", "E) it expanded considerably over time to become quite\na vast kingdom\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) almost all of what we know about its culture comes\nfrom the wealthy classes", "B) the emperor of China, believed to have descended\nfrom the gods, was at the top of society", "C) it was with the Shang dynasty that people began to\nkeep written records of Chinese history\nÖ", "D) kings of local areas gained more power and\nsometimes fought among themselves", "E) it expanded considerably over time to become quite\na vast kingdom"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2017 Sonbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Bağlaçlar"
@@ -5008,7 +5021,7 @@ object QuestionDataProvider {
         Question(
             id = 623,
             questionText = "(2017 Sonbahar / Soru 32)\nPreventing children's academic failure means\ndeveloping individuals who are able to contribute to\nthe common good; ----.",
-            options = listOf("A) yet, some types of academic failure prevention call for\nan increased emSphasis on arithmetic skills", "B) nevertheless, causes of academic failure include\nsocioeconomic and cultural issues", "C) accordingly, academic failure has recently come to\nmean a failure to acquire basic literacy skills", "D) on the contrary, a positive family environment is very\nimportant in preventing academic failure\nÖ", "E) thus, the prevention of academic failure should be a\nprimary concern for any society\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) yet, some types of academic failure prevention call for\nan increased emSphasis on arithmetic skills", "B) nevertheless, causes of academic failure include\nsocioeconomic and cultural issues", "C) accordingly, academic failure has recently come to\nmean a failure to acquire basic literacy skills", "D) on the contrary, a positive family environment is very\nimportant in preventing academic failure\nÖ", "E) thus, the prevention of academic failure should be a\nprimary concern for any society"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2017 Sonbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Bağlaçlar"
@@ -5032,7 +5045,7 @@ object QuestionDataProvider {
         Question(
             id = 626,
             questionText = "(2017 Sonbahar / Soru 36)\nWorld Space Week takes place every year in\nOctober, ----.",
-            options = listOf("A) so World Space Week 2016 has been, by far, the\nlargest space celebration in history", "B) because you do not have to be an astronaut to be part\nS\nof the global celebration of World Space Week", "C) and it has grown into the largest public space event on\nEarth since its declaration by the United Nations", "D) but it can be a great framework for countries and\nagencies to foster space exploration", "E) while the Mexican Space Agency has been an\nÖimportant promoter of World Space Week\n\n=== COLUMN_SEPARATOR ===\n\n37-42: For these questions, choose the most\naccurate Turkish translation of the sentences in"),
+            options = listOf("A) so World Space Week 2016 has been, by far, the\nlargest space celebration in history", "B) because you do not have to be an astronaut to be part\nS\nof the global celebration of World Space Week", "C) and it has grown into the largest public space event on\nEarth since its declaration by the United Nations", "D) but it can be a great framework for countries and\nagencies to foster space exploration", "E) while the Mexican Space Agency has been an\nÖimportant promoter of World Space Week\n\n\n\n37-42: For these questions, choose the most\naccurate Turkish translation of the sentences in"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2017 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Bağlaçlar"
@@ -5056,7 +5069,7 @@ object QuestionDataProvider {
         Question(
             id = 629,
             questionText = "(2017 Sonbahar / Soru 40)\nKutup ayıları iklim değişikliğinin sadece sembolü\ndeğil, aynı zamanda her yaz biraz daha seyrekleşen\ndoğal yaşam alanlarını terk eden asıl kurbanlarıdır.",
-            options = listOf("A) Polar bears are both the symbol of climate change and\ntrue victims of it,S because they have to leave their\nhabitat which has become sparser every summer.", "B) Climate change is not only responsible for making\npolar bears a symbol but also a victim of it, as they\nhave to leave their habitat becoming sparser every\nsummer.", "C) Polar bears are known as both the symbol and the\nvictims of climate change since they have to leave\nÖtheir habitat every summer as it becomes sparser.", "D) Polar bears are not just the symbol of climate change\nbut they are also true victims, leaving their habitat\nwhich has become sparser each summer.", "E) Polar bears have become the symbol of climate\nchange; however, they are also the victims of it due to\nthe necessity of leaving their habitat every summer.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Polar bears are both the symbol of climate change and\ntrue victims of it,S because they have to leave their\nhabitat which has become sparser every summer.", "B) Climate change is not only responsible for making\npolar bears a symbol but also a victim of it, as they\nhave to leave their habitat becoming sparser every\nsummer.", "C) Polar bears are known as both the symbol and the\nvictims of climate change since they have to leave\nÖtheir habitat every summer as it becomes sparser.", "D) Polar bears are not just the symbol of climate change\nbut they are also true victims, leaving their habitat\nwhich has become sparser each summer.", "E) Polar bears have become the symbol of climate\nchange; however, they are also the victims of it due to\nthe necessity of leaving their habitat every summer."),
             correctOptionIndex = 3,
             explanation = "Bu soru 2017 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Çeviri"
@@ -5080,7 +5093,7 @@ object QuestionDataProvider {
         Question(
             id = 632,
             questionText = "(2017 Sonbahar / Soru 43)\nBy asking questions such as \"Is this water safe to\ndrink?\", what is the author actually trying to say?",
-            options = listOf("A) We can expand our knowledge about almost\neverything by using the Internet.", "B) A great number of questions can be answered thanks\nÖto the Internet.", "C) What we can learn through online searches is not\nendless.", "D) Doubtful statements made by others cannot be\nexactly clarified by doing online searches.", "E) We can easily discover averages and tendencies via\nsearch engines.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) We can expand our knowledge about almost\neverything by using the Internet.", "B) A great number of questions can be answered thanks\nÖto the Internet.", "C) What we can learn through online searches is not\nendless.", "D) Doubtful statements made by others cannot be\nexactly clarified by doing online searches.", "E) We can easily discover averages and tendencies via\nsearch engines."),
             correctOptionIndex = 2,
             explanation = "Bu soru 2017 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -5128,7 +5141,7 @@ object QuestionDataProvider {
         Question(
             id = 638,
             questionText = "(2017 Sonbahar / Soru 51)\nWhich of the following is certainly true about\nSocrates?",
-            options = listOf("A) His initiation of moral reform earned him a reputation\nÖin Athenian society.", "B) Socrates earned his living by selling his ideas to his\nfellow philosophers.", "C) Socrates became a soldier because he wanted to gain\na higher social status.", "D) Socrates took up stonecutting in his early years and\npractised it until his execution.", "E) One can learn minute details of his whole life because\nhe is a famous philosopher.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) His initiation of moral reform earned him a reputation\nÖin Athenian society.", "B) Socrates earned his living by selling his ideas to his\nfellow philosophers.", "C) Socrates became a soldier because he wanted to gain\na higher social status.", "D) Socrates took up stonecutting in his early years and\npractised it until his execution.", "E) One can learn minute details of his whole life because\nhe is a famous philosopher."),
             correctOptionIndex = 0,
             explanation = "Bu soru 2017 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Paragraf"
@@ -5160,7 +5173,7 @@ object QuestionDataProvider {
         Question(
             id = 642,
             questionText = "(2017 Sonbahar / Soru 55)\nWhat could be inferred about the relationship\nbetween the media and body image?",
-            options = listOf("A) The body image promoted by the media encourages\npeople to keep up with the latest trends, thus enriching\ntheir lives.", "B) The way the media presents body image can badly\nÖ\ninfluence how people see their bodies.", "C) The media presents an ideal body type in order to\nimprove people's perceptions of their body image.", "D) A great majority of people are aware of how the media\naffects their perception of body image.", "E) The ideal body type described by the media is harshly\ncriticised by families since it has a negative impact on\ntheir children's self-esteem.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) The body image promoted by the media encourages\npeople to keep up with the latest trends, thus enriching\ntheir lives.", "B) The way the media presents body image can badly\nÖ\ninfluence how people see their bodies.", "C) The media presents an ideal body type in order to\nimprove people's perceptions of their body image.", "D) A great majority of people are aware of how the media\naffects their perception of body image.", "E) The ideal body type described by the media is harshly\ncriticised by families since it has a negative impact on\ntheir children's self-esteem."),
             correctOptionIndex = 1,
             explanation = "Bu soru 2017 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Paragraf"
@@ -5192,7 +5205,7 @@ object QuestionDataProvider {
         Question(
             id = 646,
             questionText = "(2017 Sonbahar / Soru 59)\nWhy is Theophrastus called the ‘father of botany’?",
-            options = listOf("A) He distinguished botany from zoology and\nmicrobiology as a distinct field.", "B) He was more successful than Aristotle in identifying\nÖand describing plants.", "C) He was the first person who studied plants.", "D) He produced significant works whose effects\nlast today.", "E) He worked on plants for long periods of time.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) He distinguished botany from zoology and\nmicrobiology as a distinct field.", "B) He was more successful than Aristotle in identifying\nÖand describing plants.", "C) He was the first person who studied plants.", "D) He produced significant works whose effects\nlast today.", "E) He worked on plants for long periods of time."),
             correctOptionIndex = 3,
             explanation = "Bu soru 2017 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -5224,7 +5237,7 @@ object QuestionDataProvider {
         Question(
             id = 650,
             questionText = "(2017 Sonbahar / Soru 63)\nJournalist:\n Could you tell us about your research on heroic\nEgyptian kings?\nAnthropologist:\n We found a skeleton that showed extensive battle\ntrauma. After examining his injuries, we\ndiscovered that he had died due to the injuries he\ngot while on a horse.\nJournalist:\n ----\nAnthropologist:\n Previously, the Egyptian kings riding iYnto battle\ncould only be seen in paintings and were thought\nto be just aggressive depictions of the ruling\nclass. This is the first real evidence that points to\nthe kings actually joining their armies in battle.",
-            options = listOf("A) How does this discovery impact our traditional\nperceptions of the Egyptian kings?", "B) How often did the Egyptian kings fight in battle and get\ninjured? S", "C) Why is it significant that all the Egyptian kings were on\nhorseback in battle?", "D) Why did you focus on the injuries the Egyptian kings\nhad?", "E) Do you think that old paintings portray the Egyptian\nÖkings in detail?\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) How does this discovery impact our traditional\nperceptions of the Egyptian kings?", "B) How often did the Egyptian kings fight in battle and get\ninjured? S", "C) Why is it significant that all the Egyptian kings were on\nhorseback in battle?", "D) Why did you focus on the injuries the Egyptian kings\nhad?", "E) Do you think that old paintings portray the Egyptian\nÖkings in detail?"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2017 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Diyalog"
@@ -5240,7 +5253,7 @@ object QuestionDataProvider {
         Question(
             id = 652,
             questionText = "(2017 Sonbahar / Soru 65)\nAnn:\n There's a very interesting article in this magazine\nabout a scientist, Ella Al-Shamahi, who’s a\npalaeontologist and also performs stand-up\ncomedy about her field.\nJane:\n Science and comedy, how does that work?\nAnn:\n ----\nJane:\n I get it now. She's using comedy to increase\ninterest in her scientific research. Well, she might\nbe on the right path, maybe comedy is the next\nstage in the evolution of how we present science.",
-            options = listOf("A) I guess she's using palaeontology to add variety to the\nYworld.\ntopics she's talking about in her performance to be\ndifferent from the other stand-up performers.", "B) I'm not sure, but I can assume that she might have\nreally good time management skills to be able to do\nresearch and fulfill other responsibilities as a\npalaeontologist.", "C) Well, when you think about it, we seem to have a\ncommunication problem in science, so she might be\nSC)How\nusing comedy to get to people with no enthusiasm\nabout science.", "D) The rest of the article says it's an incredible therapy for\nher as some of the places she researches are quite\ndark and it's nice to find the funny side in them.", "E) If she's really good at it, these shows might even make\nher famous meaning that she can also continue doing\nÖresearch in her field if she wants to.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) I guess she's using palaeontology to add variety to the\nYworld.\ntopics she's talking about in her performance to be\ndifferent from the other stand-up performers.", "B) I'm not sure, but I can assume that she might have\nreally good time management skills to be able to do\nresearch and fulfill other responsibilities as a\npalaeontologist.", "C) Well, when you think about it, we seem to have a\ncommunication problem in science, so she might be\nSC)How\nusing comedy to get to people with no enthusiasm\nabout science.", "D) The rest of the article says it's an incredible therapy for\nher as some of the places she researches are quite\ndark and it's nice to find the funny side in them.", "E) If she's really good at it, these shows might even make\nher famous meaning that she can also continue doing\nÖresearch in her field if she wants to."),
             correctOptionIndex = 2,
             explanation = "Bu soru 2017 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Diyalog"
@@ -5248,7 +5261,7 @@ object QuestionDataProvider {
         Question(
             id = 653,
             questionText = "(2017 Sonbahar / Soru 67)\nRobert:\n Can perfectionism or stress be a reason for\nnail-biting?\nCarl:\n This might be true, but I'm not sure one can find\nreliable research as to why nail-biting is so\naddictive.\nRobert:\n ----\nCarl:\n Anyway, I think it'd be better not to form an\nopinion on the causes of nail-biting without\nknowing all the details and scientific facts.",
-            options = listOf("A) Some experts say childhood nail-biters are less prone\nto allergies, presumably because they're exposed to\nY\nmore germs.", "B) The most common treatment of this addiction, which is\nalso cheap and widely available, is to apply a\nbitter-tasting nail polish to the nails.", "C) I know some other body-focused repetitive behaviours\nlike skin-picking and the urge to pull out hair, and\nthey sometimes coexist with nail-biting.\nS", "D) Doctors state that nail-biting does not only lead to\nharmful effects in fingers, but also mouth and more\ngenerally the digestive system.", "E) We can speculate that it's to do with experiencing high\nlevels of anxiety and fear, or being too passionate\nor impatient about things and events.\nÖ\n\n=== COLUMN_SEPARATOR ===\n\n68-71: For these questions, choose the best\nrephrased form of the given sentence."),
+            options = listOf("A) Some experts say childhood nail-biters are less prone\nto allergies, presumably because they're exposed to\nY\nmore germs.", "B) The most common treatment of this addiction, which is\nalso cheap and widely available, is to apply a\nbitter-tasting nail polish to the nails.", "C) I know some other body-focused repetitive behaviours\nlike skin-picking and the urge to pull out hair, and\nthey sometimes coexist with nail-biting.\nS", "D) Doctors state that nail-biting does not only lead to\nharmful effects in fingers, but also mouth and more\ngenerally the digestive system.", "E) We can speculate that it's to do with experiencing high\nlevels of anxiety and fear, or being too passionate\nor impatient about things and events.\nÖ\n\n\n\n68-71: For these questions, choose the best\nrephrased form of the given sentence."),
             correctOptionIndex = 4,
             explanation = "Bu soru 2017 Sonbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Diyalog"
@@ -5272,7 +5285,7 @@ object QuestionDataProvider {
         Question(
             id = 656,
             questionText = "(2017 Sonbahar / Soru 70)\nIt is imperative that women start modifying their risk\nfactors when they are younger in order to reduce the\nrisk of developing heart disease once they are older.",
-            options = listOf("A) If women immediately begin changing their risk factors\nwhen they are still young, they may decrease their risk\nof developing heart disease in their old ages.", "B) Women are recommended to start changing their risk\nfactors at young ages rather than old ages, because\nthis will reduce the risk of developing heart disease.", "C) It is extremely important for women to begin changing\ntheir risk factors when they are young because it might\nnot be easy to decrease the risk of having heart\ndisease in their old ages.", "D) Women should immediately begin changing their risk\nfactors at a young age so that they can decrease the\nrisk of having heart disease in their old ages.\nYpurpose.", "E) It is urgent that women begin changing their risk\nfactors at a young age, otherwise the risk of\ndeveloping heart disease among old women cannot be\ndecreased.\nS\nÖ\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) If women immediately begin changing their risk factors\nwhen they are still young, they may decrease their risk\nof developing heart disease in their old ages.", "B) Women are recommended to start changing their risk\nfactors at young ages rather than old ages, because\nthis will reduce the risk of developing heart disease.", "C) It is extremely important for women to begin changing\ntheir risk factors when they are young because it might\nnot be easy to decrease the risk of having heart\ndisease in their old ages.", "D) Women should immediately begin changing their risk\nfactors at a young age so that they can decrease the\nrisk of having heart disease in their old ages.\nYpurpose.", "E) It is urgent that women begin changing their risk\nfactors at a young age, otherwise the risk of\ndeveloping heart disease among old women cannot be\ndecreased.\nS\nÖ"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2017 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Dil Bilgisi"
@@ -5288,7 +5301,7 @@ object QuestionDataProvider {
         Question(
             id = 658,
             questionText = "(2017 Sonbahar / Soru 72)\nWe are terrified of sharks, largely thanks to their\nreputation as vicious killers. Shark attacks are rare\nbut appear to be rising: There were 98 unprovoked\nattacks worldwide in 2015, six fatal. There are three\nparticularly notorious species: tiger sharks, great\nwhites, and oceanic whitetips. ---- Recently,\nscientists have been shedding new light on these\nenigmatic creatures that are seemingly vital to the\nseas, and not as scary as you might think.",
-            options = listOf("A) Tiger sharks are unlikely to attack divers who keep\nthem in sight.", "B) Novice divers may come face-to-face with the sharks\nand see their true nature.\nY", "C) On the other hand, a lesser known fact is the crucial\nrole sharks play in ocean ecology.", "D) Tiger sharks in the protected waters of the Bahamas\nare relatively harmless, but they rarely stay in one\nplace for long.", "E) Scientists in Australia say that sharks keep fish\nnumbers down aSnd stop them degrading sea grass\necosystems.\nÖ\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Tiger sharks are unlikely to attack divers who keep\nthem in sight.", "B) Novice divers may come face-to-face with the sharks\nand see their true nature.\nY", "C) On the other hand, a lesser known fact is the crucial\nrole sharks play in ocean ecology.", "D) Tiger sharks in the protected waters of the Bahamas\nare relatively harmless, but they rarely stay in one\nplace for long.", "E) Scientists in Australia say that sharks keep fish\nnumbers down aSnd stop them degrading sea grass\necosystems.\nÖ"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2017 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -5304,7 +5317,7 @@ object QuestionDataProvider {
         Question(
             id = 660,
             questionText = "(2017 Sonbahar / Soru 74)\nThere is some indication that children whose access\nto television is restricted are less likely to be\nnegatively affected by it, even when they do view it.\nA study has found that children whose parents\nrestrict viewing are less likely to be unnecessarily\nfearful of the outside world. ---- In other words,\nchildren whose parents severely limit access to\ntelevision may actually become more aggressive,\nperhaps due to the frustration that results from the\ndeprivation of privileges.",
-            options = listOf("A) It should be noted, however, that there is some\nevidence that very extreme levels of restriction will\nbackfire.", "B) Children with limited access to television are less likely\nto believe that what they see on television is real.", "C) It is possible that the mere presence of parents while\nY\nviewing makes children feel happy.", "D) Children who receive parental restriction are better\nable to quickly understand the plots of television\nprogrammes.", "E) Much of the research on the effects of television\nviewing has focused on children whose parents are\nmore sophisticated consumers of television.\nS\nÖ\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) It should be noted, however, that there is some\nevidence that very extreme levels of restriction will\nbackfire.", "B) Children with limited access to television are less likely\nto believe that what they see on television is real.", "C) It is possible that the mere presence of parents while\nY\nviewing makes children feel happy.", "D) Children who receive parental restriction are better\nable to quickly understand the plots of television\nprogrammes.", "E) Much of the research on the effects of television\nviewing has focused on children whose parents are\nmore sophisticated consumers of television.\nS\nÖ"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2017 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Paragraf"
@@ -5344,7 +5357,7 @@ object QuestionDataProvider {
         Question(
             id = 665,
             questionText = "(2017 Sonbahar / Soru 80)\n(I) The symptoms of senile dementia generally include a\ndecline in memory, learning, attention, and judgement,\nas well as disorientation and increased difficulties in\ncommunication.(II)Alzheimer’s disease is the most\ncommon cause of senile dementia, accounting for\naround 70 percent of all cases. (III)Alzheimer’s disease\noften makes it more difficult to think of the right word, for\nexample. (IV) Behavioural manifestations of Alzheimer’s\ndisease include a decline in personal hygiene,\ninappropriate social behaviour, and apparent changes in\npersonality. (V) Wandering and forgetting what one is\ndoing can also become a serious problem, as this can\ncreate a genuine danger.",
-            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V\nEND OF THE TEST."),
+            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2017 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -5368,7 +5381,7 @@ object QuestionDataProvider {
         Question(
             id = 668,
             questionText = "(2017 İlkbahar / Soru 3)\nDuring the investigation of a lethal or an easily\ntransmitted disease, the necessary precautions\nmust be taken to protect health staff, because they\nare ---- to catching the disease in question.",
-            options = listOf("A) committed", "B) adaptable", "C) entitled", "D) vulnerable", "E) accessible\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) committed", "B) adaptable", "C) entitled", "D) vulnerable", "E) accessible"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2017 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Kelime Bilgisi"
@@ -5448,7 +5461,7 @@ object QuestionDataProvider {
         Question(
             id = 678,
             questionText = "(2017 İlkbahar / Soru 14)\n---- historians cannot agree on when gold was first\ndiscovered, there is some evidence to suggest that\nthe Egyptians were the first to mine it.\nÖ",
-            options = listOf("A) Now that", "B) Just as", "C) Even though", "D) As long as", "E) In case\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Now that", "B) Just as", "C) Even though", "D) As long as", "E) In case"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2017 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Bağlaçlar"
@@ -5472,7 +5485,7 @@ object QuestionDataProvider {
         Question(
             id = 681,
             questionText = "(2017 İlkbahar / Soru 18)\n",
-            options = listOf("A) on", "B) at", "C) with", "D) for", "E) over\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) on", "B) at", "C) with", "D) for", "E) over"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2017 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Dil Bilgisi"
@@ -5512,7 +5525,7 @@ object QuestionDataProvider {
         Question(
             id = 686,
             questionText = "(2017 İlkbahar / Soru 23)\n",
-            options = listOf("A) coincidental", "B) irreversible", "C) unintentional", "D) preventable", "E) plausible\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) coincidental", "B) irreversible", "C) unintentional", "D) preventable", "E) plausible"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2017 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Dil Bilgisi"
@@ -5552,7 +5565,7 @@ object QuestionDataProvider {
         Question(
             id = 691,
             questionText = "(2017 İlkbahar / Soru 28)\nSince we now genSerate more data every year than\nthe entire planet did up until 2003, ----.",
-            options = listOf("A) libraries continue to keep records of knowledge in the\nform of books", "B) it is inconceivable to have effective database\nmanagement systems\nÖ", "C) the way we store and preserve that data has to\nchange", "D) it is not possible for data stored on digital platforms to\nvanish", "E) humanity's cumulative knowledge will not disappear if\nstored digitally\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) libraries continue to keep records of knowledge in the\nform of books", "B) it is inconceivable to have effective database\nmanagement systems\nÖ", "C) the way we store and preserve that data has to\nchange", "D) it is not possible for data stored on digital platforms to\nvanish", "E) humanity's cumulative knowledge will not disappear if\nstored digitally"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2017 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Bağlaçlar"
@@ -5584,7 +5597,7 @@ object QuestionDataProvider {
         Question(
             id = 695,
             questionText = "(2017 İlkbahar / Soru 32)\nThe huge improvement in levels of readership in\nthe 1960s largely coincided with the arrival of\ntelevision, ----.\nS",
-            options = listOf("A) but there was a dramatic increase in the number of\npeople who spent their time watching TV", "B) thus people began to pay more attention to the\nbest-selling books, especially detective novels", "C) because the production of cheaper pocket editions\nwithin reach of a wider range of the population\nfostered reading\nÖ", "D) so the habit of book reading came to occupy\nproportionately less of people's leisure time", "E) while the readership of humour, biography, and history\nwas decreasing among the younger generation\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) but there was a dramatic increase in the number of\npeople who spent their time watching TV", "B) thus people began to pay more attention to the\nbest-selling books, especially detective novels", "C) because the production of cheaper pocket editions\nwithin reach of a wider range of the population\nfostered reading\nÖ", "D) so the habit of book reading came to occupy\nproportionately less of people's leisure time", "E) while the readership of humour, biography, and history\nwas decreasing among the younger generation"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2017 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Bağlaçlar"
@@ -5624,14 +5637,16 @@ object QuestionDataProvider {
         Question(
             id = 700,
             questionText = "(2017 İlkbahar / Soru 38)\nA study carried out at Weill Cornell Medical\nCollege has found out how the brain switches\nbetween waking and the unconscious, which\nis promising for rousing people from an\nunconscious state.",
-            options = listOf("A) Weill Cornell Tıp Fakültesi'nde yapılan ve beynin\nuyanma ve bilinçaltı arasında nasıl geçiş yaptığını\nortaya çıkaran çalışma, insanları bilinçsiz bir\ndurumdan uyandırma konusunda ümit vericidir.", "B) Weill Cornell Tıp Fakültesi'nde yapılan bir çalışma,\nbeynin uyanma ve bilinçaltı arasında nasıl geçiş\nyaptığını ortaya çıkardığı için insanları bilinçsiz bir\ndurumdan uyandırma konusunda ümit vadediyor.", "C) Weill Cornell Tıp Fakültesi'nde, beynin uyanma ve\nbilinçaltı arasında nasıl geçiş yaptığını oYrtaya çıkarma\nve insanları bilinçsiz bir durumdan uyandırma\nkonusunda ümit vadeden bir çalışma yapılmıştır.", "D) Beynin uyanma ve bilinçaltı arasında nasıl geçiş\nyaptığını ortaya çıkaran ve insanları bilinçsiz bir\ndurumdan uyandırma konusunda ümit vadeden bir\nçalışma, Weill Cornell Tıp Fakültesi'nde yapılmıştır.", "E) Weill Cornell Tıp Fakültesi'nde yapılan bir çalışma,\nS\nbeynin uyanma ve bilinçaltı arasında nasıl geçiş\nyaptığını ortaya çıkarmıştır, ki bu insanları bilinçsiz bir\ndurumdan uyandırma konusunda ümit vericidir.\nÖ\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Weill Cornell Tıp Fakültesi'nde yapılan ve beynin\nuyanma ve bilinçaltı arasında nasıl geçiş yaptığını\nortaya çıkaran çalışma, insanları bilinçsiz bir\ndurumdan uyandırma konusunda ümit vericidir.", "B) Weill Cornell Tıp Fakültesi'nde yapılan bir çalışma,\nbeynin uyanma ve bilinçaltı arasında nasıl geçiş\nyaptığını ortaya çıkardığı için insanları bilinçsiz bir\ndurumdan uyandırma konusunda ümit vadediyor.", "C) Weill Cornell Tıp Fakültesi'nde, beynin uyanma ve\nbilinçaltı arasında nasıl geçiş yaptığını oYrtaya çıkarma\nve insanları bilinçsiz bir durumdan uyandırma\nkonusunda ümit vadeden bir çalışma yapılmıştır.", "D) Beynin uyanma ve bilinçaltı arasında nasıl geçiş\nyaptığını ortaya çıkaran ve insanları bilinçsiz bir\ndurumdan uyandırma konusunda ümit vadeden bir\nçalışma, Weill Cornell Tıp Fakültesi'nde yapılmıştır.", "E) Weill Cornell Tıp Fakültesi'nde yapılan bir çalışma,\nS\nbeynin uyanma ve bilinçaltı arasında nasıl geçiş\nyaptığını ortaya çıkarmıştır, ki bu insanları bilinçsiz bir\ndurumdan uyandırma konusunda ümit vericidir.\nÖ"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2017 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Çeviri"
         )
     )
+}
 
-    private val chunk7 = listOf(
+object QuestionChunk7 {
+    val list = listOf(
         Question(
             id = 701,
             questionText = "(2017 İlkbahar / Soru 39)\nWidely regarded as Australia’s capital of culture,\nMelbourne is a vibrant city with various surprises\naround every corner.",
@@ -5643,7 +5658,7 @@ object QuestionDataProvider {
         Question(
             id = 702,
             questionText = "(2017 İlkbahar / Soru 40)\nÖğretmenler, öğretim yöntemi seçerken,\nöğrencilerinin özellikleri ve hâlihazırdaki kaynakların\nyanı sıra kendi yeterliliklerini ve bilgilerini de göz\nönünde bulundurmalıdırlar.",
-            options = listOf("A) What teachers need to do when choosing a teaching\nmethod is to take their own capabilities and knowledge\ninto account as well as their students' characteristics\nand the resources available.", "B) When they follow a teaching method, teachers are\nexpected to consider their own capabilities and\nknowledge together with their students' characteristics\nand the resources available.", "C) When choosing a teaching method, teachers should\ntake their own capabilities and knowledge into account\nalong with their students' characteristics Yand the\nresources available.", "D) When implementing a teaching method, teachers\nshould consider not only their students' characteristics\nand the resources available but also their own\ncapabilities and knowledge.", "E) Their own capabilities and knowledge besides their\nstudents' characteristics and the resources available\nS\nshould be taken into account by teachers when\nchoosing a teaching method.\nÖ\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) What teachers need to do when choosing a teaching\nmethod is to take their own capabilities and knowledge\ninto account as well as their students' characteristics\nand the resources available.", "B) When they follow a teaching method, teachers are\nexpected to consider their own capabilities and\nknowledge together with their students' characteristics\nand the resources available.", "C) When choosing a teaching method, teachers should\ntake their own capabilities and knowledge into account\nalong with their students' characteristics Yand the\nresources available.", "D) When implementing a teaching method, teachers\nshould consider not only their students' characteristics\nand the resources available but also their own\ncapabilities and knowledge.", "E) Their own capabilities and knowledge besides their\nstudents' characteristics and the resources available\nS\nshould be taken into account by teachers when\nchoosing a teaching method.\nÖ"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2017 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Çeviri"
@@ -5651,7 +5666,7 @@ object QuestionDataProvider {
         Question(
             id = 703,
             questionText = "(2017 İlkbahar / Soru 42)\nDünya üzerinde yaşam başladığından bu yana yüz\nmilyonlarca bitki ve hayvan türünün nesli tükendi ve\ninsanlar son 300 yıldır doğal yaşam alanlarını tahrip\nederek yok olma sürecini büyük ölçüde hızlandırdı.",
-            options = listOf("A) Since life began on Earth, hundreds of millions of\nspecies of plants and animals have been threatened\nwith extinction, and over the past 300 years the\nextinction process has substantially accelerated due to\nhabitat destruction caused by people.", "B) Hundreds of millions of species of plants and animals\nhave become extinct since life began on Earth, and\nover the past 300 years people have been damaging\nhabitats, thus significantly speeding up the extinction\nprocess.\nY", "C) Hundreds of millions of species of plants and animals\nhave become extinct since life began on Earth, and\nover the past 300 years people have dramatically\nspeeded up the extinction process by destroying\nhabitats.", "D) Since life began on Earth, hundreds of millions of\nspecies of plants and animals have become extinct,\nand habitats have been damaged by people, which\nhas substantiallyS accelerated the extinction process\nfor the past 300 years.", "E) There are hundreds of millions of species of plants\nand animals that have faced extinction since life began\non Earth, and people who are destroying habitats have\ndramatically speeded up the extinction process for the\npast 300 years.\nÖ\n\n=== COLUMN_SEPARATOR ===\n\nM"),
+            options = listOf("A) Since life began on Earth, hundreds of millions of\nspecies of plants and animals have been threatened\nwith extinction, and over the past 300 years the\nextinction process has substantially accelerated due to\nhabitat destruction caused by people.", "B) Hundreds of millions of species of plants and animals\nhave become extinct since life began on Earth, and\nover the past 300 years people have been damaging\nhabitats, thus significantly speeding up the extinction\nprocess.\nY", "C) Hundreds of millions of species of plants and animals\nhave become extinct since life began on Earth, and\nover the past 300 years people have dramatically\nspeeded up the extinction process by destroying\nhabitats.", "D) Since life began on Earth, hundreds of millions of\nspecies of plants and animals have become extinct,\nand habitats have been damaged by people, which\nhas substantiallyS accelerated the extinction process\nfor the past 300 years.", "E) There are hundreds of millions of species of plants\nand animals that have faced extinction since life began\non Earth, and people who are destroying habitats have\ndramatically speeded up the extinction process for the\npast 300 years.\nÖ\n\n\n\nM"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2017 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Çeviri"
@@ -5659,7 +5674,7 @@ object QuestionDataProvider {
         Question(
             id = 704,
             questionText = "(2017 İlkbahar / Soru 43)\nIt can be understood from the passage that the\nÖ\nairbags were ----.",
-            options = listOf("A) widely accepted when they were first introduced in\n1952", "B) invented with the fundamental aim of making cars look\nmore attractive", "C) manufactured largely in order to improve automobile\nmarketing and increase the sales", "D) invented by a US engineer while he was launching the\ncanvas cover into the air", "E) designed to work very fast to provide immediate\nprotection for people\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) widely accepted when they were first introduced in\n1952", "B) invented with the fundamental aim of making cars look\nmore attractive", "C) manufactured largely in order to improve automobile\nmarketing and increase the sales", "D) invented by a US engineer while he was launching the\ncanvas cover into the air", "E) designed to work very fast to provide immediate\nprotection for people"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2017 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Paragraf"
@@ -5683,7 +5698,7 @@ object QuestionDataProvider {
         Question(
             id = 707,
             questionText = "(2017 İlkbahar / Soru 46)\nWhich could be the best title for the passage?",
-            options = listOf("A) Advances in the Automobile Industry", "B) An Alternative Way to Save Life", "C) Airbags as a Safety Regulation", "D) How to Prevent Car Accidents with Airbags", "E) The Advance of Airbag Technology\nY\nS\nÖ\n\n=== COLUMN_SEPARATOR ===\n\nM"),
+            options = listOf("A) Advances in the Automobile Industry", "B) An Alternative Way to Save Life", "C) Airbags as a Safety Regulation", "D) How to Prevent Car Accidents with Airbags", "E) The Advance of Airbag Technology\nY\nS\nÖ\n\n\n\nM"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2017 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Paragraf"
@@ -5691,7 +5706,7 @@ object QuestionDataProvider {
         Question(
             id = 708,
             questionText = "(2017 İlkbahar / Soru 47)\nIt is pointed out in the passage that after being\nrelocated, the Dutch chimps ----.",
-            options = listOf("A) changed the pronunciation patterns of their Scottish\nhosts", "B) had increasing frequencies of loud calls", "C) had a low-toned pronunciation as they did in the\nNetherlands", "D) began to make sounds in a way similar to that of the\nScottish apes", "E) experienced a sudden change in how they\npronounced words\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) changed the pronunciation patterns of their Scottish\nhosts", "B) had increasing frequencies of loud calls", "C) had a low-toned pronunciation as they did in the\nNetherlands", "D) began to make sounds in a way similar to that of the\nScottish apes", "E) experienced a sudden change in how they\npronounced words"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2017 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -5715,7 +5730,7 @@ object QuestionDataProvider {
         Question(
             id = 711,
             questionText = "(2017 İlkbahar / Soru 50)\nOne can understand from the passage that unlike\nwhat is commonly accepted, ----.",
-            options = listOf("A) chimp words for objects do not vary", "B) chimps can consciously change the sounds they\nproduce", "C) chimp call structure includes involuntary outbursts", "D) chimps are not able to produce sounds that have\nmeanings", "E) chimp words for objects are linked to emotional\noutbursts\nY\nS\nÖ\n\n=== COLUMN_SEPARATOR ===\n\nM"),
+            options = listOf("A) chimp words for objects do not vary", "B) chimps can consciously change the sounds they\nproduce", "C) chimp call structure includes involuntary outbursts", "D) chimps are not able to produce sounds that have\nmeanings", "E) chimp words for objects are linked to emotional\noutbursts\nY\nS\nÖ\n\n\n\nM"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2017 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Paragraf"
@@ -5723,7 +5738,7 @@ object QuestionDataProvider {
         Question(
             id = 712,
             questionText = "(2017 İlkbahar / Soru 51)\nIt is clear from the passage that Manby ----.",
-            options = listOf("A) was inspired by different types of fire extinguishers\nwhile producing his own type", "B) became famous when he himself rescued a lot of\npeople from a shipwreck", "C) is regarded as the creator of the fire extinguisher\nalthough similar types existed before", "D) was the first person to use a fire extinguisher in a fire\nin London in 1729", "E) collaborated with Godfrey to invent the fire\nextinguisher\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) was inspired by different types of fire extinguishers\nwhile producing his own type", "B) became famous when he himself rescued a lot of\npeople from a shipwreck", "C) is regarded as the creator of the fire extinguisher\nalthough similar types existed before", "D) was the first person to use a fire extinguisher in a fire\nin London in 1729", "E) collaborated with Godfrey to invent the fire\nextinguisher"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2017 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -5747,7 +5762,7 @@ object QuestionDataProvider {
         Question(
             id = 715,
             questionText = "(2017 İlkbahar / Soru 54)\nWhat is the primary purpose of the author?",
-            options = listOf("A) To give examples of the pressurising agents used in\nfire extinguishers", "B) To make a comparison between Manby's fire\nextinguisher and Godfrey's device", "C) To inform the reader about the development of the fire\nextinguisher", "D) To put emphasis on portable fire extinguishers that\nhelp firemen to reach inaccessible areas", "E) To describe the benefits and limitations of Manby's fire\nextinguisher\nY\nS\nÖ\n\n=== COLUMN_SEPARATOR ===\n\nM"),
+            options = listOf("A) To give examples of the pressurising agents used in\nfire extinguishers", "B) To make a comparison between Manby's fire\nextinguisher and Godfrey's device", "C) To inform the reader about the development of the fire\nextinguisher", "D) To put emphasis on portable fire extinguishers that\nhelp firemen to reach inaccessible areas", "E) To describe the benefits and limitations of Manby's fire\nextinguisher\nY\nS\nÖ\n\n\n\nM"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2017 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -5755,7 +5770,7 @@ object QuestionDataProvider {
         Question(
             id = 716,
             questionText = "(2017 İlkbahar / Soru 55)\nIt is clearly stated in the passage that transfer of\nblood from young mice into old mice ----.",
-            options = listOf("A) has helped old mice boost their performance in\nspatial-memory tests", "B) was performed with the blood especially obtained from\n18-month-old mice", "C) has hardly made a difference in old mice in making\nconnections in their hippocampi", "D) improves their memories and it is evidently going to\nhave the same effect on humans", "E) is one of many similar studies carried out by the\nStanford University School of Medicine\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) has helped old mice boost their performance in\nspatial-memory tests", "B) was performed with the blood especially obtained from\n18-month-old mice", "C) has hardly made a difference in old mice in making\nconnections in their hippocampi", "D) improves their memories and it is evidently going to\nhave the same effect on humans", "E) is one of many similar studies carried out by the\nStanford University School of Medicine"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2017 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Paragraf"
@@ -5779,7 +5794,7 @@ object QuestionDataProvider {
         Question(
             id = 719,
             questionText = "(2017 İlkbahar / Soru 58)\nWhich could be the best title for this passage?",
-            options = listOf("A) How to Take Care of Your Hippocampus", "B) The Important Role of the Hippocampus", "C) How Mice's Spatial Memory Functions", "D) Looking to Mice for Better Memories", "E) Saying Goodbye to Mental Disorders\nY\nS\nÖ\n\n=== COLUMN_SEPARATOR ===\n\nM"),
+            options = listOf("A) How to Take Care of Your Hippocampus", "B) The Important Role of the Hippocampus", "C) How Mice's Spatial Memory Functions", "D) Looking to Mice for Better Memories", "E) Saying Goodbye to Mental Disorders\nY\nS\nÖ\n\n\n\nM"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2017 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -5787,7 +5802,7 @@ object QuestionDataProvider {
         Question(
             id = 720,
             questionText = "(2017 İlkbahar / Soru 59)\nIt is stated in the passage that Robert Peary ----.\nÖ",
-            options = listOf("A) was worried that people would learn he was not the\nthe first explorer to reach the North Pole", "B) had been accepted for years as the first person to\nreach the North Pole although he did not offer\nconclusive evidence about his expedition", "C) did not want to present the details of his expedition to\nthe independent commission after he learned that Dr\nCook was rejected", "D) requested the US National Geographic Society to\nanalyse the photographs and data he gathered during\nhis expedition to prove his claim", "E) was not viewed as the first person to reach the North\nPole since Dr Cook was thought to have arrived there\nearlier\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) was worried that people would learn he was not the\nthe first explorer to reach the North Pole", "B) had been accepted for years as the first person to\nreach the North Pole although he did not offer\nconclusive evidence about his expedition", "C) did not want to present the details of his expedition to\nthe independent commission after he learned that Dr\nCook was rejected", "D) requested the US National Geographic Society to\nanalyse the photographs and data he gathered during\nhis expedition to prove his claim", "E) was not viewed as the first person to reach the North\nPole since Dr Cook was thought to have arrived there\nearlier"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2017 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Paragraf"
@@ -5811,7 +5826,7 @@ object QuestionDataProvider {
         Question(
             id = 723,
             questionText = "(2017 İlkbahar / Soru 62)\nWhich of the following can be concluded from the\npassage?",
-            options = listOf("A) All of the expeditions to the North Pole were\nquestioned until Herbert reached the pole on foot.", "B) Even though Peary has been accepted as the first\nexplorer to reach the North Pole, it was actually Dr\nCook who attained the goal.", "C) The adventurers were strongly supported by the US\nNational Geographic Society during their trip to the\nNorth Pole.", "D) Reaching the North Pole has been an objective to be\nachieved for adventurers, which brings reputation to\nthem.\nY", "E) April is the best time for embarking on an expedition to\nthe North Pole, as both Peary and Herbert did.\nS\nÖ\n\n=== COLUMN_SEPARATOR ===\n\nM"),
+            options = listOf("A) All of the expeditions to the North Pole were\nquestioned until Herbert reached the pole on foot.", "B) Even though Peary has been accepted as the first\nexplorer to reach the North Pole, it was actually Dr\nCook who attained the goal.", "C) The adventurers were strongly supported by the US\nNational Geographic Society during their trip to the\nNorth Pole.", "D) Reaching the North Pole has been an objective to be\nachieved for adventurers, which brings reputation to\nthem.\nY", "E) April is the best time for embarking on an expedition to\nthe North Pole, as both Peary and Herbert did.\nS\nÖ\n\n\n\nM"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2017 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -5819,7 +5834,7 @@ object QuestionDataProvider {
         Question(
             id = 724,
             questionText = "(2017 İlkbahar / Soru 63)\nChristopher:\n I like the idea of Formula E, which is a new racing\nchampionship for single-seater cars powered only\nby electricity.\nAlbert:\n ----\nChristopher:\n Well, it is a platform for research to improve\nelectric powerstations and charging systems\nto make electric cars more feasible and hopefully\nmore popular.\nY\nAlbert:\n I see, this seems to be a good way to encourage\nthe use of energy-efficient and sustainable\ntransportation.",
-            options = listOf("A) Why do we need this when there are other races such\nas Formula 1?", "B) What kind of powSer do Formula E race cars use?", "C) How do they plan to attract sponsors for such an\nevent?", "D) Where do they plan to have these races?", "E) How frequently will the Formula E races be held?\nÖ\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Why do we need this when there are other races such\nas Formula 1?", "B) What kind of powSer do Formula E race cars use?", "C) How do they plan to attract sponsors for such an\nevent?", "D) Where do they plan to have these races?", "E) How frequently will the Formula E races be held?\nÖ"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2017 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Diyalog"
@@ -5835,7 +5850,7 @@ object QuestionDataProvider {
         Question(
             id = 726,
             questionText = "(2017 İlkbahar / Soru 65)\nDaisy:\n I want to take up gardening as a hobby and grow\nvegetables, but I don't have a garden to plant them\nin.\nCaroline:\n ----\nDaisy:\n But they may not grow successfully if they don't\nget a sufficient amount of sunlight.\nCaroline:\n You can grow some vegetables without any sun at\nall. For example, lettuce and parsley will grow\nbeautifully under artificial light.\nY",
-            options = listOf("A) It's not only the space you should take into account,\nbut sunlight is also important when growing\nvegetables.", "B) Vegetables need to be watered very frequently, and\nthey tend to grow more nicely in sunny areas.", "C) Have you ever heard about indoor gardening? You\ncan use your attic, basement, or balcony to grow\nvegetables. S", "D) Near a bright window that takes sunlight at high\nintensity, you can grow cherry tomatoes and\ncucumbers.", "E) I suggest you install a greenhouse. Greenhouses\nare the most convenient places to grow vegetables,\nand they vary vastly in size and price.\nÖ\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) It's not only the space you should take into account,\nbut sunlight is also important when growing\nvegetables.", "B) Vegetables need to be watered very frequently, and\nthey tend to grow more nicely in sunny areas.", "C) Have you ever heard about indoor gardening? You\ncan use your attic, basement, or balcony to grow\nvegetables. S", "D) Near a bright window that takes sunlight at high\nintensity, you can grow cherry tomatoes and\ncucumbers.", "E) I suggest you install a greenhouse. Greenhouses\nare the most convenient places to grow vegetables,\nand they vary vastly in size and price.\nÖ"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2017 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Diyalog"
@@ -5851,7 +5866,7 @@ object QuestionDataProvider {
         Question(
             id = 728,
             questionText = "(2017 İlkbahar / Soru 67)\nEdward:\n What do you think the difference between the\nwords 'inequality' and 'disparity' is?\nWilliam:\n Well, both have negative connotations. And they\nboth imply a lack of something. I guess they\nare basically synonyms.\nEdward:\n ----\nWilliam:\n Oh, I see. So, if I say that there is a disparity\nbetween you and me, it might not be a bad thing,\nbut inequality would be negative.\nYshould",
-            options = listOf("A) That's sort of correct, but we use 'disparity' when we\ntalk about scientific topics and 'inequality' for social\nissues.", "B) That's basically correct, though 'disparity' tells us that\nsomething is unfair, while 'inequality' means some\ngroups have more advantages than others.", "C) They're more or less the same, but in academic\ncircles, the term S'disparity' is an out-of-date\nexpression; the current term is 'inequality'.", "D) They're essentially synonymous, but we can use\n'inequality' to express minor differences and 'disparity'\nfor significant levels of difference.", "E) You're right, they're very similar, but 'disparity' can be\nused to talk about differences neutrally, while\n'inequality' suggests a value judgement.\nÖ\n\n=== COLUMN_SEPARATOR ===\n\n68-71: For these questions, choose the best\nrephrased form of the given sentence."),
+            options = listOf("A) That's sort of correct, but we use 'disparity' when we\ntalk about scientific topics and 'inequality' for social\nissues.", "B) That's basically correct, though 'disparity' tells us that\nsomething is unfair, while 'inequality' means some\ngroups have more advantages than others.", "C) They're more or less the same, but in academic\ncircles, the term S'disparity' is an out-of-date\nexpression; the current term is 'inequality'.", "D) They're essentially synonymous, but we can use\n'inequality' to express minor differences and 'disparity'\nfor significant levels of difference.", "E) You're right, they're very similar, but 'disparity' can be\nused to talk about differences neutrally, while\n'inequality' suggests a value judgement.\nÖ\n\n\n\n68-71: For these questions, choose the best\nrephrased form of the given sentence."),
             correctOptionIndex = 4,
             explanation = "Bu soru 2017 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Diyalog"
@@ -5883,7 +5898,7 @@ object QuestionDataProvider {
         Question(
             id = 732,
             questionText = "(2018 Sonbahar / Soru 3)\nScholars and historians have offered possible\nlocations for the mythical island Atlantis, even in\nthe face of ---- scientific evidence that it does not\nexist.",
-            options = listOf("A) compelling", "B) doubtful", "C) erroneous", "D) refutable", "E) ambiguous\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) compelling", "B) doubtful", "C) erroneous", "D) refutable", "E) ambiguous"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2018 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Kelime Bilgisi"
@@ -5923,7 +5938,7 @@ object QuestionDataProvider {
         Question(
             id = 737,
             questionText = "(2018 Sonbahar / Soru 8)\nScience ---- our every question, but it ---- humanity’s\nbest tool yet for tackling our greatest challenges.",
-            options = listOf("A) may not answer / had remained", "B) must not answer / has remained", "C) should not answer / will remain", "D) cannot answer / remained", "E) might not answer / remains\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) may not answer / had remained", "B) must not answer / has remained", "C) should not answer / will remain", "D) cannot answer / remained", "E) might not answer / remains"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2018 Sonbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Dil Bilgisi"
@@ -5971,7 +5986,7 @@ object QuestionDataProvider {
         Question(
             id = 743,
             questionText = "(2018 Sonbahar / Soru 14)\nStudies have found that the effects of a cup of\ncoffee or a glass of cola are noticeable after just 10\nminutes ---- the peak caffeine concentration in the\nblood occurs after 45 minutes.",
-            options = listOf("A) since", "B) but", "C) provided that", "D) as long as", "E) unless\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) since", "B) but", "C) provided that", "D) as long as", "E) unless"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2018 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Bağlaçlar"
@@ -6011,7 +6026,7 @@ object QuestionDataProvider {
         Question(
             id = 748,
             questionText = "(2018 Sonbahar / Soru 19)\n",
-            options = listOf("A) against", "B) on", "C) from", "D) for", "E) into\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) against", "B) on", "C) from", "D) for", "E) into"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2018 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Dil Bilgisi"
@@ -6043,7 +6058,7 @@ object QuestionDataProvider {
         Question(
             id = 752,
             questionText = "(2018 Sonbahar / Soru 23)\n",
-            options = listOf("A) Consequently", "B) In conclusion", "C) At least", "D) However", "E) Otherwise\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Consequently", "B) In conclusion", "C) At least", "D) However", "E) Otherwise"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2018 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Dil Bilgisi"
@@ -6083,7 +6098,7 @@ object QuestionDataProvider {
         Question(
             id = 757,
             questionText = "(2018 Sonbahar / Soru 28)\nBecause bodybuilders exert large amounts of\nenergy, ----.",
-            options = listOf("A) they are judged on the physical appearance of their\nmuscles and encouraged to focus on body image", "B) they try to achieve the body type that will help them be\neffective competitors in their sport", "C) bodybuilding is the development of the physique\nthrough exercise, often for competitive exhibition", "D) their metabolism generally requires more calories per\nday than the average person", "E) bodybuilding is an activity that includes weight training\nin order to build muscle mass\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) they are judged on the physical appearance of their\nmuscles and encouraged to focus on body image", "B) they try to achieve the body type that will help them be\neffective competitors in their sport", "C) bodybuilding is the development of the physique\nthrough exercise, often for competitive exhibition", "D) their metabolism generally requires more calories per\nday than the average person", "E) bodybuilding is an activity that includes weight training\nin order to build muscle mass"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2018 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Bağlaçlar"
@@ -6115,7 +6130,7 @@ object QuestionDataProvider {
         Question(
             id = 761,
             questionText = "(2018 Sonbahar / Soru 32)\n----, our very lives depend on it to sustain agriculture\nand to keep our bodies healthy.",
-            options = listOf("A) Since scientists have long struggled to comprehend\nthe complexities of the weather", "B) Just as the Earth’s atmosphere would remain stagnant\nwithout weather", "C) While cold weather might cause us discomfort or even\nmore severe health conditions", "D) Given that humanity has, indeed, changed the weather", "E) If predicting the weather is still, in many ways, a\nhaphazard occupation\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Since scientists have long struggled to comprehend\nthe complexities of the weather", "B) Just as the Earth’s atmosphere would remain stagnant\nwithout weather", "C) While cold weather might cause us discomfort or even\nmore severe health conditions", "D) Given that humanity has, indeed, changed the weather", "E) If predicting the weather is still, in many ways, a\nhaphazard occupation"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2018 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Bağlaçlar"
@@ -6147,7 +6162,7 @@ object QuestionDataProvider {
         Question(
             id = 765,
             questionText = "(2018 Sonbahar / Soru 36)\nThe Sung dynasty Chinese (AD 960-1279) had the\ntechnology to make rockets, ----.",
-            options = listOf("A) so the first European picture of a rocket was made in\n1400", "B) thus it was occasionally used as a weapon by\nEuropeans", "C) because the earliest European recipe for black powder\nappeared in 1265", "D) but there is no definitive evidence that they did so", "E) as the origin of the rocket is shrouded in mystery\n\n=== COLUMN_SEPARATOR ===\n\n37-42: For these questions, choose the most\naccurate Turkish translation of the sentences in"),
+            options = listOf("A) so the first European picture of a rocket was made in\n1400", "B) thus it was occasionally used as a weapon by\nEuropeans", "C) because the earliest European recipe for black powder\nappeared in 1265", "D) but there is no definitive evidence that they did so", "E) as the origin of the rocket is shrouded in mystery\n\n\n\n37-42: For these questions, choose the most\naccurate Turkish translation of the sentences in"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2018 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Bağlaçlar"
@@ -6163,7 +6178,7 @@ object QuestionDataProvider {
         Question(
             id = 767,
             questionText = "(2018 Sonbahar / Soru 38)\nWorld War I was supposed to be the war to end all\nwars, but defeated countries were faced with\nharsh peace terms, which led to the outbreak of\nWorld War II.",
-            options = listOf("A) I. Dünya Savaşı’nın tüm savaşlara son verecek savaş\nolacağı düşünülüyordu, fakat yenilen ülkelerin ağır\nbarış koşullarıyla karşı karşıya kalması sonucunda\nII. Dünya Savaşı gerçekleşti.", "B) Tüm savaşlara son verecek savaş olacağı zannedilen\nI. Dünya Savaşı’nda yenilen ülkeler ağır barış\nkoşullarıyla karşı karşıya kaldı ve bu durum II. Dünya\nSavaşı’nın ortaya çıkmasına neden oldu.", "C) I. Dünya Savaşı’nın tüm savaşları sona erdirecek\nsavaş olacağı zannediliyordu, ancak yenilen ülkeler\nağır barış koşullarıyla karşı karşıya kaldı, ki bu da\nII. Dünya Savaşı’nın ortaya çıkmasına neden oldu.", "D) II. Dünya Savaşı’nın gerçekleşmesine neden olan şey,\nI. Dünya Savaşı’nın tüm savaşlara son verecek savaş\nolacağının düşünülmesine rağmen yenilen ülkelerin\nağır barış koşullarıyla karşı karşıya kalmasıydı.", "E) I. Dünya Savaşı’nın tüm savaşları sona erdirecek\nsavaş olacağına inanılsa da yenilen ülkelerin ağır\nbarış koşullarıyla karşı karşıya kalması, II. Dünya\nSavaşı’nın ortaya çıkmasına neden oldu.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) I. Dünya Savaşı’nın tüm savaşlara son verecek savaş\nolacağı düşünülüyordu, fakat yenilen ülkelerin ağır\nbarış koşullarıyla karşı karşıya kalması sonucunda\nII. Dünya Savaşı gerçekleşti.", "B) Tüm savaşlara son verecek savaş olacağı zannedilen\nI. Dünya Savaşı’nda yenilen ülkeler ağır barış\nkoşullarıyla karşı karşıya kaldı ve bu durum II. Dünya\nSavaşı’nın ortaya çıkmasına neden oldu.", "C) I. Dünya Savaşı’nın tüm savaşları sona erdirecek\nsavaş olacağı zannediliyordu, ancak yenilen ülkeler\nağır barış koşullarıyla karşı karşıya kaldı, ki bu da\nII. Dünya Savaşı’nın ortaya çıkmasına neden oldu.", "D) II. Dünya Savaşı’nın gerçekleşmesine neden olan şey,\nI. Dünya Savaşı’nın tüm savaşlara son verecek savaş\nolacağının düşünülmesine rağmen yenilen ülkelerin\nağır barış koşullarıyla karşı karşıya kalmasıydı.", "E) I. Dünya Savaşı’nın tüm savaşları sona erdirecek\nsavaş olacağına inanılsa da yenilen ülkelerin ağır\nbarış koşullarıyla karşı karşıya kalması, II. Dünya\nSavaşı’nın ortaya çıkmasına neden oldu."),
             correctOptionIndex = 2,
             explanation = "Bu soru 2018 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Çeviri"
@@ -6179,7 +6194,7 @@ object QuestionDataProvider {
         Question(
             id = 769,
             questionText = "(2018 Sonbahar / Soru 40)\nMakro fotoğrafçılığın en önemli tekniklerini\nkeşfetmek için, fotoğrafçılar bir bahçede ışık\nve konumla çalışmalı ve ufak hareketlerle arka\nplanın nasıl değiştiğini fark etmelidir.",
-            options = listOf("A) The key techniques of macro photography include\nworking with light and position in a garden, through\nwhich photographers can notice how the background\nchanges with slight moves.", "B) Discovering the key techniques of macro photography\nrequires photographers to work with light and position\nin a garden and to notice how the background\nchanges with their slight moves.", "C) To notice the key techniques of macro photography,\nphotographers may work with light and position in\na garden and discover how the background changes\nin accordance with slight moves.", "D) To discover the key techniques in macro photography,\nphotographers need to work with different ranges of\nlight and position in a garden and notice the changes\nin the background caused by slight moves.", "E) To discover the key techniques of macro photography,\nphotographers should work with light and position in a\ngarden and notice how the background changes with\nslight moves.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) The key techniques of macro photography include\nworking with light and position in a garden, through\nwhich photographers can notice how the background\nchanges with slight moves.", "B) Discovering the key techniques of macro photography\nrequires photographers to work with light and position\nin a garden and to notice how the background\nchanges with their slight moves.", "C) To notice the key techniques of macro photography,\nphotographers may work with light and position in\na garden and discover how the background changes\nin accordance with slight moves.", "D) To discover the key techniques in macro photography,\nphotographers need to work with different ranges of\nlight and position in a garden and notice the changes\nin the background caused by slight moves.", "E) To discover the key techniques of macro photography,\nphotographers should work with light and position in a\ngarden and notice how the background changes with\nslight moves."),
             correctOptionIndex = 4,
             explanation = "Bu soru 2018 Sonbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Çeviri"
@@ -6195,7 +6210,7 @@ object QuestionDataProvider {
         Question(
             id = 771,
             questionText = "(2018 Sonbahar / Soru 42)\nAkademik başarısızlığın önlenmesi ciddi bir konudur\nçünkü akademik başarısızlığa uğrayan çocuklar\nyaşamları boyunca önemli sosyal ve ekonomik\nproblemler yaşarlar.",
-            options = listOf("A) It is important that academic failure is prevented since\nchildren who fail academically are likely to suffer from\nsignificant social and economic problems throughout\ntheir lives.", "B) Should academic failure not be avoided, which is a\nserious subject, children who fail academically face\nimportant social and economic problems throughout\ntheir lives.", "C) Prevention of academic failure is a serious subject\nbecause children who fail academically experience\nsignificant social and economic problems\nthroughout their lives.", "D) As a subject, prevention of academic failure is serious\nbecause children who fail at school go through\nsignificant social and economic problems\nthroughout their lives.", "E) What makes prevention of academic failure a serious\nsubject is that children who fail academically have\nsignificant social and economic problems throughout\ntheir lives.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) It is important that academic failure is prevented since\nchildren who fail academically are likely to suffer from\nsignificant social and economic problems throughout\ntheir lives.", "B) Should academic failure not be avoided, which is a\nserious subject, children who fail academically face\nimportant social and economic problems throughout\ntheir lives.", "C) Prevention of academic failure is a serious subject\nbecause children who fail academically experience\nsignificant social and economic problems\nthroughout their lives.", "D) As a subject, prevention of academic failure is serious\nbecause children who fail at school go through\nsignificant social and economic problems\nthroughout their lives.", "E) What makes prevention of academic failure a serious\nsubject is that children who fail academically have\nsignificant social and economic problems throughout\ntheir lives."),
             correctOptionIndex = 2,
             explanation = "Bu soru 2018 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Çeviri"
@@ -6203,7 +6218,7 @@ object QuestionDataProvider {
         Question(
             id = 772,
             questionText = "(2018 Sonbahar / Soru 43)\nThere is a controversy about video games even\namong scientists because ----.",
-            options = listOf("A) not many scientists have developed the suitable\nresearch design to investigate the issue", "B) video games affect our brains in a number of ways", "C) scientists are still waiting for convincing findings from\nclinical testing", "D) different studies have produced contradictory findings", "E) there are not many changes in the brains of video\ngame players\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) not many scientists have developed the suitable\nresearch design to investigate the issue", "B) video games affect our brains in a number of ways", "C) scientists are still waiting for convincing findings from\nclinical testing", "D) different studies have produced contradictory findings", "E) there are not many changes in the brains of video\ngame players"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2018 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -6235,7 +6250,7 @@ object QuestionDataProvider {
         Question(
             id = 776,
             questionText = "(2018 Sonbahar / Soru 47)\nWhich of the following is true about crop production\naccording to the passage?",
-            options = listOf("A) The losses are insignificant since only four crops are\naffected.", "B) Smog has no significant effect on crop production in\nthe US.", "C) If coal-fired power plant efficiency is improved, crop\nyields will increase dramatically.", "D) Coal-fired power plants produce smog, thereby\nnegatively impacting crop yields.", "E) The losses will continue at the same pace even after\nimplementing the Clean Power Plan.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) The losses are insignificant since only four crops are\naffected.", "B) Smog has no significant effect on crop production in\nthe US.", "C) If coal-fired power plant efficiency is improved, crop\nyields will increase dramatically.", "D) Coal-fired power plants produce smog, thereby\nnegatively impacting crop yields.", "E) The losses will continue at the same pace even after\nimplementing the Clean Power Plan."),
             correctOptionIndex = 3,
             explanation = "Bu soru 2018 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -6267,7 +6282,7 @@ object QuestionDataProvider {
         Question(
             id = 780,
             questionText = "(2018 Sonbahar / Soru 51)\nAccording to the passage, the hormone ghrelin ----.",
-            options = listOf("A) is called the hunger hormone because it prevents one\nfrom feeling hungry for long hours", "B) is produced by the body in higher amounts when there\nare more brain cell connections in the brain", "C) slows down the neurogenesis process when produced\nin considerably low amounts", "D) plays a role in a number of functions from the\nproduction of new brain cells to enhanced mental\nabilities", "E) affects our appetite in a negative way and causes us\nto consume more food than we actually need\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) is called the hunger hormone because it prevents one\nfrom feeling hungry for long hours", "B) is produced by the body in higher amounts when there\nare more brain cell connections in the brain", "C) slows down the neurogenesis process when produced\nin considerably low amounts", "D) plays a role in a number of functions from the\nproduction of new brain cells to enhanced mental\nabilities", "E) affects our appetite in a negative way and causes us\nto consume more food than we actually need"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2018 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -6299,7 +6314,7 @@ object QuestionDataProvider {
         Question(
             id = 784,
             questionText = "(2018 Sonbahar / Soru 55)\nIt is understood from the passage that first\nimpressions ----.",
-            options = listOf("A) do not shape our lives profoundly when formed quickly\nand unintentionally", "B) might not be as easy to get rid of as we may think", "C) may be misleading in job interviews or at social\ngatherings", "D) lose their effectiveness after a certain amount of time\nhas passed", "E) have such a strong impact on our lives that it is\nimpossible to change them\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) do not shape our lives profoundly when formed quickly\nand unintentionally", "B) might not be as easy to get rid of as we may think", "C) may be misleading in job interviews or at social\ngatherings", "D) lose their effectiveness after a certain amount of time\nhas passed", "E) have such a strong impact on our lives that it is\nimpossible to change them"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2018 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Paragraf"
@@ -6331,7 +6346,7 @@ object QuestionDataProvider {
         Question(
             id = 788,
             questionText = "(2018 Sonbahar / Soru 59)\nIt can be understood from the passage that Piri\nReis’s map ----.",
-            options = listOf("A) was the first one to include depictions of the Americas", "B) was preceded by others that include Africa", "C) was not the only map showing the Americas", "D) is the first example of a marine map", "E) is more accurate than once believed\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) was the first one to include depictions of the Americas", "B) was preceded by others that include Africa", "C) was not the only map showing the Americas", "D) is the first example of a marine map", "E) is more accurate than once believed"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2018 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -6363,7 +6378,7 @@ object QuestionDataProvider {
         Question(
             id = 792,
             questionText = "(2018 Sonbahar / Soru 63)\nRobert:\n You've persuaded me to volunteer for that organ\ndonation team, but I can’t figure out what exactly\nwe’re supposed to do.\nLee:\n The team is trying to encourage families to\nconsider how they would feel about donation if\nthey needed an organ transplant when not enough\npeople give their consent.\nRobert:\n ----\nLee:\n Exactly. Surveys show that 30% of people have\nnever discussed organ donation with their\nfriends and relatives.",
-            options = listOf("A) So, as far as I understand, the team is basically trying\nto raise people’s awareness about the issue.", "B) I see. People are aware of the importance of organ\ntransplantation but most are unwilling to be donors.", "C) OK, so non-profit organisations try to ensure that the\nethical considerations are understood.", "D) Yeah, everybody knows that organ transplantation is\na must for those who desperately need organs.", "E) I think more and more people are now well-informed\nabout the challenges of the procedure.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) So, as far as I understand, the team is basically trying\nto raise people’s awareness about the issue.", "B) I see. People are aware of the importance of organ\ntransplantation but most are unwilling to be donors.", "C) OK, so non-profit organisations try to ensure that the\nethical considerations are understood.", "D) Yeah, everybody knows that organ transplantation is\na must for those who desperately need organs.", "E) I think more and more people are now well-informed\nabout the challenges of the procedure."),
             correctOptionIndex = 0,
             explanation = "Bu soru 2018 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Diyalog"
@@ -6379,7 +6394,7 @@ object QuestionDataProvider {
         Question(
             id = 794,
             questionText = "(2018 Sonbahar / Soru 65)\nRichard:\n I saw a video the other day on the Internet about a\npolyglot.\nLucy:\n A polyglot? What’s that?\nRichard:\n A polyglot is a person who speaks several\ndifferent languages. The person in the video I saw\nspeaks eight languages including Portuguese and\nChinese.\nLucy:\n ----\nRichard:\n There are some methods used. For example,\nallocating a few hours a day for a language until\nmastering it, including intense listening and\nspeaking activities.",
-            options = listOf("A) Why aren’t there more people who can speak many\nlanguages like this?", "B) What’s the minimum number of languages needed to\ndescribe someone as a polyglot?", "C) Do you think he’s completely fluent in all eight of those\nlanguages?", "D) How do you think such people manage to learn so\nmany languages?", "E) How many more languages do you think he can add to\nhis repertoire?\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Why aren’t there more people who can speak many\nlanguages like this?", "B) What’s the minimum number of languages needed to\ndescribe someone as a polyglot?", "C) Do you think he’s completely fluent in all eight of those\nlanguages?", "D) How do you think such people manage to learn so\nmany languages?", "E) How many more languages do you think he can add to\nhis repertoire?"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2018 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Diyalog"
@@ -6395,7 +6410,7 @@ object QuestionDataProvider {
         Question(
             id = 796,
             questionText = "(2018 Sonbahar / Soru 67)\nStacy:\n I’m so bored with my never-ending to-do list.\nBut I can’t say I’ve been able to cross a single\nitem off the list so far.\nCarole:\n Maybe you should stop procrastinating and just\nstart working on your list.\nStacy:\n What do you mean?\nCarole:\n ----\nStacy:\n I think you’re right, finding another person with\nthe same aspirations will help me take action.",
-            options = listOf("A) I don’t get why you’ve been feeling so desperate about\nyour life plans. You’re one of the most ambitious and\nmotivated people I know.", "B) Well, I’ve been seeing a psychologist to deal with the\nsame type of issue. Maybe that’s something you can\nlook into as well.", "C) Life seems to be getting busier for us modern working\nwomen. Maybe keeping a diary of goals you’ve\nachieved will help you stay focused.", "D) Maybe one way to deal with your problem is just\nmaking a habit out of it. I mean you should make a\nhabit of taking action to fulfil your plans.", "E) You don’t have to keep waiting for the perfect moment.\nPlus sharing your goals and plans with someone else\ncould be a good idea.\n\n=== COLUMN_SEPARATOR ===\n\n68-71: For these questions, choose the best\nrephrased form of the given sentence."),
+            options = listOf("A) I don’t get why you’ve been feeling so desperate about\nyour life plans. You’re one of the most ambitious and\nmotivated people I know.", "B) Well, I’ve been seeing a psychologist to deal with the\nsame type of issue. Maybe that’s something you can\nlook into as well.", "C) Life seems to be getting busier for us modern working\nwomen. Maybe keeping a diary of goals you’ve\nachieved will help you stay focused.", "D) Maybe one way to deal with your problem is just\nmaking a habit out of it. I mean you should make a\nhabit of taking action to fulfil your plans.", "E) You don’t have to keep waiting for the perfect moment.\nPlus sharing your goals and plans with someone else\ncould be a good idea.\n\n\n\n68-71: For these questions, choose the best\nrephrased form of the given sentence."),
             correctOptionIndex = 4,
             explanation = "Bu soru 2018 Sonbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Diyalog"
@@ -6411,7 +6426,7 @@ object QuestionDataProvider {
         Question(
             id = 798,
             questionText = "(2018 Sonbahar / Soru 69)\nWhile some people believe that video games are a\nwaste of time, certain games can be a good vehicle\nfor training specific skills, such as enhancing\nshort-term memory, agility or reaction time.",
-            options = listOf("A) Although some people are convinced that video\ngames are useful in teaching specific skills like\nimproving short-term memory, agility or reaction time,\nsome of them are futile activities, according to some\nothers.", "B) Certain video games can be good means for\npractising some specific skills like improving\nshort-term memory, agility or reaction time, but there\nare some people who believe that video games are of\nno use.", "C) Some people assume that video games are\ntime-consuming, although they know that certain video\ngames are efficient tools in teaching specific skills like\nimproving short-term memory, agility or reaction time.", "D) Video games are thought to be time-consuming;\nhowever, they may be beneficial for some people\npractising certain skills like improving short-term\nmemory, agility or reaction time.", "E) There are some people who presume that video\ngames are beneficial in specific skills like improving\nshort-term memory, agility or reaction time; however,\nthose games could be a waste of time indeed.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Although some people are convinced that video\ngames are useful in teaching specific skills like\nimproving short-term memory, agility or reaction time,\nsome of them are futile activities, according to some\nothers.", "B) Certain video games can be good means for\npractising some specific skills like improving\nshort-term memory, agility or reaction time, but there\nare some people who believe that video games are of\nno use.", "C) Some people assume that video games are\ntime-consuming, although they know that certain video\ngames are efficient tools in teaching specific skills like\nimproving short-term memory, agility or reaction time.", "D) Video games are thought to be time-consuming;\nhowever, they may be beneficial for some people\npractising certain skills like improving short-term\nmemory, agility or reaction time.", "E) There are some people who presume that video\ngames are beneficial in specific skills like improving\nshort-term memory, agility or reaction time; however,\nthose games could be a waste of time indeed."),
             correctOptionIndex = 1,
             explanation = "Bu soru 2018 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Dil Bilgisi"
@@ -6419,7 +6434,7 @@ object QuestionDataProvider {
         Question(
             id = 799,
             questionText = "(2018 Sonbahar / Soru 71)\nThe growing awareness of the impact of job stress\nis best illustrated by the sheer increase in the\nvolume of job stress research in recent years.",
-            options = listOf("A) The past few years have witnessed a dramatic rise in\nthe amount of job stress research, which best\ndemonstrates the increasing recognition of the impact\nof job stress.", "B) The influence of job stress has increased recently,\nwhich is best shown by the awareness that has been\nsubstantially enhanced by the growth in the amount\nof job stress research.", "C) People are becoming increasingly aware of the\nvolume of job stress research, which has been best\nillustrated by the recent increase in the influence of job\nstress.", "D) Lately, there has been more research in the field of job\nstress, which means that it may lead to a higher level\nof consciousness about the influence of job stress.", "E) Although there has been a considerable increase in\nthe number of studies on job stress recently, there is\nstill a need for greater understanding of the influence\nof job stress.\n\n=== COLUMN_SEPARATOR ===\n\n72-75: For these questions, choose the best\noption to complete the missing part of the\npassage."),
+            options = listOf("A) The past few years have witnessed a dramatic rise in\nthe amount of job stress research, which best\ndemonstrates the increasing recognition of the impact\nof job stress.", "B) The influence of job stress has increased recently,\nwhich is best shown by the awareness that has been\nsubstantially enhanced by the growth in the amount\nof job stress research.", "C) People are becoming increasingly aware of the\nvolume of job stress research, which has been best\nillustrated by the recent increase in the influence of job\nstress.", "D) Lately, there has been more research in the field of job\nstress, which means that it may lead to a higher level\nof consciousness about the influence of job stress.", "E) Although there has been a considerable increase in\nthe number of studies on job stress recently, there is\nstill a need for greater understanding of the influence\nof job stress.\n\n\n\n72-75: For these questions, choose the best\noption to complete the missing part of the\npassage."),
             correctOptionIndex = 0,
             explanation = "Bu soru 2018 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Dil Bilgisi"
@@ -6433,12 +6448,14 @@ object QuestionDataProvider {
             category = "Paragraf"
         )
     )
+}
 
-    private val chunk8 = listOf(
+object QuestionChunk8 {
+    val list = listOf(
         Question(
             id = 801,
             questionText = "(2018 Sonbahar / Soru 73)\nAs children move into adolesence, they seek much\nmore autonomy. At this stage, parents must achieve\na delicate balance between granting autonomy and\nmaking sure their children do not get into situations\nwhere problematic or even dangerous behaviour\ncould occur. ---- This makes it likely that their\nchildren will be involved with other teens who are\nenthusiastic about school and not into risk-taking.",
-            options = listOf("A) However, some parents may find it difficult to develop\nclear rules to ensure the teenager engages in\nappropriate activities when not under adult\nsupervision.", "B) It could be helpul if parents establish effective\ncommunication with their children with regard to what\nthey are doing each day and foster their academic\ninterests.", "C) Children who are not regularly monitored by their\nparents are more likely to adopt destructive habits,\nsuffer from depression, and obtain poor grades.", "D) The most important issues to consider are the time\nteens need to be home, where they can go when they\nare out, and whom they can be with.", "E) On the contrary, offering numerous opportunities for\nyoung people to play a greater role in civic life and\ngovernance is another way to prevent problems.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) However, some parents may find it difficult to develop\nclear rules to ensure the teenager engages in\nappropriate activities when not under adult\nsupervision.", "B) It could be helpul if parents establish effective\ncommunication with their children with regard to what\nthey are doing each day and foster their academic\ninterests.", "C) Children who are not regularly monitored by their\nparents are more likely to adopt destructive habits,\nsuffer from depression, and obtain poor grades.", "D) The most important issues to consider are the time\nteens need to be home, where they can go when they\nare out, and whom they can be with.", "E) On the contrary, offering numerous opportunities for\nyoung people to play a greater role in civic life and\ngovernance is another way to prevent problems."),
             correctOptionIndex = 1,
             explanation = "Bu soru 2018 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Paragraf"
@@ -6454,7 +6471,7 @@ object QuestionDataProvider {
         Question(
             id = 803,
             questionText = "(2018 Sonbahar / Soru 75)\nEven though there are a number of teaching\napproaches, the literature indicates that teachers\nhave two primary orientations to teaching: an\norientation toward conveying knowledge and an\norientation toward facilitating learning. ---- On the\nother hand, if the teacher wants to maximise\nstudents’ understanding, he or she will probably\nfocus on the integration and elaboration of\ninformation in ways that could facilitate meaningful\nlearning and critical thinking.",
-            options = listOf("A) Interestingly, teachers’ approaches to teaching are\nalso mediated by situational and contextual factors in\naddition to a number of other factors.", "B) Hence, the various characteristics of students in these\nclassrooms will influence the approach to teaching as\nwell as its outcomes.", "C) For example, a teacher whose goal of teaching is to\ntransmit and increase knowledge will likely focus on\nthe content and provide structured learning\nexperiences.", "D) Moreover, it is generally known that the values and\nbeliefs of teachers influence their perceptions and\njudgements and also affect their behaviour in the\nclassroom.", "E) Furthermore, this teacher might believe that students\nshould be rewarded for good work and penalised for\nlack of effort and poor work.\n\n=== COLUMN_SEPARATOR ===\n\n76-80: For these questions, choose the irrelevant\nsentence in the passage."),
+            options = listOf("A) Interestingly, teachers’ approaches to teaching are\nalso mediated by situational and contextual factors in\naddition to a number of other factors.", "B) Hence, the various characteristics of students in these\nclassrooms will influence the approach to teaching as\nwell as its outcomes.", "C) For example, a teacher whose goal of teaching is to\ntransmit and increase knowledge will likely focus on\nthe content and provide structured learning\nexperiences.", "D) Moreover, it is generally known that the values and\nbeliefs of teachers influence their perceptions and\njudgements and also affect their behaviour in the\nclassroom.", "E) Furthermore, this teacher might believe that students\nshould be rewarded for good work and penalised for\nlack of effort and poor work.\n\n\n\n76-80: For these questions, choose the irrelevant\nsentence in the passage."),
             correctOptionIndex = 2,
             explanation = "Bu soru 2018 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -6494,7 +6511,7 @@ object QuestionDataProvider {
         Question(
             id = 808,
             questionText = "(2018 İlkbahar / Soru 3)\nThe thin, invisible layer of gas surrounding the\nEarth, which is called the atmosphere, shields us\nfrom the vacuum of space and protects us from ----\nsolar radiation.",
-            options = listOf("A) delicate", "B) excessive", "C) vigorous", "D) elaborate", "E) swift\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) delicate", "B) excessive", "C) vigorous", "D) elaborate", "E) swift"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2018 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Kelime Bilgisi"
@@ -6534,7 +6551,7 @@ object QuestionDataProvider {
         Question(
             id = 813,
             questionText = "(2018 İlkbahar / Soru 8)\nAnyone who ---- unusual reactions to antihistamines\n(medicines that relieve or prevent the symptoms of\nsome kinds of allergy) in the recent past ---- his or\nher physician know before taking the drugs again.",
-            options = listOf("A) used to have / might let", "B) had had / must have let", "C) was having / could let", "D) has had / should let", "E) had / might have let\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) used to have / might let", "B) had had / must have let", "C) was having / could let", "D) has had / should let", "E) had / might have let"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2018 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Dil Bilgisi"
@@ -6582,7 +6599,7 @@ object QuestionDataProvider {
         Question(
             id = 819,
             questionText = "(2018 İlkbahar / Soru 14)\nBuildings such as the Hagia Sophia in Istanbul,\nTurkey date back to the sixth century and yet are\nstill standing ---- they are located in\nearthquake-prone areas.",
-            options = listOf("A) as long as", "B) unless", "C) as if", "D) although", "E) since\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) as long as", "B) unless", "C) as if", "D) although", "E) since"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2018 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Bağlaçlar"
@@ -6614,7 +6631,7 @@ object QuestionDataProvider {
         Question(
             id = 823,
             questionText = "(2018 İlkbahar / Soru 18)\n",
-            options = listOf("A) confine", "B) object", "C) switch", "D) accommodate", "E) respond\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) confine", "B) object", "C) switch", "D) accommodate", "E) respond"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2018 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Dil Bilgisi"
@@ -6654,7 +6671,7 @@ object QuestionDataProvider {
         Question(
             id = 828,
             questionText = "(2018 İlkbahar / Soru 23)\n",
-            options = listOf("A) Given that", "B) Just as", "C) Before", "D) Unless", "E) Although\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Given that", "B) Just as", "C) Before", "D) Unless", "E) Although"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2018 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Dil Bilgisi"
@@ -6694,7 +6711,7 @@ object QuestionDataProvider {
         Question(
             id = 833,
             questionText = "(2018 İlkbahar / Soru 28)\nForensic investigators must collect evidence\nwhile the crime scene is still fresh ----.",
-            options = listOf("A) because forensic science is the use of scientific\nmethods to investigate crimes", "B) since forensic scientists study evidence at the homes\nand workplaces of suspects", "C) although it is the job of forensic scientists to provide\nevidence at a criminal trial", "D) even if the area is unsafe and they have to work under\narmed guard", "E) as many sciences, from chemistry to engineering, are\nused in an investigation\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) because forensic science is the use of scientific\nmethods to investigate crimes", "B) since forensic scientists study evidence at the homes\nand workplaces of suspects", "C) although it is the job of forensic scientists to provide\nevidence at a criminal trial", "D) even if the area is unsafe and they have to work under\narmed guard", "E) as many sciences, from chemistry to engineering, are\nused in an investigation"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2018 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Bağlaçlar"
@@ -6726,7 +6743,7 @@ object QuestionDataProvider {
         Question(
             id = 837,
             questionText = "(2018 İlkbahar / Soru 32)\n----, it will not be possible to turn a draft into a\nfinished piece of work.",
-            options = listOf("A) Although an author may have a hard time evaluating\nwhat he or she has written", "B) Even if an author thinks that characterisation is poor in\nhis or her work", "C) Unless an author knows the strengths and\nweaknesses of a manuscript", "D) Because an author should realise that revision turns\nan amateur into a professional", "E) When rewriting and polishing lead an author to\nproduce a good novel\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Although an author may have a hard time evaluating\nwhat he or she has written", "B) Even if an author thinks that characterisation is poor in\nhis or her work", "C) Unless an author knows the strengths and\nweaknesses of a manuscript", "D) Because an author should realise that revision turns\nan amateur into a professional", "E) When rewriting and polishing lead an author to\nproduce a good novel"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2018 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Bağlaçlar"
@@ -6758,7 +6775,7 @@ object QuestionDataProvider {
         Question(
             id = 841,
             questionText = "(2018 İlkbahar / Soru 36)\n----, he was foremost an inventor and more\ninterested in attracting public interest in his work\nthan advancing scientific knowledge.",
-            options = listOf("A) When the philosopher Alfred North Whitehead\nfamously credited Thomas Edison with the discovery\nof a method of invention", "B) While Thomas Edison saw himself as a member of the\nlarger scientific community and presented papers\nbefore the National Academy of Sciences", "C) As Thomas Edison began his inventive career by\nbecoming a contract inventor in the telegraph industry\nafter working as a telegraph operator in the mid-1860s", "D) Because Thomas Edison depended more on the\nassistance of a large staff of experimenters and\nmachinists who made important contributions to his\ninventive efforts", "E) Although reputation was significant for Thomas\nEdison, particularly because of his popular image as\nthe primary inventor of several new technologies\n\n=== COLUMN_SEPARATOR ===\n\n37-42: For these questions, choose the most\naccurate Turkish translation of the sentences in"),
+            options = listOf("A) When the philosopher Alfred North Whitehead\nfamously credited Thomas Edison with the discovery\nof a method of invention", "B) While Thomas Edison saw himself as a member of the\nlarger scientific community and presented papers\nbefore the National Academy of Sciences", "C) As Thomas Edison began his inventive career by\nbecoming a contract inventor in the telegraph industry\nafter working as a telegraph operator in the mid-1860s", "D) Because Thomas Edison depended more on the\nassistance of a large staff of experimenters and\nmachinists who made important contributions to his\ninventive efforts", "E) Although reputation was significant for Thomas\nEdison, particularly because of his popular image as\nthe primary inventor of several new technologies\n\n\n\n37-42: For these questions, choose the most\naccurate Turkish translation of the sentences in"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2018 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Bağlaçlar"
@@ -6782,7 +6799,7 @@ object QuestionDataProvider {
         Question(
             id = 844,
             questionText = "(2018 İlkbahar / Soru 39)\nMore than a hundred different studies have shown\nthat there really is a significant relation between\nhappiness and physical health.",
-            options = listOf("A) Yapılan yüzden fazla farklı çalışma göstermiştir ki\nmutluluk ile beden sağlığı arasında gerçekten önemli\nbir ilişki bulunabilir.", "B) Mutluluk ile beden sağlığı arasındaki önemli bir\nilişkinin gerçekliği, yüzden fazla farklı çalışma\nsayesinde ortaya konmuştur.", "C) Mutluluk ile beden sağlığı arasında gerçekten önemli\nbir ilişki olup olmadığını göstermek için yüzden fazla\nfarklı çalışma yapılmıştır.", "D) Yüzden fazla farklı çalışma, mutluluk ile beden sağlığı\narasında gerçekten önemli bir ilişki olduğunu\ngöstermiştir.", "E) Yüzden fazla farklı çalışmaya göre, mutluluk ile beden\nsağlığı arasında gerçekten önemli bir ilişki olabilir.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Yapılan yüzden fazla farklı çalışma göstermiştir ki\nmutluluk ile beden sağlığı arasında gerçekten önemli\nbir ilişki bulunabilir.", "B) Mutluluk ile beden sağlığı arasındaki önemli bir\nilişkinin gerçekliği, yüzden fazla farklı çalışma\nsayesinde ortaya konmuştur.", "C) Mutluluk ile beden sağlığı arasında gerçekten önemli\nbir ilişki olup olmadığını göstermek için yüzden fazla\nfarklı çalışma yapılmıştır.", "D) Yüzden fazla farklı çalışma, mutluluk ile beden sağlığı\narasında gerçekten önemli bir ilişki olduğunu\ngöstermiştir.", "E) Yüzden fazla farklı çalışmaya göre, mutluluk ile beden\nsağlığı arasında gerçekten önemli bir ilişki olabilir."),
             correctOptionIndex = 3,
             explanation = "Bu soru 2018 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Çeviri"
@@ -6798,7 +6815,7 @@ object QuestionDataProvider {
         Question(
             id = 846,
             questionText = "(2018 İlkbahar / Soru 41)\n20. yüzyılın başlarında Albert Einstein adında genç\nbir Alman, klasik fiziği sarsarak ve mutlak bir zaman\nve uzay fikrini sonlandırarak görelilik kuramını öne\nsürdü.",
-            options = listOf("A) At the turn of the 20th century, a young German\nnamed Albert Einstein proposed his theory of relativity,\nshaking classical physics and ending the idea of an\nabsolute time and space.", "B) A young German named Albert Einstein shook\nclassical physics at the beginning of the 20th\ncentury and put forward his theory of relativity, ending\nthe idea of an absolute time and space.", "C) At the turn of the 20th century, a young German\nnamed Albert Einstein shook classical physics and\nended the idea of an absolute time and space\nby proposing his theory of relativity.", "D) Proposing his theory of relativity at the turn of the 20th\ncentury, a young German named Albert Einstein\nshook classical physics and ended the idea of an\nabsolute time and space.", "E) The theory of relativity, proposed by a young German\nnamed Albert Einstein at the beginning of the 20th\ncentury, shook classical physics and ended the idea of\nan absolute time and space.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) At the turn of the 20th century, a young German\nnamed Albert Einstein proposed his theory of relativity,\nshaking classical physics and ending the idea of an\nabsolute time and space.", "B) A young German named Albert Einstein shook\nclassical physics at the beginning of the 20th\ncentury and put forward his theory of relativity, ending\nthe idea of an absolute time and space.", "C) At the turn of the 20th century, a young German\nnamed Albert Einstein shook classical physics and\nended the idea of an absolute time and space\nby proposing his theory of relativity.", "D) Proposing his theory of relativity at the turn of the 20th\ncentury, a young German named Albert Einstein\nshook classical physics and ended the idea of an\nabsolute time and space.", "E) The theory of relativity, proposed by a young German\nnamed Albert Einstein at the beginning of the 20th\ncentury, shook classical physics and ended the idea of\nan absolute time and space."),
             correctOptionIndex = 0,
             explanation = "Bu soru 2018 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Çeviri"
@@ -6814,7 +6831,7 @@ object QuestionDataProvider {
         Question(
             id = 848,
             questionText = "(2018 İlkbahar / Soru 43)\nWhich of the following can be true about the tap\nwater in the US?",
-            options = listOf("A) The drugs in the tap water are not expected to have\nimmediate side effects on healthy people.", "B) There can be a lower risk for elder members of society\nwho take more than one drug a day.", "C) Most drugs in the tap water are harmless, but illegal\nones can make people sick.", "D) It is more likely for a person to be affected if there are\nmultiple drug residues in the tap water.", "E) The tap water used in houses does not cause negative\neffects for adults at all.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) The drugs in the tap water are not expected to have\nimmediate side effects on healthy people.", "B) There can be a lower risk for elder members of society\nwho take more than one drug a day.", "C) Most drugs in the tap water are harmless, but illegal\nones can make people sick.", "D) It is more likely for a person to be affected if there are\nmultiple drug residues in the tap water.", "E) The tap water used in houses does not cause negative\neffects for adults at all."),
             correctOptionIndex = 0,
             explanation = "Bu soru 2018 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Paragraf"
@@ -6846,7 +6863,7 @@ object QuestionDataProvider {
         Question(
             id = 852,
             questionText = "(2018 İlkbahar / Soru 47)\nFor a horned lizard, eating too many ants means\nthat it ----.",
-            options = listOf("A) has to spend more time to digest what it has eaten\nthan to hunt for food", "B) is more vulnerable to predators while trying to run\naway", "C) will become highly indigestible for its predators", "D) seems to get physically stronger in its struggle\nto survive in the wild", "E) causes a huge decrease in the ant population living\naround its habitat\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) has to spend more time to digest what it has eaten\nthan to hunt for food", "B) is more vulnerable to predators while trying to run\naway", "C) will become highly indigestible for its predators", "D) seems to get physically stronger in its struggle\nto survive in the wild", "E) causes a huge decrease in the ant population living\naround its habitat"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2018 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Paragraf"
@@ -6878,7 +6895,7 @@ object QuestionDataProvider {
         Question(
             id = 856,
             questionText = "(2018 İlkbahar / Soru 51)\nIt is understood from the passage that great whites\n----.",
-            options = listOf("A) have hardly ever been examined in terms of their\nbreeding habits", "B) are mysterious because why they mainly prey on seals\nand sea lions has not been clarified", "C) are giant creatures whose size can never be\nmeasured exactly", "D) have been studied more extensively than any other\ncreatures in the ocean", "E) have unusual breeding habits to which scientists have\nbeen paying particular attention\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) have hardly ever been examined in terms of their\nbreeding habits", "B) are mysterious because why they mainly prey on seals\nand sea lions has not been clarified", "C) are giant creatures whose size can never be\nmeasured exactly", "D) have been studied more extensively than any other\ncreatures in the ocean", "E) have unusual breeding habits to which scientists have\nbeen paying particular attention"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2018 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Paragraf"
@@ -6910,7 +6927,7 @@ object QuestionDataProvider {
         Question(
             id = 860,
             questionText = "(2018 İlkbahar / Soru 55)\nWhich of the following can be said about the story\nof Hansel and Gretel?",
-            options = listOf("A) It was initially written by the Grimm brothers and\nbecame very popular in a short time.", "B) It illustrates the dangers faced by two children who\nlived in Kassel, Germany, in about 1807.", "C) It reveals the typical features of German culture\nbecause it is told by villagers and farmers.", "D) It was verbally transferred to the Grimm brothers like\nsome other stories.", "E) It was told by Doretchen Wild to the villagers and\nfarmers in Kassel, Germany.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) It was initially written by the Grimm brothers and\nbecame very popular in a short time.", "B) It illustrates the dangers faced by two children who\nlived in Kassel, Germany, in about 1807.", "C) It reveals the typical features of German culture\nbecause it is told by villagers and farmers.", "D) It was verbally transferred to the Grimm brothers like\nsome other stories.", "E) It was told by Doretchen Wild to the villagers and\nfarmers in Kassel, Germany."),
             correctOptionIndex = 3,
             explanation = "Bu soru 2018 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -6942,7 +6959,7 @@ object QuestionDataProvider {
         Question(
             id = 864,
             questionText = "(2018 İlkbahar / Soru 59)\nWhat can be inferred about Piccard’s father and\ngrandfather?",
-            options = listOf("A) They preferred to follow their dreams rather than have\ncareers.", "B) They were not afraid of taking risks and pursuing their\ndreams.", "C) They were both renowned scientists in their fields.", "D) They were very supportive of Piccard’s ambitions.", "E) They were just as concerned about the environment\nas Piccard.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) They preferred to follow their dreams rather than have\ncareers.", "B) They were not afraid of taking risks and pursuing their\ndreams.", "C) They were both renowned scientists in their fields.", "D) They were very supportive of Piccard’s ambitions.", "E) They were just as concerned about the environment\nas Piccard."),
             correctOptionIndex = 1,
             explanation = "Bu soru 2018 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Paragraf"
@@ -6974,7 +6991,7 @@ object QuestionDataProvider {
         Question(
             id = 868,
             questionText = "(2018 İlkbahar / Soru 63)\nReporter:\n Kids love to eat hamburgers, but they're not very\nhealthy. Tell us about the public school\ninitiative to make lunches healthier for students.\nDietician:\n With some help from food engineers, we've\ncreated a mushroom-beef blend that's being used\nin schools across the country to help students eat\nhealthier.\nReporter:\n ----\nDietician:\n True. In addition to fewer calories and saturated\nfats than regular hamburgers, this blend is also a\ngreener alternative to meat since mushrooms are\nmore sustainable than beef.\nReporter:\n That makes sense as they require fewer resources\nthan livestock to produce.",
-            options = listOf("A) I think there are more than just health benefits to using\nthis vegetable and meat blend.", "B) It seems that the health benefits are the most positive\nthing about this vegetable and meat blend.", "C) As far as I understand, blending mushrooms with beef\nrequires some careful procedures.", "D) I don't think this is a more sustainable alternative to\ntraditional meat hamburgers.", "E) Great! I think students will like eating this vegetable\nand meat blend at lunch.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) I think there are more than just health benefits to using\nthis vegetable and meat blend.", "B) It seems that the health benefits are the most positive\nthing about this vegetable and meat blend.", "C) As far as I understand, blending mushrooms with beef\nrequires some careful procedures.", "D) I don't think this is a more sustainable alternative to\ntraditional meat hamburgers.", "E) Great! I think students will like eating this vegetable\nand meat blend at lunch."),
             correctOptionIndex = 0,
             explanation = "Bu soru 2018 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Diyalog"
@@ -6990,7 +7007,7 @@ object QuestionDataProvider {
         Question(
             id = 870,
             questionText = "(2018 İlkbahar / Soru 65)\nJournalist:\n You’re the co-leader of an international project to\ndrill for rock samples in the South China Sea. Why\nis that sea bed of such interest?\nGeophysicist:\n We want to answer questions about when it was\nformed to better understand continental\nmovements.\nJournalist:\n ----\nGeophysicist:\n We also plan to study the microbiology of the\nocean crust to see if there are new organisms at\nthese great depths.",
-            options = listOf("A) What key questions do you hope to answer?", "B) What kind of rocks do you expect to find?", "C) How will you determine how old the rocks are?", "D) What methods are you going to use to collect all these\nsamples?", "E) What other things may this study help us understand?\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) What key questions do you hope to answer?", "B) What kind of rocks do you expect to find?", "C) How will you determine how old the rocks are?", "D) What methods are you going to use to collect all these\nsamples?", "E) What other things may this study help us understand?"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2018 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Diyalog"
@@ -7006,7 +7023,7 @@ object QuestionDataProvider {
         Question(
             id = 872,
             questionText = "(2018 İlkbahar / Soru 67)\nMatthew:\n A friend of mine plays in an orchestra and has\ninvited me to their concert. I’m really nervous\nbecause I don’t know anything about orchestras.\nJudy:\n Actually, most people don’t know much about\norchestras. Just pay attention to the instrument\ncategories, and then you’ll be less worried.\nMatthew:\n ----\nJudy:\n Well, each group sits together. First, you have the\nstrings. Woodwinds are in the following section.\nBehind them are the brass instruments, and at the\nback is the percussion section.",
-            options = listOf("A) How do you know the features of all these\ncategories? Have you ever taken a course about\norchestras?", "B) How exactly is a typical orchestra organised? If I learn\nthat at least, maybe I can relax and enjoy the\nperformance.", "C) As far as I know, you’ve attended several concerts\nbefore. Can you predict what will attract me most at\nthe concert?", "D) What do you know about the percussion section? I\nthink that’s the section my friend plays in. So, please\ntell me about it.", "E) I don’t even know the name of instruments played in\nan orchestra. Are there many different instruments?\n\n=== COLUMN_SEPARATOR ===\n\n68-71: For these questions, choose the best\nrephrased form of the given sentence."),
+            options = listOf("A) How do you know the features of all these\ncategories? Have you ever taken a course about\norchestras?", "B) How exactly is a typical orchestra organised? If I learn\nthat at least, maybe I can relax and enjoy the\nperformance.", "C) As far as I know, you’ve attended several concerts\nbefore. Can you predict what will attract me most at\nthe concert?", "D) What do you know about the percussion section? I\nthink that’s the section my friend plays in. So, please\ntell me about it.", "E) I don’t even know the name of instruments played in\nan orchestra. Are there many different instruments?\n\n\n\n68-71: For these questions, choose the best\nrephrased form of the given sentence."),
             correctOptionIndex = 1,
             explanation = "Bu soru 2018 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Diyalog"
@@ -7030,7 +7047,7 @@ object QuestionDataProvider {
         Question(
             id = 875,
             questionText = "(2018 İlkbahar / Soru 71)\nThe years following the 1789 revolution in France\nbrought massive upheaval in French society, which,\nin turn, produced profound changes in dress and\nfashion.",
-            options = listOf("A) Although the revolution took place in France in 1789, it\nwas only after many years that French society went\nthrough considerable changes in dress and fashion\nfollowing this great disturbance in their society.", "B) The revolution in France in 1789 led to a serious\ndisturbance among people in French society, and this\nwas the reason why the French had to allow for\nfundamental and important changes in dress and\nfashion.", "C) If it were not for the revolution in France in 1789, dress\nand fashion in French society might not have changed\nconsiderably despite the enormous disturbance it\ncaused in their society.", "D) What contributed to the revolution in France in 1789\nwere the major changes in dress and fashion, which\nresulted from the huge confusion experienced by\nFrench society at that time.", "E) It was not until after the revolution in France in 1789\nthat French society experienced dramatic changes in\ndress and fashion, due to the enormous turmoil\ngenerated by this period.\n\n=== COLUMN_SEPARATOR ===\n\n72-75: For these questions, choose the best\noption to complete the missing part of the\npassage."),
+            options = listOf("A) Although the revolution took place in France in 1789, it\nwas only after many years that French society went\nthrough considerable changes in dress and fashion\nfollowing this great disturbance in their society.", "B) The revolution in France in 1789 led to a serious\ndisturbance among people in French society, and this\nwas the reason why the French had to allow for\nfundamental and important changes in dress and\nfashion.", "C) If it were not for the revolution in France in 1789, dress\nand fashion in French society might not have changed\nconsiderably despite the enormous disturbance it\ncaused in their society.", "D) What contributed to the revolution in France in 1789\nwere the major changes in dress and fashion, which\nresulted from the huge confusion experienced by\nFrench society at that time.", "E) It was not until after the revolution in France in 1789\nthat French society experienced dramatic changes in\ndress and fashion, due to the enormous turmoil\ngenerated by this period.\n\n\n\n72-75: For these questions, choose the best\noption to complete the missing part of the\npassage."),
             correctOptionIndex = 4,
             explanation = "Bu soru 2018 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Dil Bilgisi"
@@ -7046,7 +7063,7 @@ object QuestionDataProvider {
         Question(
             id = 877,
             questionText = "(2018 İlkbahar / Soru 73)\nIn almost all cultures and societies, children have\ncollected a broad spectrum of items. Although the\nactivity seems to be universal, very little has been\nwritten on this subject. And even though collecting\nhas played an important part in many individuals’\nlives, it is seldom described in memoirs or\nautobiographies. This may be because many\ncollections are suddenly abandoned when the\ncollector grows up. ---- Other collections, however,\ncontinue into adult life, becoming lifelong\npassionate occupations; this is especially likely with\ncollections that have some kind of economic value\nor present the adult with challenges or opportunities\nfor further study.",
-            options = listOf("A) Most children will carry on adding to their collections\nthroughout adulthood because they are so attached to\nthem.", "B) Many are often split up and disappear during\nchildhood unless parents understand the fascinating\nworld of the small collector and pay special attention to\nsaving them.", "C) The spirit of the collector, once established, never\nleaves the individual but is turned in new directions\nand can result in life-changing career choices.", "D) Grand collections may end up in places like museums,\nwhich seems to be the dream of collectors who do not\nwant their passionate investments to disappear with\nthem.", "E) Collecting trains the eye, creates a sense of order, and\ndevelops aesthetic appreciation, while at the same\ntime creating a sense of economic appreciation for\ncertain items.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Most children will carry on adding to their collections\nthroughout adulthood because they are so attached to\nthem.", "B) Many are often split up and disappear during\nchildhood unless parents understand the fascinating\nworld of the small collector and pay special attention to\nsaving them.", "C) The spirit of the collector, once established, never\nleaves the individual but is turned in new directions\nand can result in life-changing career choices.", "D) Grand collections may end up in places like museums,\nwhich seems to be the dream of collectors who do not\nwant their passionate investments to disappear with\nthem.", "E) Collecting trains the eye, creates a sense of order, and\ndevelops aesthetic appreciation, while at the same\ntime creating a sense of economic appreciation for\ncertain items."),
             correctOptionIndex = 1,
             explanation = "Bu soru 2018 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Paragraf"
@@ -7062,7 +7079,7 @@ object QuestionDataProvider {
         Question(
             id = 879,
             questionText = "(2018 İlkbahar / Soru 75)\nAccording to a World Bank report in1993, the East\nAsian miracle, achieving high economic growth for\nall people, is due to a combination of fundamentally\nsound development policies, tailored interventions,\nand an unusually rapid increase of physical and\nhuman capital. The more advanced economies in\nthe Asian region are part of this success and have\nbeen referred to as high-performing East Asian\neconomies. ---- In addition, these economies have\ndisplayed high per capita incomes, along with a\nmuch-improved income distribution, compared with\nmost other developing economies.",
-            options = listOf("A) In contrast, the dramatic growth of the Asian tiger\neconomies has been based on the export of\nmanufactured goods.", "B) Poorer countries have greater difficulty than relatively\nricher countries climbing up the ladder of\ndevelopment.", "C) The study suggests that economies with a strong\ninward focus could not succeed.", "D) Such economies have a record of high and sustained\neconomic growth.", "E) Promoting trade is positively related to levels of per\ncapita income.\n\n=== COLUMN_SEPARATOR ===\n\n76-80: For these questions, choose the irrelevant\nsentence in the passage."),
+            options = listOf("A) In contrast, the dramatic growth of the Asian tiger\neconomies has been based on the export of\nmanufactured goods.", "B) Poorer countries have greater difficulty than relatively\nricher countries climbing up the ladder of\ndevelopment.", "C) The study suggests that economies with a strong\ninward focus could not succeed.", "D) Such economies have a record of high and sustained\neconomic growth.", "E) Promoting trade is positively related to levels of per\ncapita income.\n\n\n\n76-80: For these questions, choose the irrelevant\nsentence in the passage."),
             correctOptionIndex = 3,
             explanation = "Bu soru 2018 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -7094,7 +7111,7 @@ object QuestionDataProvider {
         Question(
             id = 883,
             questionText = "(2018 İlkbahar / Soru 79)\n(I)The conventional wisdom is that it is a molecule's\nspecific shape that allows our noses to distinguish\nbetween one smell and another. (II)But there is new\nevidence that it is actually the frequency of a molecule's\nvibration, a quantum effect, that is all-important.\n(III)Most olfactory (smell) scientists believe that\nreceptors within our noses act like a lock that can only\nbe activated by a molecule of a specific shape – the\n'key'. (IV)Molecules are collections of atoms that can be\nthought of as being connected by springs that can\nvibrate. (V)The trouble is, some molecules with different\nshapes have similar smells.",
-            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2018 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -7126,7 +7143,7 @@ object QuestionDataProvider {
         Question(
             id = 887,
             questionText = "(2019 Sonbahar / Soru 3)\nBecause the functions and disturbances of smell\nand taste are nearly ----, disturbances of one affect\nthe other.",
-            options = listOf("A) inconvenient", "B) unremarkable", "C) inexplicable", "D) unsophisticated", "E) inseparable\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) inconvenient", "B) unremarkable", "C) inexplicable", "D) unsophisticated", "E) inseparable"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2019 Sonbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Kelime Bilgisi"
@@ -7166,7 +7183,7 @@ object QuestionDataProvider {
         Question(
             id = 892,
             questionText = "(2019 Sonbahar / Soru 8)\nThe Martian atmosphere is so thin, and the planet’s\ntemperature so low that liquid water ---- there, and if\nit ever did in the past, conditions ---- very different.",
-            options = listOf("A) might not have existed / were to be", "B) could not exist / may be", "C) would not exist / can be", "D) cannot exist / must have been", "E) must not exist / should have been\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) might not have existed / were to be", "B) could not exist / may be", "C) would not exist / can be", "D) cannot exist / must have been", "E) must not exist / should have been"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2019 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Dil Bilgisi"
@@ -7214,7 +7231,7 @@ object QuestionDataProvider {
         Question(
             id = 898,
             questionText = "(2019 Sonbahar / Soru 14)\nLiquid water covers more than two-thirds of the\nBlue Planet's surface, ---- exactly how it got there\nhas always been puzzling.",
-            options = listOf("A) so", "B) instead", "C) but", "D) otherwise", "E) as\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) so", "B) instead", "C) but", "D) otherwise", "E) as"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2019 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Bağlaçlar"
@@ -7236,8 +7253,10 @@ object QuestionDataProvider {
             category = "Bağlaçlar"
         )
     )
+}
 
-    private val chunk9 = listOf(
+object QuestionChunk9 {
+    val list = listOf(
         Question(
             id = 901,
             questionText = "(2019 Sonbahar / Soru 17)\n",
@@ -7249,7 +7268,7 @@ object QuestionDataProvider {
         Question(
             id = 902,
             questionText = "(2019 Sonbahar / Soru 18)\n",
-            options = listOf("A) Therefore", "B) That is", "C) Eventually", "D) For instance", "E) By comparison\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Therefore", "B) That is", "C) Eventually", "D) For instance", "E) By comparison"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2019 Sonbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Dil Bilgisi"
@@ -7289,7 +7308,7 @@ object QuestionDataProvider {
         Question(
             id = 907,
             questionText = "(2019 Sonbahar / Soru 23)\n",
-            options = listOf("A) blurred", "B) endured", "C) determined", "D) exhausted", "E) threatened\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) blurred", "B) endured", "C) determined", "D) exhausted", "E) threatened"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2019 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Dil Bilgisi"
@@ -7329,7 +7348,7 @@ object QuestionDataProvider {
         Question(
             id = 912,
             questionText = "(2019 Sonbahar / Soru 28)\nBecause we are bombarded with so much\ninformation and misinformation about what might\ncause cancer, ----.",
-            options = listOf("A) it is often hard to separate myth from reality", "B) it affects every one of us in the same way", "C) the chance of being diagnosed is one in two", "D) there are some things we can do to reduce our risk of\ngetting cancer", "E) the extent of public confusion was exposed in a survey\nlast year\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) it is often hard to separate myth from reality", "B) it affects every one of us in the same way", "C) the chance of being diagnosed is one in two", "D) there are some things we can do to reduce our risk of\ngetting cancer", "E) the extent of public confusion was exposed in a survey\nlast year"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2019 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Bağlaçlar"
@@ -7361,7 +7380,7 @@ object QuestionDataProvider {
         Question(
             id = 916,
             questionText = "(2019 Sonbahar / Soru 32)\n----, language, as a complicated phenomenon of the\nhuman mind, does not seem to be restricted to a\nsingle region in the brain.",
-            options = listOf("A) If neurolinguists want to examine the functioning of the\nhuman brain in more detail", "B) Even if certain tasks are fulfilled through coordination\namong neurons", "C) Although it is localised mainly on the left side of the\nbrain", "D) As it is a concrete manifestation of the human mind", "E) When the brain is overwhelmed with long and complex\nsentences\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) If neurolinguists want to examine the functioning of the\nhuman brain in more detail", "B) Even if certain tasks are fulfilled through coordination\namong neurons", "C) Although it is localised mainly on the left side of the\nbrain", "D) As it is a concrete manifestation of the human mind", "E) When the brain is overwhelmed with long and complex\nsentences"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2019 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Bağlaçlar"
@@ -7393,7 +7412,7 @@ object QuestionDataProvider {
         Question(
             id = 920,
             questionText = "(2019 Sonbahar / Soru 36)\nFast food has emerged as one of the biggest\nenemies of health, especially for children, ----.",
-            options = listOf("A) thus its high consumption makes sense when the\nprices are considered", "B) provided that the most common cause of obesity is the\nwide availability of fast food", "C) while people are highly concerned about the nutritional\ndeficiency of foods like burgers", "D) so the fast food industry has received a lot of critical\nattention in recent years", "E) as many fast food restaurants have started to provide\nhealthier alternatives such as salads\n\n=== COLUMN_SEPARATOR ===\n\n37-42: For these questions, choose the most\naccurate Turkish translation of the sentences in"),
+            options = listOf("A) thus its high consumption makes sense when the\nprices are considered", "B) provided that the most common cause of obesity is the\nwide availability of fast food", "C) while people are highly concerned about the nutritional\ndeficiency of foods like burgers", "D) so the fast food industry has received a lot of critical\nattention in recent years", "E) as many fast food restaurants have started to provide\nhealthier alternatives such as salads\n\n\n\n37-42: For these questions, choose the most\naccurate Turkish translation of the sentences in"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2019 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Bağlaçlar"
@@ -7409,7 +7428,7 @@ object QuestionDataProvider {
         Question(
             id = 922,
             questionText = "(2019 Sonbahar / Soru 38)\nForensic investigators make a permanent record of\nanything at a crime scene that is relevant to the\ncrime, and not only does this attention prevent\ndependence on highly unreliable human memory,\nand it also provides evidence that is likely to be\naccepted in court.",
-            options = listOf("A) Adli araştırmacıların olay yerinde suç ile ilgili her şeyin\nkalıcı kaydını tutmaları ve onların bu dikkatleri,\noldukça güvenilmez olan insan hafızasına bağımlı\nolmayı engellemekle kalmaz, mahkemede\nmuhtemelen kabul edilebilecek kanıt da sağlar.", "B) Olay yerinde suç ile ilgili her şeyin kalıcı kaydını tutan\nadli araştırmacılar ve onların bu dikkatleri, oldukça\ngüvenilmez olan insan hafızasına bağımlı olmayı\nengellemekle birlikte mahkemeye muhtemelen kabul\nedilebilecek kanıt sağlar.", "C) Adli araştırmacılar, olay yerinde suç ile ilgili her şeyin\nkalıcı kaydını tutarlar ve bu dikkat sadece oldukça\ngüvenilmez olan insan hafızasına bağımlı olmayı\nengellemekle kalmaz aynı zamanda mahkemede\nmuhtemelen kabul edilebilecek kanıt da sağlar.", "D) Adli araştırmacılar, olay yerinde suç ile ilgili her şeyin\nkalıcı kaydını dikkatle tutarlar ve bu, hem oldukça\ngüvenilmez olan insan hafızasına bağımlı olmalarını\nengeller hem de mahkemede muhtemelen kabul\nedilebilecek kanıt sunmalarını sağlar.", "E) Adli araştırmacılar olay yerinde suç ile ilgili her şeyin\nkalıcı kaydını dikkatli bir şekilde tutarak hem oldukça\ngüvenilmez olan insan hafızasına bağımlı olmaktan\nkaçınırlar hem de mahkemede muhtemelen kabul\nedilebilecek kanıt elde ederler.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Adli araştırmacıların olay yerinde suç ile ilgili her şeyin\nkalıcı kaydını tutmaları ve onların bu dikkatleri,\noldukça güvenilmez olan insan hafızasına bağımlı\nolmayı engellemekle kalmaz, mahkemede\nmuhtemelen kabul edilebilecek kanıt da sağlar.", "B) Olay yerinde suç ile ilgili her şeyin kalıcı kaydını tutan\nadli araştırmacılar ve onların bu dikkatleri, oldukça\ngüvenilmez olan insan hafızasına bağımlı olmayı\nengellemekle birlikte mahkemeye muhtemelen kabul\nedilebilecek kanıt sağlar.", "C) Adli araştırmacılar, olay yerinde suç ile ilgili her şeyin\nkalıcı kaydını tutarlar ve bu dikkat sadece oldukça\ngüvenilmez olan insan hafızasına bağımlı olmayı\nengellemekle kalmaz aynı zamanda mahkemede\nmuhtemelen kabul edilebilecek kanıt da sağlar.", "D) Adli araştırmacılar, olay yerinde suç ile ilgili her şeyin\nkalıcı kaydını dikkatle tutarlar ve bu, hem oldukça\ngüvenilmez olan insan hafızasına bağımlı olmalarını\nengeller hem de mahkemede muhtemelen kabul\nedilebilecek kanıt sunmalarını sağlar.", "E) Adli araştırmacılar olay yerinde suç ile ilgili her şeyin\nkalıcı kaydını dikkatli bir şekilde tutarak hem oldukça\ngüvenilmez olan insan hafızasına bağımlı olmaktan\nkaçınırlar hem de mahkemede muhtemelen kabul\nedilebilecek kanıt elde ederler."),
             correctOptionIndex = 2,
             explanation = "Bu soru 2019 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Çeviri"
@@ -7425,7 +7444,7 @@ object QuestionDataProvider {
         Question(
             id = 924,
             questionText = "(2019 Sonbahar / Soru 40)\nAşırı yağlı yiyecekler tüketen insanların diğerlerine\ngöre kalitesiz gece uykusundan yakınmaları daha\nmuhtemeldir, çünkü yağ tüketimi hormonları ve\nmetabolizmayı olumsuz etkiler, ki bunların ikisi de\nuykuyu düzenleyen biyolojik saatle etkileşim\niçerisindedir.",
-            options = listOf("A) People who live on high-fat foods are more likely to\nsuffer from poor night-time sleep than others, because\nhormones and metabolism, both of which interact with\nthe internal clock to regulate sleep, are adversely\naffected by fat intake.", "B) People who consume high-fat foods are more likely to\nsuffer from poor night-time sleep than others, as fat\nintake negatively affects hormones and metabolism,\nboth of which interact with the internal clock that\nregulates sleep.", "C) Because fat intake negatively affects both hormones\nand metabolism and their interaction with the internal\nclock that regulates sleep, people who prefer high-fat\nfoods are more likely to suffer from poor night-time\nsleep than others.", "D) When people consume high-fat foods, they become\nmore likely to suffer from poor night-time sleep than\nothers, as fat intake adversely affects hormones and\nmetabolism, both of which interact with the internal\nclock in regulating sleep.", "E) Compared to others, people who eat high-fat foods are\nmore likely to suffer from poor night-time sleep and the\nnegative effect of the fat intake on their hormones and\nmetabolism, both of which interact with the internal\nclock that regulates sleep.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) People who live on high-fat foods are more likely to\nsuffer from poor night-time sleep than others, because\nhormones and metabolism, both of which interact with\nthe internal clock to regulate sleep, are adversely\naffected by fat intake.", "B) People who consume high-fat foods are more likely to\nsuffer from poor night-time sleep than others, as fat\nintake negatively affects hormones and metabolism,\nboth of which interact with the internal clock that\nregulates sleep.", "C) Because fat intake negatively affects both hormones\nand metabolism and their interaction with the internal\nclock that regulates sleep, people who prefer high-fat\nfoods are more likely to suffer from poor night-time\nsleep than others.", "D) When people consume high-fat foods, they become\nmore likely to suffer from poor night-time sleep than\nothers, as fat intake adversely affects hormones and\nmetabolism, both of which interact with the internal\nclock in regulating sleep.", "E) Compared to others, people who eat high-fat foods are\nmore likely to suffer from poor night-time sleep and the\nnegative effect of the fat intake on their hormones and\nmetabolism, both of which interact with the internal\nclock that regulates sleep."),
             correctOptionIndex = 1,
             explanation = "Bu soru 2019 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Çeviri"
@@ -7441,7 +7460,7 @@ object QuestionDataProvider {
         Question(
             id = 926,
             questionText = "(2019 Sonbahar / Soru 42)\nİlk kentlerin tam olarak ne zaman, nerede ve nasıl\nortaya çıktığına dair devam eden tartışmalar olsa da\nçoğu araştırmacı bu kentlerin beş ya da altı bin yıl\nönce dünyanın çeşitli bölgelerinde kurulduğunu ileri\nsürmektedir.",
-            options = listOf("A) Most researchers claim that the first cities were built\nfive or six thousand years ago in various regions\naround the world, yet there are still ongoing debates\nabout precisely when, where and how these cities\narose.", "B) Even though discussions go on with regard to exactly\nwhen, where and how the first cities arose, many\nresearchers argue that these cities were built five or\nsix thousand years ago in various regions around the\nworld.", "C) Most researchers put forward that the first cities were\nbuilt five or six thousand years ago in different parts of\nthe world although debates still continue regarding\nexactly when, where and how these cities arose.", "D) Although there are ongoing debates about exactly\nwhen, where and how the first cities arose, most\nresearchers put forward that these cities were built five\nor six thousand years ago in various regions around\nthe world.", "E) In spite of the ongoing debates about precisely when,\nwhere and how the first cities arose, most researchers\npresume that these cities in different regions around\nthe world were built five or six thousand years ago.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Most researchers claim that the first cities were built\nfive or six thousand years ago in various regions\naround the world, yet there are still ongoing debates\nabout precisely when, where and how these cities\narose.", "B) Even though discussions go on with regard to exactly\nwhen, where and how the first cities arose, many\nresearchers argue that these cities were built five or\nsix thousand years ago in various regions around the\nworld.", "C) Most researchers put forward that the first cities were\nbuilt five or six thousand years ago in different parts of\nthe world although debates still continue regarding\nexactly when, where and how these cities arose.", "D) Although there are ongoing debates about exactly\nwhen, where and how the first cities arose, most\nresearchers put forward that these cities were built five\nor six thousand years ago in various regions around\nthe world.", "E) In spite of the ongoing debates about precisely when,\nwhere and how the first cities arose, most researchers\npresume that these cities in different regions around\nthe world were built five or six thousand years ago."),
             correctOptionIndex = 3,
             explanation = "Bu soru 2019 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Çeviri"
@@ -7449,7 +7468,7 @@ object QuestionDataProvider {
         Question(
             id = 927,
             questionText = "(2019 Sonbahar / Soru 43)\nWhat was the reason for the initial lack of interest in\nmaking instruments for improving human vision?",
-            options = listOf("A) People saw no prospects for developments in the field\nof optics with respect to improving human vision.", "B) Instruments that aided human vision were not a\npopular topic of interest among scholars and\nglassmakers.", "C) There were too few scholars who had the necessary\nskills to invent instruments that could improve human\nvision.", "D) Scholars were not willing to collaborate with each\nother to invent optical devices.", "E) People had a strongly-held belief in the superiority of\nthe naked eye.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) People saw no prospects for developments in the field\nof optics with respect to improving human vision.", "B) Instruments that aided human vision were not a\npopular topic of interest among scholars and\nglassmakers.", "C) There were too few scholars who had the necessary\nskills to invent instruments that could improve human\nvision.", "D) Scholars were not willing to collaborate with each\nother to invent optical devices.", "E) People had a strongly-held belief in the superiority of\nthe naked eye."),
             correctOptionIndex = 4,
             explanation = "Bu soru 2019 Sonbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Paragraf"
@@ -7473,7 +7492,7 @@ object QuestionDataProvider {
         Question(
             id = 930,
             questionText = "(2019 Sonbahar / Soru 46)\nWhat is the main idea of the passage?",
-            options = listOf("A) Like most other inventions in the modern world,\neyeglasses are the product of human wisdom and\nstruggle.", "B) Despite being an important technological innovation,\nthe specifics related to the invention of eyeglasses\nremain unknown.", "C) Not all scientific projects lead to success despite the\nconcentrated efforts of academicians.", "D) Scholars in the past were often against new\ntechnologies, so they rarely used them even if they\nenhanced the quality of their lives.", "E) The etymology of the word lente gives us reliable\ninformation about the inventor of the greatest\nadvancement in optical technology.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Like most other inventions in the modern world,\neyeglasses are the product of human wisdom and\nstruggle.", "B) Despite being an important technological innovation,\nthe specifics related to the invention of eyeglasses\nremain unknown.", "C) Not all scientific projects lead to success despite the\nconcentrated efforts of academicians.", "D) Scholars in the past were often against new\ntechnologies, so they rarely used them even if they\nenhanced the quality of their lives.", "E) The etymology of the word lente gives us reliable\ninformation about the inventor of the greatest\nadvancement in optical technology."),
             correctOptionIndex = 1,
             explanation = "Bu soru 2019 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Paragraf"
@@ -7481,7 +7500,7 @@ object QuestionDataProvider {
         Question(
             id = 931,
             questionText = "(2019 Sonbahar / Soru 47)\nAccording to the passage, the Arctic melt ----.",
-            options = listOf("A) has only recently been found to cause ice-free\nsummers in the Arctic soon", "B) has finally led the US to keep its promise on its climate\nchange policies", "C) was taking place at a faster pace before satellite\nrecordings began", "D) will possibly result in worldwide devastation due to a\nlack of sound climate policies", "E) is one of the most immediate priorities of a large\nnumber of governments worldwide\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) has only recently been found to cause ice-free\nsummers in the Arctic soon", "B) has finally led the US to keep its promise on its climate\nchange policies", "C) was taking place at a faster pace before satellite\nrecordings began", "D) will possibly result in worldwide devastation due to a\nlack of sound climate policies", "E) is one of the most immediate priorities of a large\nnumber of governments worldwide"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2019 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -7513,7 +7532,7 @@ object QuestionDataProvider {
         Question(
             id = 935,
             questionText = "(2019 Sonbahar / Soru 51)\nWhy did child labour become an important issue\nduring the Industrial Revolution?",
-            options = listOf("A) The number of homeless children in the streets\nincreased dramatically.", "B) Government officials were reluctant to provide\nhomeless children with free room and meals.", "C) The size of the labour force in Britain declined since\nwars resulted in a lack of adult male workers.", "D) The development of universal public education was\nenhanced by government authorities.", "E) Children who worked for cotton mill owners could\nearn a huge amount of money.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) The number of homeless children in the streets\nincreased dramatically.", "B) Government officials were reluctant to provide\nhomeless children with free room and meals.", "C) The size of the labour force in Britain declined since\nwars resulted in a lack of adult male workers.", "D) The development of universal public education was\nenhanced by government authorities.", "E) Children who worked for cotton mill owners could\nearn a huge amount of money."),
             correctOptionIndex = 2,
             explanation = "Bu soru 2019 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -7537,7 +7556,7 @@ object QuestionDataProvider {
         Question(
             id = 938,
             questionText = "(2019 Sonbahar / Soru 54)\nWhat is the primary purpose of the author?",
-            options = listOf("A) To explain the reasons why child labour was not as\neffective in the United States as it was in Britain", "B) To inform readers about how farms, factories and\nmines throughout the world benefitted from child\nlabour in the late 1800s", "C) To emphasise that farms, factories and mines would\nnot have been productive enough without child\nlabour during the Industrial Revolution", "D) To highlight that child labour, initially considered\nadvantageous, later proved to be disadvantageous", "E) To draw attention to the successful collaboration\nbetween industrialists and social reformers to support\nuniversal compulsory education\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) To explain the reasons why child labour was not as\neffective in the United States as it was in Britain", "B) To inform readers about how farms, factories and\nmines throughout the world benefitted from child\nlabour in the late 1800s", "C) To emphasise that farms, factories and mines would\nnot have been productive enough without child\nlabour during the Industrial Revolution", "D) To highlight that child labour, initially considered\nadvantageous, later proved to be disadvantageous", "E) To draw attention to the successful collaboration\nbetween industrialists and social reformers to support\nuniversal compulsory education"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2019 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -7545,7 +7564,7 @@ object QuestionDataProvider {
         Question(
             id = 939,
             questionText = "(2019 Sonbahar / Soru 55)\nAccording to the passage, chemicals such as\nmethane, kerosene and chloroform ----.",
-            options = listOf("A) cannot be compared with water in their capacity to\ndissolve life chemicals", "B) have been found on several exoplanets humans are\nplanning to set foot on", "C) have been proved to be much better alternatives to\nwater, which makes life possible", "D) could possibly be solvents of various chemicals that\nform life", "E) should be researched more extensively in order to\nprotect life on Earth\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) cannot be compared with water in their capacity to\ndissolve life chemicals", "B) have been found on several exoplanets humans are\nplanning to set foot on", "C) have been proved to be much better alternatives to\nwater, which makes life possible", "D) could possibly be solvents of various chemicals that\nform life", "E) should be researched more extensively in order to\nprotect life on Earth"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2019 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -7577,7 +7596,7 @@ object QuestionDataProvider {
         Question(
             id = 943,
             questionText = "(2019 Sonbahar / Soru 59)\nIt is stated in the passage that companies ----.",
-            options = listOf("A) can contribute to their future prosperity by motivating\ntheir employees with a pay increase", "B) use various forms of payment depending on the\nimportance of the position", "C) evaluate their employees’ previous performance to lay\nout future performance criteria", "D) increase the motivation of their employees by setting\nattainable performance objectives", "E) should use individual performance-related pay to\nmotivate their non-efficient employees\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) can contribute to their future prosperity by motivating\ntheir employees with a pay increase", "B) use various forms of payment depending on the\nimportance of the position", "C) evaluate their employees’ previous performance to lay\nout future performance criteria", "D) increase the motivation of their employees by setting\nattainable performance objectives", "E) should use individual performance-related pay to\nmotivate their non-efficient employees"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2019 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Paragraf"
@@ -7601,7 +7620,7 @@ object QuestionDataProvider {
         Question(
             id = 946,
             questionText = "(2019 Sonbahar / Soru 62)\nWhat is the drawback of the merit-based pay system\naccording to the passage?",
-            options = listOf("A) Employees have no right to take part in the formulation\nof performance criteria.", "B) It is not efficient because it does not guarantee the\npromotion of hard-working employees.", "C) Rating points may not accurately reflect an employee’s\nperformance.", "D) It may not be favoured by everyone since it benefits\ncertain positions and careers.", "E) It does not help to assess employees’ monthly\nperformance since it is applied annually.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Employees have no right to take part in the formulation\nof performance criteria.", "B) It is not efficient because it does not guarantee the\npromotion of hard-working employees.", "C) Rating points may not accurately reflect an employee’s\nperformance.", "D) It may not be favoured by everyone since it benefits\ncertain positions and careers.", "E) It does not help to assess employees’ monthly\nperformance since it is applied annually."),
             correctOptionIndex = 3,
             explanation = "Bu soru 2019 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -7609,7 +7628,7 @@ object QuestionDataProvider {
         Question(
             id = 947,
             questionText = "(2019 Sonbahar / Soru 63)\nStudent:\n How do leaves know that it’s autumn?\nTeacher:\n During the autumn, every day is four minutes\nshorter than the one before it. This means leaves\nhave four minutes less sunlight.\nStudent:\n ----\nTeacher:\n Exactly! And, at some point, when it’s simply not\nworth the effort, trees shed their leaves.",
-            options = listOf("A) In other words, they have a relatively smaller amount\nof time to change light and water into energy.", "B) Does this mean some trees closest to streetlights\nkeep their leaves later into autumn?", "C) But the decrease in the amount of sunlight is not the\nsole reason, is it?", "D) So, trees are very strong and in winter even produce\ntheir own anti-freeze in their cells.", "E) That’s because leaves can’t distinguish between\nsunlight and artificial light, right?\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) In other words, they have a relatively smaller amount\nof time to change light and water into energy.", "B) Does this mean some trees closest to streetlights\nkeep their leaves later into autumn?", "C) But the decrease in the amount of sunlight is not the\nsole reason, is it?", "D) So, trees are very strong and in winter even produce\ntheir own anti-freeze in their cells.", "E) That’s because leaves can’t distinguish between\nsunlight and artificial light, right?"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2019 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Diyalog"
@@ -7625,7 +7644,7 @@ object QuestionDataProvider {
         Question(
             id = 949,
             questionText = "(2019 Sonbahar / Soru 65)\nDaisy:\n Look at the lighthouse over there. It’s on a very\nsteep hill. Do you think there is someone in it?\nKate:\n ----\nDaisy:\n Perhaps the huge antenna on the roof can explain\nthat.\nKate:\n So, the lighthouse-keeper just goes there\nfor periodic maintenance of the equipment.",
-            options = listOf("A) I’m not certain. Some modern installations are\ncontrolled remotely from a convenient location.", "B) I can’t say for sure, but it seems there is no one there.\nOtherwise, the lights would be on.", "C) Probably! Lighthouses usually overlook the sea from a\ncoastal hill and provide a safe shelter for the residents.", "D) Yes, and I’m really curious about daily routines of a\nlighthouse-keeper. Watching the ships must be\nentertaining.", "E) I don’t think so. Lighthouses guide ships with a strong\nlight, so why should they be attended?\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) I’m not certain. Some modern installations are\ncontrolled remotely from a convenient location.", "B) I can’t say for sure, but it seems there is no one there.\nOtherwise, the lights would be on.", "C) Probably! Lighthouses usually overlook the sea from a\ncoastal hill and provide a safe shelter for the residents.", "D) Yes, and I’m really curious about daily routines of a\nlighthouse-keeper. Watching the ships must be\nentertaining.", "E) I don’t think so. Lighthouses guide ships with a strong\nlight, so why should they be attended?"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2019 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Diyalog"
@@ -7641,7 +7660,7 @@ object QuestionDataProvider {
         Question(
             id = 951,
             questionText = "(2019 Sonbahar / Soru 67)\nChris:\n A group of scientists tried to develop drones that\ncould fly through the hoops or gates used in\ndrone racing, and prepared a track with gates laid\nout in a circuit.\nLuke:\n Really? Were their drones able to stay on course?\nChris:\n ----\nLuke:\n That’s a key development. A drone that can\nautonomously escape from things in its way could\nbe useful in a number of contexts.",
-            options = listOf("A) The on-board camera in each device gathered images\nof the gates and the pictures allowed a neural network\ncontrolling drones to learn how to pass through them.", "B) If they were smarter, they could be relied on to deliver\npackages in complex environments like cities.", "C) The study revealed that they had to come up with\nbetter ways for drones to learn to avoid obstacles as\nthey fly.", "D) Drones have a habit of crashing, so they planned to\nalter the position of these obstacles after each lap.", "E) Their performance in simulated experiments does not\nguarantee success in real life. It’s early to say that a\ndrone can pilot itself in environments with lots of\nobstacles like disaster zones.\n\n=== COLUMN_SEPARATOR ===\n\n68-71: For these questions, choose the best\nrephrased form of the given sentence."),
+            options = listOf("A) The on-board camera in each device gathered images\nof the gates and the pictures allowed a neural network\ncontrolling drones to learn how to pass through them.", "B) If they were smarter, they could be relied on to deliver\npackages in complex environments like cities.", "C) The study revealed that they had to come up with\nbetter ways for drones to learn to avoid obstacles as\nthey fly.", "D) Drones have a habit of crashing, so they planned to\nalter the position of these obstacles after each lap.", "E) Their performance in simulated experiments does not\nguarantee success in real life. It’s early to say that a\ndrone can pilot itself in environments with lots of\nobstacles like disaster zones.\n\n\n\n68-71: For these questions, choose the best\nrephrased form of the given sentence."),
             correctOptionIndex = 0,
             explanation = "Bu soru 2019 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Diyalog"
@@ -7665,7 +7684,7 @@ object QuestionDataProvider {
         Question(
             id = 954,
             questionText = "(2019 Sonbahar / Soru 70)\nBecause eating disorders are neither purely physical\nnor purely psychological, medical management and\npsychotherapy should be combined for effective\ntreatment.",
-            options = listOf("A) While eating disorders can be separated into physical\nand psychological ones, successful treatment requires\na combination of medical intervention and\npsychotherapy.", "B) Eating disorders can be treated effectively with\nmedical intervention or psychotherapy, based on\nwhether they are mostly physical or psychological.", "C) To treat eating disorders effectively, regardless of their\nclassification as physical or psychological, medical\nmanagement should be accompanied by\npsychotherapy.", "D) Given that eating disorders cannot be classified as\nonly physical or psychological, effective treatment\nshould include both medical intervention and\npsychotherapy.", "E) Since eating disorders are not only physical\nbut psychological as well, psychotherapy should be\nadministered more often than medical management to\ntreat them successfully.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) While eating disorders can be separated into physical\nand psychological ones, successful treatment requires\na combination of medical intervention and\npsychotherapy.", "B) Eating disorders can be treated effectively with\nmedical intervention or psychotherapy, based on\nwhether they are mostly physical or psychological.", "C) To treat eating disorders effectively, regardless of their\nclassification as physical or psychological, medical\nmanagement should be accompanied by\npsychotherapy.", "D) Given that eating disorders cannot be classified as\nonly physical or psychological, effective treatment\nshould include both medical intervention and\npsychotherapy.", "E) Since eating disorders are not only physical\nbut psychological as well, psychotherapy should be\nadministered more often than medical management to\ntreat them successfully."),
             correctOptionIndex = 3,
             explanation = "Bu soru 2019 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Dil Bilgisi"
@@ -7681,7 +7700,7 @@ object QuestionDataProvider {
         Question(
             id = 956,
             questionText = "(2019 Sonbahar / Soru 72)\nUnlike learning a second language, acquiring a first\nor native language does not require systematic\ninstruction. Parents usually do not teach children\nthe rules of language or do not tell them what kinds\nof sentences they can and cannot say. ---- For\nexample, English speaking children might continue\nto say bringed rather than brought even though\nparents occasionally correct them.",
-            options = listOf("A) Parents' corrections inform children of what is not\npossible in the language they are exposed to.", "B) Although parents generally do not correct their\nchildren, corrections can improve the children's\nlanguage.", "C) Children are rarely corrected, and even when they are,\nthey resist the correction.", "D) Children often take advantage of parents' correction\nand reformulate their utterances.", "E) If children ask a question, parents will hardly check for\nits grammatical correctness.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Parents' corrections inform children of what is not\npossible in the language they are exposed to.", "B) Although parents generally do not correct their\nchildren, corrections can improve the children's\nlanguage.", "C) Children are rarely corrected, and even when they are,\nthey resist the correction.", "D) Children often take advantage of parents' correction\nand reformulate their utterances.", "E) If children ask a question, parents will hardly check for\nits grammatical correctness."),
             correctOptionIndex = 2,
             explanation = "Bu soru 2019 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -7705,7 +7724,7 @@ object QuestionDataProvider {
         Question(
             id = 959,
             questionText = "(2019 İlkbahar / Soru 2)\nWith rapid advancements in technology, there\nare new ----, already seen in countries such as\nMyanmar and Sri Lanka where social media apps\nhave been instrumental in spreading fake news and\nviolence.",
-            options = listOf("A) measures", "B) adjustments", "C) incentives", "D) threats", "E) obligations\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) measures", "B) adjustments", "C) incentives", "D) threats", "E) obligations"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2019 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Kelime Bilgisi"
@@ -7745,7 +7764,7 @@ object QuestionDataProvider {
         Question(
             id = 964,
             questionText = "(2019 İlkbahar / Soru 7)\nIn its early stage of development, ecotourism ---- as\na completely new concept; however, today, it ---- a\nsignificant portion of the tourism industry in\ngeneral.",
-            options = listOf("A) was going to be regarded / is becoming", "B) had been regarded / will become", "C) was being regarded / is going to become", "D) was regarded / has become", "E) has been regarded / becomes\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) was going to be regarded / is becoming", "B) had been regarded / will become", "C) was being regarded / is going to become", "D) was regarded / has become", "E) has been regarded / becomes"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2019 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Dil Bilgisi"
@@ -7793,7 +7812,7 @@ object QuestionDataProvider {
         Question(
             id = 970,
             questionText = "(2019 İlkbahar / Soru 13)\n---- palaeontologists still like to argue about what\nrole the asteroid played in the dinosaur extinction,\nthere really is not much of a mystery left.",
-            options = listOf("A) Once", "B) In case", "C) Given that", "D) Although", "E) As\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Once", "B) In case", "C) Given that", "D) Although", "E) As"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2019 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Bağlaçlar"
@@ -7833,7 +7852,7 @@ object QuestionDataProvider {
         Question(
             id = 975,
             questionText = "(2019 İlkbahar / Soru 18)\n",
-            options = listOf("A) on", "B) with", "C) for", "D) over", "E) against\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) on", "B) with", "C) for", "D) over", "E) against"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2019 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Dil Bilgisi"
@@ -7873,7 +7892,7 @@ object QuestionDataProvider {
         Question(
             id = 980,
             questionText = "(2019 İlkbahar / Soru 23)\n",
-            options = listOf("A) sceptical", "B) tolerable", "C) variable", "D) prominent", "E) misleading\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) sceptical", "B) tolerable", "C) variable", "D) prominent", "E) misleading"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2019 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Dil Bilgisi"
@@ -7913,7 +7932,7 @@ object QuestionDataProvider {
         Question(
             id = 985,
             questionText = "(2019 İlkbahar / Soru 28)\nWhile Willis Carrier, who was among the most\nrelentless researchers and promoters of air\nconditioning, is known as the father of air\nconditioning, ----.",
-            options = listOf("A) the range of processes and products involved in air\nconditioning cannot be attributed to a single person", "B) for centuries, ice and water had been manipulated to\ncool air circulating in theatres, hospitals, and factories", "C) air conditioning began to be marketed as a comfort\ndevice for domestic consumption during the 1930s", "D) the development of industrial air conditioning\ndominated the newly created industry at the beginning\nof the 20th century", "E) technologies were being developed in the refrigeration\nindustry contemporaneously with Carrier’s work in\nhumidification\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) the range of processes and products involved in air\nconditioning cannot be attributed to a single person", "B) for centuries, ice and water had been manipulated to\ncool air circulating in theatres, hospitals, and factories", "C) air conditioning began to be marketed as a comfort\ndevice for domestic consumption during the 1930s", "D) the development of industrial air conditioning\ndominated the newly created industry at the beginning\nof the 20th century", "E) technologies were being developed in the refrigeration\nindustry contemporaneously with Carrier’s work in\nhumidification"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2019 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Bağlaçlar"
@@ -7945,7 +7964,7 @@ object QuestionDataProvider {
         Question(
             id = 989,
             questionText = "(2019 İlkbahar / Soru 32)\nMost people have experienced foodborne illness ----.",
-            options = listOf("A) given that those working in the field of food safety are\nmost concerned about microbial foodborne illness", "B) because ensuring the safety of food is a shared\nresponsibility among producers, industry, government,\nand consumers", "C) although current estimates of foodborne illness in the\nUnited States are 325,000 hospitalisations, and\naround 5,000 deaths per year", "D) even though they might not recognise it as such,\ninstead blaming it on the stomach flu or a 24-hour bug", "E) when a person consciously thinks about food safety\nbefore, during or after eating a meal\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) given that those working in the field of food safety are\nmost concerned about microbial foodborne illness", "B) because ensuring the safety of food is a shared\nresponsibility among producers, industry, government,\nand consumers", "C) although current estimates of foodborne illness in the\nUnited States are 325,000 hospitalisations, and\naround 5,000 deaths per year", "D) even though they might not recognise it as such,\ninstead blaming it on the stomach flu or a 24-hour bug", "E) when a person consciously thinks about food safety\nbefore, during or after eating a meal"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2019 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Bağlaçlar"
@@ -7977,7 +7996,7 @@ object QuestionDataProvider {
         Question(
             id = 993,
             questionText = "(2019 İlkbahar / Soru 36)\n----, they rely on each other for optimal performance,\nwhich is a sign of concern for interdependence in\ngroups.",
-            options = listOf("A) Since some individuals are not attracted to group\nactivities", "B) Because it is possible for individuals to do something\nthey find distasteful", "C) Whenever members of a group come together to do a\nvariety of tasks", "D) Although group support depends on members’\nwillingness to take part", "E) Whereas there is mutual interest between group\nmembers within social settings\n\n=== COLUMN_SEPARATOR ===\n\n37-42: For these questions, choose the most\naccurate Turkish translation of the sentences in"),
+            options = listOf("A) Since some individuals are not attracted to group\nactivities", "B) Because it is possible for individuals to do something\nthey find distasteful", "C) Whenever members of a group come together to do a\nvariety of tasks", "D) Although group support depends on members’\nwillingness to take part", "E) Whereas there is mutual interest between group\nmembers within social settings\n\n\n\n37-42: For these questions, choose the most\naccurate Turkish translation of the sentences in"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2019 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Bağlaçlar"
@@ -7993,7 +8012,7 @@ object QuestionDataProvider {
         Question(
             id = 995,
             questionText = "(2019 İlkbahar / Soru 38)\nSolving a series of incredibly difficult problems , the\nWright brothers created a revolutionary new\ntechnology that changed the world in a way that\neven they could not imagine.",
-            options = listOf("A) Wright kardeşler, kendilerinin bile hayal edemeyeceği\nbir biçimde dünyayı değiştiren, devrim niteliğinde yeni\nbir teknoloji yaratarak inanılmaz derecede zor bir dizi\nproblemi çözmüşlerdir.", "B) Wright kardeşler, inanılmaz derecede zor bir dizi\nproblemi çözmüşler ve kendilerinin bile hayal\nedemeyeceği bir biçimde dünyayı değiştiren, devrim\nniteliğinde yeni bir teknoloji yaratmışlardır.", "C) Wright kardeşlerin inanılmaz derecede zor bir dizi\nproblemi çözerek dünyayı değiştiren, devrim\nniteliğinde yeni bir teknoloji yaratmaları, kendilerinin\nbile hayal edemeyeceği bir şeydi.", "D) Wright kardeşler, inanılmaz derecede zor bir dizi\nproblemi çözerek kendilerinin bile hayal edemeyeceği\nbir şekilde dünyayı değiştiren, devrim niteliğinde yeni\nbir teknoloji yaratmışlardır.", "E) Wright kardeşlerin kendilerinin bile hayal edemeyeceği\nbir biçimde dünyayı değiştiren, devrim niteliğinde yeni\nbir teknoloji yaratmak için yaptıkları şey, inanılmaz\nderecede zor bir dizi problemi çözmekti.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Wright kardeşler, kendilerinin bile hayal edemeyeceği\nbir biçimde dünyayı değiştiren, devrim niteliğinde yeni\nbir teknoloji yaratarak inanılmaz derecede zor bir dizi\nproblemi çözmüşlerdir.", "B) Wright kardeşler, inanılmaz derecede zor bir dizi\nproblemi çözmüşler ve kendilerinin bile hayal\nedemeyeceği bir biçimde dünyayı değiştiren, devrim\nniteliğinde yeni bir teknoloji yaratmışlardır.", "C) Wright kardeşlerin inanılmaz derecede zor bir dizi\nproblemi çözerek dünyayı değiştiren, devrim\nniteliğinde yeni bir teknoloji yaratmaları, kendilerinin\nbile hayal edemeyeceği bir şeydi.", "D) Wright kardeşler, inanılmaz derecede zor bir dizi\nproblemi çözerek kendilerinin bile hayal edemeyeceği\nbir şekilde dünyayı değiştiren, devrim niteliğinde yeni\nbir teknoloji yaratmışlardır.", "E) Wright kardeşlerin kendilerinin bile hayal edemeyeceği\nbir biçimde dünyayı değiştiren, devrim niteliğinde yeni\nbir teknoloji yaratmak için yaptıkları şey, inanılmaz\nderecede zor bir dizi problemi çözmekti."),
             correctOptionIndex = 3,
             explanation = "Bu soru 2019 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Çeviri"
@@ -8009,7 +8028,7 @@ object QuestionDataProvider {
         Question(
             id = 997,
             questionText = "(2019 İlkbahar / Soru 40)\nGen terapisi çoğunlukla ender genetik bozuklukların\ntedavisinde faydalıdır; bunun aksine, mevcut\ngenlerin değiştirilmesini kapsayan gen düzeltme,\nçok daha fazla hastalığı tedavi eder.",
-            options = listOf("A) Gene therapy is mainly useful for treating rare genetic\ndisorders, whereas gene-editing involves altering\nexisting genes and treating a wider range of\nconditions.", "B) Gene therapy mainly treats rare genetic disorders;\ngene-editing, on the other hand, involves the alteration\nof the existing genes, which is useful for treating a\nwider range of conditions.", "C) Gene therapy is mainly useful for treating rare genetic\ndisorders; in contrast, gene-editing, which involves\naltering existing genes, treats a much wider range of\nconditions.", "D) Gene therapy is mainly used for the treatment of rare\ngenetic disorders, but gene-editing can treat a much\nwider range of disorders since it involves altering\nexisting genes.", "E) Gene therapy is mainly used to treat rare genetic\ndisorders while gene-editing, which is the alteration of\nthe existing genes, is involved in the treatment of a\nwider range of conditions.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Gene therapy is mainly useful for treating rare genetic\ndisorders, whereas gene-editing involves altering\nexisting genes and treating a wider range of\nconditions.", "B) Gene therapy mainly treats rare genetic disorders;\ngene-editing, on the other hand, involves the alteration\nof the existing genes, which is useful for treating a\nwider range of conditions.", "C) Gene therapy is mainly useful for treating rare genetic\ndisorders; in contrast, gene-editing, which involves\naltering existing genes, treats a much wider range of\nconditions.", "D) Gene therapy is mainly used for the treatment of rare\ngenetic disorders, but gene-editing can treat a much\nwider range of disorders since it involves altering\nexisting genes.", "E) Gene therapy is mainly used to treat rare genetic\ndisorders while gene-editing, which is the alteration of\nthe existing genes, is involved in the treatment of a\nwider range of conditions."),
             correctOptionIndex = 2,
             explanation = "Bu soru 2019 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Çeviri"
@@ -8025,7 +8044,7 @@ object QuestionDataProvider {
         Question(
             id = 999,
             questionText = "(2019 İlkbahar / Soru 42)\nTüm vücut fonksiyonlarımızı senkronize eden iç\nsaatimiz, ipuçlarını güneş ışığının gündüz-gece\ndöngüsünden alır ve beyin bu 24 saatlik ritmi\norganlarımıza iletmek ve vücudumuza ne zaman\nuyumaya ve uyanmaya ihtiyaç duyduğunu bildirmek\niçin sinirleri ve hormonları kullanır.",
-            options = listOf("A) Our internal clock keeps all our body functions in sync\nby taking its cues from the day-night cycle of sunlight,\nand the brain transmits this 24-hour rhythm to our\ninternal organs and tells our body when it needs to\nsleep and wake by using nerves and hormones.", "B) Our internal clock, which keeps all our body functions\nin sync, takes its cues from the day-night cycle of\nsunlight, and the brain uses nerves and hormones to\ntransmit this 24-hour rhythm to our internal organs\nand to tell our body when it needs to sleep and wake.", "C) Our internal clock, by which all our body functions are\nkept in sync, takes its cues from the day-night cycle of\nsunlight, and to transmit this 24-hour rhythm to our\ninternal organs, the brain uses nerves and hormones,\ntelling our body when it needs to sleep and wake.", "D) All our body functions are kept in sync by our internal\nclock, which takes its cues from the day-night cycle of\nsunlight, and the brain uses nerves and hormones to\ntransmit this 24-hour rhythm to our internal organs and\ntells our body when to sleep and wake.", "E) It is our internal clock that keeps all our body functions\nin sync by taking cues from the day-night cycle of\nsunlight, and the brain uses nerves and hormones\nwhile transmitting this 24-hour rhythm to our internal\norgans, and tells our body when to sleep and wake.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Our internal clock keeps all our body functions in sync\nby taking its cues from the day-night cycle of sunlight,\nand the brain transmits this 24-hour rhythm to our\ninternal organs and tells our body when it needs to\nsleep and wake by using nerves and hormones.", "B) Our internal clock, which keeps all our body functions\nin sync, takes its cues from the day-night cycle of\nsunlight, and the brain uses nerves and hormones to\ntransmit this 24-hour rhythm to our internal organs\nand to tell our body when it needs to sleep and wake.", "C) Our internal clock, by which all our body functions are\nkept in sync, takes its cues from the day-night cycle of\nsunlight, and to transmit this 24-hour rhythm to our\ninternal organs, the brain uses nerves and hormones,\ntelling our body when it needs to sleep and wake.", "D) All our body functions are kept in sync by our internal\nclock, which takes its cues from the day-night cycle of\nsunlight, and the brain uses nerves and hormones to\ntransmit this 24-hour rhythm to our internal organs and\ntells our body when to sleep and wake.", "E) It is our internal clock that keeps all our body functions\nin sync by taking cues from the day-night cycle of\nsunlight, and the brain uses nerves and hormones\nwhile transmitting this 24-hour rhythm to our internal\norgans, and tells our body when to sleep and wake."),
             correctOptionIndex = 1,
             explanation = "Bu soru 2019 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Çeviri"
@@ -8033,14 +8052,16 @@ object QuestionDataProvider {
         Question(
             id = 1000,
             questionText = "(2019 İlkbahar / Soru 43)\nWhich could be inferred from the passage about our\nface-based judgements?",
-            options = listOf("A) Babies cannot make judgements concerning human\nfaces because they are not yet capable of\ndiscriminating between different faces.", "B) We begin to make assumptions about a person’s\ncharacter or status after we have seen his or her face\nseveral times.", "C) We are innately predisposed to form an idea about a\nperson just by looking at his or her face.", "D) The face-processing area in our brains functions more\neffectively during infancy than it does in our adult\nyears.", "E) Regardless of how they look, all human faces can\nattract babies’ attention within their first year.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Babies cannot make judgements concerning human\nfaces because they are not yet capable of\ndiscriminating between different faces.", "B) We begin to make assumptions about a person’s\ncharacter or status after we have seen his or her face\nseveral times.", "C) We are innately predisposed to form an idea about a\nperson just by looking at his or her face.", "D) The face-processing area in our brains functions more\neffectively during infancy than it does in our adult\nyears.", "E) Regardless of how they look, all human faces can\nattract babies’ attention within their first year."),
             correctOptionIndex = 2,
             explanation = "Bu soru 2019 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
         )
     )
+}
 
-    private val chunk10 = listOf(
+object QuestionChunk10 {
+    val list = listOf(
         Question(
             id = 1001,
             questionText = "(2019 İlkbahar / Soru 44)\nOne can understand from the passage that our\nshortcuts ----.",
@@ -8060,7 +8081,7 @@ object QuestionDataProvider {
         Question(
             id = 1003,
             questionText = "(2019 İlkbahar / Soru 46)\nWhich could be the best title for this passage?",
-            options = listOf("A) Learning Survival Information from Our Ancestors", "B) Major Drawbacks of Our Cognitive Shortcuts", "C) How to Reject Unethical Stereotypes", "D) Transferring Our Cognitive Shortcuts into Adulthood", "E) Our Strong Tendency to Stereotype People\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Learning Survival Information from Our Ancestors", "B) Major Drawbacks of Our Cognitive Shortcuts", "C) How to Reject Unethical Stereotypes", "D) Transferring Our Cognitive Shortcuts into Adulthood", "E) Our Strong Tendency to Stereotype People"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2019 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Paragraf"
@@ -8068,7 +8089,7 @@ object QuestionDataProvider {
         Question(
             id = 1004,
             questionText = "(2019 İlkbahar / Soru 47)\nWhich of the following does consumer psychology\ndeal with?",
-            options = listOf("A) What marketers can do to effectively reach out to\npotential customers", "B) The challenge experienced by psychologists to\nunderstand consumer behaviour", "C) How basic requirements and desires influence\nconsumer behaviour", "D) Whether certain goods and services chosen by\nconsumers satisfy them or not", "E) How to help consumers avoid the conflict of needs and\ndesires when making a purchase\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) What marketers can do to effectively reach out to\npotential customers", "B) The challenge experienced by psychologists to\nunderstand consumer behaviour", "C) How basic requirements and desires influence\nconsumer behaviour", "D) Whether certain goods and services chosen by\nconsumers satisfy them or not", "E) How to help consumers avoid the conflict of needs and\ndesires when making a purchase"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2019 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -8092,7 +8113,7 @@ object QuestionDataProvider {
         Question(
             id = 1007,
             questionText = "(2019 İlkbahar / Soru 50)\nWhat is the main purpose of the passage?",
-            options = listOf("A) To analyse people’s buying habits from an economic\nviewpoint", "B) To highlight the huge number of products consumers\nare offered", "C) To stress the significant effect of advertising on\nconsumer psychology", "D) To describe the change in consumer psychology in the\nmodern world", "E) To explain what consumer psychology does to\nunderstand consumer behaviour\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) To analyse people’s buying habits from an economic\nviewpoint", "B) To highlight the huge number of products consumers\nare offered", "C) To stress the significant effect of advertising on\nconsumer psychology", "D) To describe the change in consumer psychology in the\nmodern world", "E) To explain what consumer psychology does to\nunderstand consumer behaviour"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2019 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Paragraf"
@@ -8100,7 +8121,7 @@ object QuestionDataProvider {
         Question(
             id = 1008,
             questionText = "(2019 İlkbahar / Soru 51)\nWhat can be understood about the adaptation\nprocess of plants?",
-            options = listOf("A) They tend to use their remaining energy in an attempt\nto access sunlight.", "B) They are not really affected by permanent darkness\ndue to etiolation.", "C) Even short periods of darkness cause plants to lose\ntheir ability to adapt.", "D) Some plants such as grass are more adaptable to\ndarkness than others.", "E) They adjust to complete darkness by using up all their\nenergy, so they no longer need photosynthesis.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) They tend to use their remaining energy in an attempt\nto access sunlight.", "B) They are not really affected by permanent darkness\ndue to etiolation.", "C) Even short periods of darkness cause plants to lose\ntheir ability to adapt.", "D) Some plants such as grass are more adaptable to\ndarkness than others.", "E) They adjust to complete darkness by using up all their\nenergy, so they no longer need photosynthesis."),
             correctOptionIndex = 0,
             explanation = "Bu soru 2019 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Paragraf"
@@ -8124,7 +8145,7 @@ object QuestionDataProvider {
         Question(
             id = 1011,
             questionText = "(2019 İlkbahar / Soru 54)\nWhat is the main idea of the passage?",
-            options = listOf("A) All plants need one another to store energy and\nproduce food.", "B) Plants can adapt to darkness, but none of them can\nlive forever without sunlight.", "C) The sun is the eternal source of energy for living\nbeings on our planet.", "D) Nature has so many defects that it is difficult for us to\nmake up for all of them.", "E) Darkness makes some plant species more susceptible\nto parasites.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) All plants need one another to store energy and\nproduce food.", "B) Plants can adapt to darkness, but none of them can\nlive forever without sunlight.", "C) The sun is the eternal source of energy for living\nbeings on our planet.", "D) Nature has so many defects that it is difficult for us to\nmake up for all of them.", "E) Darkness makes some plant species more susceptible\nto parasites."),
             correctOptionIndex = 1,
             explanation = "Bu soru 2019 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Paragraf"
@@ -8132,7 +8153,7 @@ object QuestionDataProvider {
         Question(
             id = 1012,
             questionText = "(2019 İlkbahar / Soru 55)\nOne can understand from the passage that Pierce’s\ndisease ----.",
-            options = listOf("A) originated in the Americas in 2013, killing many plant\nspecies", "B) has already devastated the wine industry both in the\nAmericas and Europe", "C) causes the leaves of a plant to be deprived of\nnecessary ingredients", "D) is spread by a bacterium that absorbs water and\nnutrients in the leaves of a plant", "E) has caused more damage in Europe than the Great\nFrench Wine Blight did\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) originated in the Americas in 2013, killing many plant\nspecies", "B) has already devastated the wine industry both in the\nAmericas and Europe", "C) causes the leaves of a plant to be deprived of\nnecessary ingredients", "D) is spread by a bacterium that absorbs water and\nnutrients in the leaves of a plant", "E) has caused more damage in Europe than the Great\nFrench Wine Blight did"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2019 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -8156,7 +8177,7 @@ object QuestionDataProvider {
         Question(
             id = 1015,
             questionText = "(2019 İlkbahar / Soru 58)\nWhat is the primary purpose of the author?",
-            options = listOf("A) To emphasise the great amount of money spent to\nprotect the wine industry against Pierce’s disease", "B) To point out the serious danger Pierce’s disease\nposes to various plant species", "C) To explain why X. fastidiosa is called the ‘Ebola of\nolive trees’ in Europe", "D) To warn that insects carrying X. fastidiosa increase in\nnumber as the planet warms", "E) To draw attention to the fact that a cure to eradicate\nPierce’s disease is to arrive shortly\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) To emphasise the great amount of money spent to\nprotect the wine industry against Pierce’s disease", "B) To point out the serious danger Pierce’s disease\nposes to various plant species", "C) To explain why X. fastidiosa is called the ‘Ebola of\nolive trees’ in Europe", "D) To warn that insects carrying X. fastidiosa increase in\nnumber as the planet warms", "E) To draw attention to the fact that a cure to eradicate\nPierce’s disease is to arrive shortly"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2019 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Paragraf"
@@ -8164,7 +8185,7 @@ object QuestionDataProvider {
         Question(
             id = 1016,
             questionText = "(2019 İlkbahar / Soru 59)\nWhat was the initial aim of the study conducted by\nLepers and his colleagues?",
-            options = listOf("A) To show that old people can also display excellent\nperformance in several sports", "B) To explain how world record holders in different sports\nachieved extraordianary success", "C) To find out when athletic performance begins to\ndecline dramatically", "D) To study the relation between age and athletic\nperformance in middle-aged sportspeople", "E) To discover what distinguishes Robert Marchand from\nother 100-plus sportspeople\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) To show that old people can also display excellent\nperformance in several sports", "B) To explain how world record holders in different sports\nachieved extraordianary success", "C) To find out when athletic performance begins to\ndecline dramatically", "D) To study the relation between age and athletic\nperformance in middle-aged sportspeople", "E) To discover what distinguishes Robert Marchand from\nother 100-plus sportspeople"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2019 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -8188,7 +8209,7 @@ object QuestionDataProvider {
         Question(
             id = 1019,
             questionText = "(2019 İlkbahar / Soru 62)\nWhy does Lepers put a special emphasis on\nWithlock’s performance?",
-            options = listOf("A) To suggest that 3 hours is not sufficient for a 70-plus\nathlete to run a marathon", "B) To show that marathons are races where we can see\npowerful athletes over 70", "C) To stress that an athlete must be a record-breaker to\ngain worldwide recognition", "D) To prove that Withlock was a more successful\nsportsperson than Marchand", "E) To indicate that one could be a brilliant sportsperson\nat any age\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) To suggest that 3 hours is not sufficient for a 70-plus\nathlete to run a marathon", "B) To show that marathons are races where we can see\npowerful athletes over 70", "C) To stress that an athlete must be a record-breaker to\ngain worldwide recognition", "D) To prove that Withlock was a more successful\nsportsperson than Marchand", "E) To indicate that one could be a brilliant sportsperson\nat any age"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2019 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Paragraf"
@@ -8196,7 +8217,7 @@ object QuestionDataProvider {
         Question(
             id = 1020,
             questionText = "(2019 İlkbahar / Soru 63)\nJohanna:\n Today, our psychology professor talked about a\nbiological process called 'neuroplasticity'. He said\nthat even the adult brain can grow new brain cells\nin response to new experiences.\nStan:\n ----\nJohanna:\n Yeah, he said the exact same thing. I’d never\nthought of them as being beneficial at all. I used\nto think they only cause aggressive behaviour and\naddiction.\nStan:\n Well, apparently some scientists still have those\nfears, but it all depends on how effectively you\nuse them.",
-            options = listOf("A) Such as playing action video games? I remember\nreading that they help the brain and improve cognitive\nskills.", "B) That's really interesting. I’ve always thought that the\nhuman brain couldn’t grow new cells after a certain\nage.", "C) Did he say what kind of experiences? I’ve been\nplaying chess for years hoping that it’ll give me a\ncognitive advantage at school.", "D) I’ve seen scientists trying it with patients suffering from\nAlzheimer's disease to prevent them from losing\ncognitive skills.", "E) But, don’t forget that outdoor games are more useful\nand educational than indoor games, no matter how\nentertaining they are.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Such as playing action video games? I remember\nreading that they help the brain and improve cognitive\nskills.", "B) That's really interesting. I’ve always thought that the\nhuman brain couldn’t grow new cells after a certain\nage.", "C) Did he say what kind of experiences? I’ve been\nplaying chess for years hoping that it’ll give me a\ncognitive advantage at school.", "D) I’ve seen scientists trying it with patients suffering from\nAlzheimer's disease to prevent them from losing\ncognitive skills.", "E) But, don’t forget that outdoor games are more useful\nand educational than indoor games, no matter how\nentertaining they are."),
             correctOptionIndex = 0,
             explanation = "Bu soru 2019 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Diyalog"
@@ -8212,7 +8233,7 @@ object QuestionDataProvider {
         Question(
             id = 1022,
             questionText = "(2019 İlkbahar / Soru 65)\nDaisy:\n Last week, I was in a situation where things went\nfrom bad to worse. I failed to meet my end-of-year\ntargets at work, the central heating system in my\napartment broke, and my car was hit by an\nunknown car. All these happened in the same\nweek!\nSally:\n Terrible! How do you keep calm in such\nsituations?\nDaisy:\n ----\nSally:\n What do you do with that information?\nDaisy:\n I look at the list and focus on the ones I can do\nsomething about. Then I think about the actions\nI can take, including asking for help if necessary.",
-            options = listOf("A) I can think and worry about many things at the same\ntime, but when I’m in the action phase, I try to avoid\nthat.", "B) The truth is, it’s hard not to lose it in these moments. I\nmay end up giving up because of the never-ending list\nof problems.", "C) I write everything down. I draw a line, and on the left I\nput down all the problems, and on the right what to do\nabout those problems.", "D) In my experience, the easiest way to keep calm is to\nregain control of the situation by collecting information\nfrom as many people as possible.", "E) No matter how bad things are, keeping my calm\nalways helps me come up with a possible solution. I\nkeep saying “This too shall pass”.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) I can think and worry about many things at the same\ntime, but when I’m in the action phase, I try to avoid\nthat.", "B) The truth is, it’s hard not to lose it in these moments. I\nmay end up giving up because of the never-ending list\nof problems.", "C) I write everything down. I draw a line, and on the left I\nput down all the problems, and on the right what to do\nabout those problems.", "D) In my experience, the easiest way to keep calm is to\nregain control of the situation by collecting information\nfrom as many people as possible.", "E) No matter how bad things are, keeping my calm\nalways helps me come up with a possible solution. I\nkeep saying “This too shall pass”."),
             correctOptionIndex = 2,
             explanation = "Bu soru 2019 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Diyalog"
@@ -8228,7 +8249,7 @@ object QuestionDataProvider {
         Question(
             id = 1024,
             questionText = "(2019 İlkbahar / Soru 67)\nRobert:\n The article I read this morning says whales stop\nsinging when ships are nearby.\nLeonie:\n ----\nRobert:\n It said that they used two underwater recorders to\ncapture their singing in a remote area where a\ncargo liner was the only large ship around, and\nthey found that whales within 500 metres of the\nship when it passed tended to stop singing.\nLeonie:\n So, it’s obvious that for some reason shipping\ninterferes with whale songs.",
-            options = listOf("A) Does the article say which kind of whales were\nexamined in their research?", "B) How did researchers observe the whales’ response to\nshipping noise?", "C) Do researchers think that whales feel threatened and\ntry to remain undetected?", "D) Then, how do whales communicate with each other\nwhen they don’t sing?", "E) Why does shipping noise have a considerable impact\non whale behaviour?\n\n=== COLUMN_SEPARATOR ===\n\n68-71: For these questions, choose the best\nrephrased form of the given sentence."),
+            options = listOf("A) Does the article say which kind of whales were\nexamined in their research?", "B) How did researchers observe the whales’ response to\nshipping noise?", "C) Do researchers think that whales feel threatened and\ntry to remain undetected?", "D) Then, how do whales communicate with each other\nwhen they don’t sing?", "E) Why does shipping noise have a considerable impact\non whale behaviour?\n\n\n\n68-71: For these questions, choose the best\nrephrased form of the given sentence."),
             correctOptionIndex = 1,
             explanation = "Bu soru 2019 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Diyalog"
@@ -8260,7 +8281,7 @@ object QuestionDataProvider {
         Question(
             id = 1028,
             questionText = "(2020 Sonbahar / Soru 3)\nWhile newspapers have been in dramatic decline in\nmuch of the developed West, the industry is ---- and\nstill growing in many of Asia’s booming cities.",
-            options = listOf("A) fragile", "B) profitable", "C) confidential", "D) peculiar", "E) notorious\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) fragile", "B) profitable", "C) confidential", "D) peculiar", "E) notorious"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2020 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Kelime Bilgisi"
@@ -8300,7 +8321,7 @@ object QuestionDataProvider {
         Question(
             id = 1033,
             questionText = "(2020 Sonbahar / Soru 8)\nIf an age could ever be rightly described as ‘dark’ in\nEuropean history, it ---- the two centuries that ---- the\ncollapse of Roman authority in Britain at the\nbeginning of the fifth century.",
-            options = listOf("A) may be / follow", "B) would be / followed", "C) used to be / had followed", "D) must be / have followed", "E) had to be / were following\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) may be / follow", "B) would be / followed", "C) used to be / had followed", "D) must be / have followed", "E) had to be / were following"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2020 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Dil Bilgisi"
@@ -8348,7 +8369,7 @@ object QuestionDataProvider {
         Question(
             id = 1039,
             questionText = "(2020 Sonbahar / Soru 14)\n---- there are hundreds of school- and\ncommunity-based aggression prevention and social\nskills promotion programmes, only a handful of\nthese appear to be effective.",
-            options = listOf("A) Provided that", "B) Since", "C) Although", "D) Just as", "E) Unless\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Provided that", "B) Since", "C) Although", "D) Just as", "E) Unless"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2020 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Bağlaçlar"
@@ -8380,7 +8401,7 @@ object QuestionDataProvider {
         Question(
             id = 1043,
             questionText = "(2020 Sonbahar / Soru 18)\n",
-            options = listOf("A) Instead", "B) However", "C) For instance", "D) Otherwise", "E) That is\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Instead", "B) However", "C) For instance", "D) Otherwise", "E) That is"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2020 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Dil Bilgisi"
@@ -8420,7 +8441,7 @@ object QuestionDataProvider {
         Question(
             id = 1048,
             questionText = "(2020 Sonbahar / Soru 23)\n",
-            options = listOf("A) having triggered", "B) triggered", "C) to have been triggered", "D) triggering", "E) to have triggered\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) having triggered", "B) triggered", "C) to have been triggered", "D) triggering", "E) to have triggered"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2020 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Dil Bilgisi"
@@ -8460,7 +8481,7 @@ object QuestionDataProvider {
         Question(
             id = 1053,
             questionText = "(2020 Sonbahar / Soru 28)\nAlthough all archaeologists agree that keeping\ncareful records of an excavation is essential to good\npractice, ----.",
-            options = listOf("A) there is a close relationship between their\ninterpretation and that of archaeological museums", "B) they are concerned with the activities of people and\nnature that create evidence of a cultural past", "C) artefacts, sculptures and drawings found in caves help\nthem learn about early humans", "D) many mapping techniques developed for use on land\nhave also been adapted for underwater archaeology", "E) there is no certain consensus on what exactly\nconstitutes archaeological data\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) there is a close relationship between their\ninterpretation and that of archaeological museums", "B) they are concerned with the activities of people and\nnature that create evidence of a cultural past", "C) artefacts, sculptures and drawings found in caves help\nthem learn about early humans", "D) many mapping techniques developed for use on land\nhave also been adapted for underwater archaeology", "E) there is no certain consensus on what exactly\nconstitutes archaeological data"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2020 Sonbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Bağlaçlar"
@@ -8492,7 +8513,7 @@ object QuestionDataProvider {
         Question(
             id = 1057,
             questionText = "(2020 Sonbahar / Soru 32)\nIt may be a long time before scientists can confirm\nthat biological life exists in places other than Earth,\n----.",
-            options = listOf("A) but recent discovery of tiny life forms in some extreme\nconditions and inhospitable environments has raised\nhopes", "B) as scientists have long known that amino acids and\nnucleotides, the main ingredients for building proteins\nand DNA, can be found in meteors and comets", "C) while it takes a lot of intellectual effort on the part of\nordinary people to understand the dynamics of life in\nouter space", "D) though professional associations informing the public\nabout microbial life in space have not been very\nsuccessful", "E) so the discovery of the bacteria in Antarctica, which\nlive by extracting nutrition from the air, indicates that\nlife can thrive without complex organic material\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) but recent discovery of tiny life forms in some extreme\nconditions and inhospitable environments has raised\nhopes", "B) as scientists have long known that amino acids and\nnucleotides, the main ingredients for building proteins\nand DNA, can be found in meteors and comets", "C) while it takes a lot of intellectual effort on the part of\nordinary people to understand the dynamics of life in\nouter space", "D) though professional associations informing the public\nabout microbial life in space have not been very\nsuccessful", "E) so the discovery of the bacteria in Antarctica, which\nlive by extracting nutrition from the air, indicates that\nlife can thrive without complex organic material"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2020 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Bağlaçlar"
@@ -8524,7 +8545,7 @@ object QuestionDataProvider {
         Question(
             id = 1061,
             questionText = "(2020 Sonbahar / Soru 36)\nMost classic research indicates that it is extremely\ndifficult to identify boys from girls on behavioural\ngrounds when children are under two years of age\n----.",
-            options = listOf("A) unless there are some external cultural indicators of\ngender such as clothing", "B) so that the impact of gender in young children’s lives\ncould be examined in great detail", "C) if young children know about gender and acquire\ngendered ways of being and thinking from an early\nage", "D) given that preschool children often actively maintain\ngender stereotypes in their own behaviours and that of\ntheir peers", "E) because there has recently been a focus on how boys\nand girls play with the toys they choose\n\n=== COLUMN_SEPARATOR ===\n\n37-42: For these questions, choose the most\naccurate Turkish translation of the sentences in"),
+            options = listOf("A) unless there are some external cultural indicators of\ngender such as clothing", "B) so that the impact of gender in young children’s lives\ncould be examined in great detail", "C) if young children know about gender and acquire\ngendered ways of being and thinking from an early\nage", "D) given that preschool children often actively maintain\ngender stereotypes in their own behaviours and that of\ntheir peers", "E) because there has recently been a focus on how boys\nand girls play with the toys they choose\n\n\n\n37-42: For these questions, choose the most\naccurate Turkish translation of the sentences in"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2020 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Bağlaçlar"
@@ -8540,7 +8561,7 @@ object QuestionDataProvider {
         Question(
             id = 1063,
             questionText = "(2020 Sonbahar / Soru 38)\nAccording to a recent report, early adopters of\nenterprise artificial intelligence have shown a bigger\nimprovement in productivity and performance\ncompared to those that have yet to explore this\nexciting new field.",
-            options = listOf("A) Yeni bir rapora göre, yapay zekâ girişimini önceden\nbenimseyenler, bu heyecan verici yeni alanı henüz\nkeşfetmemiş olanlara kıyasla verimlilik ve performans\nbakımından daha büyük bir gelişme göstermiştir.", "B) Yeni hazırlanan bir rapora göre, yapay zekâ girişimini\ndaha keşfetmemiş olanların aksine, bu heyecan verici\nyeni alanı önceden kullanmaya başlayanlar verimlilik\nve performans konularında daha çok ilerleme\nkaydetmiştir.", "C) Yeni bir rapora göre, yeni ve heyecan verici yapay\nzekâ girişimini önceden benimseyenlerin, bu alanı\nhenüz keşfetmeyenlere göre, verimlilik ve performans\naçısından çok daha fazla ilerleme kaydettiği\ngörülmüştür.", "D) Yeni hazırlanan bir rapor, yapay zekâ girişimini\nönceden edinenlerin, bu heyecan verici yeni alanı\nkeşfetmeyenlerle karşılaştırıldığında verimlilik ve\nperformans bakımından daha fazla gelişme ortaya\nkoyduğunu göstermiştir.", "E) Yeni bir rapor, yapay zekâ girişimini önceden\nbenimseyenlerde verimlilik ve performans alanındaki\ngelişmelerin bu yeni ve heyecan verici alanı\nkeşfetmeyenlere kıyasla daha fazla olduğunu\ngöstermiştir.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Yeni bir rapora göre, yapay zekâ girişimini önceden\nbenimseyenler, bu heyecan verici yeni alanı henüz\nkeşfetmemiş olanlara kıyasla verimlilik ve performans\nbakımından daha büyük bir gelişme göstermiştir.", "B) Yeni hazırlanan bir rapora göre, yapay zekâ girişimini\ndaha keşfetmemiş olanların aksine, bu heyecan verici\nyeni alanı önceden kullanmaya başlayanlar verimlilik\nve performans konularında daha çok ilerleme\nkaydetmiştir.", "C) Yeni bir rapora göre, yeni ve heyecan verici yapay\nzekâ girişimini önceden benimseyenlerin, bu alanı\nhenüz keşfetmeyenlere göre, verimlilik ve performans\naçısından çok daha fazla ilerleme kaydettiği\ngörülmüştür.", "D) Yeni hazırlanan bir rapor, yapay zekâ girişimini\nönceden edinenlerin, bu heyecan verici yeni alanı\nkeşfetmeyenlerle karşılaştırıldığında verimlilik ve\nperformans bakımından daha fazla gelişme ortaya\nkoyduğunu göstermiştir.", "E) Yeni bir rapor, yapay zekâ girişimini önceden\nbenimseyenlerde verimlilik ve performans alanındaki\ngelişmelerin bu yeni ve heyecan verici alanı\nkeşfetmeyenlere kıyasla daha fazla olduğunu\ngöstermiştir."),
             correctOptionIndex = 0,
             explanation = "Bu soru 2020 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Çeviri"
@@ -8556,7 +8577,7 @@ object QuestionDataProvider {
         Question(
             id = 1065,
             questionText = "(2020 Sonbahar / Soru 40)\nKoalalar yüksek miktarlarda su içeren okaliptus\nyapraklarıyla beslenirler, bu yüzden nadiren su\niçmeye ihtiyaç duyarlar ve böylelikle yerdeki\nyırtıcılardan kurtulmuş olarak ağaçlarda uzun saatler\nkalabilirler.",
-            options = listOf("A) Koalas feed on eucalyptus leaves that consist of high\namounts of water, and as a result, they rarely need to\ndrink water, which means they can stay in trees for\nlong hours, away from predators on land.", "B) Because koalas eat eucalyptus leaves that have\nexcessive amounts of water, they hardly need to drink\nwater and thus they can stay in trees for long hours,\naway from predators on land.", "C) Koalas feed on eucalyptus leaves that contain high\namounts of water, so they hardly need to drink water,\nand therefore they can stay in trees for long hours,\nsafe from predators on land.", "D) Eucalyptus leaves that koalas feed on are composed\nof excessive amounts of water, so they rarely need to\ndrink water and thus they can stay in trees for long\nhours, which keeps them away from predators on\nland.", "E) Koalas rely on eucalyptus leaves for nourishment, and\nsince they have high amounts of water, koalas\nscarcely need to drink water, and consequently, they\ncan stay in trees for long hours, free from predators on\nland.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Koalas feed on eucalyptus leaves that consist of high\namounts of water, and as a result, they rarely need to\ndrink water, which means they can stay in trees for\nlong hours, away from predators on land.", "B) Because koalas eat eucalyptus leaves that have\nexcessive amounts of water, they hardly need to drink\nwater and thus they can stay in trees for long hours,\naway from predators on land.", "C) Koalas feed on eucalyptus leaves that contain high\namounts of water, so they hardly need to drink water,\nand therefore they can stay in trees for long hours,\nsafe from predators on land.", "D) Eucalyptus leaves that koalas feed on are composed\nof excessive amounts of water, so they rarely need to\ndrink water and thus they can stay in trees for long\nhours, which keeps them away from predators on\nland.", "E) Koalas rely on eucalyptus leaves for nourishment, and\nsince they have high amounts of water, koalas\nscarcely need to drink water, and consequently, they\ncan stay in trees for long hours, free from predators on\nland."),
             correctOptionIndex = 2,
             explanation = "Bu soru 2020 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Çeviri"
@@ -8572,7 +8593,7 @@ object QuestionDataProvider {
         Question(
             id = 1067,
             questionText = "(2020 Sonbahar / Soru 42)\nAvustralya’daki bir çocuk hastanesinde çalışan\nuzmanlar, bazı insanların 20’li yaşlarına kadar\nbüyümeye devam ettiğine dair pek çok kanıt ortaya\nkoyarak ergenliğin bittiği kabul edilen yaşın 19’dan\n24’e çıkarılması gerektiğini öne sürmektedir.",
-            options = listOf("A) Experts working at a children’s hospital in Australia\nsuggest that the recognised age at which adolescence\nends should be raised to 24 from 19, revealing plenty\nof evidence that some people keep growing into their\n20s.", "B) Experts working at a children’s hospital in Australia\nhave provided plenty of evidence that some people\nkeep growing into their 20s, and therefore they claim\nthat the recognised age at which adolescence ends\nshould be raised to 24 from 19.", "C) The recognised age at which adolescence ends is 19,\nbut experts working at a children’s hospital in Australia\nclaim that it should be raised to 24, providing lots of\nevidence that some people keep growing into their\n20s.", "D) Provided that there is abundant evidence suggesting\nthat some people keep growing into their 20s, experts\nworking at a children’s hospital in Australia point out\nthat the recognised age at which adolescence ends,\nwhich is 19, should be raised to 24.", "E) The claim that the recognised age at which\nadolescence ends should be raised to 24 from 19 has\nbeen made by the experts working at a children’s\nhospital in Australia, who have revealed plenty of\nevidence that some people keep growing into their\n20s.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Experts working at a children’s hospital in Australia\nsuggest that the recognised age at which adolescence\nends should be raised to 24 from 19, revealing plenty\nof evidence that some people keep growing into their\n20s.", "B) Experts working at a children’s hospital in Australia\nhave provided plenty of evidence that some people\nkeep growing into their 20s, and therefore they claim\nthat the recognised age at which adolescence ends\nshould be raised to 24 from 19.", "C) The recognised age at which adolescence ends is 19,\nbut experts working at a children’s hospital in Australia\nclaim that it should be raised to 24, providing lots of\nevidence that some people keep growing into their\n20s.", "D) Provided that there is abundant evidence suggesting\nthat some people keep growing into their 20s, experts\nworking at a children’s hospital in Australia point out\nthat the recognised age at which adolescence ends,\nwhich is 19, should be raised to 24.", "E) The claim that the recognised age at which\nadolescence ends should be raised to 24 from 19 has\nbeen made by the experts working at a children’s\nhospital in Australia, who have revealed plenty of\nevidence that some people keep growing into their\n20s."),
             correctOptionIndex = 0,
             explanation = "Bu soru 2020 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Çeviri"
@@ -8580,7 +8601,7 @@ object QuestionDataProvider {
         Question(
             id = 1068,
             questionText = "(2020 Sonbahar / Soru 43)\nThe author clearly states that shyness ----.",
-            options = listOf("A) is a widespread phenomenon likely to be experienced\nby people from different walks of life", "B) makes itself clear through several symptoms that are\nunvaryingly seen", "C) is generally accompanied by some inner feelings\ncaused by imaginary conditions", "D) is a psychological condition which is caused by\nseveral well-known triggers", "E) can be detected by others easily as most of its\nsymptoms are visible\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) is a widespread phenomenon likely to be experienced\nby people from different walks of life", "B) makes itself clear through several symptoms that are\nunvaryingly seen", "C) is generally accompanied by some inner feelings\ncaused by imaginary conditions", "D) is a psychological condition which is caused by\nseveral well-known triggers", "E) can be detected by others easily as most of its\nsymptoms are visible"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2020 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Paragraf"
@@ -8604,7 +8625,7 @@ object QuestionDataProvider {
         Question(
             id = 1071,
             questionText = "(2020 Sonbahar / Soru 46)\nWhat is the purpose of the author of this passage?",
-            options = listOf("A) To elaborate on the impact of genetic factors on\nshyness", "B) To report the findings of recent research into the\neffects and triggers of shyness", "C) To give the reader some advice on how to overcome\nshyness", "D) To give brief information about the symptoms and\npossible causes of shyness", "E) To discuss whether shyness is a challenging\npsychological problem\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) To elaborate on the impact of genetic factors on\nshyness", "B) To report the findings of recent research into the\neffects and triggers of shyness", "C) To give the reader some advice on how to overcome\nshyness", "D) To give brief information about the symptoms and\npossible causes of shyness", "E) To discuss whether shyness is a challenging\npsychological problem"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2020 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -8612,7 +8633,7 @@ object QuestionDataProvider {
         Question(
             id = 1072,
             questionText = "(2020 Sonbahar / Soru 47)\nIt is understood from the passage that during the\n19th century, ----.",
-            options = listOf("A) most slaves in Latin American countries were able to\nbecome part of the ruling and wealthy classes once\nthey gained independence", "B) most of the crops produced by slaves were sold to\nlocal consumers in Latin America", "C) the abolishment of slavery did not happen at the same\ntime and rate in Central and South America", "D) many Latin American countries began to abolish\nslavery after Brazil outlawed it", "E) there had been no serious attempts to outlaw slavery\nin Latin America until 1888\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) most slaves in Latin American countries were able to\nbecome part of the ruling and wealthy classes once\nthey gained independence", "B) most of the crops produced by slaves were sold to\nlocal consumers in Latin America", "C) the abolishment of slavery did not happen at the same\ntime and rate in Central and South America", "D) many Latin American countries began to abolish\nslavery after Brazil outlawed it", "E) there had been no serious attempts to outlaw slavery\nin Latin America until 1888"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2020 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -8636,7 +8657,7 @@ object QuestionDataProvider {
         Question(
             id = 1075,
             questionText = "(2020 Sonbahar / Soru 50)\nWhat is the primary purpose of the author?",
-            options = listOf("A) To explain why slavery was widely practised in Latin\nAmerica during the 19th century", "B) To clarify when slavery was completely ended in Latin\nAmerica", "C) To discuss some consequences of the abolishment of\nslavery in Latin America", "D) To emphasise the considerable efforts of slaves to\ngain independence in Latin America", "E) To justify that investment from Europe and North\nAmerica helped to end slavery in Latin America\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) To explain why slavery was widely practised in Latin\nAmerica during the 19th century", "B) To clarify when slavery was completely ended in Latin\nAmerica", "C) To discuss some consequences of the abolishment of\nslavery in Latin America", "D) To emphasise the considerable efforts of slaves to\ngain independence in Latin America", "E) To justify that investment from Europe and North\nAmerica helped to end slavery in Latin America"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2020 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -8644,7 +8665,7 @@ object QuestionDataProvider {
         Question(
             id = 1076,
             questionText = "(2020 Sonbahar / Soru 51)\nAccording to the passage, even if foods do not go\nbad quickly, ----.",
-            options = listOf("A) they may contribute less to our health after a period of\nexposure to certain factors", "B) they could perish if they are exposed to direct sunlight", "C) insects and bacteria detect them easily due to their\nbad smell", "D) they may cause changes in a person's gastrointestinal\ntract", "E) people do not wish to eat foods exposed to heat or\nwater for a long time\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) they may contribute less to our health after a period of\nexposure to certain factors", "B) they could perish if they are exposed to direct sunlight", "C) insects and bacteria detect them easily due to their\nbad smell", "D) they may cause changes in a person's gastrointestinal\ntract", "E) people do not wish to eat foods exposed to heat or\nwater for a long time"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2020 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Paragraf"
@@ -8668,7 +8689,7 @@ object QuestionDataProvider {
         Question(
             id = 1079,
             questionText = "(2020 Sonbahar / Soru 54)\nWhat can be said about foods according to the\npassage?",
-            options = listOf("A) Meat, dairy products and low-acid vegetables are the\nonly foods bacteria proliferate.", "B) If it is still appetising, consumption of food is harmless\neven if it is affected by any bacteria.", "C) Food spoilage is inevitable unless foods are preserved\nthrough specific processes.", "D) People tend to keep their spoiled foods even if they\nlook unappetising.", "E) Pasteurisation is accepted as the most efficient way to\nprevent foods from going bad.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Meat, dairy products and low-acid vegetables are the\nonly foods bacteria proliferate.", "B) If it is still appetising, consumption of food is harmless\neven if it is affected by any bacteria.", "C) Food spoilage is inevitable unless foods are preserved\nthrough specific processes.", "D) People tend to keep their spoiled foods even if they\nlook unappetising.", "E) Pasteurisation is accepted as the most efficient way to\nprevent foods from going bad."),
             correctOptionIndex = 2,
             explanation = "Bu soru 2020 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -8676,7 +8697,7 @@ object QuestionDataProvider {
         Question(
             id = 1080,
             questionText = "(2020 Sonbahar / Soru 55)\nWhich of the following is true about lie detectors?",
-            options = listOf("A) The number of the control questions surpasses that of\nthe relevant questions in actual lie protector tests.", "B) A lie detector device actually works differently from\nwhat is usually imagined.", "C) One can monitor extraordinary differences in a\nperson’s psychology during a lie protector test.", "D) They record bodily responses evoked particularly by\ncontrol questions.", "E) The respondent’s bodily reactions are examined\nbefore the questions are asked.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) The number of the control questions surpasses that of\nthe relevant questions in actual lie protector tests.", "B) A lie detector device actually works differently from\nwhat is usually imagined.", "C) One can monitor extraordinary differences in a\nperson’s psychology during a lie protector test.", "D) They record bodily responses evoked particularly by\ncontrol questions.", "E) The respondent’s bodily reactions are examined\nbefore the questions are asked."),
             correctOptionIndex = 1,
             explanation = "Bu soru 2020 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Paragraf"
@@ -8708,7 +8729,7 @@ object QuestionDataProvider {
         Question(
             id = 1084,
             questionText = "(2020 Sonbahar / Soru 59)\nWhich of the following is true about the books\npeople read in childhood according to the passage?",
-            options = listOf("A) People form their reading habits thanks to the pictures\nthese books contain.", "B) Children’s books are usually better than picture books\nin helping become a published writer.", "C) Such books are written for the purpose of teaching\nsounds and letters.", "D) We often remember them throughout the course of our\nlives.", "E) It may not be possible to become a good writer without\nanalysing them carefully.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) People form their reading habits thanks to the pictures\nthese books contain.", "B) Children’s books are usually better than picture books\nin helping become a published writer.", "C) Such books are written for the purpose of teaching\nsounds and letters.", "D) We often remember them throughout the course of our\nlives.", "E) It may not be possible to become a good writer without\nanalysing them carefully."),
             correctOptionIndex = 3,
             explanation = "Bu soru 2020 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -8740,7 +8761,7 @@ object QuestionDataProvider {
         Question(
             id = 1088,
             questionText = "(2020 Sonbahar / Soru 63)\nMary:\n So, I’ve decided to participate in the Citizen\nScience movement.\nHilda:\n And what exactly are you expected to do as part\nof this movement?\nMary:\n Nothing special, in fact. Science volunteers can\ncontribute to global science studies by simply\nmonitoring whales offshore or hawks and stars in\nthe sky.\nHilda:\n ----\nMary:\n Not really! It’s simple to do with basic technology,\nlike smartphone apps. So, you can easily collect\ndata and share it with other members of the\nmovement.",
-            options = listOf("A) That’s interesting. So they invite you to be an amateur\nresearcher who offers help for free?", "B) Sounds impressive. Would you need to use special\nequipment in order to record these things?", "C) That’s exciting. But don’t you think you should be able\nto earn money for this kind of work?", "D) Hmm, I see. Doesn’t this benefit the research team\nmore than it benefits the volunteers?", "E) Wow. Is accuracy one of the top priorities for these\ntypes of observations?\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) That’s interesting. So they invite you to be an amateur\nresearcher who offers help for free?", "B) Sounds impressive. Would you need to use special\nequipment in order to record these things?", "C) That’s exciting. But don’t you think you should be able\nto earn money for this kind of work?", "D) Hmm, I see. Doesn’t this benefit the research team\nmore than it benefits the volunteers?", "E) Wow. Is accuracy one of the top priorities for these\ntypes of observations?"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2020 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Diyalog"
@@ -8756,7 +8777,7 @@ object QuestionDataProvider {
         Question(
             id = 1090,
             questionText = "(2020 Sonbahar / Soru 65)\nMaggie:\n Last week you said you didn’t feel so well and\nyou’d join a gym.\nLucy:\n That’s true, but I have so much work to do that I\ncan hardly find the time to even call up for\ninformation on how to best get fit.\nMaggie:\n ----\nLucy:\n It’s definitely better than nothing. Maybe I can try\nto discipline myself and start doing some\nstretching at my office.",
-            options = listOf("A) You keep finding excuses, and I think the problem is\nyour tendency to delay. If you really want to create\nsome time, I’m sure you can find a way.", "B) Actually, you don’t really need a gym. Most\nprofessionals say even five minutes of light exercise\ncan be beneficial for your health.", "C) You’d better get some advice from a doctor rather than\nhit the gym. Using prescribed medicines can help you\nlose weight in a controlled way.", "D) You shouldn’t worry so much about trivial things.\nGoing to the gym can make you feel happy, as the key\nto a happy life is to be able to find pleasure in small\nthings.", "E) I think you should reorganise your weekly schedule.\nThere are various techniques for planning your day so\nthat you can have some time for yourself.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) You keep finding excuses, and I think the problem is\nyour tendency to delay. If you really want to create\nsome time, I’m sure you can find a way.", "B) Actually, you don’t really need a gym. Most\nprofessionals say even five minutes of light exercise\ncan be beneficial for your health.", "C) You’d better get some advice from a doctor rather than\nhit the gym. Using prescribed medicines can help you\nlose weight in a controlled way.", "D) You shouldn’t worry so much about trivial things.\nGoing to the gym can make you feel happy, as the key\nto a happy life is to be able to find pleasure in small\nthings.", "E) I think you should reorganise your weekly schedule.\nThere are various techniques for planning your day so\nthat you can have some time for yourself."),
             correctOptionIndex = 1,
             explanation = "Bu soru 2020 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Diyalog"
@@ -8772,7 +8793,7 @@ object QuestionDataProvider {
         Question(
             id = 1092,
             questionText = "(2020 Sonbahar / Soru 67)\nPatient:\n I have a sore throat and this is the third in the last\nsix months. My tonsils will probably need to be\nremoved.\nDoctor:\n It used to be a common practice a few decades\nago, but today we approach tonsil removal with\nmuch more caution.\nPatient:\n ----\nDoctor:\n We take little notice of our palatine tonsils, except\nwhen they are sore, but they activate our immune\nsystem, recognising pathogens entering through\nthe mouth and nose.\nPatient:\n So I should take better care of them instead of\nhaving them removed.",
-            options = listOf("A) I can’t see why patients are driven to such risks. There\nmust be a good side that may be less obvious to us.", "B) But when inflamed, they are extremely painful. Why\nshould I tolerate them if I can easily get rid of them?", "C) So vaccination can provide protection against specific\ndiseases? Is it possible to prevent infection this way?", "D) Oh! I would have had medical treatment instead of\nhaving them removed through surgery if I had known\nthat.", "E) Does it really make sense? Surgery is supposed to be\nthe last option in such cases regarding the immune\nsystem.\n\n=== COLUMN_SEPARATOR ===\n\n68-71: For these questions, choose the best\nrephrased form of the given sentence."),
+            options = listOf("A) I can’t see why patients are driven to such risks. There\nmust be a good side that may be less obvious to us.", "B) But when inflamed, they are extremely painful. Why\nshould I tolerate them if I can easily get rid of them?", "C) So vaccination can provide protection against specific\ndiseases? Is it possible to prevent infection this way?", "D) Oh! I would have had medical treatment instead of\nhaving them removed through surgery if I had known\nthat.", "E) Does it really make sense? Surgery is supposed to be\nthe last option in such cases regarding the immune\nsystem.\n\n\n\n68-71: For these questions, choose the best\nrephrased form of the given sentence."),
             correctOptionIndex = 1,
             explanation = "Bu soru 2020 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Diyalog"
@@ -8796,7 +8817,7 @@ object QuestionDataProvider {
         Question(
             id = 1095,
             questionText = "(2020 Sonbahar / Soru 70)\nThe only time that an analysis procedure can help is\nwhen the user is fully aware not only of its strong\npoints, but its shortcomings as well.",
-            options = listOf("A) The user is to be fully aware of both the strengths and\nweaknesses of an analysis procedure to be able to\nbenefit from it.", "B) An analysis procedure should have more strong points\nthan shortcomings in order for the user to be aware of\nits benefits.", "C) Both the strengths and weaknesses of an analysis\nprocedure should be fully evaluated before the user\nbecomes aware of its benefits.", "D) An analysis procedure can help the user only if the\nuser acknowledges the strong points rather than its\nshortcomings.", "E) The shortcomings of an analysis procedure can\nreduce its benefits only when the user is not fully\naware of its strong points.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) The user is to be fully aware of both the strengths and\nweaknesses of an analysis procedure to be able to\nbenefit from it.", "B) An analysis procedure should have more strong points\nthan shortcomings in order for the user to be aware of\nits benefits.", "C) Both the strengths and weaknesses of an analysis\nprocedure should be fully evaluated before the user\nbecomes aware of its benefits.", "D) An analysis procedure can help the user only if the\nuser acknowledges the strong points rather than its\nshortcomings.", "E) The shortcomings of an analysis procedure can\nreduce its benefits only when the user is not fully\naware of its strong points."),
             correctOptionIndex = 0,
             explanation = "Bu soru 2020 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Dil Bilgisi"
@@ -8812,7 +8833,7 @@ object QuestionDataProvider {
         Question(
             id = 1097,
             questionText = "(2020 Sonbahar / Soru 72)\nWith few exceptions, the Austronesian languages\nare closely interrelated. In spite of their very large\nnumber and the enormous expanse of the territories\noccupied by them, it is very easy to recognise their\ngenetic interrelationship. ---- As a result of this, the\ntotal number of Austronesian languages is a\ncontentious issue. Taking this into account, the\napproximate number of Austronesian languages of\ngiven areas, and the number of their speakers in\nthese areas could be detected only if a wide-scale\nscientific study is conducted.",
-            options = listOf("A) Because of their great similarity to each other, it is\noften difficult to establish whether certain varieties are\ndifferent languages, or dialects of one language.", "B) Phonologically, Austronesian languages are, with a\nfew exceptions, fairly simple.", "C) Like other language groups, the Austronesian\nlanguages are thought to have originated thousands of\nyears ago.", "D) The recognition of the genetic interrelationship and\ninitial classification of Austronesian languages had its\nbeginnings in the nineteenth century.", "E) There are four types of indigenous languages in the\nAustralasia and the Pacific area.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Because of their great similarity to each other, it is\noften difficult to establish whether certain varieties are\ndifferent languages, or dialects of one language.", "B) Phonologically, Austronesian languages are, with a\nfew exceptions, fairly simple.", "C) Like other language groups, the Austronesian\nlanguages are thought to have originated thousands of\nyears ago.", "D) The recognition of the genetic interrelationship and\ninitial classification of Austronesian languages had its\nbeginnings in the nineteenth century.", "E) There are four types of indigenous languages in the\nAustralasia and the Pacific area."),
             correctOptionIndex = 0,
             explanation = "Bu soru 2020 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Paragraf"
@@ -8842,12 +8863,14 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         )
     )
+}
 
-    private val chunk11 = listOf(
+object QuestionChunk11 {
+    val list = listOf(
         Question(
             id = 1101,
             questionText = "(2021 Sonbahar / Soru 3)\nThe reasons for an urban climate are heat storage,\ntrapping of radiation, increasing roughness and less\nevaporation, which are seen in cities worldwide but\nare most ---- in densely built-up megacities.",
-            options = listOf("A) evident", "B) arbitrary", "C) convenient", "D) constructive", "E) mediocre\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) evident", "B) arbitrary", "C) convenient", "D) constructive", "E) mediocre"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2021 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Kelime Bilgisi"
@@ -8887,7 +8910,7 @@ object QuestionDataProvider {
         Question(
             id = 1106,
             questionText = "(2021 Sonbahar / Soru 8)\nThere are some people who ---- objects from 6\nmetres away with the same sharpness that a\nnormal-sighted person ---- in to 4.5 metres to\nachieve.",
-            options = listOf("A) may view / had to move", "B) must view / could move", "C) can view / would have to move", "D) ought to view / should have moved", "E) might view / can move\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) may view / had to move", "B) must view / could move", "C) can view / would have to move", "D) ought to view / should have moved", "E) might view / can move"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2021 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Dil Bilgisi"
@@ -8935,7 +8958,7 @@ object QuestionDataProvider {
         Question(
             id = 1112,
             questionText = "(2021 Sonbahar / Soru 14)\nIn diabetic patients, even though food intake may be\nincreased, weight loss can occur ---- muscles and\nfat stores may shrink as they are not getting the\nnecessary glucose.",
-            options = listOf("A) because", "B) given that", "C) as long as", "D) although", "E) in case\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) because", "B) given that", "C) as long as", "D) although", "E) in case"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2021 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Bağlaçlar"
@@ -8959,7 +8982,7 @@ object QuestionDataProvider {
         Question(
             id = 1115,
             questionText = "(2021 Sonbahar / Soru 17)\n",
-            options = listOf("A) Instead of", "B) Regardless of", "C) In contrast with", "D) Despite", "E) In addition to\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Instead of", "B) Regardless of", "C) In contrast with", "D) Despite", "E) In addition to"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2021 Sonbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Dil Bilgisi"
@@ -9007,7 +9030,7 @@ object QuestionDataProvider {
         Question(
             id = 1121,
             questionText = "(2021 Sonbahar / Soru 23)\n",
-            options = listOf("A) rations", "B) possessions", "C) attributes", "D) structures", "E) senses\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) rations", "B) possessions", "C) attributes", "D) structures", "E) senses"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2021 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Dil Bilgisi"
@@ -9047,7 +9070,7 @@ object QuestionDataProvider {
         Question(
             id = 1126,
             questionText = "(2021 Sonbahar / Soru 28)\n---- if doing so helps them to pursue the goals that\nare aligned with their values.",
-            options = listOf("A) Meditative practices may not be beneficial for\neveryone with depression", "B) The study of how people react to mind-altering\npractices like meditation is still in its infancy", "C) Psychologically flexible people show willingness to\nwelcome uncomfortable states", "D) Psychologists call the ability to walk through bad\nexperiences ‘resilience’", "E) Those with lower than average signs of post-traumatic\nstress disorder have higher scores of psychological\nflexibility\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Meditative practices may not be beneficial for\neveryone with depression", "B) The study of how people react to mind-altering\npractices like meditation is still in its infancy", "C) Psychologically flexible people show willingness to\nwelcome uncomfortable states", "D) Psychologists call the ability to walk through bad\nexperiences ‘resilience’", "E) Those with lower than average signs of post-traumatic\nstress disorder have higher scores of psychological\nflexibility"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2021 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Bağlaçlar"
@@ -9079,7 +9102,7 @@ object QuestionDataProvider {
         Question(
             id = 1130,
             questionText = "(2021 Sonbahar / Soru 32)\nMany researchers and clinicians observe that the\ntraditional Chinese medicine can hope to function in\nfull partnership with Western medicine ----.",
-            options = listOf("A) even though some herbs are used routinely in therapy,\nincluding treatment of some common diseases", "B) only if practitioners pay attention to the most recent\ndiscoveries made by immunological research studies", "C) but Chinese doctors are well aware of the value of\nusing traditional medicine to cure diseases", "D) whenever there is a chance to get the medical\nprofessionals in the West to question medical\npractices", "E) as if the immunological effects were due to the\nunknown or unrecognised substances in herbs\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) even though some herbs are used routinely in therapy,\nincluding treatment of some common diseases", "B) only if practitioners pay attention to the most recent\ndiscoveries made by immunological research studies", "C) but Chinese doctors are well aware of the value of\nusing traditional medicine to cure diseases", "D) whenever there is a chance to get the medical\nprofessionals in the West to question medical\npractices", "E) as if the immunological effects were due to the\nunknown or unrecognised substances in herbs"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2021 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Bağlaçlar"
@@ -9111,7 +9134,7 @@ object QuestionDataProvider {
         Question(
             id = 1134,
             questionText = "(2021 Sonbahar / Soru 36)\nIndividuals with social phobia fear being humiliated\nwhile doing something in public, ----.",
-            options = listOf("A) because those who receive treatment can completely\novercome their fears in social life", "B) and therefore they will avoid any situation in which\nsuch participation may be required", "C) as one of the most common manifestations of social\nphobia involves public speaking", "D) although they have intense fears of social interactions,\nsuch as meeting others and dating", "E) whereas it generally develops after puberty and peaks\nafter the age of 30\n\n=== COLUMN_SEPARATOR ===\n\n37-42: For these questions, choose the most\naccurate Turkish translation of the sentences in"),
+            options = listOf("A) because those who receive treatment can completely\novercome their fears in social life", "B) and therefore they will avoid any situation in which\nsuch participation may be required", "C) as one of the most common manifestations of social\nphobia involves public speaking", "D) although they have intense fears of social interactions,\nsuch as meeting others and dating", "E) whereas it generally develops after puberty and peaks\nafter the age of 30\n\n\n\n37-42: For these questions, choose the most\naccurate Turkish translation of the sentences in"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2021 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Bağlaçlar"
@@ -9127,7 +9150,7 @@ object QuestionDataProvider {
         Question(
             id = 1136,
             questionText = "(2021 Sonbahar / Soru 38)\nBecause salt is indispensable to life, and uniquely\nflavours foods, humans have been preoccupied with\nit since the beginning of recorded history.",
-            options = listOf("A) İnsanlar, tarih kayıt altına alınmaya başladığından bu\nyana tuzla yakından ilgilenmişlerdir çünkü yaşam için\nvazgeçilmez olan tuz, yiyecekleri eşsiz bir şekilde\ntatlandırmaktadır.", "B) İnsanlar kayıt altına alınan tarihin başlangıcından\nitibaren yaşam için vazgeçilmez olan ve yiyeceklere\neşsiz bir tat veren tuzla yakından ilgilenmişlerdir.", "C) İnsanların kayıt altına alınan tarihin başlangıcından\nberi tuzla yakından ilgilenmesinin nedeni yiyeceklere\neşsiz bir biçimde tat vermesinin yanı sıra yaşam için\nde vazgeçilmez olmasıdır.", "D) Tuz, yaşam için vazgeçilmez olduğu ve yiyeceklere\neşsiz bir biçimde tat verdiği için insanlar kayıt altına\nalınan tarihin başlangıcından beri tuzla yakından\nilgilenmişlerdir.", "E) Yiyecekleri eşsiz bir biçimde tatlandıran tuz, yaşam\niçin vazgeçilmez olduğundan, tarihin ilk kayıt altına\nalındığı andan itibaren insanoğlunu fazlasıyla\nilgilendirmiştir.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) İnsanlar, tarih kayıt altına alınmaya başladığından bu\nyana tuzla yakından ilgilenmişlerdir çünkü yaşam için\nvazgeçilmez olan tuz, yiyecekleri eşsiz bir şekilde\ntatlandırmaktadır.", "B) İnsanlar kayıt altına alınan tarihin başlangıcından\nitibaren yaşam için vazgeçilmez olan ve yiyeceklere\neşsiz bir tat veren tuzla yakından ilgilenmişlerdir.", "C) İnsanların kayıt altına alınan tarihin başlangıcından\nberi tuzla yakından ilgilenmesinin nedeni yiyeceklere\neşsiz bir biçimde tat vermesinin yanı sıra yaşam için\nde vazgeçilmez olmasıdır.", "D) Tuz, yaşam için vazgeçilmez olduğu ve yiyeceklere\neşsiz bir biçimde tat verdiği için insanlar kayıt altına\nalınan tarihin başlangıcından beri tuzla yakından\nilgilenmişlerdir.", "E) Yiyecekleri eşsiz bir biçimde tatlandıran tuz, yaşam\niçin vazgeçilmez olduğundan, tarihin ilk kayıt altına\nalındığı andan itibaren insanoğlunu fazlasıyla\nilgilendirmiştir."),
             correctOptionIndex = 3,
             explanation = "Bu soru 2021 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Çeviri"
@@ -9143,7 +9166,7 @@ object QuestionDataProvider {
         Question(
             id = 1138,
             questionText = "(2021 Sonbahar / Soru 40)\nYeni deneyimlere açık insanlar, görsel bilgiyi farklı\nşekillerde işleme yeteneğine sahiptir ve bu,\nyaratıcılıklarının artmasını sağlamaktadır, böylece bu\nözelliğe sahip insanlar farklı bakış açıları sayesinde\ndiğerleri tarafından gözden kaçırılan çözümleri fark\netmede iyi olabilirler.",
-            options = listOf("A) People who are open to new experiences have the\nability to boost their creativity by processing visual\ninformation in different ways, so people with this trait\ncan be good at spotting solutions that others\noverlooked, thanks to their diverse outlook.", "B) People who are open to new experiences have the\nability to spot solutions overlooked by others thanks to\ntheir diverse outlook, which is a trait that enables\nthese people to process visual information in different\nways and helps boost their creativity.", "C) People who have the ability to process visual\ninformation in different ways that boost their creativity\nare open to new experiences; therefore, people with\nthis trait can be good at spotting solutions overlooked\nby others, thanks to their diverse outlook.", "D) People who have the ability to be open to new\nexperiences process visual information in different\nways to boost their creativity, so people with diverse\noutlook might be good at spotting solutions that others\noverlook, thanks to this trait.", "E) People who are open to new experiences have the\nability to process visual information in different ways\nand this helps boost their creativity, so people with this\ntrait might be good at spotting solutions overlooked by\nothers, thanks to their diverse outlook.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) People who are open to new experiences have the\nability to boost their creativity by processing visual\ninformation in different ways, so people with this trait\ncan be good at spotting solutions that others\noverlooked, thanks to their diverse outlook.", "B) People who are open to new experiences have the\nability to spot solutions overlooked by others thanks to\ntheir diverse outlook, which is a trait that enables\nthese people to process visual information in different\nways and helps boost their creativity.", "C) People who have the ability to process visual\ninformation in different ways that boost their creativity\nare open to new experiences; therefore, people with\nthis trait can be good at spotting solutions overlooked\nby others, thanks to their diverse outlook.", "D) People who have the ability to be open to new\nexperiences process visual information in different\nways to boost their creativity, so people with diverse\noutlook might be good at spotting solutions that others\noverlook, thanks to this trait.", "E) People who are open to new experiences have the\nability to process visual information in different ways\nand this helps boost their creativity, so people with this\ntrait might be good at spotting solutions overlooked by\nothers, thanks to their diverse outlook."),
             correctOptionIndex = 4,
             explanation = "Bu soru 2021 Sonbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Çeviri"
@@ -9159,7 +9182,7 @@ object QuestionDataProvider {
         Question(
             id = 1140,
             questionText = "(2021 Sonbahar / Soru 42)\nVücudun akciğerleri koruyan mekanizmaları\nolmasına rağmen, akciğerlerde biriken birçok madde\nvardır ve bunlar akciğerlerde tekrarlayan iritasyona\nveya uzun süreli hastalığa yol açabilir.",
-            options = listOf("A) Although the body has mechanisms that protect the\nlungs, there are many substances that deposit in the\nlungs and these may cause recurrent irritation to the\nlungs or lead to long-term illness.", "B) Many substances can deposit in the lungs and cause\nrecurring irritation to the lungs that leads to long-term\nillness even though various mechanisms of the body\nprotect the lungs.", "C) Despite the protective mechanisms of the body, lots of\nsubstances may deposit in the lungs that can cause\nlong-term illness by causing recurrent irritation to the\nlungs.", "D) Even if there are mechanisms of the body for the\nprotection of the lungs, many substances may deposit\nin the lungs and lead to long-term illness as a result of\nrecurring irritation.", "E) Although the body protects the lungs through various\nmechanisms, many substances can cause long-term\nillness by depositing in the lungs and leading to\nrecurring irritation.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Although the body has mechanisms that protect the\nlungs, there are many substances that deposit in the\nlungs and these may cause recurrent irritation to the\nlungs or lead to long-term illness.", "B) Many substances can deposit in the lungs and cause\nrecurring irritation to the lungs that leads to long-term\nillness even though various mechanisms of the body\nprotect the lungs.", "C) Despite the protective mechanisms of the body, lots of\nsubstances may deposit in the lungs that can cause\nlong-term illness by causing recurrent irritation to the\nlungs.", "D) Even if there are mechanisms of the body for the\nprotection of the lungs, many substances may deposit\nin the lungs and lead to long-term illness as a result of\nrecurring irritation.", "E) Although the body protects the lungs through various\nmechanisms, many substances can cause long-term\nillness by depositing in the lungs and leading to\nrecurring irritation."),
             correctOptionIndex = 0,
             explanation = "Bu soru 2021 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Çeviri"
@@ -9167,7 +9190,7 @@ object QuestionDataProvider {
         Question(
             id = 1141,
             questionText = "(2021 Sonbahar / Soru 43)\nIt is clearly stated in the passage that more than a\nquarter of a century ago Azerbaijan ----.",
-            options = listOf("A) became a politically developed and economically\ncompetitive country", "B) was entangled in serious administrative and financial\ndifficulties", "C) was in a problematic situation in terms of infrastructure\nand services", "D) was economically and politically more stable but\nsuffered from rising inflation", "E) experienced strong economic growth thanks to\npost-Soviet investors\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) became a politically developed and economically\ncompetitive country", "B) was entangled in serious administrative and financial\ndifficulties", "C) was in a problematic situation in terms of infrastructure\nand services", "D) was economically and politically more stable but\nsuffered from rising inflation", "E) experienced strong economic growth thanks to\npost-Soviet investors"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2021 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Paragraf"
@@ -9199,7 +9222,7 @@ object QuestionDataProvider {
         Question(
             id = 1145,
             questionText = "(2021 Sonbahar / Soru 47)\nAccording to the passage, deconstruction lost its\nprevious power ----.",
-            options = listOf("A) because it could hardly evolve after its peak in the late\n1970s", "B) long before the 1970s, when various different\nphilosophical movements appeared", "C) and was forgotten for several years because of the\nobsolete ideas it promotes", "D) but still achieves a considerable impact on cultural and\nliterary criticism", "E) as a result of its excessive preoccupation with current\ncultural criticism\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) because it could hardly evolve after its peak in the late\n1970s", "B) long before the 1970s, when various different\nphilosophical movements appeared", "C) and was forgotten for several years because of the\nobsolete ideas it promotes", "D) but still achieves a considerable impact on cultural and\nliterary criticism", "E) as a result of its excessive preoccupation with current\ncultural criticism"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2021 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -9231,7 +9254,7 @@ object QuestionDataProvider {
         Question(
             id = 1149,
             questionText = "(2021 Sonbahar / Soru 51)\nAccording to the passage, greenhouse gas\nemissions ----.",
-            options = listOf("A) are mainly caused by the rise in acid levels in the\noceans", "B) are responsible for changes in ocean chemistry", "C) enable oceans to absorb and store carbon dioxide", "D) are considered to be less harmful than the chemical\nchanges in oceans", "E) impact the temperatures less than they did in the past\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) are mainly caused by the rise in acid levels in the\noceans", "B) are responsible for changes in ocean chemistry", "C) enable oceans to absorb and store carbon dioxide", "D) are considered to be less harmful than the chemical\nchanges in oceans", "E) impact the temperatures less than they did in the past"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2021 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Paragraf"
@@ -9263,7 +9286,7 @@ object QuestionDataProvider {
         Question(
             id = 1153,
             questionText = "(2021 Sonbahar / Soru 55)\nOne can understand from the passage that playing a\nmusical instrument ----.",
-            options = listOf("A) has a positive impact on how our brain responds to\ndifferent stimuli", "B) does not influence our brain functions when done\ntemporarily", "C) is the best way of preserving cognitive ability", "D) has little impact on motor skills as it is an auditory\nexperience", "E) does not have an instant impact on brain functions\nunlike listening to music\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) has a positive impact on how our brain responds to\ndifferent stimuli", "B) does not influence our brain functions when done\ntemporarily", "C) is the best way of preserving cognitive ability", "D) has little impact on motor skills as it is an auditory\nexperience", "E) does not have an instant impact on brain functions\nunlike listening to music"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2021 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Paragraf"
@@ -9295,7 +9318,7 @@ object QuestionDataProvider {
         Question(
             id = 1157,
             questionText = "(2021 Sonbahar / Soru 59)\nIt can be understood from the passage that\nmedicine ----.",
-            options = listOf("A) may not be very effective if it is recycled from\npharmaceutical waste", "B) eliminated in the treatment stage still poses a hazard\nto aquatic creatures and insects", "C) is likely to threaten some animal populations in\nwater when it reaches waterways without being\ndestroyed", "D) gives harm to only aquatic creatures whose habitats\nare confined to areas surrounding wastewater plants", "E) turns into pharmaceutical waste when it is consumed\nmore than the recommended amount\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) may not be very effective if it is recycled from\npharmaceutical waste", "B) eliminated in the treatment stage still poses a hazard\nto aquatic creatures and insects", "C) is likely to threaten some animal populations in\nwater when it reaches waterways without being\ndestroyed", "D) gives harm to only aquatic creatures whose habitats\nare confined to areas surrounding wastewater plants", "E) turns into pharmaceutical waste when it is consumed\nmore than the recommended amount"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2021 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -9327,7 +9350,7 @@ object QuestionDataProvider {
         Question(
             id = 1161,
             questionText = "(2021 Sonbahar / Soru 63)\nSebastian:\n Preparing tasty meals in the woods is a wonderful\nthought. But somehow it’s easy to go overboard\nwith backpacking menus. You think you must\npack this in order to eat that and you need all the\nother items to prepare it properly.\nGraham:\n That’s silly. What the body needs is simple. It\nneeds water more than anything else. In fact, you\ncan survive without food for at least a week.\nSebastian:\n ----\nGraham:\n Almost anything you eat out there is going to\ntaste great because you will be very hungry and,\nafter all, you’re outdoors!",
-            options = listOf("A) I don’t think I’m alone on this one, but energy bars,\nfruit and trail mix will keep you going.", "B) Think about it: No cooking, no clean up and less to\ncarry on your back.", "C) Well then, what do you suggest I put into my backpack\nso as not to starve out there?", "D) You think so? Don’t you think I should try something\nless risky then?", "E) Needless to say, you must have water on a regular\nbasis or the body breaks down.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) I don’t think I’m alone on this one, but energy bars,\nfruit and trail mix will keep you going.", "B) Think about it: No cooking, no clean up and less to\ncarry on your back.", "C) Well then, what do you suggest I put into my backpack\nso as not to starve out there?", "D) You think so? Don’t you think I should try something\nless risky then?", "E) Needless to say, you must have water on a regular\nbasis or the body breaks down."),
             correctOptionIndex = 2,
             explanation = "Bu soru 2021 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Diyalog"
@@ -9343,7 +9366,7 @@ object QuestionDataProvider {
         Question(
             id = 1163,
             questionText = "(2021 Sonbahar / Soru 65)\nScott:\n On my geography course, we are learning about\ncapital cities of Europe. Can you name any of\nthese cities?\nDebbie:\n The one I’m thinking of is Budapest, the capital of\nHungary. Where did the name 'Budapest' come\nfrom, by the way?\nScott:\n ----\nDebbie:\n Wow! I didn’t know that. So the history of the\nname 'Budapest' is much simpler than I had\nexpected it would be.",
-            options = listOf("A) I’m not sure where the name comes from, but we can\nsearch it on the Internet to find out.", "B) The name of the capital city has always been\nBudapest. If you study the history of Hungary, this is\none fact you will learn.", "C) Budapest is made up of two cities separated by the\nDanube River. One town was Buda and the other\nPest; when the cities were merged, so were their\nnames.", "D) Good question! When I asked my Hungarian friends\nabout it, they told me there are some myths about its\norigin but they're all just myths anyway.", "E) Well, someone with a sense of humour claimed it had\nsomething to do with the Buddha, but just because\nthey sound the same doesn’t mean they are related!\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) I’m not sure where the name comes from, but we can\nsearch it on the Internet to find out.", "B) The name of the capital city has always been\nBudapest. If you study the history of Hungary, this is\none fact you will learn.", "C) Budapest is made up of two cities separated by the\nDanube River. One town was Buda and the other\nPest; when the cities were merged, so were their\nnames.", "D) Good question! When I asked my Hungarian friends\nabout it, they told me there are some myths about its\norigin but they're all just myths anyway.", "E) Well, someone with a sense of humour claimed it had\nsomething to do with the Buddha, but just because\nthey sound the same doesn’t mean they are related!"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2021 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Diyalog"
@@ -9359,7 +9382,7 @@ object QuestionDataProvider {
         Question(
             id = 1165,
             questionText = "(2021 Sonbahar / Soru 67)\nPaul:\n We’ll need to be careful about not getting Dengue\nFever on our Central American tour.\nSarah:\n What’s Dengue Fever? I’ve never heard of that.\nPaul:\n It’s some sort of viral infection spread by\nmosquitoes.\nSarah:\n Well, that’s definitely not something I want to get.\nHow about we just stay in larger cities so that we\navoid mosquito-infested areas?\nPaul:\n ----\nSarah:\n Then let’s read up on how to prevent mosquito\nbites to avoid getting bitten in the first place.",
-            options = listOf("A) In truth, mosquitoes usually bite during the daytime\nand are often found indoors.", "B) Well, Dengue Fever usually causes flu-like symptoms,\nincluding fever, muscle and joint pains, nausea and\nvomiting.", "C) In fact, the guide book says there are some amazing\ncities along our tour so I’m absolutely on board with\nthat idea.", "D) Actually, since mosquitoes breed in artificial water\ncontainers like thrown away jars and cans, it’s\ncommon in populated urban areas.", "E) Apparently, treatment involves pain killers, plenty of\nfluids and even hospitalisation if it’s severe.\n\n=== COLUMN_SEPARATOR ===\n\n68-71: For these questions, choose the best\nrephrased form of the given sentence."),
+            options = listOf("A) In truth, mosquitoes usually bite during the daytime\nand are often found indoors.", "B) Well, Dengue Fever usually causes flu-like symptoms,\nincluding fever, muscle and joint pains, nausea and\nvomiting.", "C) In fact, the guide book says there are some amazing\ncities along our tour so I’m absolutely on board with\nthat idea.", "D) Actually, since mosquitoes breed in artificial water\ncontainers like thrown away jars and cans, it’s\ncommon in populated urban areas.", "E) Apparently, treatment involves pain killers, plenty of\nfluids and even hospitalisation if it’s severe.\n\n\n\n68-71: For these questions, choose the best\nrephrased form of the given sentence."),
             correctOptionIndex = 3,
             explanation = "Bu soru 2021 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Diyalog"
@@ -9375,7 +9398,7 @@ object QuestionDataProvider {
         Question(
             id = 1167,
             questionText = "(2021 Sonbahar / Soru 69)\nAs people age, the ability of white blood cells to deal\nwith infections and respond to vaccinations\ndeclines, opening the door for illness or\ninflammation that can lead to chronic disease over\ntime.",
-            options = listOf("A) When people age, chronic diseases caused by illness\nand inflammation increase because white blood cells\ndealing with infections and responding to vaccinations\ndiminish in number over time.", "B) As people age, white blood cells to deal with infections\nand respond to vaccinations lose their strength, and\nthis causes chronic diseases accompanied with illness\nand inflammation.", "C) While aging, people lose the ability to deal with\ninfections and respond to vaccinations due to the\ndecline in their white blood cells, that is why chronic\ndiseases due to inflammation increase over time.", "D) As people age, white blood cells lose the strength to\ndeal with infections as well as respond to vaccinations,\nand this may cause illness or inflammation that leads\nto chronic disease as time progresses.", "E) Illness and inflammation can lead to chronic diseases\nas people age and this is because of the white blood\ncells’ incapacity to deal with infections and respond to\nvaccinations over time.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) When people age, chronic diseases caused by illness\nand inflammation increase because white blood cells\ndealing with infections and responding to vaccinations\ndiminish in number over time.", "B) As people age, white blood cells to deal with infections\nand respond to vaccinations lose their strength, and\nthis causes chronic diseases accompanied with illness\nand inflammation.", "C) While aging, people lose the ability to deal with\ninfections and respond to vaccinations due to the\ndecline in their white blood cells, that is why chronic\ndiseases due to inflammation increase over time.", "D) As people age, white blood cells lose the strength to\ndeal with infections as well as respond to vaccinations,\nand this may cause illness or inflammation that leads\nto chronic disease as time progresses.", "E) Illness and inflammation can lead to chronic diseases\nas people age and this is because of the white blood\ncells’ incapacity to deal with infections and respond to\nvaccinations over time."),
             correctOptionIndex = 3,
             explanation = "Bu soru 2021 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Dil Bilgisi"
@@ -9391,7 +9414,7 @@ object QuestionDataProvider {
         Question(
             id = 1169,
             questionText = "(2021 Sonbahar / Soru 71)\nWhile the growth of cities may be associated with\nincreasing prosperity, urban areas demonstrate the\nworld’s most obvious health disparities in both low-\nand high-income countries.",
-            options = listOf("A) The largest disparities in health are observed in both\nlow- and high-income countries due to increasing\nprosperity that is connected to the growth of cities.", "B) As a result of the growth of cities with the purpose of\ncreating more wealth, both low- and high-income\ncountries have developed urban areas with health\ninequalities in the world.", "C) Both low- and high-income countries are experiencing\nthe most obvious problem of health inequalities as the\ngrowth of cities has produced increasing wealth in\nurban areas.", "D) It is possible to link the growth of cities to more wealth;\nhowever, urban areas both in low- and high-income\ncountries are places with the most apparent health\ninequalities in the world.", "E) The growth of cities is linked to an increase in\nprosperity as long as there is the apparent issue of\nurban health discrepancies in both low- and\nhigh-income countries of the world.\n\n=== COLUMN_SEPARATOR ===\n\n72-75: For these questions, choose the best\noption to complete the missing part of the\npassage."),
+            options = listOf("A) The largest disparities in health are observed in both\nlow- and high-income countries due to increasing\nprosperity that is connected to the growth of cities.", "B) As a result of the growth of cities with the purpose of\ncreating more wealth, both low- and high-income\ncountries have developed urban areas with health\ninequalities in the world.", "C) Both low- and high-income countries are experiencing\nthe most obvious problem of health inequalities as the\ngrowth of cities has produced increasing wealth in\nurban areas.", "D) It is possible to link the growth of cities to more wealth;\nhowever, urban areas both in low- and high-income\ncountries are places with the most apparent health\ninequalities in the world.", "E) The growth of cities is linked to an increase in\nprosperity as long as there is the apparent issue of\nurban health discrepancies in both low- and\nhigh-income countries of the world.\n\n\n\n72-75: For these questions, choose the best\noption to complete the missing part of the\npassage."),
             correctOptionIndex = 3,
             explanation = "Bu soru 2021 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Dil Bilgisi"
@@ -9407,7 +9430,7 @@ object QuestionDataProvider {
         Question(
             id = 1171,
             questionText = "(2021 Sonbahar / Soru 73)\nToxic behaviour is common in the workplace. In\npart, it grows from selfishness and callousness that\ncan manifest in extreme form from certain character\ndisorders that do not recede after work hours and\nare particularly destructive to interpersonal\nrelationships. ---- The spirit of the times plays a role\nas well. Periods of cultural turbulence, instability\nand uncertainty tend to stimulate and release hostile\nbehaviours that play on the fears of others. Whether\nit turns up in the conference room or the home,\ntoxic behaviour has a negative emotional impact\nbeyond its immediate cause.",
-            options = listOf("A) Toxic behaviour can also be the product of work\nenvironments where productivity is the only measure\nfor success or where there is an atmosphere of\nmistrust.", "B) A toxic boss behaves like a dictator whose rudeness is\nmatched by bullying and the implementation of other\noffensive actions towards workers.", "C) Toxic behaviour does not just inflict personal harm, it\nattacks the systematic well-being of entire groups and\norganisations alike.", "D) People who are subjected to toxic behaviour as a\ntarget can be adversely physically affected in the\nlong-term.", "E) Nearly half of all workers in one poll in 1998 reported\nthey were treated rudely at least once a week; a\nnumber which increased to 62% in 2016.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Toxic behaviour can also be the product of work\nenvironments where productivity is the only measure\nfor success or where there is an atmosphere of\nmistrust.", "B) A toxic boss behaves like a dictator whose rudeness is\nmatched by bullying and the implementation of other\noffensive actions towards workers.", "C) Toxic behaviour does not just inflict personal harm, it\nattacks the systematic well-being of entire groups and\norganisations alike.", "D) People who are subjected to toxic behaviour as a\ntarget can be adversely physically affected in the\nlong-term.", "E) Nearly half of all workers in one poll in 1998 reported\nthey were treated rudely at least once a week; a\nnumber which increased to 62% in 2016."),
             correctOptionIndex = 0,
             explanation = "Bu soru 2021 Sonbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Paragraf"
@@ -9423,7 +9446,7 @@ object QuestionDataProvider {
         Question(
             id = 1173,
             questionText = "(2021 Sonbahar / Soru 75)\nAdaptive Business Intelligence (ABI) is the\ndiscipline of combining prediction, optimisation,\nand adaptability into a system capable of answering\nthese two fundamental questions: “What is likely to\nhappen in the future?” and “What is the best\ndecision right now?” To build such a system, we\nfirst need to understand the methods and\ntechniques that enable prediction, optimisation, and\nadaptability. At first glance, this subject matter is\nnothing new, as hundreds of books and articles\nhave been written on business intelligence,\nprediction methods, optimisation techniques, and\nso forth. ---- ABI addresses this very issue.",
-            options = listOf("A) This popular statement has been around for years as\nbusiness managers stored massive amounts of data in\nthe belief that they contain valuable insight.", "B) Moreover, recent research in psychology indicates\nwidely held beliefs can actually hamper the\ndecision-making process.", "C) The concept of adaptability is certainly gaining\npopularity, and not just in the software sector; it can be\nseen in running shoes or Internet search engines.", "D) However, none of these has explained how to combine\nthese various technologies into a software system\ncapable of predicting, optimising, and adapting.", "E) These products are very appealing for individual\nconsumers, because, despite their mass production,\nthey are capable of adapting to the preferences of\neach unique owner.\n\n=== COLUMN_SEPARATOR ===\n\n76-80: For these questions, choose the irrelevant\nsentence in the passage."),
+            options = listOf("A) This popular statement has been around for years as\nbusiness managers stored massive amounts of data in\nthe belief that they contain valuable insight.", "B) Moreover, recent research in psychology indicates\nwidely held beliefs can actually hamper the\ndecision-making process.", "C) The concept of adaptability is certainly gaining\npopularity, and not just in the software sector; it can be\nseen in running shoes or Internet search engines.", "D) However, none of these has explained how to combine\nthese various technologies into a software system\ncapable of predicting, optimising, and adapting.", "E) These products are very appealing for individual\nconsumers, because, despite their mass production,\nthey are capable of adapting to the preferences of\neach unique owner.\n\n\n\n76-80: For these questions, choose the irrelevant\nsentence in the passage."),
             correctOptionIndex = 3,
             explanation = "Bu soru 2021 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -9455,7 +9478,7 @@ object QuestionDataProvider {
         Question(
             id = 1177,
             questionText = "(2021 Sonbahar / Soru 79)\n(I)For almost 40 years, our nearest cosmic neighbour,\nthe Moon, was left alone as we looked somewhere else\nin the Solar System.(II)That changed in 2013, when\nChina’s Chang’e 3 lander touched down on the lunar\nsurface. (III)Since then there has been an explosion of\ninterest in the Moon.(IV) The search for water as a\nsource of life even on the Moon is a constant point of\nfocus in the context of human exploration. (V)NASA,\nChina and even private companies are racing back to it,\nwith dozens of robotic and human missions being\nplanned.",
-            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2021 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Paragraf"
@@ -9487,7 +9510,7 @@ object QuestionDataProvider {
         Question(
             id = 1181,
             questionText = "(2021 İlkbahar / Soru 3)\nHeating and cooling of the Earth are not ----, as it\ntakes time for land, water, and air to either absorb\nheat and warm up or release stored heat and cool\ndown.",
-            options = listOf("A) hospitable", "B) convertible", "C) instantaneous", "D) detrimental", "E) preliminary\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) hospitable", "B) convertible", "C) instantaneous", "D) detrimental", "E) preliminary"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2021 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Kelime Bilgisi"
@@ -9527,7 +9550,7 @@ object QuestionDataProvider {
         Question(
             id = 1186,
             questionText = "(2021 İlkbahar / Soru 8)\nIdeally, the end of the Cold War between the United\nStates and the Soviet Union ---- a substantial\nlessening of security concerns in the world;\nhowever, in practice, the focus ---- to terrorism and\nsubnational groups.",
-            options = listOf("A) might have signified / will have moved", "B) would have signified / used to move", "C) must have signified / had moved", "D) could have signified / had been moving", "E) should have signified / moved\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) might have signified / will have moved", "B) would have signified / used to move", "C) must have signified / had moved", "D) could have signified / had been moving", "E) should have signified / moved"),
             correctOptionIndex = 4,
             explanation = "Bu soru 2021 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Dil Bilgisi"
@@ -9575,7 +9598,7 @@ object QuestionDataProvider {
         Question(
             id = 1192,
             questionText = "(2021 İlkbahar / Soru 14)\n---- children can be easy targets for exploitation and\nvictimization, supervision is a necessary component\nof any Internet safety.",
-            options = listOf("A) Even if", "B) Although", "C) Since", "D) Before", "E) Unless\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Even if", "B) Although", "C) Since", "D) Before", "E) Unless"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2021 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Bağlaçlar"
@@ -9607,7 +9630,7 @@ object QuestionDataProvider {
         Question(
             id = 1196,
             questionText = "(2021 İlkbahar / Soru 18)\n",
-            options = listOf("A) as if", "B) because", "C) although", "D) once", "E) unless\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) as if", "B) because", "C) although", "D) once", "E) unless"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2021 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Dil Bilgisi"
@@ -9645,12 +9668,14 @@ object QuestionDataProvider {
             category = "Dil Bilgisi"
         )
     )
+}
 
-    private val chunk12 = listOf(
+object QuestionChunk12 {
+    val list = listOf(
         Question(
             id = 1201,
             questionText = "(2021 İlkbahar / Soru 23)\n",
-            options = listOf("A) at the expense of", "B) as opposed to", "C) on account of", "D) except for", "E) in comparison to\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) at the expense of", "B) as opposed to", "C) on account of", "D) except for", "E) in comparison to"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2021 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Dil Bilgisi"
@@ -9690,7 +9715,7 @@ object QuestionDataProvider {
         Question(
             id = 1206,
             questionText = "(2021 İlkbahar / Soru 28)\nWhile chronic stress can bring on significant mental\nhealth issues along with other problems, ----.",
-            options = listOf("A) stress can be prevented from becoming a problem in\nthe first place by following a healthy diet", "B) employees should be trained in stress management\nbefore they experience stress-related problems in the\nworkplace", "C) work-related stress often leads to depression or\nanxiety, causing a high rate of loss in employee\nproductivity", "D) short-term stress, such as working to meet an\nimminent deadline, can be beneficial", "E) stress may trigger headaches, digestive disorders and\ncardiovascular disease\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) stress can be prevented from becoming a problem in\nthe first place by following a healthy diet", "B) employees should be trained in stress management\nbefore they experience stress-related problems in the\nworkplace", "C) work-related stress often leads to depression or\nanxiety, causing a high rate of loss in employee\nproductivity", "D) short-term stress, such as working to meet an\nimminent deadline, can be beneficial", "E) stress may trigger headaches, digestive disorders and\ncardiovascular disease"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2021 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Bağlaçlar"
@@ -9722,7 +9747,7 @@ object QuestionDataProvider {
         Question(
             id = 1210,
             questionText = "(2021 İlkbahar / Soru 32)\nVisiting buildings gives you the best chance to\nexperience architecture in relation to the world of\nlight, sound, setting, and people, ----.",
-            options = listOf("A) though visits to buildings are enjoyable and provide a\nchance to see how architecture changes the real world", "B) but to understand the underlying architecture of\nbuildings you need to study them through drawing", "C) as many books on architecture and the history of\narchitecture are rich in various kinds of visuals", "D) and there is no readily-available prescription on how to\nbecome a good architect", "E) even so, architecture is about changing the world,\nmaking it better, more comfortable, and more beautiful\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) though visits to buildings are enjoyable and provide a\nchance to see how architecture changes the real world", "B) but to understand the underlying architecture of\nbuildings you need to study them through drawing", "C) as many books on architecture and the history of\narchitecture are rich in various kinds of visuals", "D) and there is no readily-available prescription on how to\nbecome a good architect", "E) even so, architecture is about changing the world,\nmaking it better, more comfortable, and more beautiful"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2021 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Bağlaçlar"
@@ -9754,7 +9779,7 @@ object QuestionDataProvider {
         Question(
             id = 1214,
             questionText = "(2021 İlkbahar / Soru 36)\nEsperanto, an artificial language invented in 1887\nfor international use, is considered by many to be\none of the easiest languages to master ----.",
-            options = listOf("A) but UNESCO has affirmed the value of establishing\nit as a universal second language", "B) although the Polish linguist Ludwik L. Zamenhof hoped\nto bring all of the peoples of the Earth together by\ninventing such a language", "C) in order that the number of speakers can reach\nseveral million in varying levels of proficiency", "D) because it is known for its simplicity, beauty and\nflexibility as a medium for translation", "E) even if Esperantists believe in the positive outcomes in\nlearning and teaching this language\n\n=== COLUMN_SEPARATOR ===\n\n37-42: For these questions, choose the most\naccurate Turkish translation of the sentences in"),
+            options = listOf("A) but UNESCO has affirmed the value of establishing\nit as a universal second language", "B) although the Polish linguist Ludwik L. Zamenhof hoped\nto bring all of the peoples of the Earth together by\ninventing such a language", "C) in order that the number of speakers can reach\nseveral million in varying levels of proficiency", "D) because it is known for its simplicity, beauty and\nflexibility as a medium for translation", "E) even if Esperantists believe in the positive outcomes in\nlearning and teaching this language\n\n\n\n37-42: For these questions, choose the most\naccurate Turkish translation of the sentences in"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2021 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Bağlaçlar"
@@ -9770,7 +9795,7 @@ object QuestionDataProvider {
         Question(
             id = 1216,
             questionText = "(2021 İlkbahar / Soru 38)\nBeing overweight after turning 60 may increase the\nrisk of Alzheimer’s disease, but by losing weight,\npeople may be able to hinder ageing of their brains\nand reduce the likelihood of memory problems later\non.",
-            options = listOf("A) Aşırı kilolu olmak, 60 yaşına gelindiğinde Alzheimer\nhastalığı riskini artırabilmektedir fakat kilo veren\ninsanlar beyinlerinin yaşlanmasını engelleyerek\nsonrasında yaşanacak olan hafıza problemleri\nolasılığını azaltabilirler.", "B) 60 yaşından sonra aşırı kilolu olmak, Alzheimer\nhastalığı riskini artırabilir ancak kilo vererek\nbeyinlerinin yaşlanmasının önüne geçebilen insanlar\nsonrasında yaşanacak olan hafıza problemleri\nolasılığını azaltabilirler.", "C) 60 yaşına geldikten sonra aşırı kilolu olanlar,\nAlzheimer hastalığı riskini artırabilmektedir fakat\ninsanlar kilo vererek beynin yaşlanmasının önüne\ngeçtiğinde sonrasında yaşanacak olan hafıza\nproblemleri olasılığını azaltabilirler.", "D) 60 yaşına geldikten sonra aşırı kilolu olmak, Alzheimer\nhastalığı riskini artırabilir ancak insanlar kilo vererek\nbeyinlerinin yaşlanmasının önüne geçebilir ve\nsonrasında hafıza problemleri yaşama olasılığını\nazaltabilirler.", "E) 60 yaş sonrası kilolu olmak, Alzheimer hastalığı riskini\nartırsa da insanlar beyinlerinin yaşlanmasını\nengellemek ve sonrasında hafıza problemleri yaşama\nolasılığını azaltmak için kilo verebilirler.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Aşırı kilolu olmak, 60 yaşına gelindiğinde Alzheimer\nhastalığı riskini artırabilmektedir fakat kilo veren\ninsanlar beyinlerinin yaşlanmasını engelleyerek\nsonrasında yaşanacak olan hafıza problemleri\nolasılığını azaltabilirler.", "B) 60 yaşından sonra aşırı kilolu olmak, Alzheimer\nhastalığı riskini artırabilir ancak kilo vererek\nbeyinlerinin yaşlanmasının önüne geçebilen insanlar\nsonrasında yaşanacak olan hafıza problemleri\nolasılığını azaltabilirler.", "C) 60 yaşına geldikten sonra aşırı kilolu olanlar,\nAlzheimer hastalığı riskini artırabilmektedir fakat\ninsanlar kilo vererek beynin yaşlanmasının önüne\ngeçtiğinde sonrasında yaşanacak olan hafıza\nproblemleri olasılığını azaltabilirler.", "D) 60 yaşına geldikten sonra aşırı kilolu olmak, Alzheimer\nhastalığı riskini artırabilir ancak insanlar kilo vererek\nbeyinlerinin yaşlanmasının önüne geçebilir ve\nsonrasında hafıza problemleri yaşama olasılığını\nazaltabilirler.", "E) 60 yaş sonrası kilolu olmak, Alzheimer hastalığı riskini\nartırsa da insanlar beyinlerinin yaşlanmasını\nengellemek ve sonrasında hafıza problemleri yaşama\nolasılığını azaltmak için kilo verebilirler."),
             correctOptionIndex = 3,
             explanation = "Bu soru 2021 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Çeviri"
@@ -9786,7 +9811,7 @@ object QuestionDataProvider {
         Question(
             id = 1218,
             questionText = "(2021 İlkbahar / Soru 40)\nBirinci Dünya Savaşı’ndan sonra Avrupa otomobil\nendüstrisi yavaş yavaş toparlanmaya başladı ancak\nnispeten düşük gelirler ve yüksek işletme maliyetleri\ngerçek anlamda bir seri otomobil üretiminin ortaya\nçıkmasını engelledi.",
-            options = listOf("A) It was comparatively low incomes and high operating\ncosts that hindered the emergence of a real mass\nproduction of automobiles although the European\nautomobile industry started to make gradual progress\nafter World War I.", "B) Following World War I, the European automobile\nindustry started to improve gradually; however, the\nfactors that hindered the emergence of a real mass\nproduction of automobiles were relatively low incomes\nand high operating costs.", "C) Whereas the European automobile industry began to\nrecover slowly following World War I, the emergence\nof a real mass production of automobiles was delayed\nbecause of relatively low incomes and high operating\ncosts.", "D) The European automobile industry started to recover\nslowly after World War I, but relatively low incomes\nand high operating costs prevented the emergence of\na real mass production of automobiles.", "E) Having started to improve gradually after World War I,\nthe European automobile industry prevented the\nemergence of a real mass production of automobiles\ndue to comparatively low incomes and high operating\ncosts.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) It was comparatively low incomes and high operating\ncosts that hindered the emergence of a real mass\nproduction of automobiles although the European\nautomobile industry started to make gradual progress\nafter World War I.", "B) Following World War I, the European automobile\nindustry started to improve gradually; however, the\nfactors that hindered the emergence of a real mass\nproduction of automobiles were relatively low incomes\nand high operating costs.", "C) Whereas the European automobile industry began to\nrecover slowly following World War I, the emergence\nof a real mass production of automobiles was delayed\nbecause of relatively low incomes and high operating\ncosts.", "D) The European automobile industry started to recover\nslowly after World War I, but relatively low incomes\nand high operating costs prevented the emergence of\na real mass production of automobiles.", "E) Having started to improve gradually after World War I,\nthe European automobile industry prevented the\nemergence of a real mass production of automobiles\ndue to comparatively low incomes and high operating\ncosts."),
             correctOptionIndex = 3,
             explanation = "Bu soru 2021 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Çeviri"
@@ -9802,7 +9827,7 @@ object QuestionDataProvider {
         Question(
             id = 1220,
             questionText = "(2021 İlkbahar / Soru 42)\nİki farklı bakteri türü, insan vücudunun belirli\nbölgelerinde karşılaştıklarında antibiyotiklere karşı\ngösterdikleri alışılagelmiş tepkilerini bırakarak\nbeklenmedik bir şekilde davranabilirler.",
-            options = listOf("A) Two different types of bacteria are likely to act\nunpredictably when they meet in certain parts of the\nhuman body and abandon their usual responses to\nantibiotics.", "B) When two different types of bacteria meet in certain\nparts of the human body, they can act unexpectedly,\nabandoning their typical responses to antibiotics.", "C) When two different types of bacteria meet in certain\nparts of the human body, abandoning their typical\nresponses to antibiotics can make them act\nunexpectedly.", "D) The human body has certain parts where two different\ntypes of bacteria may act unpredictably when they\nmeet and abandon their typical responses to\nantibiotics.", "E) Meeting in certain parts of the human body, two\ndifferent types of bacteria can act unexpectedly if they\nhave abandoned their normal responses to antibiotics.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Two different types of bacteria are likely to act\nunpredictably when they meet in certain parts of the\nhuman body and abandon their usual responses to\nantibiotics.", "B) When two different types of bacteria meet in certain\nparts of the human body, they can act unexpectedly,\nabandoning their typical responses to antibiotics.", "C) When two different types of bacteria meet in certain\nparts of the human body, abandoning their typical\nresponses to antibiotics can make them act\nunexpectedly.", "D) The human body has certain parts where two different\ntypes of bacteria may act unpredictably when they\nmeet and abandon their typical responses to\nantibiotics.", "E) Meeting in certain parts of the human body, two\ndifferent types of bacteria can act unexpectedly if they\nhave abandoned their normal responses to antibiotics."),
             correctOptionIndex = 1,
             explanation = "Bu soru 2021 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Çeviri"
@@ -9810,7 +9835,7 @@ object QuestionDataProvider {
         Question(
             id = 1221,
             questionText = "(2021 İlkbahar / Soru 43)\nAccording to the passage, the issue of animal\nlanguage is significant because ----.",
-            options = listOf("A) it has just started to emerge in various debates", "B) it can determine the self-image of human beings as a\nspecies", "C) it has been proven that animals can understand\nhuman language", "D) human beings’ self-image is strengthened when\nanimals understand their language", "E) there is strong evidence against animals’ ability to\nhave thoughts\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) it has just started to emerge in various debates", "B) it can determine the self-image of human beings as a\nspecies", "C) it has been proven that animals can understand\nhuman language", "D) human beings’ self-image is strengthened when\nanimals understand their language", "E) there is strong evidence against animals’ ability to\nhave thoughts"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2021 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Paragraf"
@@ -9842,7 +9867,7 @@ object QuestionDataProvider {
         Question(
             id = 1225,
             questionText = "(2021 İlkbahar / Soru 47)\nWhich of the following is not mentioned as a risk in\nbusiness activity?",
-            options = listOf("A) Not having enough customers to meet the costs of\noperating your business", "B) A competitor offering a better version of your product", "C) Not being able to get a bank loan to cover your\nstart-up costs", "D) Exchange-rate risk in overseas trade", "E) Challenge of loan repayment if interest rates increase\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Not having enough customers to meet the costs of\noperating your business", "B) A competitor offering a better version of your product", "C) Not being able to get a bank loan to cover your\nstart-up costs", "D) Exchange-rate risk in overseas trade", "E) Challenge of loan repayment if interest rates increase"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2021 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -9874,7 +9899,7 @@ object QuestionDataProvider {
         Question(
             id = 1229,
             questionText = "(2021 İlkbahar / Soru 51)\nIt is stated in the passage that contrary to earlier\nresearch, Neanderthals ----.",
-            options = listOf("A) were capable of using their finger and thumb to grasp\nthings", "B) expended considerable effort to be able to perform a\nprecision grip", "C) learnt to control their hand muscles through activities\nlike making jewellery with sea shells", "D) were clumsy, and thus incompetent in accomplishing\ncomplicated tasks", "E) used power grips even for tasks that required delicacy\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) were capable of using their finger and thumb to grasp\nthings", "B) expended considerable effort to be able to perform a\nprecision grip", "C) learnt to control their hand muscles through activities\nlike making jewellery with sea shells", "D) were clumsy, and thus incompetent in accomplishing\ncomplicated tasks", "E) used power grips even for tasks that required delicacy"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2021 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Paragraf"
@@ -9906,7 +9931,7 @@ object QuestionDataProvider {
         Question(
             id = 1233,
             questionText = "(2021 İlkbahar / Soru 55)\nIt is pointed out in the passage that according to the\nstatistics ----.",
-            options = listOf("A) air travel is more popular than ever, especially in the\nUSA", "B) the number of people afraid of air travel is increasing", "C) transportation is safer by plane than by car", "D) the number of deaths in air travel is increasing", "E) people die of the fear of flights, not of air crashes\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) air travel is more popular than ever, especially in the\nUSA", "B) the number of people afraid of air travel is increasing", "C) transportation is safer by plane than by car", "D) the number of deaths in air travel is increasing", "E) people die of the fear of flights, not of air crashes"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2021 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -9938,7 +9963,7 @@ object QuestionDataProvider {
         Question(
             id = 1237,
             questionText = "(2021 İlkbahar / Soru 59)\nAccording to the passage, in order for memories to\nbe deeply rooted, they should be ----.",
-            options = listOf("A) paired with a physical stimulus", "B) accompanied by stimulating feelings", "C) linked to the ones that are initially strong", "D) broadly categorised in the brain before they are lost", "E) replicated immediately after they are created\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) paired with a physical stimulus", "B) accompanied by stimulating feelings", "C) linked to the ones that are initially strong", "D) broadly categorised in the brain before they are lost", "E) replicated immediately after they are created"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2021 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Paragraf"
@@ -9970,7 +9995,7 @@ object QuestionDataProvider {
         Question(
             id = 1241,
             questionText = "(2021 İlkbahar / Soru 63)\nDaniel:\n In my Humanities course this week, we’re learning\nabout common American hobbies. One such\nhobby is coin collecting.\nBeth:\n That sounds strange and uncommon. Why would\nsomeone have a hobby such as coin collecting?\nDaniel:\n ----\nBeth:\n Well, it’s true that coins represent changes in\ntrade as well as in international relations.\nHowever, it still seems like a strange hobby to\nme.",
-            options = listOf("A) I’m not sure why someone would have a hobby like\nthis. Perhaps people with large collections feel more\npowerful than those without.", "B) Some would argue that coin collecting is related to\nhistory and economics. Therefore, this hobby covers a\nwide range of interests.", "C) My father grew up in America and he collected coins\nbecause he wanted to learn about metals.", "D) The reasons behind our hobbies are sometimes\nunexplainable. I do know that people appreciate\nmoney, so that could be why.", "E) Our professor asked us that same question. I’m going\nto think about possible reasons this week.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) I’m not sure why someone would have a hobby like\nthis. Perhaps people with large collections feel more\npowerful than those without.", "B) Some would argue that coin collecting is related to\nhistory and economics. Therefore, this hobby covers a\nwide range of interests.", "C) My father grew up in America and he collected coins\nbecause he wanted to learn about metals.", "D) The reasons behind our hobbies are sometimes\nunexplainable. I do know that people appreciate\nmoney, so that could be why.", "E) Our professor asked us that same question. I’m going\nto think about possible reasons this week."),
             correctOptionIndex = 1,
             explanation = "Bu soru 2021 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Diyalog"
@@ -9986,7 +10011,7 @@ object QuestionDataProvider {
         Question(
             id = 1243,
             questionText = "(2021 İlkbahar / Soru 65)\nHannah:\n The weather has finally warmed up! Time to bring\nout the spring wardrobe!\nMichael:\n You’re right, but for many of us that means the\nonset of allergies with sniffles and watery eyes.\nHannah:\n ----\nMichael:\n Actually a healthy diet is said to be the key. What\nwe eat has the potential to prevent allergic\nreactions, like sneezing, from happening in the\nfirst place.\nHannah:\n That’s great! Then everybody can find a way to\nenjoy outdoors in spring.",
-            options = listOf("A) What other symptoms do people have when their\nspring allergy starts?", "B) Which allergens should people watch out for during\nspring time?", "C) Why don’t people prefer to stay indoors to deal with\nspring allergies?", "D) How can people avoid allergies especially throughout\nspring?", "E) How long are allergic people allowed to stay out when\nit is spring?\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) What other symptoms do people have when their\nspring allergy starts?", "B) Which allergens should people watch out for during\nspring time?", "C) Why don’t people prefer to stay indoors to deal with\nspring allergies?", "D) How can people avoid allergies especially throughout\nspring?", "E) How long are allergic people allowed to stay out when\nit is spring?"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2021 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Diyalog"
@@ -10002,7 +10027,7 @@ object QuestionDataProvider {
         Question(
             id = 1245,
             questionText = "(2021 İlkbahar / Soru 67)\nStudent:\n I think for my final presentation I'm going to focus\non culture and the characteristics of cultured\npeople.\nTeacher:\n ----\nStudent:\n Well I like the topic because how people interpret\nit may vary greatly. To some, being cultured\nmeans being cultured in arts while for others it\nonly refers to a good education.\nTeacher:\n I see your point now. Then, you will also need to\naddress how complementary these two views are\nto each other.",
-            options = listOf("A) Wouldn’t it be better if you also mention the\nmainstream culture in different societies to illustrate\nthe common features of cultured people?", "B) Why do you consider it as an issue worth discussing in\ndetail? Isn’t it clear what we expect to find in\nthese people?", "C) Are you also interested in the definition of cultural\nevents since it may provide clues about who to\ninclude as cultured or not?", "D) Do you find cultured people who attend talks,\nexhibitions and music concerts more intriguing than\nordinary ones?", "E) What about also comparing the description of\ncultured people with those of intellectuals, artists, and\nliterary figures?\n\n=== COLUMN_SEPARATOR ===\n\n68-71: For these questions, choose the best\nrephrased form of the given sentence."),
+            options = listOf("A) Wouldn’t it be better if you also mention the\nmainstream culture in different societies to illustrate\nthe common features of cultured people?", "B) Why do you consider it as an issue worth discussing in\ndetail? Isn’t it clear what we expect to find in\nthese people?", "C) Are you also interested in the definition of cultural\nevents since it may provide clues about who to\ninclude as cultured or not?", "D) Do you find cultured people who attend talks,\nexhibitions and music concerts more intriguing than\nordinary ones?", "E) What about also comparing the description of\ncultured people with those of intellectuals, artists, and\nliterary figures?\n\n\n\n68-71: For these questions, choose the best\nrephrased form of the given sentence."),
             correctOptionIndex = 1,
             explanation = "Bu soru 2021 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Diyalog"
@@ -10026,7 +10051,7 @@ object QuestionDataProvider {
         Question(
             id = 1248,
             questionText = "(2021 İlkbahar / Soru 70)\nCommunicative development in the first year of\nall infants occurs in the same way, regardless of the\ncomplexity of the language being acquired.",
-            options = listOf("A) While communicative development in the first year of\nall infants takes place in a similar way, the complexity\nof the language being acquired may impact this\ndevelopment.", "B) The complexity of an infant’s language determines\nwhether he or she can learn to communicate more\neasily than others in his or her first year.", "C) Although some infants have a language that is more\ncomplex than those of others, their communicative\ndevelopment in their first year could occur more\nquickly.", "D) No matter how complicated their language is, every\ninfant goes through the same process of\ncommunicative development in their first year.", "E) The complexity of the language being acquired has\nnothing to do with the communicative development in\nthe first year of an infant, though it seems to do so.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) While communicative development in the first year of\nall infants takes place in a similar way, the complexity\nof the language being acquired may impact this\ndevelopment.", "B) The complexity of an infant’s language determines\nwhether he or she can learn to communicate more\neasily than others in his or her first year.", "C) Although some infants have a language that is more\ncomplex than those of others, their communicative\ndevelopment in their first year could occur more\nquickly.", "D) No matter how complicated their language is, every\ninfant goes through the same process of\ncommunicative development in their first year.", "E) The complexity of the language being acquired has\nnothing to do with the communicative development in\nthe first year of an infant, though it seems to do so."),
             correctOptionIndex = 3,
             explanation = "Bu soru 2021 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
             category = "Dil Bilgisi"
@@ -10042,7 +10067,7 @@ object QuestionDataProvider {
         Question(
             id = 1250,
             questionText = "(2021 İlkbahar / Soru 72)\nSleep is a period of intense neurological activity,\nespecially when we have dreams. ---- Many\nresearchers think that dreams could be an\nunintended consequence of these and other\nunderlying neurological processes. Harvard\npsychiatrists propose that as brain circuits become\nactive during the night, they trigger sensations,\nemotions and memories, all of which are essentially\nrandom. But our meaning-making brains still\nassemble all of this underlying activity into a story,\noften a strange or illogical one.",
-            options = listOf("A) One of its main functions may be to allow the brain to\nconsolidate and organise our memories.", "B) Deciphering nocturnal symbols may be enjoyable, but\nin reality, it is much more complicated than it seems.", "C) Scientific theories are more sceptical than dream\ndictionaries about how much dreams actually reveal.", "D) Dreaming has recently been seen as something that\nopens a window to the working of the mind.", "E) Dream interpretations seem relevant to our lives\nbecause they apply equally well to almost everybody.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) One of its main functions may be to allow the brain to\nconsolidate and organise our memories.", "B) Deciphering nocturnal symbols may be enjoyable, but\nin reality, it is much more complicated than it seems.", "C) Scientific theories are more sceptical than dream\ndictionaries about how much dreams actually reveal.", "D) Dreaming has recently been seen as something that\nopens a window to the working of the mind.", "E) Dream interpretations seem relevant to our lives\nbecause they apply equally well to almost everybody."),
             correctOptionIndex = 0,
             explanation = "Bu soru 2021 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
             category = "Paragraf"
@@ -10058,7 +10083,7 @@ object QuestionDataProvider {
         Question(
             id = 1252,
             questionText = "(2021 İlkbahar / Soru 74)\nFor centuries, people have bred microorganisms for\nthe production of foods such as cheese and yogurt.\nGenetic technology takes this process a step further\nby manipulating specific genes for practical\napplications in research, medicine, and agriculture.\nThe manipulation of genes resulted in hundreds of\nnew products at the beginning of the 21st century.\n---- The tools used by scientists in this process\ninclude DNA-splitting enzymes and host organisms\nincluding a range of bacteria.",
-            options = listOf("A) Usually, one gene prevails over the other and is thus\ncalled the dominant gene that supresses the other.", "B) Currently there are a number of technologies that use\ngenetic engineering.", "C) Genes are individual segments of DNA within\nchromosomes and are known to affect all human\ntraits.", "D) Reproduction entails a copy of a gene from the father\nand a gene from the mother joining together.", "E) Genes from different species are often combined by\ninserting a gene from one organism into another.\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) Usually, one gene prevails over the other and is thus\ncalled the dominant gene that supresses the other.", "B) Currently there are a number of technologies that use\ngenetic engineering.", "C) Genes are individual segments of DNA within\nchromosomes and are known to affect all human\ntraits.", "D) Reproduction entails a copy of a gene from the father\nand a gene from the mother joining together.", "E) Genes from different species are often combined by\ninserting a gene from one organism into another."),
             correctOptionIndex = 4,
             explanation = "Bu soru 2021 İlkbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
             category = "Paragraf"
@@ -10082,7 +10107,7 @@ object QuestionDataProvider {
         Question(
             id = 1255,
             questionText = "(2021 İlkbahar / Soru 77)\n(I) Whale sharks, Rhincodon typus, are the biggest fish\non Earth, reaching up to 20 metres long and\nweighing up to 20 tonnes. (II) Despite their size, the\nslow-moving giants are not dangerous to humans.\n(III) Whale sharks tend to cluster at various coastal\nareas, drawn by seasonal increases in prey, including\nzooplankton blooms and fish spawning. (IV) Juveniles\nhave been known to play with divers. (V)But humans\nare a threat to them, with the species considered\nendangered as numbers decline from fishing, accidental\ncapture alongside other fish, and collisions with vessels.",
-            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V\n\n=== COLUMN_SEPARATOR ==="),
+            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2021 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
             category = "Paragraf"
@@ -10106,12 +10131,14 @@ object QuestionDataProvider {
         Question(
             id = 1258,
             questionText = "(2021 İlkbahar / Soru 80)\n(I)Crocodiles and alligators are the biggest living\nreptiles. (II)A crocodile is specialised at hunting in the\nwater.(III)Although they look rather like lizards, they are\nactually more closely related to birds, and to the giant\ndinosaurs that disappeared from the Earth about 66\nmillion years ago.(IV)These creatures lived alongside\nthe dinosaurs millions of years ago, and probably\npreyed on them using the same ambush tactics that\nmodern saltwater crocodiles use to kill buffalo.(V)They\nhave not changed much since then, because they have\nnot needed to ─ they have always been perfectly\nadapted for their way of life.",
-            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V\n\n=== COLUMN_SEPARATOR ===\n\nEND OF THE TEST."),
+            options = listOf("A) I", "B) II", "C) III", "D) IV", "E) V"),
             correctOptionIndex = 1,
             explanation = "Bu soru 2021 İlkbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
             category = "Paragraf"
         )
     )
+}
 
-    val questions = chunk0 + chunk1 + chunk2 + chunk3 + chunk4 + chunk5 + chunk6 + chunk7 + chunk8 + chunk9 + chunk10 + chunk11 + chunk12
+object QuestionDataProvider {
+    val questions = QuestionChunk0.list + QuestionChunk1.list + QuestionChunk2.list + QuestionChunk3.list + QuestionChunk4.list + QuestionChunk5.list + QuestionChunk6.list + QuestionChunk7.list + QuestionChunk8.list + QuestionChunk9.list + QuestionChunk10.list + QuestionChunk11.list + QuestionChunk12.list
 }
