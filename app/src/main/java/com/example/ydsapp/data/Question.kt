@@ -13,7 +13,7 @@ object QuestionDataProvider {
     val questions = listOf(
         Question(
             id = 1,
-            questionText = "(2013 Sonbahar / Soru 1)\nBu testte 80 soru vardır. 1. - 6.  sorularda, cümlede boş bırakılan yerlere uygun düşen sözcük ya da ifadeyi bulunuz. Parents should teach their children that being patient with someone does not necessarily mean they have to ---- their inappropriate behaviour.",
+            questionText = "(2013 Sonbahar / Soru 1)\nAÇIKLAMA 1. Bu soru kitapçığındaki test 80 sorudan oluşmaktadır. 2. Bu test için verilen cevaplama süresi 150 dakikadır (2.5 saat). 3. Bu kitapçıktaki testte yer alan her sorunun sadece bir doğru cevabı vardır. Bir soru için birden çok cevap yeri işaretlenmişse o soru yanlış cevaplanmış sayılacaktır. 4. İşaretlediğiniz bir cevabı değiştirmek istediğinizde, sil- me işlemini çok iyi yapmanız gerektiğini unutmayınız. 5. Bu sınavın değerlendirilmesi doğru cevap sayısı üzerinden yapılacak, yanlış cevaplar dikkate alın- mayacaktır. 6. Cevaplamaya istediğiniz sorudan başlayabilirsiniz. Bir soru ile ilgili cevabınızı, cevap kâğıdında o soru için ay- rılmış olan yere işaretlemeyi unutmayınız. 7. Sınavda uyulacak diğer kurallar bu kitapçığın arka ka- pağında belirtilmiştir. ÖSYM Bu testte 80 soru vardır. 1. - 6.  sorularda, cümlede boş bırakılan yerlere uygun düşen sözcük ya da ifadeyi bulunuz. Parents should teach their children that being patient with someone does not necessarily mean they have to ---- their inappropriate behaviour.",
             options = listOf("A) do away with", "B) look down on", "C) put up with", "D) get up to", "E) come out of"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2013 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
@@ -141,7 +141,7 @@ object QuestionDataProvider {
         ),
         Question(
             id = 17,
-            questionText = "(2013 İlkbahar / Soru 1)\nBu testte 80 soru vardır. 1. - 6.  sorularda, cümlede boş bırakılan yerlere uygun düşen sözcük ya da ifadeyi bulunuz. UNICEF is deeply committed to creating a world in which all children, regardless of their gender or socioeconomic background, have ---- to free, compulsory and quality education.",
+            questionText = "(2013 İlkbahar / Soru 1)\nAÇIKLAMA 1. Bu soru kitapçığındaki test 80 sorudan oluşmaktadır. 2. Bu test için verilen cevaplama süresi 150 dakikadır (2.5 saat). 3. Bu kitapçıktaki testte yer alan her sorunun sadece bir doğru cevabı vardır. Bir soru için birden çok cevap yeri işaretlenmişse o soru yanlış cevaplanmış sayılacaktır. 4. İşaretlediğiniz bir cevabı değiştirmek istediğinizde, sil- me işlemini çok iyi yapmanız gerektiğini unutmayınız. 5. Bu sınavın değerlendirilmesi doğru cevap sayısı üzerinden yapılacak, yanlış cevaplar dikkate alın- mayacaktır. 6. Cevaplamaya istediğiniz sorudan başlayabilirsiniz. Bir soru ile ilgili cevabınızı, cevap kâğıdında o soru için ay- rılmış olan yere işaretlemeyi unutmayınız. 7. Sınavda uyulacak diğer kurallar bu kitapçığın arka ka- pağında belirtilmiştir. Bu testte 80 soru vardır. 1. - 6.  sorularda, cümlede boş bırakılan yerlere uygun düşen sözcük ya da ifadeyi bulunuz. UNICEF is deeply committed to creating a world in which all children, regardless of their gender or socioeconomic background, have ---- to free, compulsory and quality education.",
             options = listOf("A) A) B) C)", "B) E)D)", "C) access", "D) dedication", "E) insight"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2013 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
@@ -269,7 +269,7 @@ object QuestionDataProvider {
         ),
         Question(
             id = 33,
-            questionText = "(2014 Sonbahar / Soru 1)\nBu testte 80 soru vardır. The story of creating power begins with the ---- of the most obvious natural resources around us – water and wind.",
+            questionText = "(2014 Sonbahar / Soru 1)\nAÇIKLAMA 1. Bu soru kitapçığındaki test 80 sorudan oluşmaktadır. 2. Bu test için verilen cevaplama süresi 150 dakikadır (2,5 saat). 3. Bu kitapçıktaki testte yer alan her sorunun sadece bir doğru cevabı vardır. Bir soru için birden çok cevap yeri işaretlenmişse o soru yanlış cevaplanmış sayılacaktır. 4. İşaretlediğiniz bir cevabı değiştirmek istediğinizde, sil- me işlemini çok iyi yapmanız gerektiğini unutmayınız. 5. Bu sınavın değerlendirilmesi doğru cevap sayısı üzerinden yapılacak, yanlış cevaplar dikkate alın- mayacaktır. 6. Cevaplamaya istediğiniz sorudan başlayabilirsiniz. Bir soru ile ilgili cevabınızı, cevap kâğıdında o soru için ay- rılmış olan yere işaretlemeyi unutmayınız. 7. Sınavda uyulacak diğer kurallar bu kitapçığın arka ka- pağında belirtilmiştir. ÖSYM Bu testte 80 soru vardır. The story of creating power begins with the ---- of the most obvious natural resources around us – water and wind.",
             options = listOf("A) termination", "B) estimation", "C) perception", "D) exploitation", "E) elaboration"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2014 Sonbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
@@ -397,7 +397,7 @@ object QuestionDataProvider {
         ),
         Question(
             id = 49,
-            questionText = "(2014 İlkbahar / Soru 1)\nBu testte 80 soru vardır. 1. - 6.  sorularda, cümlede boş bırakılan yerlere uygun düşen sözcük veya ifadeyi bulunuz. Alzheimer’s disease is the major form of mental impairment in older people and is characterized by the ---- of brain tissue over an extended period of time.",
+            questionText = "(2014 İlkbahar / Soru 1)\nAÇIKLAMA 1. Bu soru kitapçığındaki test 80 sorudan oluşmaktadır. 2. Bu test için verilen cevaplama süresi 150 dakikadır (2,5 saat). 3. Bu kitapçıktaki testte yer alan her sorunun sadece bir doğru cevabı vardır. Bir soru için birden çok cevap yeri işaretlenmişse o soru yanlış cevaplanmış sayılacaktır. 4. İşaretlediğiniz bir cevabı değiştirmek istediğinizde, sil- me işlemini çok iyi yapmanız gerektiğini unutmayınız. 5. Bu sınavın değerlendirilmesi doğru cevap sayısı üzerinden yapılacak, yanlış cevaplar dikkate alın- mayacaktır. 6. Cevaplamaya istediğiniz sorudan başlayabilirsiniz. Bir soru ile ilgili cevabınızı, cevap kâğıdında o soru için ay- rılmış olan yere işaretlemeyi unutmayınız. 7. Sınavda uyulacak diğer kurallar bu kitapçığın arka ka- pağında belirtilmiştir. ÖSYM Bu testte 80 soru vardır. 1. - 6.  sorularda, cümlede boş bırakılan yerlere uygun düşen sözcük veya ifadeyi bulunuz. Alzheimer’s disease is the major form of mental impairment in older people and is characterized by the ---- of brain tissue over an extended period of time.",
             options = listOf("A) clarification", "B) examination", "C) deterioration", "D) realisation", "E) prevention"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2014 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
@@ -525,7 +525,7 @@ object QuestionDataProvider {
         ),
         Question(
             id = 65,
-            questionText = "(2015 Sonbahar / Soru 1)\nBu testte 80 soru vardır. The total amount of military ---- by all the countries of the world in 2010 was $1.63 trillion, which is equivalent to $236 for every person on the planet.",
+            questionText = "(2015 Sonbahar / Soru 1)\nÖSYM Bu testte 80 soru vardır. The total amount of military ---- by all the countries of the world in 2010 was $1.63 trillion, which is equivalent to $236 for every person on the planet.",
             options = listOf("A) diversity", "B) requirement", "C) expenditure", "D) dimension", "E) influence"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2015 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
@@ -653,7 +653,7 @@ object QuestionDataProvider {
         ),
         Question(
             id = 81,
-            questionText = "(2015 İlkbahar / Soru 1)\nBu testte 80 soru vardır. For years, information systems experts have faced the ---- of convincing business managers of the value they provide to the organizations.",
+            questionText = "(2015 İlkbahar / Soru 1)\nAÇIKLAMA 1. Bu soru kitapçığındaki test 80 sorudan oluşmaktadır. 2. Bu test için verilen toplam cevaplama süresi 150 dakikadır (2,5 saat). 3. Testteki her sorunun sadece bir doğru cevabı vardır. Bir soru için birden çok cevap yeri işaretlenmişse o soru yanlış cevaplanmış sayılacaktır. 4. İşaretlediğiniz bir cevabı değiştirmek istediğinizde, sil- me işlemini çok iyi yapmanız gerektiğini unutmayınız. 5. Bu sınavın değerlendirilmesi doğru cevap sayısı üzerinden yapılacak, yanlış cevaplar dikkate alın- mayacaktır. 6. Cevaplamaya istediğiniz sorudan başlayabilirsiniz. Bir soru ile ilgili cevabınızı, cevap kâğıdında o soru için ay- rılmış olan yere işaretlemeyi unutmayınız. 7. Sınavda uyulacak diğer kurallar bu kitapçığın arka ka- pağında belirtilmiştir. ÖSYM Bu testte 80 soru vardır. For years, information systems experts have faced the ---- of convincing business managers of the value they provide to the organizations.",
             options = listOf("A) challenge", "B) appreciation", "C) consciousness", "D) assurance", "E) designation"),
             correctOptionIndex = 0,
             explanation = "Bu soru 2015 İlkbahar YDS sınavında çıkmıştır. Doğru cevap A seçeneğidir.",
@@ -781,7 +781,7 @@ object QuestionDataProvider {
         ),
         Question(
             id = 97,
-            questionText = "(2016 Sonbahar / Soru 1)\nBu tesāe 80 soru vardır. There is new ---- that dinosaurs were warm-blooded like birds and mammals rather than cold-blooded like reptiles.",
+            questionText = "(2016 Sonbahar / Soru 1)\nÖSYM Bu tesāe 80 soru vardır. There is new ---- that dinosaurs were warm-blooded like birds and mammals rather than cold-blooded like reptiles.",
             options = listOf("A) compulsion", "B) frustration", "C) evidence", "D) significance", "E) fulfillment"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2016 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
@@ -909,7 +909,7 @@ object QuestionDataProvider {
         ),
         Question(
             id = 113,
-            questionText = "(2016 İlkbahar / Soru 1)\nBu tes e 80 soru vardır. As we learn more about the neural mechanisms of intelligence, ---- for enhancing intelligence become more likely.",
+            questionText = "(2016 İlkbahar / Soru 1)\nÖSYM Bu tes e 80 soru vardır. As we learn more about the neural mechanisms of intelligence, ---- for enhancing intelligence become more likely.",
             options = listOf("A) precautions", "B) substitutions", "C) necessities", "D) prospects", "E) permissions"),
             correctOptionIndex = 3,
             explanation = "Bu soru 2016 İlkbahar YDS sınavında çıkmıştır. Doğru cevap D seçeneğidir.",
@@ -1037,7 +1037,7 @@ object QuestionDataProvider {
         ),
         Question(
             id = 129,
-            questionText = "(2017 Sonbahar / Soru 1)\nSome ethnic minority groups of students within the US, such as African Americans and Hispanic Americans, achieve below the national average of all students; however, one ---- is the high educational achievements demonstrated by Asian American students.",
+            questionText = "(2017 Sonbahar / Soru 1)\nÖSYM Some ethnic minority groups of students within the US, such as African Americans and Hispanic Americans, achieve below the national average of all students; however, one ---- is the high educational achievements demonstrated by Asian American students.",
             options = listOf("A) aspiration", "B) defect", "C) exception", "D) influence", "E) complaint"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2017 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
@@ -1165,7 +1165,7 @@ object QuestionDataProvider {
         ),
         Question(
             id = 145,
-            questionText = "(2017 İlkbahar / Soru 1)\nThe ageing of population, also known as 'demographic ageing', is a term used to describe ---- in the age distribution of a population from the young towards people of older ages.",
+            questionText = "(2017 İlkbahar / Soru 1)\nÖSYM The ageing of population, also known as 'demographic ageing', is a term used to describe ---- in the age distribution of a population from the young towards people of older ages.",
             options = listOf("A) opportunities", "B) regulations", "C) shifts", "D) assumptions", "E) conflicts"),
             correctOptionIndex = 2,
             explanation = "Bu soru 2017 İlkbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
@@ -1381,6 +1381,46 @@ object QuestionDataProvider {
         ),
         Question(
             id = 172,
+            questionText = "(2018 Sonbahar / Soru 12)\nMost cheesemakers believe that the brilliant nuances of flavour found in raw milk, with its naturally present ‘good’ bacteria, simply cannot be duplicated in a pasteurised milk cheese ---- some well-respected cheeses, including British Stilton, are made only from pasteurised milk.",
+            options = listOf("A) now that", "B) after", "C) although", "D) because", "E) only if"),
+            correctOptionIndex = 2,
+            explanation = "Bu soru 2018 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
+            category = "Bağlaçlar"
+        ),
+        Question(
+            id = 173,
+            questionText = "(2018 Sonbahar / Soru 13)\nSurprisingly, the symbol for zero emerged later than the concepts for other numbers, and ---- the Babylonians used a symbol for zero, it was merely a placeholder and not used for computational purposes.",
+            options = listOf("A) just as", "B) as if", "C) in case", "D) because", "E) even though"),
+            correctOptionIndex = 4,
+            explanation = "Bu soru 2018 Sonbahar YDS sınavında çıkmıştır. Doğru cevap E seçeneğidir.",
+            category = "Bağlaçlar"
+        ),
+        Question(
+            id = 174,
+            questionText = "(2018 Sonbahar / Soru 14)\nStudies have found that the effects of a cup of coffee or a glass of cola are noticeable after just 10 minutes ---- the peak caffeine concentration in the blood occurs after 45 minutes.",
+            options = listOf("A) since", "B) but", "C) provided that", "D) as long as", "E) unless"),
+            correctOptionIndex = 1,
+            explanation = "Bu soru 2018 Sonbahar YDS sınavında çıkmıştır. Doğru cevap B seçeneğidir.",
+            category = "Bağlaçlar"
+        ),
+        Question(
+            id = 175,
+            questionText = "(2018 Sonbahar / Soru 15)\nAnimals are hunted by humans ---- for their meat ---- for parts of their bodies that are used to create medicines, clothes, and jewellery.",
+            options = listOf("A) neither / nor", "B) such / that", "C) not only / but also", "D) the more / the more", "E) as / as"),
+            correctOptionIndex = 2,
+            explanation = "Bu soru 2018 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
+            category = "Bağlaçlar"
+        ),
+        Question(
+            id = 176,
+            questionText = "(2018 Sonbahar / Soru 16)\n---- its notoriety as a naval weapon, the first modern torpedo was developed in landlocked Austria, or rather in what was then the Austrian Empire stretching down to the Adriatic.",
+            options = listOf("A) Along with", "B) In terms of", "C) Despite", "D) Due to", "E) Instead of"),
+            correctOptionIndex = 2,
+            explanation = "Bu soru 2018 Sonbahar YDS sınavında çıkmıştır. Doğru cevap C seçeneğidir.",
+            category = "Bağlaçlar"
+        ),
+        Question(
+            id = 177,
             questionText = "(2018 İlkbahar / Soru 1)\nGender studies is a multifaceted field of inquiry into social structures and social relations that has important ---- for the study of violence, peace and conflict.",
             options = listOf("A) challenges", "B) divisions", "C) implications", "D) drawbacks", "E) requirements"),
             correctOptionIndex = 2,
@@ -1388,7 +1428,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 173,
+            id = 178,
             questionText = "(2018 İlkbahar / Soru 2)\nNano-tech products can potentially save lives as well as give us hundreds of new conveniences from enhanced drug delivery and disease ---- to fabric that will not stain.",
             options = listOf("A) progression", "B) manipulation", "C) detection", "D) transmission", "E) inheritance"),
             correctOptionIndex = 2,
@@ -1396,7 +1436,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 174,
+            id = 179,
             questionText = "(2018 İlkbahar / Soru 3)\nThe thin, invisible layer of gas surrounding the Earth, which is called the atmosphere, shields us from the vacuum of space and protects us from ---- solar radiation.",
             options = listOf("A) delicate", "B) excessive", "C) vigorous", "D) elaborate", "E) swift"),
             correctOptionIndex = 1,
@@ -1404,7 +1444,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 175,
+            id = 180,
             questionText = "(2018 İlkbahar / Soru 4)\nArchitectural analysis is not only a ---- academic pursuit, done for its own sake, but it can be informative and entertaining as well.",
             options = listOf("A) mutually", "B) convincingly", "C) drastically", "D) purely", "E) deniably"),
             correctOptionIndex = 3,
@@ -1412,7 +1452,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 176,
+            id = 181,
             questionText = "(2018 İlkbahar / Soru 5)\nChildcare is a broad term that ---- services which protect the health, safety, and well-being of children who require custodial care by adults other than their own parents for a temporary period of time.",
             options = listOf("A) hinders", "B) encompasses", "C) creates", "D) eliminates", "E) suspends"),
             correctOptionIndex = 1,
@@ -1420,7 +1460,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 177,
+            id = 182,
             questionText = "(2018 İlkbahar / Soru 6)\nTaking a break, and distracting your mind for a while, not only gives you the spare time to be creative, but it can also give your brain the space it needs to ---- creative solutions to problems you have been struggling with.",
             options = listOf("A) make up for", "B) get away from", "C) fight back against", "D) look up to", "E) come up with"),
             correctOptionIndex = 4,
@@ -1428,7 +1468,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 178,
+            id = 183,
             questionText = "(2018 İlkbahar / Soru 7)\nA number of studies have concluded that a given level of carbon dioxide in the atmosphere ---- less warming than previously ----.",
             options = listOf("A) is producing / to think", "B) has produced / thinking", "C) produces / thought", "D) has been producing / having thought", "E) had produced / being thought"),
             correctOptionIndex = 2,
@@ -1436,7 +1476,7 @@ object QuestionDataProvider {
             category = "Dil Bilgisi"
         ),
         Question(
-            id = 179,
+            id = 184,
             questionText = "(2018 İlkbahar / Soru 8)\nAnyone who ---- unusual reactions to antihistamines (medicines that relieve or prevent the symptoms of some kinds of allergy) in the recent past ---- his or her physician know before taking the drugs again.",
             options = listOf("A) used to have / might let", "B) had had / must have let", "C) was having / could let", "D) has had / should let", "E) had / might have let"),
             correctOptionIndex = 3,
@@ -1444,7 +1484,7 @@ object QuestionDataProvider {
             category = "Dil Bilgisi"
         ),
         Question(
-            id = 180,
+            id = 185,
             questionText = "(2018 İlkbahar / Soru 9)\nBy 2.5 million years ago, when they began ---- stone tools, early humans had understood that they ---- the natural world to their own advantage.",
             options = listOf("A) to have made / had to alter", "B) to make / used to alter", "C) making / could alter", "D) having made / should have altered", "E) to have been making / must have altered"),
             correctOptionIndex = 2,
@@ -1452,7 +1492,7 @@ object QuestionDataProvider {
             category = "Dil Bilgisi"
         ),
         Question(
-            id = 181,
+            id = 186,
             questionText = "(2018 İlkbahar / Soru 10)\nDramatists and scriptwriters could place their characters ---- the centre of a terrifying human conflict, and may allow us to watch these characters suffer the pains of avoiding a collision ---- the conflict.",
             options = listOf("A) on / for", "B) over / in", "C) at / with", "D) to / about", "E) by / from"),
             correctOptionIndex = 2,
@@ -1460,7 +1500,7 @@ object QuestionDataProvider {
             category = "Edatlar"
         ),
         Question(
-            id = 182,
+            id = 187,
             questionText = "(2018 İlkbahar / Soru 11)\n---- the problems of obesity and disordered eating growing around the world, public health professionals have focused research efforts on identifying potential causes and treatments ---- these related problems. About / in",
             options = listOf("A) On / towards", "B) With / for", "C) Through / from", "D) Among / at", "E) A) B) C)"),
             correctOptionIndex = 2,
@@ -1468,7 +1508,7 @@ object QuestionDataProvider {
             category = "Edatlar"
         ),
         Question(
-            id = 183,
+            id = 188,
             questionText = "(2018 İlkbahar / Soru 12)\n---- there is no consensus among folklorists on how to define folklore nor how to explain the issues of the meaning and the function of it, folklore generally refers to cultural expressions, such as narratives, music, dance, beliefs and festivals.",
             options = listOf("A) Once", "B) While", "C) Until", "D) As", "E) In case"),
             correctOptionIndex = 1,
@@ -1476,7 +1516,7 @@ object QuestionDataProvider {
             category = "Bağlaçlar"
         ),
         Question(
-            id = 184,
+            id = 189,
             questionText = "(2018 İlkbahar / Soru 13)\nIndustrial nations consume nearly 75 to 80 percent of the fossil fuels burned each year; ----, they are responsible for the majority of greenhouse gas emissions.",
             options = listOf("A) instead", "B) on the contrary", "C) as a result", "D) for example", "E) however"),
             correctOptionIndex = 2,
@@ -1484,7 +1524,7 @@ object QuestionDataProvider {
             category = "Bağlaçlar"
         ),
         Question(
-            id = 185,
+            id = 190,
             questionText = "(2018 İlkbahar / Soru 14)\nBuildings such as the Hagia Sophia in Istanbul, Turkey date back to the sixth century and yet are still standing ---- they are located in earthquake-prone areas. as long as",
             options = listOf("A) unless", "B) as if", "C) although", "D) since", "E) A) B) C)"),
             correctOptionIndex = 3,
@@ -1492,7 +1532,7 @@ object QuestionDataProvider {
             category = "Bağlaçlar"
         ),
         Question(
-            id = 186,
+            id = 191,
             questionText = "(2018 İlkbahar / Soru 15)\nIn statistics, ---- the standard deviation allows us to see how much individuals vary within a sample, ---- the standard error allows us to estimate how much samples will vary within a population.",
             options = listOf("A) whether / or", "B) no sooner / than", "C) rather / than", "D) hardly / when", "E) just as / so"),
             correctOptionIndex = 4,
@@ -1500,7 +1540,7 @@ object QuestionDataProvider {
             category = "Bağlaçlar"
         ),
         Question(
-            id = 187,
+            id = 192,
             questionText = "(2018 İlkbahar / Soru 16)\nThe idea of the Internet was initially to provide redundancy of communications ---- a catastrophic event like a nuclear blast, which might destroy a single connection or computer but not the entire network.",
             options = listOf("A) such as", "B) on behalf of", "C) in terms of", "D) in addition to", "E) in case of"),
             correctOptionIndex = 4,
@@ -1508,7 +1548,7 @@ object QuestionDataProvider {
             category = "Bağlaçlar"
         ),
         Question(
-            id = 188,
+            id = 193,
             questionText = "(2019 Sonbahar / Soru 1)\nResearch has found that the typical brain is a ‘mosaic’ combining some features that are more common in males and some that appear more frequently in females, pointing to the ---- that human brains do not belong to two distinct types categorised by gender.",
             options = listOf("A) violation", "B) conclusion", "C) development", "D) compulsion", "E) obstacle"),
             correctOptionIndex = 1,
@@ -1516,7 +1556,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 189,
+            id = 194,
             questionText = "(2019 Sonbahar / Soru 2)\nMany scientists and research advocates contend that animal experiments are crucial for learning about basic biology and disease mechanisms, and are necessary for testing the ---- of new medicines.",
             options = listOf("A) scarcity", "B) urgency", "C) ambiguity", "D) efficacy", "E) uniformity"),
             correctOptionIndex = 3,
@@ -1524,7 +1564,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 190,
+            id = 195,
             questionText = "(2019 Sonbahar / Soru 3)\nBecause the functions and disturbances of smell and taste are nearly ----, disturbances of one affect the other. inconvenient",
             options = listOf("A) unremarkable", "B) inexplicable", "C) unsophisticated", "D) inseparable", "E) A) B) C)"),
             correctOptionIndex = 4,
@@ -1532,7 +1572,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 191,
+            id = 196,
             questionText = "(2019 Sonbahar / Soru 4)\nMaps of the ocean are rare as the vastness and depth of the ocean make it ---- difficult to study.",
             options = listOf("A) admirably", "B) notoriously", "C) questionably", "D) properly", "E) incidentally"),
             correctOptionIndex = 1,
@@ -1540,7 +1580,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 192,
+            id = 197,
             questionText = "(2019 Sonbahar / Soru 5)\nChildren with autism spectrum conditions often have trouble ---- the emotional states of people around them, struggling to distinguish a happy face from a sad one, for example.",
             options = listOf("A) overcoming", "B) ignoring", "C) provoking", "D) identifying", "E) improving"),
             correctOptionIndex = 3,
@@ -1548,7 +1588,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 193,
+            id = 198,
             questionText = "(2019 Sonbahar / Soru 6)\nHuman accomplishments ---- our ability to acquire knowledge from others and to use that communal store of experience to devise novel solutions to life’s challenges .",
             options = listOf("A) call off", "B) stem from", "C) bring down", "D) take out", "E) figure out"),
             correctOptionIndex = 1,
@@ -1556,7 +1596,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 194,
+            id = 199,
             questionText = "(2019 Sonbahar / Soru 7)\nFor the first time, doctors ---- that temporarily opening the protective barrier of the human brain ---- to boost the delivery of cancer medication to brain tumours.",
             options = listOf("A) are showing / helped", "B) have shown / helps", "C) showed / is helping", "D) will have shown / was helping", "E) will be showing / has been helping"),
             correctOptionIndex = 1,
@@ -1564,7 +1604,7 @@ object QuestionDataProvider {
             category = "Dil Bilgisi"
         ),
         Question(
-            id = 195,
+            id = 200,
             questionText = "(2019 Sonbahar / Soru 8)\nThe Martian atmosphere is so thin, and the planet’s temperature so low that liquid water ---- there, and if it ever did in the past, conditions ---- very different.",
             options = listOf("A) might not have existed / were to be", "B) could not exist / may be", "C) would not exist / can be", "D) cannot exist / must have been", "E) must not exist / should have been"),
             correctOptionIndex = 3,
@@ -1572,7 +1612,7 @@ object QuestionDataProvider {
             category = "Dil Bilgisi"
         ),
         Question(
-            id = 196,
+            id = 201,
             questionText = "(2019 Sonbahar / Soru 9)\nA tsunami damaged emergency generators that ---- power to keep the nuclear reactors at Fukushima in Japan cool; however, the earthquake ---- to the tsunami also caused the cooling systems to fail.",
             options = listOf("A) should provide / to lead", "B) could have provided / to have led", "C) would have provided / leading", "D) must have provided / having led", "E) might provide / led"),
             correctOptionIndex = 2,
@@ -1580,7 +1620,7 @@ object QuestionDataProvider {
             category = "Dil Bilgisi"
         ),
         Question(
-            id = 197,
+            id = 202,
             questionText = "(2019 Sonbahar / Soru 10)\n---- the 17th century, committed Anglicans produced a steady flow of religious and devotional literature that aimed to inspire holiness ---- readers.",
             options = listOf("A) By / about", "B) During / through", "C) Throughout / among", "D) From / against", "E) Across / over"),
             correctOptionIndex = 2,
@@ -1588,7 +1628,7 @@ object QuestionDataProvider {
             category = "Edatlar"
         ),
         Question(
-            id = 198,
+            id = 203,
             questionText = "(2019 Sonbahar / Soru 11)\nThe word adolescence is Latin ---- origin, derived from the verb adolescere, which means ‘to grow ---- adulthood’.",
             options = listOf("A) through / on", "B) from / to", "C) at / beyond", "D) in / into", "E) with / over"),
             correctOptionIndex = 3,
@@ -1596,7 +1636,7 @@ object QuestionDataProvider {
             category = "Edatlar"
         ),
         Question(
-            id = 199,
+            id = 204,
             questionText = "(2019 Sonbahar / Soru 12)\n---- immigrants to North America's new colonies were primarily British in the 17th and 18th centuries, significant numbers of people of other nationalities also established a presence in the Americas.",
             options = listOf("A) Because", "B) While", "C) As long as", "D) Provided that", "E) Once"),
             correctOptionIndex = 1,
@@ -1604,7 +1644,7 @@ object QuestionDataProvider {
             category = "Bağlaçlar"
         ),
         Question(
-            id = 200,
+            id = 205,
             questionText = "(2019 Sonbahar / Soru 13)\nNot much had been accomplished with the phenomena of magnetism and static ---- the Chinese began to use the magnetic compass for navigation around 1000 AD.",
             options = listOf("A) in case", "B) while", "C) until", "D) if", "E) as soon as"),
             correctOptionIndex = 2,
@@ -1612,7 +1652,7 @@ object QuestionDataProvider {
             category = "Bağlaçlar"
         ),
         Question(
-            id = 201,
+            id = 206,
             questionText = "(2019 Sonbahar / Soru 14)\nLiquid water covers more than two-thirds of the Blue Planet's surface, ---- exactly how it got there has always been puzzling.",
             options = listOf("A) so", "B) instead", "C) but", "D) otherwise", "E) as"),
             correctOptionIndex = 2,
@@ -1620,7 +1660,7 @@ object QuestionDataProvider {
             category = "Bağlaçlar"
         ),
         Question(
-            id = 202,
+            id = 207,
             questionText = "(2019 Sonbahar / Soru 15)\nPersonality is ---- a crucial aspect of psychology ---- every main branch of psychological research has attempted to contribute to the existing knowledge in this area.",
             options = listOf("A) such / that", "B) whether / or", "C) as much / as", "D) the more / the more", "E) neither / nor"),
             correctOptionIndex = 0,
@@ -1628,7 +1668,7 @@ object QuestionDataProvider {
             category = "Bağlaçlar"
         ),
         Question(
-            id = 203,
+            id = 208,
             questionText = "(2019 Sonbahar / Soru 16)\nHaving a geopolitical significance ---- its unique aspect of dividing two continents, the Bosphorus stands among distinguished landmarks of Istanbul.",
             options = listOf("A) similar to", "B) thanks to", "C) in place of", "D) in spite of", "E) contrary to"),
             correctOptionIndex = 1,
@@ -1636,7 +1676,7 @@ object QuestionDataProvider {
             category = "Bağlaçlar"
         ),
         Question(
-            id = 204,
+            id = 209,
             questionText = "(2019 İlkbahar / Soru 1)\nLike the rest of the animal kingdom, mammals need food for energy and the ---- of bodily processes such as growth and reproduction.",
             options = listOf("A) suspension", "B) deterioration", "C) maintenance", "D) elaboration", "E) persistence"),
             correctOptionIndex = 2,
@@ -1644,7 +1684,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 205,
+            id = 210,
             questionText = "(2019 İlkbahar / Soru 2)\nWith rapid advancements in technology, there are new ----, already seen in countries such as Myanmar and Sri Lanka where social media apps have been instrumental in spreading fake news and violence.",
             options = listOf("A) measures", "B) adjustments", "C) incentives", "D) threats", "E) obligations"),
             correctOptionIndex = 3,
@@ -1652,7 +1692,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 206,
+            id = 211,
             questionText = "(2019 İlkbahar / Soru 3)\nAlthough empirical studies into the brain’s left and right hemispheric participation in language acquisition are ---- and differ from each other, some observational studies indicate that adults might benefit from right-brain-oriented activities in the foreign language classroom.",
             options = listOf("A) unavailable", "B) indispensible", "C) indestructible", "D) inconclusive", "E) unprecedented"),
             correctOptionIndex = 3,
@@ -1660,7 +1700,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 207,
+            id = 212,
             questionText = "(2019 İlkbahar / Soru 4)\nThe foundations of international law as it is understood today lie ---- in the development of Western culture and political organisation.",
             options = listOf("A) eligibly", "B) instantly", "C) adequately", "D) firmly", "E) convertibly"),
             correctOptionIndex = 3,
@@ -1668,7 +1708,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 208,
+            id = 213,
             questionText = "(2019 İlkbahar / Soru 5)\nThere is a link between sunlight and the chemical serotonin, which ---- our mood and is important in reducing anxiety disorders.",
             options = listOf("A) initiates", "B) detects", "C) reveals", "D) hinders", "E) boosts"),
             correctOptionIndex = 4,
@@ -1676,7 +1716,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 209,
+            id = 214,
             questionText = "(2019 İlkbahar / Soru 6)\nParkinson’s disease is a movement disorder that ---- the death of neurons producing dopamine, a neurochemical that dispatches messages to parts of the brain that control motor skills and coordination.",
             options = listOf("A) takes over", "B) stems from", "C) makes up", "D) pins down", "E) gets through"),
             correctOptionIndex = 1,
@@ -1684,7 +1724,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 210,
+            id = 215,
             questionText = "(2019 İlkbahar / Soru 7)\nIn its early stage of development, ecotourism ---- as a completely new concept; however, today, it ---- a significant portion of the tourism industry in general.",
             options = listOf("A) was going to be regarded / is becoming", "B) had been regarded / will become", "C) was being regarded / is going to become", "D) was regarded / has become", "E) has been regarded / becomes"),
             correctOptionIndex = 3,
@@ -1692,7 +1732,7 @@ object QuestionDataProvider {
             category = "Dil Bilgisi"
         ),
         Question(
-            id = 211,
+            id = 216,
             questionText = "(2019 İlkbahar / Soru 8)\nAs two-thirds of homes in the US owned radio receivers by the end of the 1920s, people no longer ---- to a concert, play, or sporting event to be entertained; instead, they ---- many forms of entertainment from the comfort of their homes.",
             options = listOf("A) should have gone / must have enjoyed", "B) may go / were able to enjoy", "C) used to go / may have enjoyed", "D) had to go / could enjoy", "E) would go / ought to have enjoyed"),
             correctOptionIndex = 3,
@@ -1700,7 +1740,7 @@ object QuestionDataProvider {
             category = "Dil Bilgisi"
         ),
         Question(
-            id = 212,
+            id = 217,
             questionText = "(2019 İlkbahar / Soru 9)\nHumanity’s extraordinary success ---- due to our ingenuity in devising cultural means ---- our physical limitations.",
             options = listOf("A) has been / to overcome", "B) was / having overcome", "C) had been / overcoming", "D) is / overcome", "E) will be / to have overcome"),
             correctOptionIndex = 0,
@@ -1708,7 +1748,7 @@ object QuestionDataProvider {
             category = "Dil Bilgisi"
         ),
         Question(
-            id = 213,
+            id = 218,
             questionText = "(2019 İlkbahar / Soru 10)\nThe geographical spread of English is unique ---- the languages of the world, and it is an official language in about 50 countries, where it is used in addition to the indigenous first languages ---- a variety of public and personal functions.",
             options = listOf("A) from / at", "B) to / on", "C) through / with", "D) among / for", "E) about / in"),
             correctOptionIndex = 3,
@@ -1716,7 +1756,7 @@ object QuestionDataProvider {
             category = "Edatlar"
         ),
         Question(
-            id = 214,
+            id = 219,
             questionText = "(2019 İlkbahar / Soru 11)\nWeather is defined as the state of the atmosphere ---- a given location and ---- a relatively short period of time.",
             options = listOf("A) along / on", "B) towards / in", "C) at / over", "D) from / against", "E) for / about"),
             correctOptionIndex = 2,
@@ -1724,7 +1764,7 @@ object QuestionDataProvider {
             category = "Edatlar"
         ),
         Question(
-            id = 215,
+            id = 220,
             questionText = "(2019 İlkbahar / Soru 12)\nRenaissance art evolved from a common set of principles, ---- it took many directions and changed considerably in the following centuries.",
             options = listOf("A) instead", "B) provided that", "C) but", "D) for", "E) so"),
             correctOptionIndex = 2,
@@ -1732,7 +1772,7 @@ object QuestionDataProvider {
             category = "Bağlaçlar"
         ),
         Question(
-            id = 216,
+            id = 221,
             questionText = "(2019 İlkbahar / Soru 13)\n---- palaeontologists still like to argue about what role the asteroid played in the dinosaur extinction, there really is not much of a mystery left.",
             options = listOf("A) Once", "B) In case", "C) Given that", "D) Although", "E) As"),
             correctOptionIndex = 3,
@@ -1740,7 +1780,7 @@ object QuestionDataProvider {
             category = "Bağlaçlar"
         ),
         Question(
-            id = 217,
+            id = 222,
             questionText = "(2019 İlkbahar / Soru 14)\nTo psychology professionals, the name Anne Anastasi is synonymous with psychometrics, ---- it was she who pioneered understanding how psychological traits are influenced, developed, and measured.",
             options = listOf("A) so", "B) even if", "C) while", "D) yet", "E) as"),
             correctOptionIndex = 4,
@@ -1748,7 +1788,7 @@ object QuestionDataProvider {
             category = "Bağlaçlar"
         ),
         Question(
-            id = 218,
+            id = 223,
             questionText = "(2019 İlkbahar / Soru 15)\nMusic is a very small word to encompass something that takes ---- many forms ---- there are cultural and subcultural identities.",
             options = listOf("A) either / or", "B) both / and", "C) as / as", "D) such / that", "E) not only / but also"),
             correctOptionIndex = 2,
@@ -1756,7 +1796,7 @@ object QuestionDataProvider {
             category = "Bağlaçlar"
         ),
         Question(
-            id = 219,
+            id = 224,
             questionText = "(2019 İlkbahar / Soru 16)\nAlthough genetically modified seed is more expensive than conventional equivalents, the extra cost can be seen as an insurance policy against crop losses ---- weeds or pests.",
             options = listOf("A) contrary to", "B) due to", "C) in terms of", "D) despite", "E) along with"),
             correctOptionIndex = 1,
@@ -1764,7 +1804,7 @@ object QuestionDataProvider {
             category = "Bağlaçlar"
         ),
         Question(
-            id = 220,
+            id = 225,
             questionText = "(2020 Sonbahar / Soru 1)\nTwenty-fiv e hundred years ago, ancient Greek philosophers turned their highly  sophisticated ---- away from the whims of the gods  and toward questions of the natural  world.",
             options = listOf("A) inquiries", "B) fallacies", "C) incentives", "D) complaints", "E) precautions"),
             correctOptionIndex = 0,
@@ -1772,7 +1812,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 221,
+            id = 226,
             questionText = "(2020 Sonbahar / Soru 2)\nThe mis sion control experts ca nnot tell if the space junk  is going to hit the space station or not, but they are sure that a ---- would knock a hole in the body and cause all air i nsid e it to qui ckl y escape into space.",
             options = listOf("A) succession", "B) collision", "C) conversion", "D) fluctuation", "E) deviation"),
             correctOptionIndex = 1,
@@ -1780,7 +1820,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 222,
+            id = 227,
             questionText = "(2020 Sonbahar / Soru 3)\nWhile newspapers have been in dra matic decli ne in muc h of the developed West, the indus try is ---- and stil l grow ing i n many of Asia’s booming c ities.",
             options = listOf("A) fragile", "B) profitable", "C) confidential", "D) peculiar", "E) notorious"),
             correctOptionIndex = 1,
@@ -1788,7 +1828,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 223,
+            id = 228,
             questionText = "(2020 Sonbahar / Soru 4)\nAs the DNA of two unrelated people only differs b y about one in every 1,000 base pairs, hu mans show ---- little genetic div ersi ty.",
             options = listOf("A) remarkably", "B) elaborately", "C) ambiguously", "D) sufficiently", "E) promptly"),
             correctOptionIndex = 0,
@@ -1796,7 +1836,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 224,
+            id = 229,
             questionText = "(2020 Sonbahar / Soru 5)\nBiolog ists  have created a molecul e that ---- the connections between brain cells , called neurons, acting exactly lik e the steel bars in reinforce d concrete.",
             options = listOf("A) penetrates", "B) overcomes", "C) implements", "D) fortifies", "E) receives"),
             correctOptionIndex = 3,
@@ -1804,7 +1844,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 225,
+            id = 230,
             questionText = "(2020 Sonbahar / Soru 6)\nInternet us ers are increasingly ---- cyberchond ria, a mental condition in which easy access to inform ation on medical iss ues causes increased feelings  of anxiety over health.",
             options = listOf("A) making up for", "B) cutting down on", "C) getting away with", "D) looking around for", "E) coming down with"),
             correctOptionIndex = 4,
@@ -1812,7 +1852,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 226,
+            id = 231,
             questionText = "(2020 Sonbahar / Soru 7)\nSo far, only two types of mental exertion ---- to improve overall cognitive a bility : one is mus ical traini ng, the other is  learning a new language or practisin g a second one you ----.",
             options = listOf("A) were shown / will have already learned", "B) had been shown / have already been learning", "C) have been shown / have already learned", "D) will be shown / already learned", "E) are shown / had already learned"),
             correctOptionIndex = 2,
@@ -1820,7 +1860,7 @@ object QuestionDataProvider {
             category = "Dil Bilgisi"
         ),
         Question(
-            id = 227,
+            id = 232,
             questionText = "(2020 Sonbahar / Soru 8)\nIf an age could ever be rightly  describe d as ‘d ark’ in European history , it ---- the two centurie s that ---- the collapse of Roman authority in Brita in at the beginning of the fifth  century.",
             options = listOf("A) may be / follow", "B) would be / followed", "C) used to be / had followed", "D) must be / have followed", "E) had to be / were following"),
             correctOptionIndex = 1,
@@ -1828,7 +1868,7 @@ object QuestionDataProvider {
             category = "Dil Bilgisi"
         ),
         Question(
-            id = 228,
+            id = 233,
             questionText = "(2020 Sonbahar / Soru 9)\nWall paintings previous ly ---- in three Spanish caves have now been dated to 65,000 years ago – some 20,000 years before Hom o sapiens is thought ---- in Europe.",
             options = listOf("A) to have been discovered / to arrive", "B) being discovered / having arrived", "C) discovered / to have arrived", "D) having been discovered / to be arriving", "E) to be discovered / arriving"),
             correctOptionIndex = 2,
@@ -1836,7 +1876,7 @@ object QuestionDataProvider {
             category = "Dil Bilgisi"
         ),
         Question(
-            id = 229,
+            id = 234,
             questionText = "(2020 Sonbahar / Soru 10)\nA compound called ‘hyloins’ that can be found in the frog's  lymph and skin gl ands increases the frog' s brig htness ---- around  20 percent ---- a full moon.",
             options = listOf("A) by / during", "B) in / under", "C) at / over", "D) to / along", "E) from / through"),
             correctOptionIndex = 0,
@@ -1844,7 +1884,7 @@ object QuestionDataProvider {
             category = "Edatlar"
         ),
         Question(
-            id = 230,
+            id = 235,
             questionText = "(2020 Sonbahar / Soru 11)\nThe scientific s tudy of the dynamic  relationship ---- the celestial bodies of the solar system and the motion of human-made objects ---- outer space, suc h as spacecraft and satelli tes, is called orbital mechanics .",
             options = listOf("A) about / on", "B) between / at", "C) with / of", "D) among / in", "E) beyond / without"),
             correctOptionIndex = 3,
@@ -1852,7 +1892,7 @@ object QuestionDataProvider {
             category = "Edatlar"
         ),
         Question(
-            id = 231,
+            id = 236,
             questionText = "(2020 Sonbahar / Soru 12)\n---- electric ity and heat account for 41 percent of global carbon diox ide emiss ions today, curbing cli mate change will  requi re satisfy ing that muc h demand with renewables rather than fossil  fuel s.",
             options = listOf("A) Since", "B) While", "C) Until", "D) Unless", "E) As if"),
             correctOptionIndex = 0,
@@ -1860,7 +1900,7 @@ object QuestionDataProvider {
             category = "Bağlaçlar"
         ),
         Question(
-            id = 232,
+            id = 237,
             questionText = "(2020 Sonbahar / Soru 13)\n---- all dog s show signs  of having ‘theory of mind’, which enables them to gras p that we think diffe rently from them, it is unlike ly that they are capable of extending this  to knowing the reason why one person behaves differe ntly to another.",
             options = listOf("A) In case", "B) Only if", "C) As far as", "D) Given that", "E) Even though"),
             correctOptionIndex = 4,
@@ -1868,7 +1908,7 @@ object QuestionDataProvider {
             category = "Bağlaçlar"
         ),
         Question(
-            id = 233,
+            id = 238,
             questionText = "(2020 Sonbahar / Soru 14)\n---- there are hundreds  of school- and community-based aggre ssi on prevention and social skills  promotion programm es, only a handfu l of these appear to be effecti ve.",
             options = listOf("A) Provided that", "B) Since", "C) Although", "D) Just as", "E) Unless"),
             correctOptionIndex = 2,
@@ -1876,7 +1916,7 @@ object QuestionDataProvider {
             category = "Bağlaçlar"
         ),
         Question(
-            id = 234,
+            id = 239,
             questionText = "(2020 Sonbahar / Soru 15)\nFinding ammonia on the surface  of Pluto could be a hint of more complex organic  chemistry on the planet, although i t is ---- cold ---- there is almost defi nitely no life there.",
             options = listOf("A) not only / but also", "B) both / and", "C) neither / nor", "D) such / that", "E) so / that"),
             correctOptionIndex = 4,
@@ -1884,7 +1924,7 @@ object QuestionDataProvider {
             category = "Bağlaçlar"
         ),
         Question(
-            id = 235,
+            id = 240,
             questionText = "(2020 Sonbahar / Soru 16)\n---- the Sun’s c onstant stream of energy, water molecules are continually evaporating from  the surfa ces of oceans and lakes, adding to the water vapour in the air.",
             options = listOf("A) Rather than", "B) Thanks to", "C) As opposed to", "D) In terms of", "E) Unlike"),
             correctOptionIndex = 1,
@@ -1892,7 +1932,7 @@ object QuestionDataProvider {
             category = "Bağlaçlar"
         ),
         Question(
-            id = 236,
+            id = 241,
             questionText = "(2021 Sonbahar / Soru 1)\nAttaining ---- in the current job is a basic career strategy, given that organisations make promotion decisions, at least in part, on an employee’s present performance.",
             options = listOf("A) assurance", "B) competence", "C) balance", "D) recession", "E) insurance"),
             correctOptionIndex = 1,
@@ -1900,7 +1940,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 237,
+            id = 242,
             questionText = "(2021 Sonbahar / Soru 2)\nDespite its being a remote and harsh environment, there is ---- about ownership of the North Pole as there could be rich natural resources beneath the ice.",
             options = listOf("A) discrimination", "B) substitution", "C) exposure", "D) controversy", "E) neglect"),
             correctOptionIndex = 3,
@@ -1908,7 +1948,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 238,
+            id = 243,
             questionText = "(2021 Sonbahar / Soru 3)\nThe reasons for an urban climate are heat storage, trapping of radiation, increasing roughness and less evaporation, which are seen in cities worldwide but are most ---- in densely built-up megacities.",
             options = listOf("A) evident", "B) arbitrary", "C) convenient", "D) constructive", "E) mediocre"),
             correctOptionIndex = 0,
@@ -1916,7 +1956,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 239,
+            id = 244,
             questionText = "(2021 Sonbahar / Soru 4)\nThe population of koalas dropped ---- during the early part of the 20th century because they were over-hunted for their fur.",
             options = listOf("A) strictly", "B) drastically", "C) cautiously", "D) ardently", "E) merely"),
             correctOptionIndex = 1,
@@ -1924,7 +1964,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 240,
+            id = 245,
             questionText = "(2021 Sonbahar / Soru 5)\nWhen neurological issues like aphasia and dyslexia arise, they often ---- themselves in the things we say and how we say them.",
             options = listOf("A) alienate", "B) improve", "C) manifest", "D) diminish", "E) receive"),
             correctOptionIndex = 2,
@@ -1932,7 +1972,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 241,
+            id = 246,
             questionText = "(2021 Sonbahar / Soru 6)\nWhen you cook meat, a chemical reaction turns creatine into a group of compounds called heterocyclic amines and there is some evidence that these compounds ---- cancer in high concentrations.",
             options = listOf("A) rely on", "B) break into", "C) pass for", "D) call off", "E) lead to"),
             correctOptionIndex = 4,
@@ -1940,7 +1980,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 242,
+            id = 247,
             questionText = "(2021 Sonbahar / Soru 7)\nRecently, nutritional scientists ---- strong evidence that the eating, drinking, and exercise habits of the Mediterranean people ---- a major role in their low risk for heart disease.",
             options = listOf("A) uncover / are playing", "B) are uncovering / had been playing", "C) have uncovered / play", "D) may uncover / have played", "E) uncovered / had played"),
             correctOptionIndex = 2,
@@ -1948,7 +1988,7 @@ object QuestionDataProvider {
             category = "Dil Bilgisi"
         ),
         Question(
-            id = 243,
+            id = 248,
             questionText = "(2021 Sonbahar / Soru 8)\nThere are some people who ---- objects from 6 metres away with the same sharpness that a normal-sighted person ---- in to 4.5 metres to achieve.",
             options = listOf("A) may view / had to move", "B) must view / could move", "C) can view / would have to move", "D) ought to view / should have moved", "E) might view / can move"),
             correctOptionIndex = 2,
@@ -1956,7 +1996,7 @@ object QuestionDataProvider {
             category = "Dil Bilgisi"
         ),
         Question(
-            id = 244,
+            id = 249,
             questionText = "(2021 Sonbahar / Soru 9)\nWhile  many people welcome the chance ---- exotic foods or novel flavours, others do not even consider ---- foods beyond their usual repertoire.",
             options = listOf("A) to be tasting / having consumed", "B) tasting / to have consumed", "C) to have tasted / to be consuming", "D) having tasted / to consume", "E) to taste / consuming"),
             correctOptionIndex = 4,
@@ -1964,7 +2004,7 @@ object QuestionDataProvider {
             category = "Dil Bilgisi"
         ),
         Question(
-            id = 245,
+            id = 250,
             questionText = "(2021 Sonbahar / Soru 10)\nPeople intuitively tend to equate happiness ---- freedom, however without obstacles ---- our desires it is harder to know what we really want, let alone fulfilling them.",
             options = listOf("A) between / on", "B) with / to", "C) at / into", "D) in / among", "E) for / from"),
             correctOptionIndex = 1,
@@ -1972,7 +2012,7 @@ object QuestionDataProvider {
             category = "Edatlar"
         ),
         Question(
-            id = 246,
+            id = 251,
             questionText = "(2021 Sonbahar / Soru 11)\nPeople who feel strongly that they do not want to be awake and alert ---- certain procedures may not be good candidates ---- local or regional anaesthesia.",
             options = listOf("A) through / at", "B) by / with", "C) during / for", "D) upon / to", "E) against / about"),
             correctOptionIndex = 2,
@@ -1980,7 +2020,7 @@ object QuestionDataProvider {
             category = "Edatlar"
         ),
         Question(
-            id = 247,
+            id = 252,
             questionText = "(2021 Sonbahar / Soru 12)\n---- social media has become widely integrated into everyday life, there is a growing interest in understanding its impact and the norms of online conduct.",
             options = listOf("A) Supposing that", "B) Although", "C) Now that", "D) As much as", "E) While"),
             correctOptionIndex = 2,
@@ -1988,7 +2028,7 @@ object QuestionDataProvider {
             category = "Bağlaçlar"
         ),
         Question(
-            id = 248,
+            id = 253,
             questionText = "(2021 Sonbahar / Soru 13)\nFor many years, social researchers regarded gossip as unworthy of scientific investigation; ----, sociologists have recently begun to recognise gossip as an important feature of social life.",
             options = listOf("A) accordingly", "B) in other words", "C) however", "D) as a result", "E) for example"),
             correctOptionIndex = 2,
@@ -1996,7 +2036,7 @@ object QuestionDataProvider {
             category = "Bağlaçlar"
         ),
         Question(
-            id = 249,
+            id = 254,
             questionText = "(2021 Sonbahar / Soru 14)\nIn diabetic patients, even though food intake may be increased, weight loss can occur ---- muscles and fat stores may shrink as they are not getting the necessary glucose.",
             options = listOf("A) because", "B) given that", "C) as long as", "D) although", "E) in case"),
             correctOptionIndex = 0,
@@ -2004,7 +2044,7 @@ object QuestionDataProvider {
             category = "Bağlaçlar"
         ),
         Question(
-            id = 250,
+            id = 255,
             questionText = "(2021 Sonbahar / Soru 15)\n---- you are a long-time fan ---- casual follower of the series of Street Fighter, you are already well-aware that it is constantly updated with new characters, costumes, and story content.",
             options = listOf("A) Both / and", "B) Neither / nor", "C) Rather / than", "D) Whether / or", "E) Not only / but also"),
             correctOptionIndex = 3,
@@ -2012,7 +2052,7 @@ object QuestionDataProvider {
             category = "Bağlaçlar"
         ),
         Question(
-            id = 251,
+            id = 256,
             questionText = "(2021 Sonbahar / Soru 16)\n---- many individual cases of malicious data leaks online that have caught the public eye, there has been very little research examining the scale of the problem.",
             options = listOf("A) Similar to", "B) Due to", "C) As a result of", "D) In accordance with", "E) Despite"),
             correctOptionIndex = 4,
@@ -2020,7 +2060,7 @@ object QuestionDataProvider {
             category = "Bağlaçlar"
         ),
         Question(
-            id = 252,
+            id = 257,
             questionText = "(2021 İlkbahar / Soru 1)\nThis  test consis ts of 80 question s. The most pow erful ---- to parachuti ng is  fear, but one should a lso take its  hig h cost in to account, as a total  outfit  for parachuting can be extremely expensive.",
             options = listOf("A) resemblance", "B) adjustment", "C) deterrent", "D) submission", "E) adherence"),
             correctOptionIndex = 2,
@@ -2028,7 +2068,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 253,
+            id = 258,
             questionText = "(2021 İlkbahar / Soru 2)\nPeanut m ay very well be the most com mon food allergy in some populati ons, but th e ---- of a partic ular food allergy varies accordi ng to age and group.",
             options = listOf("A) utilisation", "B) withdrawal", "C) precaution", "D) termination", "E) prevalence"),
             correctOptionIndex = 4,
@@ -2036,7 +2076,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 254,
+            id = 259,
             questionText = "(2021 İlkbahar / Soru 3)\nHeating and cooling of the Earth are not ----, as it takes time  for land, water, and air to eith er absorb heat and warm up or release stored heat and cool down.",
             options = listOf("A) hospitable", "B) convertible", "C) instantaneous", "D) detrimental", "E) preliminary"),
             correctOptionIndex = 2,
@@ -2044,7 +2084,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 255,
+            id = 260,
             questionText = "(2021 İlkbahar / Soru 4)\nSince the mid-20th c entury, plastic  pollu tion has increased ----, and resultin g pol lution  has become a glob al environmental iss ue.",
             options = listOf("A) exponentially", "B) conveniently", "C) alternatively", "D) precisely", "E) fruitfully"),
             correctOptionIndex = 0,
@@ -2052,7 +2092,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 256,
+            id = 261,
             questionText = "(2021 İlkbahar / Soru 5)\nThe most basic  path  to compu ter lite racy is to ---- competence in usi ng compu ters to  perform personal or vocational tas ks.",
             options = listOf("A) exclude", "B) relieve", "C) deteriorate", "D) restrict", "E) attain"),
             correctOptionIndex = 4,
@@ -2060,7 +2100,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 257,
+            id = 262,
             questionText = "(2021 İlkbahar / Soru 6)\nMaking video s should  be a lot of fu n, but it can also be a bit of a minefield, as lots of people ---- proble ms and lose momentum before they even get started.",
             options = listOf("A) hand over", "B) look for", "C) turn down", "D) give up", "E) run into"),
             correctOptionIndex = 4,
@@ -2068,7 +2108,7 @@ object QuestionDataProvider {
             category = "Kelime Bilgisi"
         ),
         Question(
-            id = 258,
+            id = 263,
             questionText = "(2021 İlkbahar / Soru 7)\nA semi nal study  ---- that people  who ---- less than seven hours a night a re at increased ris k of mortality .",
             options = listOf("A) revealed / will sleep", "B) has revealed / sleep", "C) reveals / will be sleeping", "D) will reveal / have slept", "E) had revealed / had been sleeping"),
             correctOptionIndex = 1,
@@ -2076,7 +2116,7 @@ object QuestionDataProvider {
             category = "Dil Bilgisi"
         ),
         Question(
-            id = 259,
+            id = 264,
             questionText = "(2021 İlkbahar / Soru 8)\nIdeally, the end  of the  Cold War between the United States and the  Soviet Union ---- a sub stantial lessening of security  concerns in the world; however, in practice , the focus ---- to terroris m and sub national groups .",
             options = listOf("A) might have signified / will have moved", "B) would have signified / used to move", "C) must have signified / had moved", "D) could have signified / had been moving", "E) should have signified / moved"),
             correctOptionIndex = 4,
@@ -2084,7 +2124,7 @@ object QuestionDataProvider {
             category = "Dil Bilgisi"
         ),
         Question(
-            id = 260,
+            id = 265,
             questionText = "(2021 İlkbahar / Soru 9)\nThe recent discov ery of a toe made  of wood and leather ---- to th e mumm ified  body of an Egyptia n noblewoman in Cairo, approximately 3,000 years old, ---- that artificia l li mbs  are nothin g new.",
             options = listOf("A) attached / proves", "B) being attached / had proven", "C) attach / has proven", "D) attaching / proved", "E) to be attached / used to prove"),
             correctOptionIndex = 0,
@@ -2092,7 +2132,7 @@ object QuestionDataProvider {
             category = "Dil Bilgisi"
         ),
         Question(
-            id = 261,
+            id = 266,
             questionText = "(2021 İlkbahar / Soru 10)\nAnorexia nervosa is a severe eating dis order, usu ally involving excessive weigh t los s ---- self-sta rvation, most ofte n found ---- teenage girls .",
             options = listOf("A) at / with", "B) from / of", "C) for / between", "D) by / on", "E) through / among"),
             correctOptionIndex = 4,
@@ -2100,7 +2140,7 @@ object QuestionDataProvider {
             category = "Edatlar"
         ),
         Question(
-            id = 262,
+            id = 267,
             questionText = "(2021 İlkbahar / Soru 11)\nWith co ncerns ---- th e rate of energy demand, the role of renewable energy, which  is generated ---- sources that are natural ly replenished, such as wind and sunlight,  is becoming inc reasingl y sig nific ant.",
             options = listOf("A) at / upon", "B) in / for", "C) to / through", "D) about / from", "E) over / into"),
             correctOptionIndex = 3,
@@ -2108,7 +2148,7 @@ object QuestionDataProvider {
             category = "Edatlar"
         ),
         Question(
-            id = 263,
+            id = 268,
             questionText = "(2021 İlkbahar / Soru 12)\n---- certain types of fungi ha ve been used throughout his tory for a variety of beneficia l pu rposes, others have been found  to contain dangerous to xins that are pois onous to humans.",
             options = listOf("A) Once", "B) Although", "C) Since", "D) Provided that", "E) Only when"),
             correctOptionIndex = 1,
@@ -2116,7 +2156,7 @@ object QuestionDataProvider {
             category = "Bağlaçlar"
         ),
         Question(
-            id = 264,
+            id = 269,
             questionText = "(2021 İlkbahar / Soru 13)\n---- such an intima te connection  existe d between agric ultura l inte nsifica tion and th e appearance of citi es, it is  not surpris ing th at the  earlies t eviden ce for ci ties  comes from regions  with ancient agric ultura l tradi tions .",
             options = listOf("A) Because", "B) As if", "C) Before", "D) Although", "E) While"),
             correctOptionIndex = 0,
@@ -2124,7 +2164,7 @@ object QuestionDataProvider {
             category = "Bağlaçlar"
         ),
         Question(
-            id = 265,
+            id = 270,
             questionText = "(2021 İlkbahar / Soru 14)\n---- children  can be easy targets for e xploitati on and victimiz ation, supervisio n is a necessary component of any Internet safety.",
             options = listOf("A) Even if", "B) Although", "C) Since", "D) Before", "E) Unless"),
             correctOptionIndex = 2,
@@ -2132,7 +2172,7 @@ object QuestionDataProvider {
             category = "Bağlaçlar"
         ),
         Question(
-            id = 266,
+            id = 271,
             questionText = "(2021 İlkbahar / Soru 15)\nThe conventional view of dinosaur origins hol ds th at they were endowed with --- - superior s peed, agili ty, metabol ism  and intellige nce ---- as soon as they debuted they qui ckl y spread across the  globe.",
             options = listOf("A) either / or", "B) both / and", "C) the more / the more", "D) whether / or", "E) such / that"),
             correctOptionIndex = 4,
@@ -2140,7 +2180,7 @@ object QuestionDataProvider {
             category = "Bağlaçlar"
         ),
         Question(
-            id = 267,
+            id = 272,
             questionText = "(2021 İlkbahar / Soru 16)\nBooks conti nue to be a major medium for communicating s cholarly works in the fi eld of his tory, ---- many other social sciences, where journal article s are far more importa nt.",
             options = listOf("A) with the help of", "B) in contrast to", "C) due to", "D) such as", "E) on the basis of"),
             correctOptionIndex = 1,
