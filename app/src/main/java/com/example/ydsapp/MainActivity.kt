@@ -18,6 +18,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.border
+import androidx.compose.animation.animateColorAsState
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -41,11 +45,11 @@ class MainActivity : ComponentActivity() {
         setContent {
             MaterialTheme(
                 colorScheme = darkColorScheme(
-                    primary = Color(0xFF64B5F6),
-                    secondary = Color(0xFF81C784),
-                    background = Color(0xFF121212),
-                    surface = Color(0xFF1E1E1E),
-                    error = Color(0xFFE57373)
+                    primary = Color(0xFF8B5CF6),
+                    secondary = Color(0xFF10B981),
+                    background = Color(0xFF0A0A0F),
+                    surface = Color(0xFF151522),
+                    error = Color(0xFFEF4444)
                 )
             ) {
                 Surface(
@@ -133,31 +137,31 @@ fun MainScreen(viewModel: MainViewModel) {
 
     Scaffold(
         bottomBar = {
-            NavigationBar {
-                NavigationBarItem(
-                    selected = selectedTab == 0,
-                    onClick = { selectedTab = 0 },
-                    icon = { Text("📊", fontSize = 20.sp) },
-                    label = { Text("Panel") }
+            NavigationBar(
+                containerColor = Color(0xFF0F0F15),
+                tonalElevation = 8.dp
+            ) {
+                val navItems = listOf(
+                    Triple(0, "📊", "Panel"),
+                    Triple(1, "🧠", "Kartlar"),
+                    Triple(2, "📚", "Dersler"),
+                    Triple(3, "✍️", "Sorular")
                 )
-                NavigationBarItem(
-                    selected = selectedTab == 1,
-                    onClick = { selectedTab = 1 },
-                    icon = { Text("📝", fontSize = 20.sp) },
-                    label = { Text("Kartlar") }
-                )
-                NavigationBarItem(
-                    selected = selectedTab == 2,
-                    onClick = { selectedTab = 2 },
-                    icon = { Text("📚", fontSize = 20.sp) },
-                    label = { Text("Dersler") }
-                )
-                NavigationBarItem(
-                    selected = selectedTab == 3,
-                    onClick = { selectedTab = 3 },
-                    icon = { Text("❓", fontSize = 20.sp) },
-                    label = { Text("Sorular") }
-                )
+                navItems.forEach { (tabIndex, emoji, label) ->
+                    NavigationBarItem(
+                        selected = selectedTab == tabIndex,
+                        onClick = { selectedTab = tabIndex },
+                        icon = { Text(emoji, fontSize = 20.sp) },
+                        label = { Text(label, fontSize = 12.sp, fontWeight = if (selectedTab == tabIndex) FontWeight.Bold else FontWeight.Normal) },
+                        colors = NavigationBarItemDefaults.colors(
+                            selectedIconColor = Color(0xFF8B5CF6),
+                            selectedTextColor = Color(0xFF8B5CF6),
+                            indicatorColor = Color(0xFF8B5CF6).copy(alpha = 0.15f),
+                            unselectedIconColor = Color(0xFF9E9EAF),
+                            unselectedTextColor = Color(0xFF9E9EAF)
+                        )
+                    )
+                }
             }
         }
     ) { paddingValues ->
@@ -167,6 +171,60 @@ fun MainScreen(viewModel: MainViewModel) {
                 1 -> ActiveRecallScreen(viewModel)
                 2 -> LessonsScreen()
                 3 -> PracticeScreen(viewModel)
+            }
+        }
+    }
+}
+
+@Composable
+fun CircularProgressCard(
+    title: String,
+    current: Int,
+    total: Int,
+    subtitle: String,
+    modifier: Modifier = Modifier
+) {
+    Card(
+        modifier = modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = Color(0xFF151522)),
+        border = BorderStroke(1.dp, Color(0xFF2E2E4A)),
+        shape = RoundedCornerShape(16.dp)
+    ) {
+        Row(
+            modifier = Modifier.padding(16.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Column(modifier = Modifier.weight(1f)) {
+                Text(title, fontWeight = FontWeight.SemiBold, fontSize = 14.sp, color = Color(0xFF9E9EAF))
+                Spacer(modifier = Modifier.height(8.dp))
+                Text("$current / $total", fontSize = 22.sp, fontWeight = FontWeight.Bold, color = Color.White)
+                Spacer(modifier = Modifier.height(4.dp))
+                Text(subtitle, fontSize = 12.sp, color = Color(0xFF10B981), fontWeight = FontWeight.Medium)
+            }
+            Box(
+                contentAlignment = Alignment.Center,
+                modifier = Modifier.size(60.dp)
+            ) {
+                val progress = if (total > 0) current.toFloat() / total else 0f
+                CircularProgressIndicator(
+                    progress = 1f,
+                    strokeWidth = 6.dp,
+                    color = Color(0xFF2E2E4A),
+                    modifier = Modifier.fillMaxSize()
+                )
+                CircularProgressIndicator(
+                    progress = progress,
+                    strokeWidth = 6.dp,
+                    color = Color(0xFF8B5CF6),
+                    modifier = Modifier.fillMaxSize()
+                )
+                Text(
+                    text = "${(progress * 100).toInt()}%",
+                    color = Color.White,
+                    fontSize = 12.sp,
+                    fontWeight = FontWeight.Bold
+                )
             }
         }
     }
@@ -185,24 +243,24 @@ fun DashboardScreen(viewModel: MainViewModel, navigateToTab: (Int) -> Unit) {
     if (targetScore == 0 || showGoalDialog) {
         AlertDialog(
             onDismissRequest = { if (targetScore != 0) showGoalDialog = false },
-            title = { Text("🎯 Hedef YDS Puanınızı Seçin", fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary) },
+            title = { Text("🎯 Hedef YDS Puanınızı Seçin", fontWeight = FontWeight.Bold, color = Color(0xFF8B5CF6)) },
             text = {
                 Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
                     Text("Öğrenme algoritmanızı ve günlük çalışma temponuzu seçtiğiniz puana göre özelleştireceğiz.", fontSize = 14.sp)
                     Button(
                         onClick = { viewModel.setTargetScore(70); showGoalDialog = false },
                         modifier = Modifier.fillMaxWidth(),
-                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF64B5F6))
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF8B5CF6))
                     ) { Text("70+ Puan (Temel Akademik Seviye)") }
                     Button(
                         onClick = { viewModel.setTargetScore(80); showGoalDialog = false },
                         modifier = Modifier.fillMaxWidth(),
-                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF81C784))
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF6366F1))
                     ) { Text("80+ Puan (İleri Akademik Seviye)") }
                     Button(
                         onClick = { viewModel.setTargetScore(90); showGoalDialog = false },
                         modifier = Modifier.fillMaxWidth(),
-                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFFB74D))
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF10B981))
                     ) { Text("90+ Puan (Zirve / C1-C2 Seviyesi)") }
                 }
             },
@@ -221,14 +279,16 @@ fun DashboardScreen(viewModel: MainViewModel, navigateToTab: (Int) -> Unit) {
             text = "YDS Çalışma Ortağım",
             fontSize = 28.sp,
             fontWeight = FontWeight.Bold,
-            color = MaterialTheme.colorScheme.primary,
+            color = Color(0xFF8B5CF6),
             modifier = Modifier.padding(vertical = 8.dp)
         )
 
         if (targetScore > 0) {
             Card(
                 modifier = Modifier.fillMaxWidth(),
-                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
+                border = BorderStroke(1.dp, Color(0xFF2E2E4A)),
+                colors = CardDefaults.cardColors(containerColor = Color(0xFF151522)),
+                shape = RoundedCornerShape(16.dp)
             ) {
                 Row(
                     modifier = Modifier.fillMaxWidth().padding(16.dp),
@@ -236,16 +296,19 @@ fun DashboardScreen(viewModel: MainViewModel, navigateToTab: (Int) -> Unit) {
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Column(modifier = Modifier.weight(1f)) {
-                        Text("🎯 Hedef Profiliniz: YDS $targetScore+ Puan", fontWeight = FontWeight.Bold, fontSize = 18.sp, color = MaterialTheme.colorScheme.primary)
+                        Text("🎯 Hedef Profiliniz: YDS $targetScore+ Puan", fontWeight = FontWeight.Bold, fontSize = 16.sp, color = Color(0xFF8B5CF6))
                         val recText = when (targetScore) {
                             70 -> "Günlük Hedef: 15 Kelime & 5 Soru"
                             80 -> "Günlük Hedef: 25 Kelime & 10 Soru"
                             else -> "Günlük Hedef: 40 Kelime & 20 Soru"
                         }
-                        Text(recText, fontSize = 14.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                        Text(recText, fontSize = 13.sp, color = Color(0xFF9E9EAF))
                     }
-                    OutlinedButton(onClick = { showGoalDialog = true }) {
-                        Text("Değiştir")
+                    OutlinedButton(
+                        onClick = { showGoalDialog = true },
+                        border = BorderStroke(1.dp, Color(0xFF8B5CF6))
+                    ) {
+                        Text("Değiştir", color = Color(0xFF8B5CF6))
                     }
                 }
             }
@@ -254,74 +317,150 @@ fun DashboardScreen(viewModel: MainViewModel, navigateToTab: (Int) -> Unit) {
         // Streak Card
         Card(
             modifier = Modifier.fillMaxWidth(),
-            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
+            shape = RoundedCornerShape(16.dp),
+            border = BorderStroke(1.dp, Color(0xFF451A03))
         ) {
-            Row(
+            Box(
                 modifier = Modifier
+                    .background(
+                        Brush.linearGradient(
+                            listOf(Color(0xFFD97706), Color(0xFFEF4444))
+                        )
+                    )
                     .fillMaxWidth()
-                    .padding(16.dp),
-                verticalAlignment = Alignment.CenterVertically
+                    .padding(16.dp)
             ) {
-                Text("🔥", fontSize = 40.sp)
-                Spacer(modifier = Modifier.width(16.dp))
-                Column {
-                    Text("Çalışma Serisi", fontWeight = FontWeight.Bold, fontSize = 18.sp)
-                    Text("Her gün çalışarak seriyi devam ettir!", color = MaterialTheme.colorScheme.onSurfaceVariant, fontSize = 14.sp)
-                }
-            }
-        }
-
-        // Stats Dashboard
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.spacedBy(12.dp)
-        ) {
-            Card(
-                modifier = Modifier.weight(1f),
-                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
-            ) {
-                Column(modifier = Modifier.padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-                    Text("Kelime Kartı", fontWeight = FontWeight.SemiBold, fontSize = 14.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                    Spacer(modifier = Modifier.height(8.dp))
-                    Text("$learnedWords / $totalWords Kelime", fontSize = 16.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
-                    Spacer(modifier = Modifier.height(2.dp))
-                    Text(if (currentCard != null) "Tekrar Var" else "Tamamlandı", fontSize = 12.sp, color = if (currentCard != null) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.secondary)
-                }
-            }
-
-            Card(
-                modifier = Modifier.weight(1f),
-                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
-            ) {
-                Column(modifier = Modifier.padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-                    Text("Çözülen Soru", fontWeight = FontWeight.SemiBold, fontSize = 14.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                    Spacer(modifier = Modifier.height(8.dp))
-                    Text("$totalQuizzes Soru", fontSize = 16.sp, fontWeight = FontWeight.Bold)
-                    if (totalQuizzes > 0) {
-                        Text("Doğru: %${(correctQuizzes.toFloat() / totalQuizzes.toFloat() * 100).toInt()}", fontSize = 12.sp, color = MaterialTheme.colorScheme.secondary)
+                Row(
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text("🔥", fontSize = 36.sp)
+                    Spacer(modifier = Modifier.width(16.dp))
+                    Column {
+                        Text("Çalışma Serisi", fontWeight = FontWeight.Bold, fontSize = 18.sp, color = Color.White)
+                        Text("Her gün çalışarak seriyi devam ettir!", color = Color(0xFFFFE4E6), fontSize = 13.sp)
                     }
                 }
             }
         }
 
-        // Quick Actions
-        Text("Hızlı Başlat", fontWeight = FontWeight.Bold, fontSize = 18.sp, color = MaterialTheme.colorScheme.primary)
+        // Word Card Stats (Circular)
+        CircularProgressCard(
+            title = "Kelime Kartları Gelişimi",
+            current = learnedWords,
+            total = totalWords,
+            subtitle = if (currentCard != null) "Bugünlük tamamlanacak tekrarların var" else "Bugünlük tüm kelimeler tamamlandı!"
+        )
 
-        Button(
-            onClick = { navigateToTab(1) },
+        // Practice Stats Grid
+        Card(
             modifier = Modifier.fillMaxWidth(),
-            shape = RoundedCornerShape(12.dp)
+            colors = CardDefaults.cardColors(containerColor = Color(0xFF151522)),
+            border = BorderStroke(1.dp, Color(0xFF2E2E4A)),
+            shape = RoundedCornerShape(16.dp)
         ) {
-            Text("Kelime Çalışmaya Başla (Active Recall)")
+            Row(
+                modifier = Modifier.padding(16.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                Column(modifier = Modifier.weight(1f)) {
+                    Text("Çözülen Soru Pratiği", fontWeight = FontWeight.SemiBold, fontSize = 14.sp, color = Color(0xFF9E9EAF))
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Text("$totalQuizzes Soru", fontSize = 22.sp, fontWeight = FontWeight.Bold, color = Color.White)
+                    Spacer(modifier = Modifier.height(4.dp))
+                    if (totalQuizzes > 0) {
+                        Text("Doğru Oranı: %${(correctQuizzes.toFloat() / totalQuizzes.toFloat() * 100).toInt()}", fontSize = 12.sp, color = Color(0xFF10B981), fontWeight = FontWeight.Medium)
+                    } else {
+                        Text("Henüz soru çözülmedi", fontSize = 12.sp, color = Color(0xFF9E9EAF))
+                    }
+                }
+                Box(
+                    contentAlignment = Alignment.Center,
+                    modifier = Modifier.size(60.dp)
+                ) {
+                    val progress = if (totalQuizzes > 0) correctQuizzes.toFloat() / totalQuizzes else 0f
+                    CircularProgressIndicator(
+                        progress = 1f,
+                        strokeWidth = 6.dp,
+                        color = Color(0xFF2E2E4A),
+                        modifier = Modifier.fillMaxSize()
+                    )
+                    CircularProgressIndicator(
+                        progress = progress,
+                        strokeWidth = 6.dp,
+                        color = Color(0xFF10B981),
+                        modifier = Modifier.fillMaxSize()
+                    )
+                    Text(
+                        text = "🎯",
+                        fontSize = 20.sp
+                    )
+                }
+            }
         }
 
-        Button(
-            onClick = { navigateToTab(3) },
+        // Quick Actions
+        Text("Hızlı Başlat", fontWeight = FontWeight.Bold, fontSize = 18.sp, color = Color(0xFF8B5CF6))
+
+        Row(
             modifier = Modifier.fillMaxWidth(),
-            shape = RoundedCornerShape(12.dp),
-            colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.secondary)
+            horizontalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            Text("YDS Pratik Soruları Çöz")
+            Card(
+                modifier = Modifier
+                    .weight(1f)
+                    .clickable { navigateToTab(1) },
+                shape = RoundedCornerShape(16.dp),
+                border = BorderStroke(1.dp, Color(0xFF2E2E4A))
+            ) {
+                Box(
+                    modifier = Modifier
+                        .background(
+                            Brush.linearGradient(
+                                listOf(Color(0xFF8B5CF6), Color(0xFF6366F1))
+                            )
+                        )
+                        .padding(16.dp)
+                        .fillMaxWidth()
+                        .height(100.dp),
+                    contentAlignment = Alignment.CenterStart
+                ) {
+                    Column {
+                        Text("🧠", fontSize = 28.sp)
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Text("Kelime Kartları", fontWeight = FontWeight.Bold, fontSize = 16.sp, color = Color.White)
+                        Text("Active Recall", fontSize = 12.sp, color = Color(0xFFE0E7FF))
+                    }
+                }
+            }
+
+            Card(
+                modifier = Modifier
+                    .weight(1f)
+                    .clickable { navigateToTab(3) },
+                shape = RoundedCornerShape(16.dp),
+                border = BorderStroke(1.dp, Color(0xFF2E2E4A))
+            ) {
+                Box(
+                    modifier = Modifier
+                        .background(
+                            Brush.linearGradient(
+                                listOf(Color(0xFF06B6D4), Color(0xFF10B981))
+                            )
+                        )
+                        .padding(16.dp)
+                        .fillMaxWidth()
+                        .height(100.dp),
+                    contentAlignment = Alignment.CenterStart
+                ) {
+                    Column {
+                        Text("✍️", fontSize = 28.sp)
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Text("Soru Çözümü", fontWeight = FontWeight.Bold, fontSize = 16.sp, color = Color.White)
+                        Text("YDS Soru Havuzu", fontSize = 12.sp, color = Color(0xFFECFDF5))
+                    }
+                }
+            }
         }
     }
 }
@@ -343,45 +482,123 @@ fun ActiveRecallScreen(viewModel: MainViewModel) {
         verticalArrangement = Arrangement.Center
     ) {
         if (currentCard == null) {
-            Text("🎉 Harika! Bugünlük tüm tekrarlarını tamamladın.", fontSize = 20.sp, fontWeight = FontWeight.Bold, textAlign = TextAlign.Center)
-            Spacer(modifier = Modifier.height(16.dp))
-            Text("Yarın yeni kelimelerle çalışmaya devam edebilirsin.", fontSize = 14.sp, color = MaterialTheme.colorScheme.onSurfaceVariant, textAlign = TextAlign.Center)
+            Card(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(24.dp),
+                colors = CardDefaults.cardColors(containerColor = Color(0xFF151522)),
+                border = BorderStroke(1.dp, Color(0xFF2E2E4A)),
+                shape = RoundedCornerShape(24.dp)
+            ) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(32.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                ) {
+                    Text("🎉", fontSize = 48.sp)
+                    Spacer(modifier = Modifier.height(16.dp))
+                    Text(
+                        text = "Harika! Bugünlük tüm tekrarlarını tamamladın.",
+                        fontSize = 20.sp,
+                        fontWeight = FontWeight.Bold,
+                        textAlign = TextAlign.Center,
+                        color = Color.White
+                    )
+                    Spacer(modifier = Modifier.height(12.dp))
+                    Text(
+                        text = "Yarın yeni kelimelerle çalışmaya devam edebilirsin.",
+                        fontSize = 14.sp,
+                        color = Color(0xFF9E9EAF),
+                        textAlign = TextAlign.Center
+                    )
+                }
+            }
         } else {
             val card = currentCard!!
             
             Card(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(350.dp)
+                    .height(380.dp)
                     .clickable { isRevealed = true },
-                elevation = CardDefaults.cardElevation(defaultElevation = 8.dp),
-                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
+                colors = CardDefaults.cardColors(containerColor = Color(0xFF151522)),
+                border = BorderStroke(1.dp, Color(0xFF2E2E4A)),
+                shape = RoundedCornerShape(24.dp)
             ) {
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
-                        .padding(16.dp),
+                        .padding(24.dp),
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center
                 ) {
-                    Text(text = card.word, fontSize = 36.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
+                    Text(
+                        text = "YDS KELİME KARTI",
+                        fontSize = 11.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = Color(0xFF8B5CF6),
+                        letterSpacing = 1.5.sp
+                    )
+                    Spacer(modifier = Modifier.height(24.dp))
+                    Text(
+                        text = card.word,
+                        fontSize = 38.sp,
+                        fontWeight = FontWeight.ExtraBold,
+                        color = Color.White,
+                        textAlign = TextAlign.Center
+                    )
                     
                     if (isRevealed) {
-                        Spacer(modifier = Modifier.height(24.dp))
-                        Text(text = card.translation, fontSize = 24.sp, color = MaterialTheme.colorScheme.secondary, fontWeight = FontWeight.SemiBold)
+                        Spacer(modifier = Modifier.height(20.dp))
+                        Text(
+                            text = card.translation,
+                            fontSize = 24.sp,
+                            color = Color(0xFF10B981),
+                            fontWeight = FontWeight.Bold,
+                            textAlign = TextAlign.Center
+                        )
+                        Spacer(modifier = Modifier.height(20.dp))
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .clip(RoundedCornerShape(12.dp))
+                                .background(Color(0xFF1C1C2E))
+                                .padding(12.dp)
+                        ) {
+                            Text(
+                                text = "“${card.exampleSentence}”",
+                                fontSize = 14.sp,
+                                fontStyle = FontStyle.Italic,
+                                color = Color(0xFFD1D1F7),
+                                textAlign = TextAlign.Center,
+                                modifier = Modifier.fillMaxWidth()
+                            )
+                        }
                         Spacer(modifier = Modifier.height(16.dp))
                         Text(
-                            text = "\"${card.exampleSentence}\"",
-                            fontSize = 16.sp,
-                            fontStyle = FontStyle.Italic,
-                            textAlign = TextAlign.Center,
-                            modifier = Modifier.padding(horizontal = 8.dp)
+                            text = "Eş Anlamlılar: ${card.synonyms}",
+                            fontSize = 13.sp,
+                            color = Color(0xFF9E9EAF),
+                            fontWeight = FontWeight.Medium,
+                            textAlign = TextAlign.Center
                         )
-                        Spacer(modifier = Modifier.height(16.dp))
-                        Text(text = "Eş Anlamlılar: ${card.synonyms}", fontSize = 14.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
                     } else {
                         Spacer(modifier = Modifier.height(48.dp))
-                        Text("Anlamını görmek için dokun", fontSize = 14.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                        Box(
+                            modifier = Modifier
+                                .clip(RoundedCornerShape(12.dp))
+                                .background(Color(0xFF8B5CF6).copy(alpha = 0.1f))
+                                .padding(horizontal = 16.dp, vertical = 8.dp)
+                        ) {
+                            Text(
+                                text = "🔍 Anlamını görmek için dokun",
+                                fontSize = 13.sp,
+                                color = Color(0xFFC084FC),
+                                fontWeight = FontWeight.SemiBold
+                            )
+                        }
                     }
                 }
             }
@@ -389,32 +606,40 @@ fun ActiveRecallScreen(viewModel: MainViewModel) {
             Spacer(modifier = Modifier.height(32.dp))
             
             if (isRevealed) {
-                Text("Cevabı hatırlamakta ne kadar zorlandın?", fontWeight = FontWeight.Medium, fontSize = 16.sp)
+                Text(
+                    text = "Cevabı hatırlamakta ne kadar zorlandın?",
+                    fontWeight = FontWeight.SemiBold,
+                    fontSize = 15.sp,
+                    color = Color(0xFFE2E2E9)
+                )
                 Spacer(modifier = Modifier.height(16.dp))
                 Row(
                     modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceEvenly
+                    horizontalArrangement = Arrangement.spacedBy(10.dp)
                 ) {
                     Button(
                         onClick = { viewModel.submitReview(0) },
-                        colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.error),
-                        modifier = Modifier.weight(1f).padding(horizontal = 4.dp)
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFEF4444)),
+                        shape = RoundedCornerShape(12.dp),
+                        modifier = Modifier.weight(1f)
                     ) {
-                        Text("Bilemedim")
+                        Text("Bilemedim", fontWeight = FontWeight.Bold, color = Color.White)
                     }
                     Button(
                         onClick = { viewModel.submitReview(3) },
-                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFFB74D)),
-                        modifier = Modifier.weight(1f).padding(horizontal = 4.dp)
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF59E0B)),
+                        shape = RoundedCornerShape(12.dp),
+                        modifier = Modifier.weight(1f)
                     ) {
-                        Text("Zorlandım")
+                        Text("Zorlandım", fontWeight = FontWeight.Bold, color = Color.White)
                     }
                     Button(
                         onClick = { viewModel.submitReview(5) },
-                        colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.secondary),
-                        modifier = Modifier.weight(1f).padding(horizontal = 4.dp)
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF10B981)),
+                        shape = RoundedCornerShape(12.dp),
+                        modifier = Modifier.weight(1f)
                     ) {
-                        Text("Kolaydı")
+                        Text("Kolaydı", fontWeight = FontWeight.Bold, color = Color.White)
                     }
                 }
             }
@@ -430,7 +655,15 @@ fun LessonsScreen() {
         // Fullscreen Lesson Reader Dialog
         AlertDialog(
             onDismissRequest = { activeLesson = null },
-            title = { Text(activeLesson!!.title, fontSize = 20.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary) },
+            containerColor = Color(0xFF151522),
+            title = { 
+                Text(
+                    text = activeLesson!!.title, 
+                    fontSize = 20.sp, 
+                    fontWeight = FontWeight.Bold, 
+                    color = Color(0xFF8B5CF6)
+                ) 
+            },
             text = {
                 Box(
                     modifier = Modifier
@@ -438,12 +671,22 @@ fun LessonsScreen() {
                         .height(400.dp)
                         .verticalScroll(rememberScrollState())
                 ) {
-                    Text(activeLesson!!.content, fontSize = 15.sp, modifier = Modifier.padding(bottom = 16.dp))
+                    Text(
+                        text = activeLesson!!.content, 
+                        fontSize = 15.sp, 
+                        color = Color(0xFFE2E2E9),
+                        lineHeight = 22.sp,
+                        modifier = Modifier.padding(bottom = 16.dp)
+                    )
                 }
             },
             confirmButton = {
-                Button(onClick = { activeLesson = null }) {
-                    Text("Dersi Bitir")
+                Button(
+                    onClick = { activeLesson = null },
+                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF8B5CF6)),
+                    shape = RoundedCornerShape(12.dp)
+                ) {
+                    Text("Dersi Bitir", color = Color.White, fontWeight = FontWeight.Bold)
                 }
             }
         )
@@ -454,9 +697,17 @@ fun LessonsScreen() {
             .fillMaxSize()
             .padding(16.dp)
     ) {
-        Text("YDS Konu Anlatımları", fontSize = 24.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
+        Text(
+            text = "YDS Konu Anlatımları", 
+            fontSize = 24.sp, 
+            fontWeight = FontWeight.Bold, 
+            color = Color(0xFF8B5CF6)
+        )
         Spacer(modifier = Modifier.height(8.dp))
-        Text("YDS'de en çok çıkan dil bilgisi kurallarını ve yapılarını sırasıyla çalışın.", color = MaterialTheme.colorScheme.onSurfaceVariant)
+        Text(
+            text = "YDS'de en çok çıkan dil bilgisi kurallarını ve yapılarını sırasıyla çalışın.", 
+            color = Color(0xFF9E9EAF)
+        )
         Spacer(modifier = Modifier.height(16.dp))
 
         LazyColumn(
@@ -467,14 +718,63 @@ fun LessonsScreen() {
                     modifier = Modifier
                         .fillMaxWidth()
                         .clickable { activeLesson = lesson },
-                    colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
+                    colors = CardDefaults.cardColors(containerColor = Color(0xFF151522)),
+                    border = BorderStroke(1.dp, Color(0xFF2E2E4A)),
+                    shape = RoundedCornerShape(16.dp)
                 ) {
                     Column(modifier = Modifier.padding(16.dp)) {
-                        Text(lesson.title, fontWeight = FontWeight.Bold, fontSize = 18.sp, color = MaterialTheme.colorScheme.primary)
-                        Spacer(modifier = Modifier.height(4.dp))
-                        Text(lesson.summary, fontSize = 14.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                        Spacer(modifier = Modifier.height(12.dp))
-                        Text("Çalışmaya Başla ➔", fontWeight = FontWeight.SemiBold, fontSize = 14.sp, color = MaterialTheme.colorScheme.secondary)
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Text(
+                                text = lesson.title, 
+                                fontWeight = FontWeight.Bold, 
+                                fontSize = 18.sp, 
+                                color = Color.White,
+                                modifier = Modifier.weight(1f)
+                            )
+                            Spacer(modifier = Modifier.width(8.dp))
+                            Box(
+                                modifier = Modifier
+                                    .clip(RoundedCornerShape(8.dp))
+                                    .background(Color(0xFF8B5CF6).copy(alpha = 0.15f))
+                                    .padding(horizontal = 8.dp, vertical = 4.dp)
+                            ) {
+                                Text(
+                                    text = "Ders",
+                                    color = Color(0xFFC084FC),
+                                    fontSize = 10.sp,
+                                    fontWeight = FontWeight.Bold
+                                )
+                            }
+                        }
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Text(
+                            text = lesson.summary, 
+                            fontSize = 14.sp, 
+                            color = Color(0xFF9E9EAF),
+                            lineHeight = 20.sp
+                        )
+                        Spacer(modifier = Modifier.height(16.dp))
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Text(
+                                text = "Çalışmaya Başla", 
+                                fontWeight = FontWeight.SemiBold, 
+                                fontSize = 14.sp, 
+                                color = Color(0xFF10B981)
+                            )
+                            Spacer(modifier = Modifier.width(4.dp))
+                            Text(
+                                text = "➔", 
+                                fontWeight = FontWeight.Bold, 
+                                fontSize = 14.sp, 
+                                color = Color(0xFF10B981)
+                            )
+                        }
                     }
                 }
             }
@@ -511,8 +811,17 @@ fun PracticeScreen(viewModel: MainViewModel) {
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Text("YDS Pratik Soruları", fontSize = 20.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
-            Text("Soru: ${currentQuestionIndex + 1} / ${filteredQuestions.size}", fontSize = 14.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            Text(
+                text = "YDS Pratik Soruları", 
+                fontSize = 20.sp, 
+                fontWeight = FontWeight.Bold, 
+                color = Color(0xFF8B5CF6)
+            )
+            Text(
+                text = "Soru: ${currentQuestionIndex + 1} / ${filteredQuestions.size}", 
+                fontSize = 14.sp, 
+                color = Color(0xFF9E9EAF)
+            )
         }
         
         Spacer(modifier = Modifier.height(8.dp))
@@ -540,14 +849,17 @@ fun PracticeScreen(viewModel: MainViewModel) {
         // Question text
         Card(
             modifier = Modifier.fillMaxWidth(),
-            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
+            colors = CardDefaults.cardColors(containerColor = Color(0xFF151522)),
+            border = BorderStroke(1.dp, Color(0xFF2E2E4A)),
+            shape = RoundedCornerShape(16.dp)
         ) {
             Text(
                 text = question.questionText,
-                fontSize = 18.sp,
+                fontSize = 17.sp,
                 fontWeight = FontWeight.Medium,
-                modifier = Modifier.padding(16.dp),
-                lineHeight = 24.sp
+                color = Color.White,
+                modifier = Modifier.padding(18.dp),
+                lineHeight = 26.sp
             )
         }
 
@@ -556,31 +868,87 @@ fun PracticeScreen(viewModel: MainViewModel) {
         // Options list
         Column(
             modifier = Modifier.fillMaxWidth(),
-            verticalArrangement = Arrangement.spacedBy(8.dp)
+            verticalArrangement = Arrangement.spacedBy(10.dp)
         ) {
             question.options.forEachIndexed { index, optionText ->
                 val isSelected = selectedOptionIndex == index
                 val isCorrect = question.correctOptionIndex == index
                 
-                val buttonColor = when {
-                    hasAnswered && isCorrect -> MaterialTheme.colorScheme.secondary
-                    hasAnswered && isSelected && !isCorrect -> MaterialTheme.colorScheme.error
-                    isSelected -> MaterialTheme.colorScheme.primary
-                    else -> MaterialTheme.colorScheme.surface
+                val targetColor = when {
+                    hasAnswered && isCorrect -> Color(0xFF10B981).copy(alpha = 0.15f)
+                    hasAnswered && isSelected && !isCorrect -> Color(0xFFEF4444).copy(alpha = 0.15f)
+                    isSelected -> Color(0xFF8B5CF6).copy(alpha = 0.20f)
+                    else -> Color(0xFF151522)
                 }
+                
+                val borderColor = when {
+                    hasAnswered && isCorrect -> Color(0xFF10B981)
+                    hasAnswered && isSelected && !isCorrect -> Color(0xFFEF4444)
+                    isSelected -> Color(0xFF8B5CF6)
+                    else -> Color(0xFF2E2E4A)
+                }
+
+                val animatedBgColor by animateColorAsState(targetValue = targetColor, label = "bgColor")
+                val animatedBorderColor by animateColorAsState(targetValue = borderColor, label = "borderColor")
 
                 Card(
                     modifier = Modifier
                         .fillMaxWidth()
                         .clickable(enabled = !hasAnswered) { viewModel.selectQuizOption(index) },
-                    colors = CardDefaults.cardColors(containerColor = buttonColor)
+                    colors = CardDefaults.cardColors(containerColor = animatedBgColor),
+                    border = BorderStroke(1.dp, animatedBorderColor),
+                    shape = RoundedCornerShape(14.dp)
                 ) {
-                    Text(
-                        text = optionText,
-                        modifier = Modifier.padding(16.dp),
-                        fontSize = 16.sp,
-                        fontWeight = if (isSelected || (hasAnswered && isCorrect)) FontWeight.Bold else FontWeight.Normal
-                    )
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(16.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        Text(
+                            text = optionText,
+                            modifier = Modifier.weight(1f),
+                            fontSize = 16.sp,
+                            color = when {
+                                hasAnswered && isCorrect -> Color(0xFF34D399)
+                                hasAnswered && isSelected && !isCorrect -> Color(0xFFF87171)
+                                isSelected -> Color(0xFFC084FC)
+                                else -> Color.White
+                            },
+                            fontWeight = if (isSelected || (hasAnswered && isCorrect)) FontWeight.Bold else FontWeight.Normal
+                        )
+                        
+                        if (hasAnswered) {
+                            if (isCorrect) {
+                                Text("✅", fontSize = 18.sp)
+                            } else if (isSelected) {
+                                Text("❌", fontSize = 18.sp)
+                            }
+                        } else {
+                            Box(
+                                modifier = Modifier
+                                    .size(20.dp)
+                                    .clip(RoundedCornerShape(10.dp))
+                                    .border(
+                                        width = if (isSelected) 2.dp else 1.dp,
+                                        color = if (isSelected) Color(0xFF8B5CF6) else Color(0xFF4E4E7A),
+                                        shape = RoundedCornerShape(10.dp)
+                                    )
+                                    .background(if (isSelected) Color(0xFF8B5CF6) else Color.Transparent),
+                                contentAlignment = Alignment.Center
+                            ) {
+                                if (isSelected) {
+                                    Box(
+                                        modifier = Modifier
+                                            .size(8.dp)
+                                            .clip(RoundedCornerShape(4.dp))
+                                            .background(Color.White)
+                                    )
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -597,25 +965,52 @@ fun PracticeScreen(viewModel: MainViewModel) {
                     }
                 },
                 enabled = selectedOptionIndex != null,
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color(0xFF8B5CF6),
+                    disabledContainerColor = Color(0xFF2E2E4A)
+                ),
+                shape = RoundedCornerShape(12.dp),
                 modifier = Modifier.fillMaxWidth()
             ) {
-                Text("Cevabı Onayla")
+                Text(
+                    text = "Cevabı Onayla", 
+                    color = if (selectedOptionIndex != null) Color.White else Color(0xFF9E9EAF),
+                    fontWeight = FontWeight.Bold
+                )
             }
         } else {
             // Explanation box
+            val isCorrect = selectedOptionIndex == question.correctOptionIndex
+            val glowColor = if (isCorrect) Color(0xFF10B981) else Color(0xFFEF4444)
             Card(
                 modifier = Modifier.fillMaxWidth(),
-                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)
+                colors = CardDefaults.cardColors(containerColor = Color(0xFF151522)),
+                border = BorderStroke(1.dp, glowColor.copy(alpha = 0.5f)),
+                shape = RoundedCornerShape(16.dp)
             ) {
-                Column(modifier = Modifier.padding(16.dp)) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(
+                            Brush.verticalGradient(
+                                listOf(glowColor.copy(alpha = 0.05f), Color.Transparent)
+                            )
+                        )
+                        .padding(16.dp)
+                ) {
                     Text(
-                        text = if (selectedOptionIndex == question.correctOptionIndex) "✅ Doğru Cevap!" else "❌ Yanlış Cevap!",
+                        text = if (isCorrect) "🎉 Doğru Cevap!" else "❌ Yanlış Cevap!",
                         fontWeight = FontWeight.Bold,
                         fontSize = 16.sp,
-                        color = if (selectedOptionIndex == question.correctOptionIndex) MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.error
+                        color = glowColor
                     )
                     Spacer(modifier = Modifier.height(8.dp))
-                    Text(text = question.explanation, fontSize = 14.sp)
+                    Text(
+                        text = question.explanation, 
+                        fontSize = 14.sp,
+                        color = Color(0xFFE2E2E9),
+                        lineHeight = 20.sp
+                    )
                 }
             }
 
@@ -629,9 +1024,15 @@ fun PracticeScreen(viewModel: MainViewModel) {
                         viewModel.resetQuiz()
                     }
                 },
+                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF8B5CF6)),
+                shape = RoundedCornerShape(12.dp),
                 modifier = Modifier.fillMaxWidth()
             ) {
-                Text(if (currentQuestionIndex < filteredQuestions.size - 1) "Sonraki Soru" else "Testi Sıfırla ve Yeniden Başlat")
+                Text(
+                    text = if (currentQuestionIndex < filteredQuestions.size - 1) "Sonraki Soru" else "Testi Sıfırla ve Yeniden Başlat",
+                    fontWeight = FontWeight.Bold,
+                    color = Color.White
+                )
             }
         }
     }
@@ -639,16 +1040,29 @@ fun PracticeScreen(viewModel: MainViewModel) {
 
 @Composable
 fun CategoryChip(text: String, isSelected: Boolean, onClick: () -> Unit) {
+    val borderModifier = if (isSelected) {
+        Modifier.border(1.dp, Brush.linearGradient(listOf(Color(0xFF8B5CF6), Color(0xFF6366F1))), RoundedCornerShape(16.dp))
+    } else {
+        Modifier.border(1.dp, Color(0xFF2E2E4A), RoundedCornerShape(16.dp))
+    }
+    
+    val backgroundBrush = if (isSelected) {
+        Brush.linearGradient(listOf(Color(0xFF8B5CF6).copy(alpha = 0.2f), Color(0xFF6366F1).copy(alpha = 0.2f)))
+    } else {
+        Brush.linearGradient(listOf(Color(0xFF151522), Color(0xFF151522)))
+    }
+
     Box(
         modifier = Modifier
+            .then(borderModifier)
             .clip(RoundedCornerShape(16.dp))
-            .background(if (isSelected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.surfaceVariant)
+            .background(backgroundBrush)
             .clickable { onClick() }
             .padding(horizontal = 14.dp, vertical = 8.dp)
     ) {
         Text(
             text = text,
-            color = if (isSelected) MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onSurfaceVariant,
+            color = if (isSelected) Color(0xFFC084FC) else Color(0xFF9E9EAF),
             fontSize = 13.sp,
             fontWeight = FontWeight.Bold
         )
