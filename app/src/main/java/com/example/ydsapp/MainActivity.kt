@@ -654,6 +654,5 @@ fun CategoryChip(text: String, isSelected: Boolean, onClick: () -> Unit) {
         )
     }
 }
-}
 
 
