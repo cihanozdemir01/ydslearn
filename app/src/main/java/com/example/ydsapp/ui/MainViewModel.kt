@@ -43,6 +43,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     // Statistics Flows
     val quizAttemptsCount: Flow<Int>
     val correctAttemptsCount: Flow<Int>
+    val learnedWordsCount: Flow<Int>
+    val totalWordsCount: Flow<Int>
 
     init {
         val database = AppDatabase.getDatabase(application)
@@ -52,6 +54,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         
         quizAttemptsCount = ydsDao.getQuizAttemptsCountFlow()
         correctAttemptsCount = ydsDao.getCorrectQuizAttemptsCountFlow()
+        learnedWordsCount = flashcardDao.getLearnedFlashcardsCountFlow()
+        totalWordsCount = flashcardDao.getTotalFlashcardsCountFlow()
         
         viewModelScope.launch {
             // Mock data populate for demonstration

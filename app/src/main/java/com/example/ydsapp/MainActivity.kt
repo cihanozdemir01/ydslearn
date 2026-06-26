@@ -177,6 +177,8 @@ fun DashboardScreen(viewModel: MainViewModel, navigateToTab: (Int) -> Unit) {
     val correctQuizzes by viewModel.correctAttemptsCount.collectAsState(initial = 0)
     val currentCard by viewModel.currentCard.collectAsState()
     val targetScore by viewModel.targetScore.collectAsState()
+    val learnedWords by viewModel.learnedWordsCount.collectAsState(initial = 0)
+    val totalWords by viewModel.totalWordsCount.collectAsState(initial = 0)
     var showGoalDialog by remember { mutableStateOf(false) }
 
     if (targetScore == 0 || showGoalDialog) {
@@ -280,7 +282,9 @@ fun DashboardScreen(viewModel: MainViewModel, navigateToTab: (Int) -> Unit) {
                 Column(modifier = Modifier.padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
                     Text("Kelime Kartı", fontWeight = FontWeight.SemiBold, fontSize = 14.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
                     Spacer(modifier = Modifier.height(8.dp))
-                    Text(if (currentCard != null) "Tekrar Var" else "Tamamlandı", fontSize = 16.sp, fontWeight = FontWeight.Bold, color = if (currentCard != null) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.secondary)
+                    Text("$learnedWords / $totalWords Kelime", fontSize = 16.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
+                    Spacer(modifier = Modifier.height(2.dp))
+                    Text(if (currentCard != null) "Tekrar Var" else "Tamamlandı", fontSize = 12.sp, color = if (currentCard != null) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.secondary)
                 }
             }
 
