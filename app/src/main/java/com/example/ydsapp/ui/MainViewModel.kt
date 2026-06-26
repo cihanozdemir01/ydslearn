@@ -1,6 +1,7 @@
 package com.example.ydsapp.ui
 
 import android.app.Application
+import android.content.Context
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.ydsapp.data.AppDatabase
@@ -13,12 +14,18 @@ import com.example.ydsapp.data.QuestionDataProvider
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val repository: FlashcardRepository
     private val ydsDao: YdsDao
     
+    private val prefs = application.getSharedPreferences("yds_profile", Context.MODE_PRIVATE)
+    
+    private val _targetScore = MutableStateFlow(prefs.getInt("target_score", 0))
+    val targetScore: StateFlow<Int> = _targetScore.asStateFlow()
+
     private val _currentCard = MutableStateFlow<Flashcard?>(null)
     val currentCard: StateFlow<Flashcard?> = _currentCard
     
@@ -122,5 +129,10 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         _currentQuestionIndex.value = 0
         _selectedOptionIndex.value = null
         _hasAnswered.value = false
+    }
+
+    fun setTargetScore(score: Int) {
+        prefs.edit().putInt("target_score", score).apply()
+        _targetScore.value = score
     }
 }
