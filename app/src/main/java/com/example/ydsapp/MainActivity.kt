@@ -525,7 +525,7 @@ fun PracticeScreen(viewModel: MainViewModel) {
                 .horizontalScroll(rememberScrollState()),
             horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            val categories = listOf("Tümü", "Kelime Bilgisi", "Dil Bilgisi", "Bağlaçlar", "Edatlar")
+            val categories = listOf("Tümü", "Kelime Bilgisi", "Dil Bilgisi", "Bağlaçlar", "Edatlar", "Çeviri", "Paragraf", "Diyalog")
             categories.forEach { cat ->
                 CategoryChip(
                     text = cat,
