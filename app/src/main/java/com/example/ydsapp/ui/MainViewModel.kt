@@ -40,6 +40,9 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val _hasAnswered = MutableStateFlow(false)
     val hasAnswered: StateFlow<Boolean> = _hasAnswered
 
+    private val _selectedCategory = MutableStateFlow("Tümü")
+    val selectedCategory: StateFlow<String> = _selectedCategory
+
     // Statistics Flows
     val quizAttemptsCount: Flow<Int>
     val correctAttemptsCount: Flow<Int>
@@ -105,11 +108,23 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         _hasAnswered.value = answered
     }
 
+    fun setCategory(category: String) {
+        _selectedCategory.value = category
+        _currentQuestionIndex.value = 0
+        _selectedOptionIndex.value = null
+        _hasAnswered.value = false
+    }
+
     fun nextQuizQuestion() {
         _selectedOptionIndex.value = null
         _hasAnswered.value = false
+        val filteredSize = if (_selectedCategory.value == "Tümü") {
+            QuestionDataProvider.questions.size
+        } else {
+            QuestionDataProvider.questions.count { it.category == _selectedCategory.value }
+        }
         val nextIndex = _currentQuestionIndex.value + 1
-        if (nextIndex < QuestionDataProvider.questions.size) {
+        if (nextIndex < filteredSize) {
             _currentQuestionIndex.value = nextIndex
         } else {
             _currentQuestionIndex.value = 0

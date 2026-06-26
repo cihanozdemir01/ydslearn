@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -486,8 +487,17 @@ fun PracticeScreen(viewModel: MainViewModel) {
     val currentQuestionIndex by viewModel.currentQuestionIndex.collectAsState()
     val selectedOptionIndex by viewModel.selectedOptionIndex.collectAsState()
     val hasAnswered by viewModel.hasAnswered.collectAsState()
+    val selectedCategory by viewModel.selectedCategory.collectAsState()
 
-    val question = QuestionDataProvider.questions[currentQuestionIndex]
+    val filteredQuestions = if (selectedCategory == "Tümü") {
+        QuestionDataProvider.questions
+    } else {
+        QuestionDataProvider.questions.filter { it.category == selectedCategory }
+    }
+
+    val question = filteredQuestions.getOrNull(currentQuestionIndex)
+        ?: filteredQuestions.firstOrNull()
+        ?: QuestionDataProvider.questions.first()
 
     Column(
         modifier = Modifier
@@ -502,10 +512,30 @@ fun PracticeScreen(viewModel: MainViewModel) {
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text("YDS Pratik Soruları", fontSize = 20.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
-            Text("Soru: ${currentQuestionIndex + 1} / ${QuestionDataProvider.questions.size}", fontSize = 14.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            Text("Soru: ${currentQuestionIndex + 1} / ${filteredQuestions.size}", fontSize = 14.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
         
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(8.dp))
+
+        // Horizontally scrolling category chips
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = 8.dp)
+                .horizontalScroll(rememberScrollState()),
+            horizontalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            val categories = listOf("Tümü", "Kelime Bilgisi", "Dil Bilgisi", "Bağlaçlar", "Edatlar")
+            categories.forEach { cat ->
+                CategoryChip(
+                    text = cat,
+                    isSelected = selectedCategory == cat,
+                    onClick = { viewModel.setCategory(cat) }
+                )
+            }
+        }
+
+        Spacer(modifier = Modifier.height(8.dp))
 
         // Question text
         Card(
@@ -593,7 +623,7 @@ fun PracticeScreen(viewModel: MainViewModel) {
 
             Button(
                 onClick = {
-                    if (currentQuestionIndex < QuestionDataProvider.questions.size - 1) {
+                    if (currentQuestionIndex < filteredQuestions.size - 1) {
                         viewModel.nextQuizQuestion()
                     } else {
                         viewModel.resetQuiz()
@@ -601,10 +631,29 @@ fun PracticeScreen(viewModel: MainViewModel) {
                 },
                 modifier = Modifier.fillMaxWidth()
             ) {
-                Text(if (currentQuestionIndex < QuestionDataProvider.questions.size - 1) "Sonraki Soru" else "Testi Sıfırla ve Yeniden Başlat")
+                Text(if (currentQuestionIndex < filteredQuestions.size - 1) "Sonraki Soru" else "Testi Sıfırla ve Yeniden Başlat")
             }
         }
     }
+}
+
+@Composable
+fun CategoryChip(text: String, isSelected: Boolean, onClick: () -> Unit) {
+    Box(
+        modifier = Modifier
+            .clip(RoundedCornerShape(16.dp))
+            .background(if (isSelected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.surfaceVariant)
+            .clickable { onClick() }
+            .padding(horizontal = 14.dp, vertical = 8.dp)
+    ) {
+        Text(
+            text = text,
+            color = if (isSelected) MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onSurfaceVariant,
+            fontSize = 13.sp,
+            fontWeight = FontWeight.Bold
+        )
+    }
+}
 }
 
 
