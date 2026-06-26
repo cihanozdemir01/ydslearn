@@ -9,7 +9,6 @@ data class Question(
     val category: String
 )
 
-object QuestionDataProvider {
 object QuestionChunk0 {
     val list = listOf(
         Question(
