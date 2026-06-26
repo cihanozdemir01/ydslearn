@@ -6,7 +6,6 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.ydsapp.data.AppDatabase
 import com.example.ydsapp.data.Flashcard
-import com.example.ydsapp.data.FeynmanSubmission
 import com.example.ydsapp.data.QuizAttempt
 import com.example.ydsapp.data.FlashcardRepository
 import com.example.ydsapp.data.YdsDao
@@ -44,7 +43,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     // Statistics Flows
     val quizAttemptsCount: Flow<Int>
     val correctAttemptsCount: Flow<Int>
-    val feynmanSubmissions: Flow<List<FeynmanSubmission>>
 
     init {
         val database = AppDatabase.getDatabase(application)
@@ -54,7 +52,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         
         quizAttemptsCount = ydsDao.getQuizAttemptsCountFlow()
         correctAttemptsCount = ydsDao.getCorrectQuizAttemptsCountFlow()
-        feynmanSubmissions = ydsDao.getAllFeynmanSubmissions()
         
         viewModelScope.launch {
             // Mock data populate for demonstration
@@ -83,17 +80,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    fun submitFeynman(topic: String, explanation: String, score: Int) {
-        viewModelScope.launch {
-            val submission = FeynmanSubmission(
-                topic = topic,
-                explanation = explanation,
-                score = score,
-                date = System.currentTimeMillis()
-            )
-            ydsDao.insertFeynman(submission)
-        }
-    }
+
 
     fun submitQuizAttempt(questionId: Int, isCorrect: Boolean) {
         viewModelScope.launch {

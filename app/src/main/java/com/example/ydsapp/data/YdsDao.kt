@@ -8,15 +8,6 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface YdsDao {
     @Insert
-    suspend fun insertFeynman(submission: FeynmanSubmission)
-
-    @Query("SELECT * FROM feynman_submissions ORDER BY date DESC")
-    fun getAllFeynmanSubmissions(): Flow<List<FeynmanSubmission>>
-
-    @Query("SELECT COUNT(*) FROM feynman_submissions")
-    suspend fun getFeynmanSubmissionsCount(): Int
-
-    @Insert
     suspend fun insertQuizAttempt(attempt: QuizAttempt)
 
     @Query("SELECT * FROM quiz_attempts ORDER BY date DESC")

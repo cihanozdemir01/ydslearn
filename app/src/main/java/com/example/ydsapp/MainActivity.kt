@@ -28,7 +28,6 @@ import com.example.ydsapp.data.Lesson
 import com.example.ydsapp.data.LessonDataProvider
 import com.example.ydsapp.data.Question
 import com.example.ydsapp.data.QuestionDataProvider
-import com.example.ydsapp.data.FeynmanDataProvider
 import com.example.ydsapp.ui.MainViewModel
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
@@ -158,12 +157,6 @@ fun MainScreen(viewModel: MainViewModel) {
                     icon = { Text("❓", fontSize = 20.sp) },
                     label = { Text("Sorular") }
                 )
-                NavigationBarItem(
-                    selected = selectedTab == 4,
-                    onClick = { selectedTab = 4 },
-                    icon = { Text("🧠", fontSize = 20.sp) },
-                    label = { Text("Feynman") }
-                )
             }
         }
     ) { paddingValues ->
@@ -173,7 +166,6 @@ fun MainScreen(viewModel: MainViewModel) {
                 1 -> ActiveRecallScreen(viewModel)
                 2 -> LessonsScreen()
                 3 -> PracticeScreen(viewModel)
-                4 -> FeynmanScreen(viewModel)
             }
         }
     }
@@ -183,7 +175,6 @@ fun MainScreen(viewModel: MainViewModel) {
 fun DashboardScreen(viewModel: MainViewModel, navigateToTab: (Int) -> Unit) {
     val totalQuizzes by viewModel.quizAttemptsCount.collectAsState(initial = 0)
     val correctQuizzes by viewModel.correctAttemptsCount.collectAsState(initial = 0)
-    val feynmanList by viewModel.feynmanSubmissions.collectAsState(initial = emptyList())
     val currentCard by viewModel.currentCard.collectAsState()
     val targetScore by viewModel.targetScore.collectAsState()
     var showGoalDialog by remember { mutableStateOf(false) }
@@ -246,7 +237,7 @@ fun DashboardScreen(viewModel: MainViewModel, navigateToTab: (Int) -> Unit) {
                         val recText = when (targetScore) {
                             70 -> "Günlük Hedef: 15 Kelime & 5 Soru"
                             80 -> "Günlük Hedef: 25 Kelime & 10 Soru"
-                            else -> "Günlük Hedef: 40 Kelime, 20 Soru & Feynman"
+                            else -> "Günlük Hedef: 40 Kelime & 20 Soru"
                         }
                         Text(recText, fontSize = 14.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
                     }
@@ -306,17 +297,6 @@ fun DashboardScreen(viewModel: MainViewModel, navigateToTab: (Int) -> Unit) {
                     }
                 }
             }
-
-            Card(
-                modifier = Modifier.weight(1f),
-                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
-            ) {
-                Column(modifier = Modifier.padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-                    Text("Feynman Anlatımı", fontWeight = FontWeight.SemiBold, fontSize = 14.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                    Spacer(modifier = Modifier.height(8.dp))
-                    Text("${feynmanList.size} Konu", fontSize = 16.sp, fontWeight = FontWeight.Bold)
-                }
-            }
         }
 
         // Quick Actions
@@ -337,15 +317,6 @@ fun DashboardScreen(viewModel: MainViewModel, navigateToTab: (Int) -> Unit) {
             colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.secondary)
         ) {
             Text("YDS Pratik Soruları Çöz")
-        }
-
-        Button(
-            onClick = { navigateToTab(4) },
-            modifier = Modifier.fillMaxWidth(),
-            shape = RoundedCornerShape(12.dp),
-            colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.tertiaryContainer)
-        ) {
-            Text("Feynman Anlatımı Yap")
         }
     }
 }
@@ -632,198 +603,4 @@ fun PracticeScreen(viewModel: MainViewModel) {
     }
 }
 
-@Composable
-fun FeynmanScreen(viewModel: MainViewModel) {
-    val challenges = FeynmanDataProvider.challenges
-    var selectedChallengeIndex by remember { mutableStateOf(0) }
-    var currentStepIndex by remember { mutableStateOf(0) }
-    var userResponse by remember { mutableStateOf("") }
-    var stepFeedback by remember { mutableStateOf<String?>(null) }
-    var isStepSuccess by remember { mutableStateOf(false) }
-    var totalEarnedScore by remember { mutableStateOf(0) }
-    var isChallengeCompleted by remember { mutableStateOf(false) }
 
-    val challenge = challenges[selectedChallengeIndex]
-    val currentStep = challenge.steps.getOrNull(currentStepIndex)
-    val feynmanList by viewModel.feynmanSubmissions.collectAsState(initial = emptyList())
-    val scrollState = rememberScrollState()
-
-    var expanded by remember { mutableStateOf(false) }
-
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp)
-            .verticalScroll(scrollState),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(16.dp)
-    ) {
-        Text("🧑‍🎓 Feynman Anlatım Koçu", fontSize = 24.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
-        Text(
-            "Konuyu seçin ve ekrandaki meraklı lise öğrencisinin sorularını kendi sözcüklerinizle yanıtlayın. Yerel doğrulama motoru cevaplarınızı anında analiz edecek!",
-            fontSize = 14.sp,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-            textAlign = TextAlign.Center
-        )
-
-        Box(modifier = Modifier.fillMaxWidth()) {
-            OutlinedButton(onClick = { expanded = true }, modifier = Modifier.fillMaxWidth()) {
-                Text("Konu: ${challenge.topicName} ▾")
-            }
-            DropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
-                challenges.forEachIndexed { idx, ch ->
-                    DropdownMenuItem(
-                        text = { Text(ch.topicName) },
-                        onClick = {
-                            selectedChallengeIndex = idx
-                            currentStepIndex = 0
-                            userResponse = ""
-                            stepFeedback = null
-                            isStepSuccess = false
-                            totalEarnedScore = 0
-                            isChallengeCompleted = false
-                            expanded = false
-                        }
-                    )
-                }
-            }
-        }
-
-        Card(
-            modifier = Modifier.fillMaxWidth(),
-            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)
-        ) {
-            Text(
-                text = challenge.introScenario,
-                modifier = Modifier.padding(14.dp),
-                fontSize = 14.sp,
-                fontWeight = FontWeight.Medium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
-            )
-        }
-
-        if (!isChallengeCompleted && currentStep != null) {
-            Card(
-                modifier = Modifier.fillMaxWidth(),
-                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
-            ) {
-                Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                    Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-                        Text("Mülakat Adımı: ${currentStepIndex + 1} / ${challenge.steps.size}", fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
-                        Text(currentStep.hint, fontSize = 12.sp, color = MaterialTheme.colorScheme.secondary)
-                    }
-
-                    Text(currentStep.studentQuestion, fontSize = 16.sp, fontWeight = FontWeight.SemiBold)
-
-                    OutlinedTextField(
-                        value = userResponse,
-                        onValueChange = { userResponse = it },
-                        modifier = Modifier.fillMaxWidth().height(120.dp),
-                        label = { Text("Öğrenciye cevabınızı yazın...") },
-                        placeholder = { Text("Örn: 'Bak Ali, aslında bu kural şu anlama geliyor...'") }
-                    )
-
-                    if (stepFeedback != null) {
-                        Card(
-                            colors = CardDefaults.cardColors(containerColor = if (isStepSuccess) Color(0xFFE8F5E9) else Color(0xFFFFEBEE)),
-                            modifier = Modifier.fillMaxWidth()
-                        ) {
-                            Text(
-                                text = stepFeedback!!,
-                                modifier = Modifier.padding(12.dp),
-                                color = if (isStepSuccess) Color(0xFF2E7D32) else Color(0xFFC62828),
-                                fontWeight = FontWeight.Medium,
-                                fontSize = 14.sp
-                            )
-                        }
-                    }
-
-                    if (!isStepSuccess) {
-                        Button(
-                            onClick = {
-                                if (userResponse.isNotBlank()) {
-                                    val lowerText = userResponse.lowercase()
-                                    val matchCount = currentStep.requiredKeywords.count { lowerText.contains(it.lowercase()) }
-                                    if (matchCount >= 1) {
-                                        isStepSuccess = true
-                                        stepFeedback = "✅ " + currentStep.successFeedback
-                                        totalEarnedScore += (100 / challenge.steps.size)
-                                    } else {
-                                        isStepSuccess = false
-                                        stepFeedback = "⚠️ " + currentStep.missingKeywordFeedback
-                                    }
-                                }
-                            },
-                            enabled = userResponse.isNotBlank(),
-                            modifier = Modifier.fillMaxWidth()
-                        ) {
-                            Text("Cevabı Doğrula")
-                        }
-                    } else {
-                        Button(
-                            onClick = {
-                                if (currentStepIndex < challenge.steps.size - 1) {
-                                    currentStepIndex++
-                                    userResponse = ""
-                                    stepFeedback = null
-                                    isStepSuccess = false
-                                } else {
-                                    isChallengeCompleted = true
-                                    viewModel.submitFeynman(challenge.topicName, "Mülakat başarıyla tamamlandı. Kazanılan Puan: $totalEarnedScore", totalEarnedScore)
-                                }
-                            },
-                            modifier = Modifier.fillMaxWidth(),
-                            colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.secondary)
-                        ) {
-                            Text(if (currentStepIndex < challenge.steps.size - 1) "Sonraki Öğrenci Sorusuna Geç ➔" else "🎉 Testi Tamamla ve Sonucu Kaydet")
-                        }
-                    }
-                }
-            }
-        } else if (isChallengeCompleted) {
-            Card(
-                modifier = Modifier.fillMaxWidth(),
-                colors = CardDefaults.cardColors(containerColor = Color(0xFFE8F5E9))
-            ) {
-                Column(modifier = Modifier.padding(24.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                    Text("🏆", fontSize = 50.sp)
-                    Text("Tebrikler! Feynman Mülakatını Geçtiniz", fontWeight = FontWeight.Bold, fontSize = 20.sp, color = Color(0xFF1B5E20), textAlign = TextAlign.Center)
-                    Text("Öğrenci Ali bu konuyu sayenizde tamamen kavradı. Kazanılan Başarı Puanı: $totalEarnedScore / 100", fontSize = 14.sp, textAlign = TextAlign.Center, color = Color(0xFF2E7D32))
-                    Button(
-                        onClick = {
-                            currentStepIndex = 0
-                            userResponse = ""
-                            stepFeedback = null
-                            isStepSuccess = false
-                            totalEarnedScore = 0
-                            isChallengeCompleted = false
-                        }
-                    ) { Text("Yeniden Test Et") }
-                }
-            }
-        }
-
-        if (feynmanList.isNotEmpty()) {
-            Spacer(modifier = Modifier.height(16.dp))
-            Divider(color = MaterialTheme.colorScheme.surfaceVariant)
-            Spacer(modifier = Modifier.height(8.dp))
-            Text("Geçmiş Feynman Mülakat Sonuçlarınız", fontWeight = FontWeight.Bold, fontSize = 18.sp, color = MaterialTheme.colorScheme.primary, modifier = Modifier.align(Alignment.Start))
-            
-            feynmanList.forEach { submission ->
-                val dateStr = SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.getDefault()).format(Date(submission.date))
-                Card(
-                    modifier = Modifier.fillMaxWidth(),
-                    colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
-                ) {
-                    Column(modifier = Modifier.padding(16.dp)) {
-                        Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-                            Text(submission.topic, fontWeight = FontWeight.Bold, fontSize = 16.sp)
-                            Text("Puan: ${submission.score}/100", fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.secondary)
-                        }
-                        Text(dateStr, fontSize = 12.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                    }
-                }
-            }
-        }
-    }
-}
