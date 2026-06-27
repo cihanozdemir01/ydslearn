@@ -278,7 +278,7 @@ fun DashboardScreen(viewModel: MainViewModel, navigateToTab: (Int) -> Unit) {
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         Text(
-            text = "YDS Çalışma Ortağım",
+            text = "🧭 YDS Pusula",
             fontSize = 28.sp,
             fontWeight = FontWeight.Bold,
             color = Color(0xFF8B5CF6),
