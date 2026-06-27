@@ -469,9 +469,11 @@ fun DashboardScreen(viewModel: MainViewModel, navigateToTab: (Int) -> Unit) {
 fun ActiveRecallScreen(viewModel: MainViewModel) {
     val currentCard by viewModel.currentCard.collectAsState()
     var isRevealed by remember { mutableStateOf(false) }
+    var selectedOption by remember { mutableStateOf<String?>(null) }
 
     LaunchedEffect(currentCard) {
         isRevealed = false
+        selectedOption = null
     }
 
     Column(
@@ -518,19 +520,29 @@ fun ActiveRecallScreen(viewModel: MainViewModel) {
         } else {
             val card = currentCard!!
             
+            val options = remember(card.id) {
+                val distractorPool = listOf(
+                    "Geliştirmek, Artırmak", "Önlemek, Engellemek", "Kötüleşmek, Bozulmak", 
+                    "Azaltmak, Hafifletmek", "Desteklemek, Savunmak", "Sonuç olarak, Bu nedenle",
+                    "Aksine, Tam tersine", "Vurgulamak, Öne çıkarmak", "Neden olmak, Yol açmak",
+                    "Kaçınmak, Sakınmak", "Sürdürmek, Devam ettirmek", "Değerlendirmek, Ölçmek"
+                ).filter { it != card.translation }
+                val wrong = distractorPool.shuffled().first()
+                listOf(card.translation, wrong).shuffled()
+            }
+
             Card(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(380.dp)
-                    .clickable { isRevealed = true },
+                    .padding(vertical = 8.dp),
                 colors = CardDefaults.cardColors(containerColor = Color(0xFF151522)),
                 border = BorderStroke(1.dp, Color(0xFF2E2E4A)),
                 shape = RoundedCornerShape(24.dp)
             ) {
                 Column(
                     modifier = Modifier
-                        .fillMaxSize()
-                        .padding(24.dp),
+                        .fillMaxWidth()
+                        .padding(20.dp),
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center
                 ) {
@@ -541,17 +553,72 @@ fun ActiveRecallScreen(viewModel: MainViewModel) {
                         color = Color(0xFF8B5CF6),
                         letterSpacing = 1.5.sp
                     )
-                    Spacer(modifier = Modifier.height(24.dp))
+                    Spacer(modifier = Modifier.height(16.dp))
                     Text(
                         text = card.word,
-                        fontSize = 38.sp,
+                        fontSize = 34.sp,
                         fontWeight = FontWeight.ExtraBold,
                         color = Color.White,
                         textAlign = TextAlign.Center
                     )
                     
-                    if (isRevealed) {
-                        Spacer(modifier = Modifier.height(20.dp))
+                    Spacer(modifier = Modifier.height(20.dp))
+
+                    if (!isRevealed) {
+                        Text(
+                            text = "Doğru Türkçe Karşılığını Seçin:",
+                            fontSize = 13.sp,
+                            color = Color(0xFFC084FC),
+                            fontWeight = FontWeight.SemiBold
+                        )
+                        Spacer(modifier = Modifier.height(12.dp))
+                        
+                        Column(
+                            verticalArrangement = Arrangement.spacedBy(10.dp),
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            options.forEach { optionText ->
+                                Button(
+                                    onClick = {
+                                        selectedOption = optionText
+                                        isRevealed = true
+                                    },
+                                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF232338)),
+                                    border = BorderStroke(1.dp, Color(0xFF3B3B5E)),
+                                    shape = RoundedCornerShape(14.dp),
+                                    modifier = Modifier.fillMaxWidth()
+                                ) {
+                                    Text(
+                                        text = optionText,
+                                        fontSize = 15.sp,
+                                        fontWeight = FontWeight.SemiBold,
+                                        color = Color.White,
+                                        modifier = Modifier.padding(vertical = 4.dp),
+                                        textAlign = TextAlign.Center
+                                    )
+                                }
+                            }
+                        }
+                    } else {
+                        val isCorrectChoice = selectedOption == card.translation
+                        
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .clip(RoundedCornerShape(12.dp))
+                                .background(if (isCorrectChoice) Color(0xFF10B981).copy(alpha = 0.15f) else Color(0xFFEF4444).copy(alpha = 0.15f))
+                                .padding(12.dp),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(
+                                text = if (isCorrectChoice) "🎉 Doğru Tahmin!" else "❌ Yanlış Tahmin!",
+                                fontSize = 16.sp,
+                                fontWeight = FontWeight.Bold,
+                                color = if (isCorrectChoice) Color(0xFF34D399) else Color(0xFFF87171)
+                            )
+                        }
+
+                        Spacer(modifier = Modifier.height(12.dp))
                         Text(
                             text = card.translation,
                             fontSize = 24.sp,
@@ -559,7 +626,7 @@ fun ActiveRecallScreen(viewModel: MainViewModel) {
                             fontWeight = FontWeight.Bold,
                             textAlign = TextAlign.Center
                         )
-                        Spacer(modifier = Modifier.height(20.dp))
+                        Spacer(modifier = Modifier.height(14.dp))
                         Box(
                             modifier = Modifier
                                 .fillMaxWidth()
@@ -576,34 +643,19 @@ fun ActiveRecallScreen(viewModel: MainViewModel) {
                                 modifier = Modifier.fillMaxWidth()
                             )
                         }
-                        Spacer(modifier = Modifier.height(16.dp))
+                        Spacer(modifier = Modifier.height(12.dp))
                         Text(
-                            text = "Eş Anlamlılar: ${card.synonyms}",
+                            text = "Detay / Eş Anlam: ${card.synonyms}",
                             fontSize = 13.sp,
                             color = Color(0xFF9E9EAF),
                             fontWeight = FontWeight.Medium,
                             textAlign = TextAlign.Center
                         )
-                    } else {
-                        Spacer(modifier = Modifier.height(48.dp))
-                        Box(
-                            modifier = Modifier
-                                .clip(RoundedCornerShape(12.dp))
-                                .background(Color(0xFF8B5CF6).copy(alpha = 0.1f))
-                                .padding(horizontal = 16.dp, vertical = 8.dp)
-                        ) {
-                            Text(
-                                text = "🔍 Anlamını görmek için dokun",
-                                fontSize = 13.sp,
-                                color = Color(0xFFC084FC),
-                                fontWeight = FontWeight.SemiBold
-                            )
-                        }
                     }
                 }
             }
             
-            Spacer(modifier = Modifier.height(32.dp))
+            Spacer(modifier = Modifier.height(20.dp))
             
             if (isRevealed) {
                 Text(
@@ -612,7 +664,7 @@ fun ActiveRecallScreen(viewModel: MainViewModel) {
                     fontSize = 15.sp,
                     color = Color(0xFFE2E2E9)
                 )
-                Spacer(modifier = Modifier.height(16.dp))
+                Spacer(modifier = Modifier.height(12.dp))
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.spacedBy(10.dp)
