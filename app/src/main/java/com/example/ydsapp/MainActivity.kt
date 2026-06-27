@@ -238,6 +238,8 @@ fun DashboardScreen(viewModel: MainViewModel, navigateToTab: (Int) -> Unit) {
     val targetScore by viewModel.targetScore.collectAsState()
     val learnedWords by viewModel.learnedWordsCount.collectAsState(initial = 0)
     val totalWords by viewModel.totalWordsCount.collectAsState(initial = 0)
+    val dailySessionCount by viewModel.dailySessionCount.collectAsState()
+    val dailyQuestionCount by viewModel.dailyQuestionCount.collectAsState()
     var showGoalDialog by remember { mutableStateOf(false) }
 
     if (targetScore == 0 || showGoalDialog) {
@@ -314,30 +316,89 @@ fun DashboardScreen(viewModel: MainViewModel, navigateToTab: (Int) -> Unit) {
             }
         }
 
-        // Streak Card
+        // Streak & Live Daily Goal Tracker Card
+        val wordDone = dailySessionCount >= 40
+        val questionDone = dailyQuestionCount >= 20
+        val allDone = wordDone && questionDone
+
         Card(
             modifier = Modifier.fillMaxWidth(),
             shape = RoundedCornerShape(16.dp),
-            border = BorderStroke(1.dp, Color(0xFF451A03))
+            border = BorderStroke(1.dp, if (allDone) Color(0xFF10B981) else Color(0xFF451A03))
         ) {
             Box(
                 modifier = Modifier
                     .background(
                         Brush.linearGradient(
-                            listOf(Color(0xFFD97706), Color(0xFFEF4444))
+                            if (allDone) listOf(Color(0xFF059669), Color(0xFF10B981))
+                            else listOf(Color(0xFFD97706), Color(0xFFEF4444))
                         )
                     )
                     .fillMaxWidth()
                     .padding(16.dp)
             ) {
-                Row(
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Text("🔥", fontSize = 36.sp)
-                    Spacer(modifier = Modifier.width(16.dp))
-                    Column {
-                        Text("Çalışma Serisi", fontWeight = FontWeight.Bold, fontSize = 18.sp, color = Color.White)
-                        Text("Her gün çalışarak seriyi devam ettir!", color = Color(0xFFFFE4E6), fontSize = 13.sp)
+                Column {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Text(if (allDone) "🎉" else "🔥", fontSize = 32.sp)
+                        Spacer(modifier = Modifier.width(12.dp))
+                        Column {
+                            Text(
+                                text = if (allDone) "Tüm Görevler Tamamlandı!" else "Günlük Çalışma & Seri Takibi",
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 17.sp,
+                                color = Color.White
+                            )
+                            Text(
+                                text = if (allDone) "Harika! Bugünün tüm hedeflerini devirdin!" else "Her gün çalışarak seriyi devam ettir!",
+                                color = Color(0xFFFFE4E6),
+                                fontSize = 12.sp
+                            )
+                        }
+                    }
+                    
+                    Spacer(modifier = Modifier.height(14.dp))
+                    
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(10.dp)
+                    ) {
+                        Box(
+                            modifier = Modifier
+                                .weight(1f)
+                                .clip(RoundedCornerShape(12.dp))
+                                .background(Color.Black.copy(alpha = 0.25f))
+                                .padding(horizontal = 10.dp, vertical = 8.dp),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Row(verticalAlignment = Alignment.CenterVertically) {
+                                Text(if (wordDone) "✅ " else "📝 ", fontSize = 12.sp)
+                                Text(
+                                    text = "Kelime: ${dailySessionCount.coerceAtMost(40)}/40",
+                                    fontSize = 13.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    color = if (wordDone) Color(0xFF34D399) else Color.White
+                                )
+                            }
+                        }
+
+                        Box(
+                            modifier = Modifier
+                                .weight(1f)
+                                .clip(RoundedCornerShape(12.dp))
+                                .background(Color.Black.copy(alpha = 0.25f))
+                                .padding(horizontal = 10.dp, vertical = 8.dp),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Row(verticalAlignment = Alignment.CenterVertically) {
+                                Text(if (questionDone) "✅ " else "✍️ ", fontSize = 12.sp)
+                                Text(
+                                    text = "Soru: ${dailyQuestionCount.coerceAtMost(20)}/20",
+                                    fontSize = 13.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    color = if (questionDone) Color(0xFF34D399) else Color.White
+                                )
+                            }
+                        }
                     }
                 }
             }
@@ -920,6 +981,8 @@ fun PracticeScreen(viewModel: MainViewModel) {
     val selectedOptionIndex by viewModel.selectedOptionIndex.collectAsState()
     val hasAnswered by viewModel.hasAnswered.collectAsState()
     val selectedCategory by viewModel.selectedCategory.collectAsState()
+    val isFreeQuestionMode by viewModel.isFreeQuestionMode.collectAsState()
+    val dailyQuestionCount by viewModel.dailyQuestionCount.collectAsState()
 
     val filteredQuestions = if (selectedCategory == "Tümü") {
         QuestionDataProvider.questions
@@ -938,37 +1001,151 @@ fun PracticeScreen(viewModel: MainViewModel) {
             .verticalScroll(rememberScrollState()),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        // Mode Selector Toggle (Günlük 20 Soru vs Serbest Çalışma)
         Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 8.dp)
+                .clip(RoundedCornerShape(16.dp))
+                .background(Color(0xFF151522))
+                .border(1.dp, Color(0xFF2E2E4A), RoundedCornerShape(16.dp))
+                .padding(4.dp),
+            horizontalArrangement = Arrangement.spacedBy(4.dp)
         ) {
-            Column {
+            Box(
+                modifier = Modifier
+                    .weight(1f)
+                    .clip(RoundedCornerShape(12.dp))
+                    .background(if (!isFreeQuestionMode) Color(0xFF8B5CF6) else Color.Transparent)
+                    .clickable { viewModel.setFreeQuestionMode(false) }
+                    .padding(vertical = 10.dp),
+                contentAlignment = Alignment.Center
+            ) {
                 Text(
-                    text = "YDS Soru Havuzu", 
-                    fontSize = 20.sp, 
-                    fontWeight = FontWeight.Bold, 
-                    color = Color(0xFF8B5CF6)
-                )
-                Text(
-                    text = "Toplam Banka: ${QuestionDataProvider.questions.size} Soru", 
-                    fontSize = 12.sp, 
-                    color = Color(0xFF9E9EAF)
+                    text = "📅 Günlük (20 Soru)",
+                    fontSize = 13.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.White
                 )
             }
             Box(
                 modifier = Modifier
+                    .weight(1f)
                     .clip(RoundedCornerShape(12.dp))
-                    .background(Color(0xFF10B981).copy(alpha = 0.15f))
-                    .border(1.dp, Color(0xFF10B981).copy(alpha = 0.3f), RoundedCornerShape(12.dp))
-                    .padding(horizontal = 12.dp, vertical = 6.dp)
+                    .background(if (isFreeQuestionMode) Color(0xFF8B5CF6) else Color.Transparent)
+                    .clickable { viewModel.setFreeQuestionMode(true) }
+                    .padding(vertical = 10.dp),
+                contentAlignment = Alignment.Center
             ) {
                 Text(
-                    text = "Soru: ${currentQuestionIndex + 1} / ${filteredQuestions.size}", 
-                    fontSize = 13.sp, 
+                    text = "📚 Serbest Çalışma",
+                    fontSize = 13.sp,
                     fontWeight = FontWeight.Bold,
-                    color = Color(0xFF34D399)
+                    color = Color.White
                 )
+            }
+        }
+
+        if (!isFreeQuestionMode) {
+            val countDisplay = dailyQuestionCount.coerceAtMost(20)
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 4.dp, vertical = 4.dp),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = "GÜNLÜK SORU HEDEFİ",
+                    fontSize = 11.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color(0xFF9E9EAF)
+                )
+                Text(
+                    text = "$countDisplay / 20 Soru",
+                    fontSize = 13.sp,
+                    fontWeight = FontWeight.ExtraBold,
+                    color = Color(0xFF10B981)
+                )
+            }
+        }
+
+        if (!isFreeQuestionMode && dailyQuestionCount >= 20) {
+            Spacer(modifier = Modifier.height(32.dp))
+            Card(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(24.dp),
+                colors = CardDefaults.cardColors(containerColor = Color(0xFF151522)),
+                border = BorderStroke(1.dp, Color(0xFF2E2E4A)),
+                shape = RoundedCornerShape(24.dp)
+            ) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(32.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                ) {
+                    Text("🎉", fontSize = 48.sp)
+                    Spacer(modifier = Modifier.height(16.dp))
+                    Text(
+                        text = "Tebrikler! Bugünlük 20 soruluk pratik hedefini tamamladın.",
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight.Bold,
+                        textAlign = TextAlign.Center,
+                        color = Color.White
+                    )
+                    Spacer(modifier = Modifier.height(12.dp))
+                    Text(
+                        text = "Serbest Çalışma moduna geçerek soru çözmeye devam edebilirsin!",
+                        fontSize = 14.sp,
+                        color = Color(0xFF9E9EAF),
+                        textAlign = TextAlign.Center
+                    )
+                    Spacer(modifier = Modifier.height(20.dp))
+                    Button(
+                        onClick = { viewModel.setFreeQuestionMode(true) },
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF8B5CF6)),
+                        shape = RoundedCornerShape(12.dp)
+                    ) {
+                        Text("📚 Serbest Çalışmaya Geç", fontWeight = FontWeight.Bold, color = Color.White)
+                    }
+                }
+            }
+        } else {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Column {
+                    Text(
+                        text = if (isFreeQuestionMode) "SERBEST SORU HAVUZU" else "YDS Soru Havuzu", 
+                        fontSize = 20.sp, 
+                        fontWeight = FontWeight.Bold, 
+                        color = Color(0xFF8B5CF6)
+                    )
+                    Text(
+                        text = "Toplam Banka: ${QuestionDataProvider.questions.size} Soru", 
+                        fontSize = 12.sp, 
+                        color = Color(0xFF9E9EAF)
+                    )
+                }
+                Box(
+                    modifier = Modifier
+                        .clip(RoundedCornerShape(12.dp))
+                        .background(Color(0xFF10B981).copy(alpha = 0.15f))
+                        .border(1.dp, Color(0xFF10B981).copy(alpha = 0.3f), RoundedCornerShape(12.dp))
+                        .padding(horizontal = 12.dp, vertical = 6.dp)
+                ) {
+                    Text(
+                        text = "Soru: ${currentQuestionIndex + 1} / ${filteredQuestions.size}", 
+                        fontSize = 13.sp, 
+                        fontWeight = FontWeight.Bold,
+                        color = Color(0xFF34D399)
+                    )
+                }
             }
         }
         

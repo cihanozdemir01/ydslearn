@@ -35,6 +35,13 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val _dailySessionCount = MutableStateFlow(0)
     val dailySessionCount: StateFlow<Int> = _dailySessionCount.asStateFlow()
 
+    // Question / Quiz Daily Tracking
+    private val _isFreeQuestionMode = MutableStateFlow(false)
+    val isFreeQuestionMode: StateFlow<Boolean> = _isFreeQuestionMode.asStateFlow()
+
+    private val _dailyQuestionCount = MutableStateFlow(0)
+    val dailyQuestionCount: StateFlow<Int> = _dailyQuestionCount.asStateFlow()
+
     private var activeCardsList: List<Flashcard> = emptyList()
     private var cardsCollectorJob: Job? = null
 
@@ -82,6 +89,12 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+    fun setFreeQuestionMode(freeMode: Boolean) {
+        if (_isFreeQuestionMode.value != freeMode) {
+            _isFreeQuestionMode.value = freeMode
+        }
+    }
+
     private fun observeCards() {
         cardsCollectorJob?.cancel()
         cardsCollectorJob = viewModelScope.launch {
@@ -126,6 +139,9 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun submitQuizAttempt(questionId: Int, isCorrect: Boolean) {
+        if (!_isFreeQuestionMode.value) {
+            _dailyQuestionCount.value += 1
+        }
         viewModelScope.launch {
             val attempt = QuizAttempt(
                 questionId = questionId,
