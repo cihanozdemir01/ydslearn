@@ -469,6 +469,7 @@ fun DashboardScreen(viewModel: MainViewModel, navigateToTab: (Int) -> Unit) {
 fun ActiveRecallScreen(viewModel: MainViewModel) {
     val currentCard by viewModel.currentCard.collectAsState()
     val isFreeStudyMode by viewModel.isFreeStudyMode.collectAsState()
+    val dailySessionCount by viewModel.dailySessionCount.collectAsState()
     var isRevealed by remember { mutableStateOf(false) }
     var selectedOption by remember { mutableStateOf<String?>(null) }
 
@@ -488,7 +489,7 @@ fun ActiveRecallScreen(viewModel: MainViewModel) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(bottom = 12.dp)
+                .padding(bottom = 8.dp)
                 .clip(RoundedCornerShape(16.dp))
                 .background(Color(0xFF151522))
                 .border(1.dp, Color(0xFF2E2E4A), RoundedCornerShape(16.dp))
@@ -529,7 +530,31 @@ fun ActiveRecallScreen(viewModel: MainViewModel) {
             }
         }
 
-        if (currentCard == null) {
+        if (!isFreeStudyMode) {
+            val countDisplay = dailySessionCount.coerceAtMost(40)
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 4.dp, vertical = 4.dp),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = "GÜNLÜK HEDEF İLERLEMESİ",
+                    fontSize = 11.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color(0xFF9E9EAF)
+                )
+                Text(
+                    text = "$countDisplay / 40 Kelime",
+                    fontSize = 13.sp,
+                    fontWeight = FontWeight.ExtraBold,
+                    color = Color(0xFF10B981)
+                )
+            }
+        }
+
+        if (currentCard == null || (!isFreeStudyMode && dailySessionCount >= 40)) {
             Spacer(modifier = Modifier.height(32.dp))
             Card(
                 modifier = Modifier
@@ -549,7 +574,7 @@ fun ActiveRecallScreen(viewModel: MainViewModel) {
                     Text("🎉", fontSize = 48.sp)
                     Spacer(modifier = Modifier.height(16.dp))
                     Text(
-                        text = if (!isFreeStudyMode) "Harika! Bugünlük 40 kelimelik tekrarını tamamladın." else "Serbest çalışma havuzundaki kartlar tamamlandı.",
+                        text = if (!isFreeStudyMode) "Tebrikler! Bugünlük 40 kelimelik çalışma hedefine ulaştın." else "Serbest çalışma havuzundaki kartlar tamamlandı.",
                         fontSize = 18.sp,
                         fontWeight = FontWeight.Bold,
                         textAlign = TextAlign.Center,

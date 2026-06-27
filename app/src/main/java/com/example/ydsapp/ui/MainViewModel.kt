@@ -32,6 +32,9 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val _isFreeStudyMode = MutableStateFlow(false)
     val isFreeStudyMode: StateFlow<Boolean> = _isFreeStudyMode.asStateFlow()
 
+    private val _dailySessionCount = MutableStateFlow(0)
+    val dailySessionCount: StateFlow<Int> = _dailySessionCount.asStateFlow()
+
     private var activeCardsList: List<Flashcard> = emptyList()
     private var cardsCollectorJob: Job? = null
 
@@ -85,7 +88,9 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             val flow = if (_isFreeStudyMode.value) repository.getAllFlashcards() else repository.getDueFlashcards()
             flow.collect { cards ->
                 activeCardsList = cards
-                if (_currentCard.value == null && cards.isNotEmpty()) {
+                if (!_isFreeStudyMode.value && _dailySessionCount.value >= 40) {
+                    _currentCard.value = null
+                } else if (_currentCard.value == null && cards.isNotEmpty()) {
                     _currentCard.value = cards.first()
                 } else if (cards.isEmpty()) {
                     _currentCard.value = null
@@ -96,6 +101,18 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     
     fun submitReview(quality: Int) {
         val card = _currentCard.value ?: return
+        
+        if (!_isFreeStudyMode.value) {
+            _dailySessionCount.value += 1
+            if (_dailySessionCount.value >= 40) {
+                _currentCard.value = null
+                viewModelScope.launch {
+                    repository.processReview(card, quality)
+                }
+                return
+            }
+        }
+
         val currentIndex = activeCardsList.indexOfFirst { it.id == card.id }
         val nextCard = if (currentIndex != -1 && currentIndex + 1 < activeCardsList.size) {
             activeCardsList[currentIndex + 1]
