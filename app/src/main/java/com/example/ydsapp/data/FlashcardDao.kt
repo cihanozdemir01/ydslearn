@@ -22,7 +22,7 @@ interface FlashcardDao {
     @Update
     suspend fun update(card: Flashcard)
 
-    @Query("SELECT COUNT(*) FROM flashcards WHERE interval >= 1")
+    @Query("SELECT COUNT(*) FROM flashcards WHERE isMastered = 1 OR interval >= 14")
     fun getLearnedFlashcardsCountFlow(): Flow<Int>
 
     @Query("SELECT COUNT(*) FROM flashcards")

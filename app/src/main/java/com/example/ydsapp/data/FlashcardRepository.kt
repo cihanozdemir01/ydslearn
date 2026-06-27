@@ -31,8 +31,8 @@ class FlashcardRepository(
         if (newEaseFactor < 1.3f) newEaseFactor = 1.3f
         
         var newInterval: Int
-        if (quality < 3) {
-            newInterval = 1
+        if (quality < 3) { // "Bilemedim" -> Reset interval to 0 so it is not marked as learned!
+            newInterval = 0
         } else { // "Kolaydı"
             newInterval = if (card.interval <= 1) {
                 14 // 14 days interval so it won't repeat endlessly!
