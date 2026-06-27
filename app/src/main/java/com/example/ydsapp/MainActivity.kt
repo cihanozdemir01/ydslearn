@@ -366,7 +366,7 @@ fun DashboardScreen(viewModel: MainViewModel, navigateToTab: (Int) -> Unit) {
                 Column(modifier = Modifier.weight(1f)) {
                     Text("Çözülen Soru Pratiği", fontWeight = FontWeight.SemiBold, fontSize = 14.sp, color = Color(0xFF9E9EAF))
                     Spacer(modifier = Modifier.height(8.dp))
-                    Text("$totalQuizzes Soru", fontSize = 22.sp, fontWeight = FontWeight.Bold, color = Color.White)
+                    Text("$totalQuizzes / ${QuestionDataProvider.questions.size} Soru", fontSize = 22.sp, fontWeight = FontWeight.Bold, color = Color.White)
                     Spacer(modifier = Modifier.height(4.dp))
                     if (totalQuizzes > 0) {
                         Text("Doğru Oranı: %${(correctQuizzes.toFloat() / totalQuizzes.toFloat() * 100).toInt()}", fontSize = 12.sp, color = Color(0xFF10B981), fontWeight = FontWeight.Medium)
@@ -943,17 +943,33 @@ fun PracticeScreen(viewModel: MainViewModel) {
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Text(
-                text = "YDS Pratik Soruları", 
-                fontSize = 20.sp, 
-                fontWeight = FontWeight.Bold, 
-                color = Color(0xFF8B5CF6)
-            )
-            Text(
-                text = "Soru: ${currentQuestionIndex + 1} / ${filteredQuestions.size}", 
-                fontSize = 14.sp, 
-                color = Color(0xFF9E9EAF)
-            )
+            Column {
+                Text(
+                    text = "YDS Soru Havuzu", 
+                    fontSize = 20.sp, 
+                    fontWeight = FontWeight.Bold, 
+                    color = Color(0xFF8B5CF6)
+                )
+                Text(
+                    text = "Toplam Banka: ${QuestionDataProvider.questions.size} Soru", 
+                    fontSize = 12.sp, 
+                    color = Color(0xFF9E9EAF)
+                )
+            }
+            Box(
+                modifier = Modifier
+                    .clip(RoundedCornerShape(12.dp))
+                    .background(Color(0xFF10B981).copy(alpha = 0.15f))
+                    .border(1.dp, Color(0xFF10B981).copy(alpha = 0.3f), RoundedCornerShape(12.dp))
+                    .padding(horizontal = 12.dp, vertical = 6.dp)
+            ) {
+                Text(
+                    text = "Soru: ${currentQuestionIndex + 1} / ${filteredQuestions.size}", 
+                    fontSize = 13.sp, 
+                    fontWeight = FontWeight.Bold,
+                    color = Color(0xFF34D399)
+                )
+            }
         }
         
         Spacer(modifier = Modifier.height(8.dp))
