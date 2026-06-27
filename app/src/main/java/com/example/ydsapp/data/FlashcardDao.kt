@@ -8,8 +8,8 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface FlashcardDao {
-    // Get up to 10 cards that are due for review (nextReviewDate is past or present)
-    @Query("SELECT * FROM flashcards WHERE nextReviewDate <= :currentDate ORDER BY nextReviewDate ASC LIMIT 10")
+    // Get up to 100 cards that are due for review (nextReviewDate is past or present)
+    @Query("SELECT * FROM flashcards WHERE nextReviewDate <= :currentDate ORDER BY nextReviewDate ASC LIMIT 100")
     fun getDueFlashcards(currentDate: Long): Flow<List<Flashcard>>
 
     @Insert
@@ -18,7 +18,7 @@ interface FlashcardDao {
     @Update
     suspend fun update(card: Flashcard)
 
-    @Query("SELECT COUNT(*) FROM flashcards WHERE interval > 1")
+    @Query("SELECT COUNT(*) FROM flashcards WHERE interval >= 1")
     fun getLearnedFlashcardsCountFlow(): Flow<Int>
 
     @Query("SELECT COUNT(*) FROM flashcards")

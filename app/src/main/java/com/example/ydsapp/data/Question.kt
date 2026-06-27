@@ -10139,5 +10139,5 @@ object QuestionChunk12 {
 }
 
 object QuestionDataProvider {
-    val questions = QuestionChunk0.list + QuestionChunk1.list + QuestionChunk2.list + QuestionChunk3.list + QuestionChunk4.list + QuestionChunk5.list + QuestionChunk6.list + QuestionChunk7.list + QuestionChunk8.list + QuestionChunk9.list + QuestionChunk10.list + QuestionChunk11.list + QuestionChunk12.list
+    val questions = (QuestionChunk0.list + QuestionChunk1.list + QuestionChunk2.list + QuestionChunk3.list + QuestionChunk4.list + QuestionChunk5.list + QuestionChunk6.list + QuestionChunk7.list + QuestionChunk8.list + QuestionChunk9.list + QuestionChunk10.list + QuestionChunk11.list + QuestionChunk12.list).filter { it.category != "Paragraf" }
 }

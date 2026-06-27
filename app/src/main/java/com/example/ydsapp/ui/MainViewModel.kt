@@ -75,15 +75,15 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     
     fun submitReview(quality: Int) {
         val card = _currentCard.value ?: return
+        val currentIndex = dueCardsList.indexOfFirst { it.id == card.id }
+        val nextCard = if (currentIndex != -1 && currentIndex + 1 < dueCardsList.size) {
+            dueCardsList[currentIndex + 1]
+        } else {
+            null
+        }
+        _currentCard.value = nextCard
         viewModelScope.launch {
             repository.processReview(card, quality)
-            // After review, move to next card in memory
-            val nextIndex = dueCardsList.indexOf(card) + 1
-            if (nextIndex < dueCardsList.size) {
-                _currentCard.value = dueCardsList[nextIndex]
-            } else {
-                _currentCard.value = null // Done for now
-            }
         }
     }
 

@@ -834,7 +834,7 @@ fun PracticeScreen(viewModel: MainViewModel) {
                 .horizontalScroll(rememberScrollState()),
             horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            val categories = listOf("Tümü", "Kelime Bilgisi", "Dil Bilgisi", "Bağlaçlar", "Edatlar", "Çeviri", "Paragraf", "Diyalog")
+            val categories = listOf("Tümü", "Kelime Bilgisi", "Dil Bilgisi", "Bağlaçlar", "Edatlar", "Çeviri", "Diyalog")
             categories.forEach { cat ->
                 CategoryChip(
                     text = cat,
@@ -982,6 +982,7 @@ fun PracticeScreen(viewModel: MainViewModel) {
             // Explanation box
             val isCorrect = selectedOptionIndex == question.correctOptionIndex
             val glowColor = if (isCorrect) Color(0xFF10B981) else Color(0xFFEF4444)
+            val correctOptionText = question.options.getOrNull(question.correctOptionIndex) ?: ""
             Card(
                 modifier = Modifier.fillMaxWidth(),
                 colors = CardDefaults.cardColors(containerColor = Color(0xFF151522)),
@@ -999,12 +1000,26 @@ fun PracticeScreen(viewModel: MainViewModel) {
                         .padding(16.dp)
                 ) {
                     Text(
-                        text = if (isCorrect) "🎉 Doğru Cevap!" else "❌ Yanlış Cevap!",
+                        text = if (isCorrect) "🎉 TEBRİKLER! Doğru Cevap!" else "❌ YANLIŞ CEVAP!",
                         fontWeight = FontWeight.Bold,
                         fontSize = 16.sp,
                         color = glowColor
                     )
                     Spacer(modifier = Modifier.height(8.dp))
+                    Text(
+                        text = "Doğru Şık: $correctOptionText",
+                        fontWeight = FontWeight.SemiBold,
+                        fontSize = 15.sp,
+                        color = Color(0xFF34D399)
+                    )
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Text(
+                        text = "Soru Açıklaması:",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 14.sp,
+                        color = Color(0xFF8B5CF6)
+                    )
+                    Spacer(modifier = Modifier.height(4.dp))
                     Text(
                         text = question.explanation, 
                         fontSize = 14.sp,
