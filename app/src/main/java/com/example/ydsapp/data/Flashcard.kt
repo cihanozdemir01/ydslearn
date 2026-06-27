@@ -12,5 +12,6 @@ data class Flashcard(
     val synonyms: String,
     val nextReviewDate: Long, // timestamp in ms
     val interval: Int, // days
-    val easeFactor: Float // SuperMemo 2 algorithm ease factor
+    val easeFactor: Float, // SuperMemo 2 algorithm ease factor
+    val isMastered: Boolean = false
 )

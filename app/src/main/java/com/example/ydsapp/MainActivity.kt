@@ -468,6 +468,7 @@ fun DashboardScreen(viewModel: MainViewModel, navigateToTab: (Int) -> Unit) {
 @Composable
 fun ActiveRecallScreen(viewModel: MainViewModel) {
     val currentCard by viewModel.currentCard.collectAsState()
+    val isFreeStudyMode by viewModel.isFreeStudyMode.collectAsState()
     var isRevealed by remember { mutableStateOf(false) }
     var selectedOption by remember { mutableStateOf<String?>(null) }
 
@@ -481,9 +482,55 @@ fun ActiveRecallScreen(viewModel: MainViewModel) {
             .fillMaxSize()
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.Top
     ) {
+        // Mode Selector Toggle (Günlük Tekrar vs Serbest Çalışma)
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 12.dp)
+                .clip(RoundedCornerShape(16.dp))
+                .background(Color(0xFF151522))
+                .border(1.dp, Color(0xFF2E2E4A), RoundedCornerShape(16.dp))
+                .padding(4.dp),
+            horizontalArrangement = Arrangement.spacedBy(4.dp)
+        ) {
+            Box(
+                modifier = Modifier
+                    .weight(1f)
+                    .clip(RoundedCornerShape(12.dp))
+                    .background(if (!isFreeStudyMode) Color(0xFF8B5CF6) else Color.Transparent)
+                    .clickable { viewModel.setFreeStudyMode(false) }
+                    .padding(vertical = 10.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    text = "📅 Günlük (40)",
+                    fontSize = 13.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.White
+                )
+            }
+            Box(
+                modifier = Modifier
+                    .weight(1f)
+                    .clip(RoundedCornerShape(12.dp))
+                    .background(if (isFreeStudyMode) Color(0xFF8B5CF6) else Color.Transparent)
+                    .clickable { viewModel.setFreeStudyMode(true) }
+                    .padding(vertical = 10.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    text = "📚 Serbest Çalışma",
+                    fontSize = 13.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.White
+                )
+            }
+        }
+
         if (currentCard == null) {
+            Spacer(modifier = Modifier.height(32.dp))
             Card(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -502,15 +549,15 @@ fun ActiveRecallScreen(viewModel: MainViewModel) {
                     Text("🎉", fontSize = 48.sp)
                     Spacer(modifier = Modifier.height(16.dp))
                     Text(
-                        text = "Harika! Bugünlük tüm tekrarlarını tamamladın.",
-                        fontSize = 20.sp,
+                        text = if (!isFreeStudyMode) "Harika! Bugünlük 40 kelimelik tekrarını tamamladın." else "Serbest çalışma havuzundaki kartlar tamamlandı.",
+                        fontSize = 18.sp,
                         fontWeight = FontWeight.Bold,
                         textAlign = TextAlign.Center,
                         color = Color.White
                     )
                     Spacer(modifier = Modifier.height(12.dp))
                     Text(
-                        text = "Yarın yeni kelimelerle çalışmaya devam edebilirsin.",
+                        text = if (!isFreeStudyMode) "Serbest Çalışma moduna geçerek pratik yapmaya devam edebilirsin!" else "Tebrikler!",
                         fontSize = 14.sp,
                         color = Color(0xFF9E9EAF),
                         textAlign = TextAlign.Center
@@ -521,12 +568,20 @@ fun ActiveRecallScreen(viewModel: MainViewModel) {
             val card = currentCard!!
             
             val options = remember(card.id) {
-                val distractorPool = listOf(
-                    "Geliştirmek, Artırmak", "Önlemek, Engellemek", "Kötüleşmek, Bozulmak", 
-                    "Azaltmak, Hafifletmek", "Desteklemek, Savunmak", "Sonuç olarak, Bu nedenle",
-                    "Aksine, Tam tersine", "Vurgulamak, Öne çıkarmak", "Neden olmak, Yol açmak",
-                    "Kaçınmak, Sakınmak", "Sürdürmek, Devam ettirmek", "Değerlendirmek, Ölçmek"
-                ).filter { it != card.translation }
+                val isConjunction = card.synonyms.contains("Bağlaç") || card.synonyms.contains("[")
+                val distractorPool = if (isConjunction) {
+                    listOf(
+                        "-e rağmen", "Oysa, -e karşın", "Aksi takdirde, Yoksa", 
+                        "Sonuç olarak, Bu nedenle", "-mek için, amacıyla", "Bu yüzden, Böylece",
+                        "Dahası, Üstelik", "Şartıyla, Eğer", "Nedeniyle, yüzünden", "Aksine, Tam tersine"
+                    )
+                } else {
+                    listOf(
+                        "Geliştirmek, Artırmak", "Önlemek, Engellemek", "Kötüleşmek, Bozulmak", 
+                        "Azaltmak, Hafifletmek", "Desteklemek, Savunmak", "Vurgulamak, Öne çıkarmak",
+                        "Neden olmak, Yol açmak", "Kaçınmak, Sakınmak", "Sürdürmek, Devam ettirmek"
+                    )
+                }.filter { it != card.translation }
                 val wrong = distractorPool.shuffled().first()
                 listOf(card.translation, wrong).shuffled()
             }
@@ -547,7 +602,7 @@ fun ActiveRecallScreen(viewModel: MainViewModel) {
                     verticalArrangement = Arrangement.Center
                 ) {
                     Text(
-                        text = "YDS KELİME KARTI",
+                        text = if (isFreeStudyMode) "SERBEST ÇALIŞMA HAVUZU" else "GÜNLÜK YDS KELİME KARTI",
                         fontSize = 11.sp,
                         fontWeight = FontWeight.Bold,
                         color = Color(0xFF8B5CF6),
@@ -655,19 +710,19 @@ fun ActiveRecallScreen(viewModel: MainViewModel) {
                 }
             }
             
-            Spacer(modifier = Modifier.height(20.dp))
+            Spacer(modifier = Modifier.height(16.dp))
             
             if (isRevealed) {
                 Text(
-                    text = "Cevabı hatırlamakta ne kadar zorlandın?",
+                    text = "Bu kelime durumunu güncelle:",
                     fontWeight = FontWeight.SemiBold,
-                    fontSize = 15.sp,
+                    fontSize = 14.sp,
                     color = Color(0xFFE2E2E9)
                 )
-                Spacer(modifier = Modifier.height(12.dp))
+                Spacer(modifier = Modifier.height(10.dp))
                 Row(
                     modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.spacedBy(10.dp)
+                    horizontalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
                     Button(
                         onClick = { viewModel.submitReview(0) },
@@ -675,15 +730,15 @@ fun ActiveRecallScreen(viewModel: MainViewModel) {
                         shape = RoundedCornerShape(12.dp),
                         modifier = Modifier.weight(1f)
                     ) {
-                        Text("Bilemedim", fontWeight = FontWeight.Bold, color = Color.White)
+                        Text("Bilemedim", fontWeight = FontWeight.Bold, fontSize = 13.sp, color = Color.White)
                     }
                     Button(
-                        onClick = { viewModel.submitReview(3) },
-                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF59E0B)),
+                        onClick = { viewModel.submitReview(10) },
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF6B7280)),
                         shape = RoundedCornerShape(12.dp),
-                        modifier = Modifier.weight(1f)
+                        modifier = Modifier.weight(1.1f)
                     ) {
-                        Text("Zorlandım", fontWeight = FontWeight.Bold, color = Color.White)
+                        Text("Artık Sorma", fontWeight = FontWeight.Bold, fontSize = 13.sp, color = Color.White)
                     }
                     Button(
                         onClick = { viewModel.submitReview(5) },
@@ -691,7 +746,7 @@ fun ActiveRecallScreen(viewModel: MainViewModel) {
                         shape = RoundedCornerShape(12.dp),
                         modifier = Modifier.weight(1f)
                     ) {
-                        Text("Kolaydı", fontWeight = FontWeight.Bold, color = Color.White)
+                        Text("Kolaydı", fontWeight = FontWeight.Bold, fontSize = 13.sp, color = Color.White)
                     }
                 }
             }

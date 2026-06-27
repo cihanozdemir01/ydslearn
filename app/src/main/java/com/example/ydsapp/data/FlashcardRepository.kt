@@ -13,20 +13,31 @@ class FlashcardRepository(
         return flashcardDao.getDueFlashcards(currentTime)
     }
 
+    fun getAllFlashcards(): Flow<List<Flashcard>> {
+        return flashcardDao.getAllFlashcardsFlow()
+    }
+
     suspend fun processReview(card: Flashcard, quality: Int) {
+        if (quality >= 10) { // "Artık Sorma" (Mastered & archived from daily)
+            val updatedCard = card.copy(
+                isMastered = true,
+                interval = 999
+            )
+            flashcardDao.update(updatedCard)
+            return
+        }
+
         var newEaseFactor = card.easeFactor + (0.1f - (5 - quality) * (0.08f + (5 - quality) * 0.02f))
         if (newEaseFactor < 1.3f) newEaseFactor = 1.3f
         
-        var newInterval = card.interval
+        var newInterval: Int
         if (quality < 3) {
             newInterval = 1
-        } else {
-            newInterval = if (card.interval == 0) {
-                1
-            } else if (card.interval == 1) {
-                6
+        } else { // "Kolaydı"
+            newInterval = if (card.interval <= 1) {
+                14 // 14 days interval so it won't repeat endlessly!
             } else {
-                (card.interval * newEaseFactor).toInt()
+                (card.interval * newEaseFactor).toInt().coerceAtLeast(14)
             }
         }
         

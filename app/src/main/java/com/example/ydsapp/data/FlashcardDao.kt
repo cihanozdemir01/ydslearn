@@ -8,9 +8,13 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface FlashcardDao {
-    // Get up to 100 cards that are due for review (nextReviewDate is past or present)
-    @Query("SELECT * FROM flashcards WHERE nextReviewDate <= :currentDate ORDER BY nextReviewDate ASC LIMIT 100")
+    // Daily study pool: up to 40 unmastered cards due for review in RANDOM order
+    @Query("SELECT * FROM flashcards WHERE nextReviewDate <= :currentDate AND isMastered = 0 ORDER BY RANDOM() LIMIT 40")
     fun getDueFlashcards(currentDate: Long): Flow<List<Flashcard>>
+
+    // Free study pool: all cards in RANDOM order for unlimited practice
+    @Query("SELECT * FROM flashcards ORDER BY RANDOM()")
+    fun getAllFlashcardsFlow(): Flow<List<Flashcard>>
 
     @Insert
     suspend fun insertAll(vararg cards: Flashcard)

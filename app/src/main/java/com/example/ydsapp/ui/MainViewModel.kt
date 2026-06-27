@@ -10,6 +10,7 @@ import com.example.ydsapp.data.QuizAttempt
 import com.example.ydsapp.data.FlashcardRepository
 import com.example.ydsapp.data.YdsDao
 import com.example.ydsapp.data.QuestionDataProvider
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -28,7 +29,11 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val _currentCard = MutableStateFlow<Flashcard?>(null)
     val currentCard: StateFlow<Flashcard?> = _currentCard
     
-    private var dueCardsList: List<Flashcard> = emptyList()
+    private val _isFreeStudyMode = MutableStateFlow(false)
+    val isFreeStudyMode: StateFlow<Boolean> = _isFreeStudyMode.asStateFlow()
+
+    private var activeCardsList: List<Flashcard> = emptyList()
+    private var cardsCollectorJob: Job? = null
 
     // Quiz State
     private val _currentQuestionIndex = MutableStateFlow(0)
@@ -61,13 +66,29 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         totalWordsCount = flashcardDao.getTotalFlashcardsCountFlow()
         
         viewModelScope.launch {
-            // Mock data populate for demonstration
             repository.populateMockData()
-            
-            repository.getDueFlashcards().collect { cards ->
-                dueCardsList = cards
+            observeCards()
+        }
+    }
+    
+    fun setFreeStudyMode(freeMode: Boolean) {
+        if (_isFreeStudyMode.value != freeMode) {
+            _isFreeStudyMode.value = freeMode
+            _currentCard.value = null
+            observeCards()
+        }
+    }
+
+    private fun observeCards() {
+        cardsCollectorJob?.cancel()
+        cardsCollectorJob = viewModelScope.launch {
+            val flow = if (_isFreeStudyMode.value) repository.getAllFlashcards() else repository.getDueFlashcards()
+            flow.collect { cards ->
+                activeCardsList = cards
                 if (_currentCard.value == null && cards.isNotEmpty()) {
                     _currentCard.value = cards.first()
+                } else if (cards.isEmpty()) {
+                    _currentCard.value = null
                 }
             }
         }
@@ -75,9 +96,9 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     
     fun submitReview(quality: Int) {
         val card = _currentCard.value ?: return
-        val currentIndex = dueCardsList.indexOfFirst { it.id == card.id }
-        val nextCard = if (currentIndex != -1 && currentIndex + 1 < dueCardsList.size) {
-            dueCardsList[currentIndex + 1]
+        val currentIndex = activeCardsList.indexOfFirst { it.id == card.id }
+        val nextCard = if (currentIndex != -1 && currentIndex + 1 < activeCardsList.size) {
+            activeCardsList[currentIndex + 1]
         } else {
             null
         }
@@ -86,8 +107,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             repository.processReview(card, quality)
         }
     }
-
-
 
     fun submitQuizAttempt(questionId: Int, isCorrect: Boolean) {
         viewModelScope.launch {
