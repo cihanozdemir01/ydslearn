@@ -43,6 +43,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val dailyQuestionCount: StateFlow<Int> = _dailyQuestionCount.asStateFlow()
 
     private var activeCardsList: List<Flashcard> = emptyList()
+    private val sessionQueue = mutableListOf<Flashcard>()
     private var cardsCollectorJob: Job? = null
 
     // Quiz State
@@ -85,6 +86,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         if (_isFreeStudyMode.value != freeMode) {
             _isFreeStudyMode.value = freeMode
             _currentCard.value = null
+            sessionQueue.clear()
             observeCards()
         }
     }
@@ -101,11 +103,14 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             val flow = if (_isFreeStudyMode.value) repository.getAllFlashcards() else repository.getDueFlashcards()
             flow.collect { cards ->
                 activeCardsList = cards
+                if (sessionQueue.isEmpty() && cards.isNotEmpty()) {
+                    sessionQueue.addAll(cards)
+                }
                 if (!_isFreeStudyMode.value && _dailySessionCount.value >= 40) {
                     _currentCard.value = null
-                } else if (_currentCard.value == null && cards.isNotEmpty()) {
-                    _currentCard.value = cards.first()
-                } else if (cards.isEmpty()) {
+                } else if (_currentCard.value == null && sessionQueue.isNotEmpty()) {
+                    _currentCard.value = sessionQueue.firstOrNull()
+                } else if (sessionQueue.isEmpty()) {
                     _currentCard.value = null
                 }
             }
@@ -126,13 +131,15 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             }
         }
 
-        val currentIndex = activeCardsList.indexOfFirst { it.id == card.id }
-        val nextCard = if (currentIndex != -1 && currentIndex + 1 < activeCardsList.size) {
-            activeCardsList[currentIndex + 1]
-        } else {
-            null
+        if (sessionQueue.isNotEmpty()) {
+            sessionQueue.removeAt(0)
         }
-        _currentCard.value = nextCard
+        if (quality < 3) {
+            // Re-queue card to the end of the session so it repeats until answered Kolaydı/Artık Sorma!
+            sessionQueue.add(card)
+        }
+
+        _currentCard.value = sessionQueue.firstOrNull()
         viewModelScope.launch {
             repository.processReview(card, quality)
         }
